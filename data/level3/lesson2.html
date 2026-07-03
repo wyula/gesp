@@ -1,0 +1,380 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+    <p style="text-align:center; color:#999; margin-top:20px;">第二课 数组进阶</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 数组的常见操作</h2>
+    <div class="slide-content">
+        <p>数组的常见操作包括：</p>
+        <br>
+        <p>1. <strong>数组的复制</strong>：将一个数组的内容复制到另一个数组</p>
+        <p>2. <strong>数组的合并</strong>：将两个数组合并成一个新数组</p>
+        <p>3. <strong>数组的查找</strong>：在数组中查找特定元素</p>
+        <p>4. <strong>数组的排序</strong>：对数组元素进行排序</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">数组复制</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr1[] = {1, 2, 3, 4, 5};<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr2[5];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> len = <span class="code-keyword">sizeof</span>(arr1) / <span class="code-keyword">sizeof</span>(arr1[0]);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr2[i] = arr1[i];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "arr2: ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << arr2[i] << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">数组查找（顺序查找）</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr[] = {10, 20, 30, 40, 50};<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> len = <span class="code-keyword">sizeof</span>(arr) / <span class="code-keyword">sizeof</span>(arr[0]);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> target = 30;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> index = -1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (arr[i] == target) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = i;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">break</span>;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (index != -1) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "找到了，下标为：" << index << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "未找到" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">在数组{5, 12, 8, 20, 15}中查找元素12，顺序查找需要比较几次？</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>1次</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>2次</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>3次</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>4次</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 冒泡排序</h2>
+    <div class="slide-content">
+        <p>冒泡排序是一种简单的排序算法，通过重复遍历数组，比较相邻元素并交换位置，使较大的元素逐渐'冒泡'到数组末端。</p>
+        <br>
+        <p><strong>排序过程：</strong></p>
+        <p>1. 比较第一个和第二个元素，如果第一个大于第二个则交换</p>
+        <p>2. 比较第二个和第三个元素，如果第二个大于第三个则交换</p>
+        <p>3. 继续这个过程，直到最后一个元素</p>
+        <p>4. 重复上述步骤，每次少比较一个元素</p>
+        <p>5. 直到没有需要交换的元素</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">冒泡排序实现</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr[] = {34, 7, 23, 32, 5, 62};<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> len = <span class="code-keyword">sizeof</span>(arr) / <span class="code-keyword">sizeof</span>(arr[0]);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len - 1; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> j = 0; j &lt; len - 1 - i; j++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (arr[j] &gt; arr[j + 1]) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> temp = arr[j];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j] = arr[j + 1];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[j + 1] = temp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "排序后：";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << arr[i] << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">冒泡排序过程演示</h2>
+    <div class="slide-content">
+        <p>初始数组：{34, 7, 23, 32, 5, 62}</p>
+    </div>
+    <div class="array-visual">
+        <div class="array-box">
+            <div class="array-item">
+                <div class="array-value">34</div>
+                <div class="array-index">0</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">7</div>
+                <div class="array-index">1</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">23</div>
+                <div class="array-index">2</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">32</div>
+                <div class="array-index">3</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">5</div>
+                <div class="array-index">4</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">62</div>
+                <div class="array-index">5</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">冒泡排序最好情况下的时间复杂度是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>O(n)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>O(n^2)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>O(n log n)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>O(log n)</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 选择排序</h2>
+    <div class="slide-content">
+        <p>选择排序是一种简单直观的排序算法，每次从未排序部分选择最小（或最大）的元素，放到已排序部分的末尾。</p>
+        <br>
+        <p><strong>排序过程：</strong></p>
+        <p>1. 在未排序部分找到最小元素</p>
+        <p>2. 将最小元素与未排序部分的第一个元素交换</p>
+        <p>3. 缩小未排序部分的范围</p>
+        <p>4. 重复上述步骤，直到整个数组有序</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">选择排序实现</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr[] = {34, 7, 23, 32, 5, 62};<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> len = <span class="code-keyword">sizeof</span>(arr) / <span class="code-keyword">sizeof</span>(arr[0]);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len - 1; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> min_index = i;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> j = i + 1; j &lt; len; j++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (arr[j] &lt; arr[min_index]) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_index = j;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> temp = arr[i];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i] = arr[min_index];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[min_index] = temp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "排序后：";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << arr[i] << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">选择排序与冒泡排序相比，主要优点是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>时间复杂度更低</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>交换次数更少</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>空间复杂度更低</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>更稳定</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">04 真题解析</h2>
+    <div class="slide-content">
+        <p>让我们来看一些关于数组排序的真题。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">判断题</h2>
+    <div class="slide-content">
+        <p><strong>（2023年6月）</strong> 冒泡排序在最坏情况下需要进行n(n-1)/2次比较。</p>
+        <br>
+        <p>答案：<strong>正确</strong></p>
+        <br>
+        <p>解析：冒泡排序最坏情况是数组完全逆序，需要比较(n-1)+(n-2)+...+1 = n(n-1)/2次。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（样题）</strong> 对数组{5, 3, 8, 1, 2}进行冒泡排序，第一轮排序后的结果是（）</p>
+        <br>
+        <p>A. {3, 5, 1, 2, 8}</p>
+        <p>B. {3, 5, 8, 1, 2}</p>
+        <p>C. {3, 5, 1, 8, 2}</p>
+        <p>D. {5, 3, 1, 2, 8}</p>
+        <br>
+        <p>答案：<strong>A</strong></p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">编程题：数组去重</h2>
+    <div class="slide-content">
+        <p><strong>题目描述：</strong></p>
+        <p>输入一个有序数组，去除重复元素，输出去重后的数组。</p>
+        <br>
+        <p><strong>输入格式：</strong></p>
+        <p>第一行输入整数n</p>
+        <p>第二行输入n个整数（有序）</p>
+        <br>
+        <p><strong>输出格式：</strong></p>
+        <p>去重后的数组元素</p>
+        <br>
+        <p><strong>样例输入：</strong></p>
+        <div class="code-block">
+            6<br>
+            1 2 2 3 3 3
+        </div>
+        <br>
+        <p><strong>样例输出：</strong></p>
+        <div class="code-block">
+            1 2 3
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">数组去重参考代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr[100];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cin >> arr[i];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (n == 0) <span class="code-keyword">return</span> 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << arr[0];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (arr[i] != arr[i - 1]) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << " " << arr[i];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="highlight-box">
+        <p><strong>练习1：</strong> 实现插入排序算法。</p>
+        <br>
+        <p><strong>练习2：</strong> 输入两个有序数组，将它们合并成一个新的有序数组。</p>
+        <br>
+        <p><strong>练习3：</strong> 统计数组中每个元素出现的次数。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第二课 数组进阶</p>
+</div>

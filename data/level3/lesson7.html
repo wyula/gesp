@@ -1,0 +1,360 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+    <p style="text-align:center; color:#999; margin-top:20px;">第七课 函数进阶</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 函数的参数传递</h2>
+    <div class="slide-content">
+        <p>C++中有三种参数传递方式：</p>
+        <br>
+        <p><strong>1. 值传递：</strong></p>
+        <p>- 将实参的值复制一份给形参</p>
+        <p>- 函数内部对形参的修改不会影响实参</p>
+        <br>
+        <p><strong>2. 引用传递：</strong></p>
+        <p>- 将实参的引用传递给形参</p>
+        <p>- 函数内部对形参的修改会影响实参</p>
+        <p>- 使用&符号声明引用参数</p>
+        <br>
+        <p><strong>3. 指针传递：</strong></p>
+        <p>- 将实参的地址传递给形参</p>
+        <p>- 函数内部通过指针修改实参的值</p>
+        <p>- 使用*符号声明指针参数</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">值传递示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">void</span> swap(<span class="code-keyword">int</span> a, <span class="code-keyword">int</span> b) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> temp = a;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;a = b;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;b = temp;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> x = 10, y = 20;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "交换前：x=" << x << ", y=" << y << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;swap(x, y);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "交换后：x=" << x << ", y=" << y << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">引用传递示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">void</span> swap(<span class="code-keyword">int</span>& a, <span class="code-keyword">int</span>& b) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> temp = a;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;a = b;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;b = temp;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> x = 10, y = 20;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "交换前：x=" << x << ", y=" << y << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;swap(x, y);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "交换后：x=" << x << ", y=" << y << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">要在函数中修改实参的值，应该使用哪种参数传递方式？</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>值传递</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>引用传递</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>常量传递</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>数组传递</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 函数的返回值</h2>
+    <div class="slide-content">
+        <p><strong>函数的返回值类型：</strong></p>
+        <p>- 可以是基本数据类型（int、float、char等）</p>
+        <p>- 可以是数组（但通常返回指针）</p>
+        <p>- 可以是字符串（返回指针或string）</p>
+        <p>- 可以是结构体</p>
+        <p>- 可以是void（无返回值）</p>
+        <br>
+        <p><strong>注意事项：</strong></p>
+        <p>- 不要返回局部变量的指针或引用</p>
+        <p>- 返回值类型必须与函数声明一致</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">返回指针示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span>* createArray(<span class="code-keyword">int</span> size) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span>* arr = <span class="code-keyword">new</span> <span class="code-keyword">int</span>[size];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; size; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i] = i + 1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> arr;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span>* ptr = createArray(5);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; 5; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << ptr[i] << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">delete</span>[] ptr;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 函数重载</h2>
+    <div class="slide-content">
+        <p><strong>函数重载</strong>是指在同一个作用域内，可以定义多个同名函数，但它们的参数列表必须不同（参数类型、参数个数或参数顺序不同）。</p>
+        <br>
+        <p><strong>函数重载的条件：</strong></p>
+        <p>1. 函数名相同</p>
+        <p>2. 参数列表不同（类型、个数、顺序）</p>
+        <p>3. 返回值类型可以相同也可以不同</p>
+        <br>
+        <p><strong>函数重载的作用：</strong></p>
+        <p>- 提高代码的可读性和可维护性</p>
+        <p>- 允许使用相同的函数名处理不同类型的数据</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">函数重载示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> add(<span class="code-keyword">int</span> a, <span class="code-keyword">int</span> b) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> a + b;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">double</span> add(<span class="code-keyword">double</span> a, <span class="code-keyword">double</span> b) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> a + b;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> add(<span class="code-keyword">int</span> a, <span class="code-keyword">int</span> b, <span class="code-keyword">int</span> c) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> a + b + c;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "add(1, 2) = " << add(1, 2) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "add(1.5, 2.5) = " << add(1.5, 2.5) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "add(1, 2, 3) = " << add(1, 2, 3) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">以下哪个函数可以与int add(int a, int b)构成重载？</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>int add(int x, int y)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>double add(int a, int b)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>int add(int a, int b, int c)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>void add(int a, int b)</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">04 递归函数</h2>
+    <div class="slide-content">
+        <p><strong>递归函数</strong>是指在函数体内调用自身的函数。</p>
+        <br>
+        <p><strong>递归函数的组成：</strong></p>
+        <p>1. <strong>递归条件：</strong>函数调用自身的条件</p>
+        <p>2. <strong>终止条件：</strong>函数不再调用自身的条件</p>
+        <br>
+        <p><strong>递归函数的特点：</strong></p>
+        <p>- 代码简洁，逻辑清晰</p>
+        <p>- 可能导致栈溢出（递归深度太大）</p>
+        <p>- 时间复杂度较高</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">递归函数示例：阶乘</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> factorial(<span class="code-keyword">int</span> n) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (n == 0 || n == 1) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> n * factorial(n - 1);<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n = 5;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << n << "! = " << factorial(n) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">递归函数示例：斐波那契数列</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> fibonacci(<span class="code-keyword">int</span> n) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (n == 1 || n == 2) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> fibonacci(n - 1) + fibonacci(n - 2);<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt;= 10; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << fibonacci(i) << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">05 真题解析</h2>
+    <div class="slide-content">
+        <p>让我们来看一些关于函数的真题。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">判断题</h2>
+    <div class="slide-content">
+        <p><strong>（2023年6月）</strong> 函数重载只要求函数名相同，参数列表可以相同。</p>
+        <br>
+        <p>答案：<strong>错误</strong></p>
+        <br>
+        <p>解析：函数重载要求参数列表必须不同，只改变返回值类型不能构成重载。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（样题）</strong> 以下关于递归函数的说法，正确的是（）</p>
+        <br>
+        <p>A. 递归函数不需要终止条件</p>
+        <p>B. 递归函数一定会导致栈溢出</p>
+        <p>C. 递归函数必须有终止条件</p>
+        <p>D. 递归函数的时间复杂度一定比迭代低</p>
+        <br>
+        <p>答案：<strong>C</strong></p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">编程题：最大公约数</h2>
+    <div class="slide-content">
+        <p><strong>题目描述：</strong></p>
+        <p>使用递归函数求两个正整数的最大公约数（GCD）。</p>
+        <br>
+        <p><strong>输入格式：</strong></p>
+        <p>两个正整数a和b</p>
+        <br>
+        <p><strong>输出格式：</strong></p>
+        <p>它们的最大公约数</p>
+        <br>
+        <p><strong>提示：</strong></p>
+        <p>使用欧几里得算法：gcd(a, b) = gcd(b, a % b)，当b=0时，a即为最大公约数。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">最大公约数参考代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> gcd(<span class="code-keyword">int</span> a, <span class="code-keyword">int</span> b) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (b == 0) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> a;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> gcd(b, a % b);<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a, b;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> a >> b;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << gcd(a, b) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="highlight-box">
+        <p><strong>练习1：</strong> 编写递归函数计算幂次。</p>
+        <br>
+        <p><strong>练习2：</strong> 编写递归函数反转字符串。</p>
+        <br>
+        <p><strong>练习3：</strong> 编写递归函数求数组的最大值。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第七课 函数进阶</p>
+</div>

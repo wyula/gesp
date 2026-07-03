@@ -1,0 +1,371 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+    <p style="text-align:center; color:#999; margin-top:20px;">第四课 字符串2</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 C++ string类</h2>
+    <div class="slide-content">
+        <p>C++提供了string类，使用起来比字符数组更方便、更安全。需要包含头文件<code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">&lt;string&gt;</code>。</p>
+        <br>
+        <p><strong>string类的优点：</strong></p>
+        <p>1. 不需要关心内存分配问题</p>
+        <p>2. 可以直接使用+进行字符串拼接</p>
+        <p>3. 可以直接使用==、!=、<、>等运算符比较</p>
+        <p>4. 提供了丰富的成员函数</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">string对象的定义和初始化</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s1;           // 空字符串<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s2 = "Hello"; // 用字符串常量初始化<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s3(s2);       // 用另一个string对象初始化<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s4(5, 'A');   // 5个'A'<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "s1: \"" << s1 << "\"" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "s2: \"" << s2 << "\"" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "s3: \"" << s3 << "\"" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "s4: \"" << s4 << "\"" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">string的常用操作</h2>
+    <div class="slide-content">
+        <p><strong>字符串拼接：</strong></p>
+        <div class="code-block">
+            string s1 = "Hello";<br>
+            string s2 = " World";<br>
+            string s3 = s1 + s2;  // "Hello World"<br>
+            s1 += s2;             // s1 = "Hello World"
+        </div>
+        <br>
+        <p><strong>字符串比较：</strong></p>
+        <div class="code-block">
+            string s1 = "Apple";<br>
+            string s2 = "Banana";<br>
+            s1 == s2;  // false<br>
+            s1 &lt; s2;   // true（字典序）<br>
+            s1 &gt; s2;   // false
+        </div>
+        <br>
+        <p><strong>字符串访问：</strong></p>
+        <div class="code-block">
+            string s = "Hello";<br>
+            s[0];      // 'H'<br>
+            s.at(1);   // 'e'
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">string s1 = "abc"; string s2 = "def"; s1 + s2的结果是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>"abc"</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>"def"</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>"abcdef"</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>"defabc"</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">string的常用成员函数</h2>
+    <div class="slide-content">
+        <p><strong>长度相关：</strong></p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.size()</code> / <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.length()</code>：返回字符串长度</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.empty()</code>：判断字符串是否为空</p>
+        <br>
+        <p><strong>查找相关：</strong></p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.find(substr)</code>：查找子串，返回起始位置</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.rfind(substr)</code>：从右向左查找子串</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.find_first_of(chars)</code>：查找第一个在chars中的字符</p>
+        <br>
+        <p><strong>截取相关：</strong></p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.substr(pos, len)</code>：从pos开始截取len个字符</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.erase(pos, len)</code>：删除从pos开始的len个字符</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">s.insert(pos, substr)</code>：在pos位置插入子串</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">string成员函数示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s = "Hello, C++!";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "长度：" << s.size() << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> pos = s.find("C++");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "C++的位置：" << pos << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string sub = s.substr(0, 5);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "截取前5个字符：" << sub << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;s.insert(5, " World");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "插入后：" << s << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;s.erase(5, 7);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "删除后：" << s << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 字符串的大小写转换</h2>
+    <div class="slide-content">
+        <p>C++提供了<code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">&lt;cctype&gt;</code>头文件中的字符处理函数。</p>
+        <br>
+        <p><strong>常用函数：</strong></p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">toupper(c)</code>：将小写字母转换为大写</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">tolower(c)</code>：将大写字母转换为小写</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">isupper(c)</code>：判断是否为大写字母</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">islower(c)</code>：判断是否为小写字母</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">isalpha(c)</code>：判断是否为字母</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">isdigit(c)</code>：判断是否为数字</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">大小写转换示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">#include</span> &lt;cctype&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s = "Hello, World!";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; s.size(); i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (islower(s[i])) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[i] = toupper(s[i]);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "大写：" << s << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; s.size(); i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (isupper(s[i])) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[i] = tolower(s[i]);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "小写：" << s << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">下列关于string类的说法，正确的是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>string需要手动添加'\0'结尾</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>string不能直接使用+拼接</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>string的size()返回字节数</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>string需要包含&lt;cstring&gt;头文件</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 字符串与数字的转换</h2>
+    <div class="slide-content">
+        <p><strong>数字转字符串：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> num = 123;<br>
+            string s = to_string(num);  // "123"<br>
+            <br>
+            <span class="code-keyword">double</span> d = 3.14;<br>
+            string s2 = to_string(d);   // "3.140000"
+        </div>
+        <br>
+        <p><strong>字符串转数字：</strong></p>
+        <div class="code-block">
+            string s = "123";<br>
+            <span class="code-keyword">int</span> num = stoi(s);  // 123<br>
+            <br>
+            string s2 = "3.14";<br>
+            <span class="code-keyword">double</span> d = stod(s2); // 3.14
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">字符串与数字转换示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num = 456;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s = to_string(num);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "数字转字符串：" << s << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s2 = "789";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num2 = stoi(s2);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "字符串转数字：" << num2 << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s3 = "3.14159";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">double</span> pi = stod(s3);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "字符串转小数：" << pi << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">04 真题解析</h2>
+    <div class="slide-content">
+        <p>让我们来看一些关于字符串的真题。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（2023年6月）</strong> 以下哪个不是C++ string类的成员函数？</p>
+        <br>
+        <p>A. size()</p>
+        <p>B. length()</p>
+        <p>C. strlen()</p>
+        <p>D. find()</p>
+        <br>
+        <p>答案：<strong>C</strong></p>
+        <br>
+        <p>解析：strlen()是cstring头文件中的函数，不是string类的成员函数。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（2023年6月）</strong> 以下代码的输出结果是？</p>
+        <div class="code-block">
+            string s = "Hello";<br>
+            cout << s.find('l') << endl;
+        </div>
+        <br>
+        <p>A. 1</p>
+        <p>B. 2</p>
+        <p>C. 3</p>
+        <p>D. -1</p>
+        <br>
+        <p>答案：<strong>B</strong></p>
+        <br>
+        <p>解析：find()返回首次出现的位置，'l'首次出现在下标2。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">编程题：提取数字</h2>
+    <div class="slide-content">
+        <p><strong>题目描述：</strong></p>
+        <p>从输入字符串中提取所有数字字符，并按顺序输出。</p>
+        <br>
+        <p><strong>输入格式：</strong></p>
+        <p>输入一个字符串</p>
+        <br>
+        <p><strong>输出格式：</strong></p>
+        <p>提取出的数字字符串</p>
+        <br>
+        <p><strong>样例输入：</strong></p>
+        <div class="code-block">
+            Hello123World456
+        </div>
+        <br>
+        <p><strong>样例输出：</strong></p>
+        <div class="code-block">
+            123456
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">提取数字参考代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">#include</span> &lt;cctype&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string s;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> s;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; s.size(); i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (isdigit(s[i])) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += s[i];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << result << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="highlight-box">
+        <p><strong>练习1：</strong> 使用string类实现字符串反转。</p>
+        <br>
+        <p><strong>练习2：</strong> 判断字符串是否以指定前缀开头。</p>
+        <br>
+        <p><strong>练习3：</strong> 将字符串中的单词首字母大写。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第四课 字符串2</p>
+</div>

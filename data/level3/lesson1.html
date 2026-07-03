@@ -1,0 +1,631 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">GESP三级考核知识点</h2>
+    <div class="slide-content">
+        <p>GESP三级考试涵盖以下核心知识点：</p>
+        <br>
+        <p>1. <strong>数组</strong>：定义、初始化、下标访问、遍历</p>
+        <p>2. <strong>字符串</strong>：字符数组、string类型、常用操作</p>
+        <p>3. <strong>数制和编码</strong>：二进制、八进制、十六进制、原码/反码/补码</p>
+        <p>4. <strong>位运算</strong>：按位与、或、异或、取反、移位</p>
+        <p>5. <strong>算法基础</strong>：模拟算法、枚举算法</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">GESP三级题型分布</h2>
+    <div class="slide-content">
+        <p><strong>满分100分，60分以上合格</strong></p>
+        <p><strong>考试时间：120分钟</strong></p>
+        <br>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>题型</th>
+                    <th>数量</th>
+                    <th>分值</th>
+                    <th>总分</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>单选题</td>
+                    <td>15道</td>
+                    <td>2分/道</td>
+                    <td>30分</td>
+                </tr>
+                <tr>
+                    <td>判断题</td>
+                    <td>10道</td>
+                    <td>2分/道</td>
+                    <td>20分</td>
+                </tr>
+                <tr>
+                    <td>编程题</td>
+                    <td>2道</td>
+                    <td>25分/道</td>
+                    <td>50分</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">第一课</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">数组 1</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 数组的定义</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">数组的概念</h2>
+    <div class="slide-content">
+        <p><strong>数组就是一组数据</strong>，是由一组具有相同数据类型的变量组成的。</p>
+        <br>
+        <p><strong>数组中的变量称为数组的元素</strong>，元素的本质就是变量。</p>
+        <br>
+        <div class="code-block">
+            变量1  变量2  变量3  变量4  变量5<br>
+             98     88     85     78     92<br>
+              int类型
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">定义数组</h2>
+    <div class="slide-content">
+        <p>定义数组需要确定：</p>
+        <br>
+        <p>1. <strong>数组的名称</strong>：命名规则与变量相同</p>
+        <p>2. <strong>数组元素的类型</strong>：所有元素必须是同一种类型</p>
+        <p>3. <strong>数组的结构</strong>：比如数组的长度</p>
+        <br>
+        <p><strong>语法格式：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">数据类型</span> <span class="code-keyword">数组名</span>[长度];<br>
+            <br>
+            <span class="code-keyword">int</span> a[5];  // 可以保存5个整型元素
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">数组长度的注意事项</h2>
+    <div class="slide-content">
+        <p><strong>数组长度的要求：</strong></p>
+        <br>
+        <p>1. <strong>只能是大于0的整数</strong></p>
+        <p>2. <strong>不能是变量和变量表达式</strong></p>
+        <br>
+        <div class="code-block">
+            <span class="code-keyword">int</span> n = 5;<br>
+            <span class="code-keyword">int</span> a[n];      // × 错误：不能使用变量<br>
+            <span class="code-keyword">int</span> a[n+2];    // × 错误：不能使用变量表达式<br>
+            <span class="code-keyword">int</span> a['3'];    // ✓ 正确：'3'的ASCII码是51，是常量
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）在C++语言中，数组被定义时，它的大小就确定了。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）在C++语言中，可以定义一个一维整型数组的是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>int array[5];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>int array[];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>int[5] array;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>int[] array;</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）以下数组定义，符合C++语言语法的是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>int a[];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>int b['3'];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>int c[3.0];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>int[3] d;</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 数组的初始化</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">数组初始化</h2>
+    <div class="slide-content">
+        <p><strong>语法格式：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">数据类型</span> <span class="code-keyword">数组名</span>[长度] = {元素1, 元素2, ..., 元素n};<br>
+            <br>
+            <span class="code-keyword">int</span> a[5] = {98, 88, 85, 78, 92};
+        </div>
+        <br>
+        <p><strong>注意：</strong></p>
+        <p>- 元素个数不能超过设置的长度数</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">int a[3] = {98, 88, 85, 78, 92};</code> // × 错误：元素个数超过长度</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">数组其他初始化方式</h2>
+    <div class="slide-content">
+        <p><strong>方式一：省略数组长度</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> a[] = {98, 88, 85, 78, 92};<br>
+            // 元素：98 88 85 78 92<br>
+            // 元素给定的情况，长度可以省略
+        </div>
+        <br>
+        <p><strong>方式二：自动补0</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> b[5] = {1};           // 元素：1 0 0 0 0<br>
+            <span class="code-keyword">int</span> c[5] = {1, 2, 3};     // 元素：1 2 3 0 0
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">数组其他初始化方式（续）</h2>
+    <div class="slide-content">
+        <p><strong>方式三：数组元素全部初始化为0</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> d[5] = {0};           // 元素：0 0 0 0 0<br>
+            <span class="code-keyword">int</span> e[5] = {};            // 元素：0 0 0 0 0<br>
+            <span class="code-keyword">int</span> f[5] = {0}, g[10] = {0};  // 同时初始化多个数组
+        </div>
+        <br>
+        <p><strong>方式四：同时定义多个数组</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> h[5], n = 5;<br>
+            // 数组h未初始化，变量n=5
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）在C++语言中，定义数组时，[]中必须指定元素个数。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）若有以下代码，则数组arr的长度是（）<br><br>int arr[] = {1, 2, 3, 4, 5};</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>6</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）以下数组定义，符合C++语言语法的是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>double a[];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>double b[] = {1,2.0,'3'};</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>double c[3.0]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>double[] d = new double[3];</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 数组的下标和元素访问</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">数组下标</h2>
+    <div class="slide-content">
+        <p>数组元素在内存中是顺序、连续存储的，每个元素都有对应的编号，这个编号称为<strong>数组下标</strong>。</p>
+        <br>
+        <p><strong>下标特点：</strong></p>
+        <p>- 从0开始的一组整数</p>
+        <p>- 下标范围：0 ~ 数组长度-1</p>
+        <br>
+        <div class="code-block">
+            <span class="code-keyword">int</span> a[5] = {98, 88, 85, 78, 92};<br>
+            数组a:  98   88   85   78   92<br>
+            下标:   0    1    2    3    4
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">输出数组中的元素</h2>
+    <div class="slide-content">
+        <p><strong>访问数组元素：</strong></p>
+        <div class="code-block">
+            数组名称[下标表达式]
+        </div>
+        <br>
+        <p><strong>下标表达式的要求：</strong></p>
+        <p>- 结果必须为整数</p>
+        <br>
+        <p><strong>示例：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> a[5] = {98, 88, 85, 78, 92};<br>
+            <br>
+            cout << a[0] << " ";  // 输出98<br>
+            cout << a[1] << " ";  // 输出88<br>
+            cout << a[2] << " ";  // 输出85<br>
+            cout << a[3] << " ";  // 输出78<br>
+            cout << a[4];          // 输出92
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">遍历数组元素</h2>
+    <div class="slide-content">
+        <p>依次访问数组中每一个元素的操作，称为<strong>遍历数组元素</strong>。</p>
+        <br>
+        <p><strong>使用for循环遍历：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> a[5] = {98, 88, 85, 78, 92};<br>
+            <br>
+            <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i < 5; i++) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cout << a[i] << " ";<br>
+            }<br>
+            // 输出：98 88 85 78 92
+        </div>
+        <br>
+        <p><strong>数组a:</strong>  98   88   85   78   92</p>
+        <p><strong>下标:</strong>    0    1    2    3    4</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）在C++语言中，长度为n的数组，合理的下标范围从0到n，包括0和n。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）在C++语言中，数组的下标从1开始计数。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）在C++语言中，可以使用浮点数（如3.0）作为数组下标。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）在C++语言中，可以使用字符（如'0'）作为数组下标。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）一个数组定义为double array[3];，则可合理访问这个数组的元素的下标最大为（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>2</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>23</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>24</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-10"></div>
+        <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析：小杨的储蓄（2023年9月）</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">问题描述</h2>
+    <div class="slide-content">
+        <p><strong>小杨共有N个储蓄罐</strong>，编号从0到N-1。从第1天开始，小杨每天都会往存钱罐里存钱。具体来说，第i天他会挑选一个存钱罐a_i，并存入i元钱。过了D天后，他已经忘记每个储蓄罐里都存了多少钱了，你能帮帮他吗？</p>
+        <br>
+        <p><strong>输入描述：</strong></p>
+        <p>输入2行，第一行两个整数N,D；第二行D个整数，其中第i个整数为a_i（保证0≤a_i≤N-1）。每行的各个整数之间用单个空格分隔。保证1≤N≤1000; 1≤D≤1000。</p>
+        <br>
+        <p><strong>输出描述：</strong></p>
+        <p>输出N个用单个空格隔开的整数，其中第i个整数表示编号为i-1的存钱罐中有多少钱（i=1,....N）。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">样例输入输出</h2>
+    <div class="slide-content">
+        <p><strong>样例输入1：</strong></p>
+        <div class="code-block">
+            2 3<br>
+            0 1 0
+        </div>
+        <br>
+        <p><strong>样例输出1：</strong></p>
+        <div class="code-block">
+            4 2
+        </div>
+        <br>
+        <p><strong>样例解释：</strong></p>
+        <p>小杨在第1天、第2天、第3天分别向0号、1号、0号存钱罐存了1元钱、2元钱、3元钱，因此0号存钱罐有1+3=4元钱，而1号存钱罐有2元钱。</p>
+        <br>
+        <p><strong>样例输入2：</strong></p>
+        <div class="code-block">
+            3 5<br>
+            0 0 0 2 0
+        </div>
+        <br>
+        <p><strong>样例输出2：</strong></p>
+        <div class="code-block">
+            11 0 4
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">思路分析</h2>
+    <div class="slide-content">
+        <p><strong>解题思路：</strong></p>
+        <br>
+        <p>1. <strong>定义数组</strong>：创建一个数组来存储每个储蓄罐的金额</p>
+        <p>2. <strong>输入数据</strong>：读取储蓄罐数量N和天数D</p>
+        <p>3. <strong>模拟存钱过程</strong>：第i天向a_i号储蓄罐存入i元</p>
+        <p>4. <strong>输出结果</strong>：依次输出每个储蓄罐的金额</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">步骤一：输入所需数据</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> jar[1000];  // 存钱罐数组<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n = 0, d = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n >> d;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">步骤二：按题目规则进行存储统计</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> jar[1000];<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n = 0, d = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n >> d;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt;= d; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cin >> a;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jar[a] += i;  // 第i天向a号存钱罐存入i元<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">步骤三：输出结果</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> jar[1000];<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n = 0, d = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n >> d;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt;= d; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cin >> a;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jar[a] += i;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << jar[i] << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> jar[1000];<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n, d;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n >> d;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt;= d; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cin >> a;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jar[a] += i;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << jar[i] << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第一课 数组</p>
+</div>

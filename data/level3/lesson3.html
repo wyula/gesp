@@ -1,0 +1,364 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+    <p style="text-align:center; color:#999; margin-top:20px;">第三课 字符串1</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 字符数组</h2>
+    <div class="slide-content">
+        <p>字符串是由0个或多个字符组成的有序序列。在C++中，字符串可以用字符数组来表示。</p>
+        <br>
+        <p><strong>字符串的特点：</strong></p>
+        <p>1. 字符串必须以'\0'结尾</p>
+        <p>2. '\0'是字符串结束的标志，其ASCII码值为0</p>
+        <p>3. 字符数组的长度必须大于等于字符串的实际长度+1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">字符数组的定义和初始化</h2>
+    <div class="slide-content">
+        <p><strong>方式一：逐个字符初始化</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[6] = {'H', 'e', 'l', 'l', 'o', '\0'};<br>
+        </div>
+        <br>
+        <p><strong>方式二：直接用字符串常量初始化</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[] = "Hello";<br>
+        </div>
+        <br>
+        <p><strong>方式三：指定大小初始化</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[20] = "Hello";<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">字符数组内存布局</h2>
+    <div class="slide-content">
+        <p>"Hello"在内存中的存储方式</p>
+    </div>
+    <div class="array-visual">
+        <div class="array-box">
+            <div class="array-item">
+                <div class="array-value">'H'</div>
+                <div class="array-index">0</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">'e'</div>
+                <div class="array-index">1</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">'l'</div>
+                <div class="array-index">2</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">'l'</div>
+                <div class="array-index">3</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">'o'</div>
+                <div class="array-index">4</div>
+            </div>
+            <div class="array-item">
+                <div class="array-value">'\0'</div>
+                <div class="array-index">5</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">字符串"ABC"在内存中占用几个字节？</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>3个</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4个</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>5个</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>6个</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 字符数组的输入输出</h2>
+    <div class="slide-content">
+        <p><strong>使用cin输入字符串：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[20];<br>
+            cin >> str;  // 不接收空格
+        </div>
+        <br>
+        <p><strong>使用cin.getline()输入含空格的字符串：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[100];<br>
+            cin.getline(str, 100);  // 可以接收空格
+        </div>
+        <br>
+        <p><strong>使用cout输出字符串：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[] = "Hello";<br>
+            cout << str;
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">字符串输入输出示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> name[50];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> address[100];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "请输入姓名：";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> name;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "请输入地址：";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin.ignore();  // 忽略换行符<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin.getline(address, 100);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "姓名：" << name << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "地址：" << address << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 字符串操作函数</h2>
+    <div class="slide-content">
+        <p>C++提供了丰富的字符串操作函数，需要包含头文件<code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">&lt;cstring&gt;</code>。</p>
+        <br>
+        <p><strong>常用函数：</strong></p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">strlen(str)</code>：计算字符串长度（不含'\0'）</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">strcpy(str1, str2)</code>：将str2复制到str1</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">strcat(str1, str2)</code>：将str2追加到str1末尾</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">strcmp(str1, str2)</code>：比较str1和str2</p>
+        <p>- <code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">strstr(str1, str2)</code>：在str1中查找str2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">字符串操作函数示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;cstring&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> str1[20] = "Hello";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> str2[20] = " World";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "str1长度：" << strlen(str1) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;strcat(str1, str2);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "拼接后：" << str1 << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> str3[20];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;strcpy(str3, str1);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "复制后：" << str3 << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> cmp = strcmp(str1, str3);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "比较结果：" << cmp << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">strlen("abc\0def")的返回值是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>6</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>7</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>8</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">04 字符串的遍历</h2>
+    <div class="slide-content">
+        <p><strong>使用for循环遍历：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[] = "Hello";<br>
+            <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; str[i] != '\0'; i++) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cout << str[i];<br>
+            }
+        </div>
+        <br>
+        <p><strong>使用while循环遍历：</strong></p>
+        <div class="code-block">
+            <span class="code-keyword">char</span> str[] = "Hello";<br>
+            <span class="code-keyword">int</span> i = 0;<br>
+            <span class="code-keyword">while</span> (str[i] != '\0') {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;cout << str[i];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;i++;<br>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">字符串遍历示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> str[] = "Hello, C++!";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> count = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; str[i] != '\0'; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "字符个数：" << count << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; str[i] != '\0'; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (str[i] >= 'a' && str[i] <= 'z') {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str[i] -= 32;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "大写：" << str << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">05 真题解析</h2>
+    <div class="slide-content">
+        <p>让我们来看一些关于字符串的真题。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">判断题</h2>
+    <div class="slide-content">
+        <p><strong>（样题）</strong> 在C++语言中，字符串是以'\0'结尾的字符数组。</p>
+        <br>
+        <p>答案：<strong>正确</strong></p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（2023年6月）</strong> 如果字符串定义为char str[] = "Hello";，则字符数组str的长度为（）</p>
+        <br>
+        <p>A. 0</p>
+        <p>B. 5</p>
+        <p>C. 6</p>
+        <p>D. 不确定</p>
+        <br>
+        <p>答案：<strong>B</strong></p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">编程题：密码合规检测</h2>
+    <div class="slide-content">
+        <p><strong>题目描述：</strong></p>
+        <p>检查用户输入的密码是否合规。合规要求：</p>
+        <p>1. 只能由字母、数字、特殊字符组成</p>
+        <p>2. 长度在6~12之间</p>
+        <p>3. 至少包含一个特殊字符</p>
+        <br>
+        <p><strong>输入格式：</strong></p>
+        <p>输入一个字符串</p>
+        <br>
+        <p><strong>输出格式：</strong></p>
+        <p>合规输出"YES"，否则输出"NO"</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">密码合规检测参考代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;cstring&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">bool</span> check(<span class="code-keyword">char</span> str[], <span class="code-keyword">int</span> len) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (len &lt; 6 || len &gt; 12) <span class="code-keyword">return</span> <span class="code-keyword">false</span>;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">bool</span> hasSpecial = <span class="code-keyword">false</span>;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; len; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> c = str[i];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (!((c &gt;= 'a' && c &lt;= 'z') || (c &gt;= 'A' && c &lt;= 'Z') ||<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(c &gt;= '0' && c &lt;= '9') || c == '!' || c == '@' ||<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c == '#' || c == '$' || c == '%' || c == '^')) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-keyword">false</span>;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (c == '!' || c == '@' || c == '#' || c == '$' ||<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c == '%' || c == '^') {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hasSpecial = <span class="code-keyword">true</span>;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> hasSpecial;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> pwd[100];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> pwd;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (check(pwd, strlen(pwd))) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "YES" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "NO" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="highlight-box">
+        <p><strong>练习1：</strong> 实现字符串反转。</p>
+        <br>
+        <p><strong>练习2：</strong> 判断一个字符串是否是回文字符串。</p>
+        <br>
+        <p><strong>练习3：</strong> 统计字符串中每个字母出现的次数。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第三课 字符串1</p>
+</div>

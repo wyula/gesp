@@ -1,0 +1,353 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+    <p style="text-align:center; color:#999; margin-top:20px;">第八课 位运算</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 位运算概述</h2>
+    <div class="slide-content">
+        <p><strong>位运算</strong>是直接对二进制位进行操作的运算。它的操作数是整数，结果也是整数。</p>
+        <br>
+        <p><strong>位运算的特点：</strong></p>
+        <p>1. <strong>高效：</strong>直接操作二进制位，速度快</p>
+        <p>2. <strong>节省空间：</strong>可以用位来表示状态</p>
+        <p>3. <strong>代码简洁：</strong>某些操作可以用位运算简洁实现</p>
+        <br>
+        <p><strong>C++中的位运算符：</strong></p>
+        <p>- & 按位与</p>
+        <p>- | 按位或</p>
+        <p>- ^ 按位异或</p>
+        <p>- ~ 按位取反</p>
+        <p>- << 左移</p>
+        <p>- >> 右移</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">位运算真值表</h2>
+    <div class="slide-content">
+        <table style="border-collapse: collapse; width: 100%; margin: 0 auto;">
+            <tr style="background: #f5f5f5;">
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">a</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">b</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">a &amp; b</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">a | b</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">a ^ b</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 按位与运算 (&)</h2>
+    <div class="slide-content">
+        <p><strong>按位与运算：</strong>两个二进制位都为1时结果为1，否则为0。</p>
+        <br>
+        <p><strong>按位与的应用：</strong></p>
+        <p>1. 检测某一位是否为1</p>
+        <p>2. 将某些位清零</p>
+        <p>3. 判断奇偶性（num & 1 == 1表示奇数）</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">按位与示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a = 6;   // 0110<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> b = 3;   // 0011<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "a & b = " << (a & b) << endl;  // 0010 = 2<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num = 5;  // 0101<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (num & 1) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << num << "是奇数" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << num << "是偶数" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">表达式5 & 3的结果是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>7</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 按位或运算 (|)</h2>
+    <div class="slide-content">
+        <p><strong>按位或运算：</strong>两个二进制位中有一个为1时结果为1，否则为0。</p>
+        <br>
+        <p><strong>按位或的应用：</strong></p>
+        <p>1. 将某些位设置为1</p>
+        <p>2. 合并标志位</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">按位或示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a = 6;   // 0110<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> b = 3;   // 0011<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "a | b = " << (a | b) << endl;  // 0111 = 7<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> flags = 0;   // 0000<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;flags |= 1;          // 设置第0位为1<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;flags |= 4;          // 设置第2位为1<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "flags = " << flags << endl;  // 0101 = 5<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">04 按位异或运算 (^)</h2>
+    <div class="slide-content">
+        <p><strong>按位异或运算：</strong>两个二进制位相同为0，不同为1。</p>
+        <br>
+        <p><strong>按位异或的性质：</strong></p>
+        <p>1. a ^ a = 0</p>
+        <p>2. a ^ 0 = a</p>
+        <p>3. a ^ b = b ^ a（交换律）</p>
+        <p>4. (a ^ b) ^ c = a ^ (b ^ c)（结合律）</p>
+        <br>
+        <p><strong>按位异或的应用：</strong></p>
+        <p>1. 交换两个数（不使用临时变量）</p>
+        <p>2. 检测只出现一次的数字</p>
+        <p>3. 翻转某些位</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">按位异或示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a = 6;   // 0110<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> b = 3;   // 0011<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "a ^ b = " << (a ^ b) << endl;  // 0101 = 5<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> x = 10, y = 20;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "交换前：x=" << x << ", y=" << y << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;x = x ^ y;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;y = x ^ y;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;x = x ^ y;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "交换后：x=" << x << ", y=" << y << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">使用异或交换两个数a和b，正确的步骤是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>a = a ^ b; b = a ^ b; a = a ^ b;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>a = a ^ b; a = a ^ b; b = a ^ b;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>b = a ^ b; a = a ^ b; a = a ^ b;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>a = a ^ b; b = b ^ a; a = b ^ a;</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">05 移位运算</h2>
+    <div class="slide-content">
+        <p><strong>左移运算 (<<)：</strong>将二进制位向左移动，右边补0。</p>
+        <p>- a << n 相当于 a * 2^n</p>
+        <br>
+        <p><strong>右移运算 (>>)：</strong>将二进制位向右移动。</p>
+        <p>- 对于无符号数，左边补0</p>
+        <p>- 对于有符号数，左边补符号位</p>
+        <p>- a >> n 相当于 a / 2^n（向下取整）</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">移位运算示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> a = 5;   // 0101<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "a << 1 = " << (a << 1) << endl;  // 1010 = 10<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "a << 2 = " << (a << 2) << endl;  // 10100 = 20<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "a >> 1 = " << (a >> 1) << endl;  // 0010 = 2<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "a >> 2 = " << (a >> 2) << endl;  // 0001 = 1<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">06 真题解析</h2>
+    <div class="slide-content">
+        <p>让我们来看一些关于位运算的真题。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">判断题</h2>
+    <div class="slide-content">
+        <p><strong>（样题）</strong> 5 << 2的结果是20。</p>
+        <br>
+        <p>答案：<strong>正确</strong></p>
+        <br>
+        <p>解析：5的二进制是101，左移2位后是10100，即20。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（2023年6月）</strong> 以下代码的输出结果是？</p>
+        <div class="code-block">
+            <span class="code-keyword">int</span> a = 3, b = 5;<br>
+            cout << (a ^ b) << endl;
+        </div>
+        <br>
+        <p>A. 6</p>
+        <p>B. 8</p>
+        <p>C. 2</p>
+        <p>D. 15</p>
+        <br>
+        <p>答案：<strong>A</strong></p>
+        <br>
+        <p>解析：3是0011，5是0101，异或结果是0110，即6。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">编程题：检测二进制中1的个数</h2>
+    <div class="slide-content">
+        <p><strong>题目描述：</strong></p>
+        <p>输入一个整数，输出其二进制表示中1的个数。</p>
+        <br>
+        <p><strong>输入格式：</strong></p>
+        <p>一个整数n</p>
+        <br>
+        <p><strong>输出格式：</strong></p>
+        <p>二进制中1的个数</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">检测二进制中1的个数参考代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n, count = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (n) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count += n & 1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n = n >> 1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << count << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="highlight-box">
+        <p><strong>练习1：</strong> 使用位运算实现两个数的加法。</p>
+        <br>
+        <p><strong>练习2：</strong> 检测一个数是否是2的幂。</p>
+        <br>
+        <p><strong>练习3：</strong> 交换两个整数的奇偶位。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第八课 位运算</p>
+</div>

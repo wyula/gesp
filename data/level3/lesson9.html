@@ -1,0 +1,386 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+    <p style="text-align:center; color:#999; margin-top:20px;">第九课 数制转换</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 数制概述</h2>
+    <div class="slide-content">
+        <p><strong>数制</strong>是计数的方式，不同的数制使用不同的基数。</p>
+        <br>
+        <p><strong>常用数制：</strong></p>
+        <p>1. <strong>十进制（Decimal）：</strong>基数为10，使用0-9</p>
+        <p>2. <strong>二进制（Binary）：</strong>基数为2，使用0和1</p>
+        <p>3. <strong>八进制（Octal）：</strong>基数为8，使用0-7</p>
+        <p>4. <strong>十六进制（Hexadecimal）：</strong>基数为16，使用0-9和A-F</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">不同数制的表示</h2>
+    <div class="slide-content">
+        <table style="border-collapse: collapse; width: 100%; margin: 0 auto;">
+            <tr style="background: #f5f5f5;">
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">十进制</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">二进制</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">八进制</th>
+                <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">十六进制</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1010</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">12</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">A</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">16</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10000</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">20</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">10</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">255</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">11111111</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">377</td>
+                <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">FF</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">十进制数255对应的二进制是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>10000000</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>11111111</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>11001100</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>10101010</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 十进制转其他进制</h2>
+    <div class="slide-content">
+        <p><strong>转换方法：除基取余法</strong></p>
+        <p>1. 将十进制数除以目标进制的基数</p>
+        <p>2. 记录余数</p>
+        <p>3. 将商继续除以基数</p>
+        <p>4. 重复步骤2-3，直到商为0</p>
+        <p>5. 将余数从后往前排列</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">十进制转二进制示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">string</span> decimalToBinary(<span class="code-keyword">int</span> num) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (num == 0) <span class="code-keyword">return</span> "0";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (num &gt; 0) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = to_string(num % 2) + result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num /= 2;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> result;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num = 25;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << num << "的二进制是：" << decimalToBinary(num) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">十进制转十六进制示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">char</span> getHexChar(<span class="code-keyword">int</span> n) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (n &lt; 10) <span class="code-keyword">return</span> '0' + n;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 'A' + (n - 10);<br>
+        }<br>
+        <br>
+        <span class="code-keyword">string</span> decimalToHex(<span class="code-keyword">int</span> num) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (num == 0) <span class="code-keyword">return</span> "0";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (num &gt; 0) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = getHexChar(num % 16) + result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num /= 16;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> result;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num = 255;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << num << "的十六进制是：" << decimalToHex(num) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 其他进制转十进制</h2>
+    <div class="slide-content">
+        <p><strong>转换方法：按权展开法</strong></p>
+        <p>1. 从右往左，每一位乘以基数的相应次幂</p>
+        <p>2. 将所有位的结果相加</p>
+        <br>
+        <p><strong>示例：二进制1010转十进制</strong></p>
+        <p>1010 = 1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 8 + 0 + 2 + 0 = 10</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">二进制转十进制示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> binaryToDecimal(<span class="code-keyword">string</span> binary) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> result = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; binary.size(); i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = result * 2 + (binary[i] - '0');<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> result;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string binary = "1010";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << binary << "的十进制是：" << binaryToDecimal(binary) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">二进制数1101转换为十进制是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>10</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>11</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>12</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>13</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">04 二进制与八进制、十六进制的转换</h2>
+    <div class="slide-content">
+        <p><strong>二进制转八进制：</strong></p>
+        <p>从右往左，每3位一组，不足3位左边补0</p>
+        <p>示例：101101 → 010 110 1 → 2 6 1 → 261(八进制)</p>
+        <br>
+        <p><strong>二进制转十六进制：</strong></p>
+        <p>从右往左，每4位一组，不足4位左边补0</p>
+        <p>示例：101101 → 0010 1101 → 2 D → 2D(十六进制)</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">二进制转十六进制示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">char</span> getHexChar(<span class="code-keyword">int</span> n) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (n &lt; 10) <span class="code-keyword">return</span> '0' + n;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 'A' + (n - 10);<br>
+        }<br>
+        <br>
+        <span class="code-keyword">string</span> binaryToHex(<span class="code-keyword">string</span> binary) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (binary.size() % 4 != 0) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binary = "0" + binary;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; binary.size(); i += 4) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> val = 0;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> j = 0; j &lt; 4; j++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;val = val * 2 + (binary[i + j] - '0');<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result += getHexChar(val);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> result;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string binary = "101101";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << binary << "的十六进制是：" << binaryToHex(binary) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">05 C++中的数制表示</h2>
+    <div class="slide-content">
+        <p><strong>C++中不同数制的字面量表示：</strong></p>
+        <p>- 十进制：直接写数字，如 100</p>
+        <p>- 八进制：以0开头，如 0144（等于十进制100）</p>
+        <p>- 十六进制：以0x或0X开头，如 0x64（等于十进制100）</p>
+        <p>- 二进制（C++14及以上）：以0b或0B开头，如 0b1100100（等于十进制100）</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">C++数制表示示例</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> dec = 100;      // 十进制<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> oct = 0144;     // 八进制<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> hex = 0x64;     // 十六进制<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> bin = 0b1100100; // 二进制(C++14)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "十进制：" << dec << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "八进制：" << oct << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "十六进制：" << hex << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "二进制：" << bin << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "八进制输出：" << oct << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "十六进制输出：" << hex << hex << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">06 真题解析</h2>
+    <div class="slide-content">
+        <p>让我们来看一些关于数制转换的真题。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（样题）</strong> 在C++中，十六进制数0xFF等于十进制的（）</p>
+        <br>
+        <p>A. 100</p>
+        <p>B. 200</p>
+        <p>C. 255</p>
+        <p>D. 256</p>
+        <br>
+        <p>答案：<strong>C</strong></p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">编程题：任意进制转换</h2>
+    <div class="slide-content">
+        <p><strong>题目描述：</strong></p>
+        <p>输入一个十进制整数和目标进制，将其转换为目标进制的字符串表示。</p>
+        <br>
+        <p><strong>输入格式：</strong></p>
+        <p>两个整数，分别表示十进制数和目标进制（2-16）</p>
+        <br>
+        <p><strong>输出格式：</strong></p>
+        <p>转换后的字符串</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">任意进制转换参考代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">#include</span> &lt;string&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">char</span> getChar(<span class="code-keyword">int</span> n) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (n &lt; 10) <span class="code-keyword">return</span> '0' + n;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 'A' + (n - 10);<br>
+        }<br>
+        <br>
+        <span class="code-keyword">string</span> convert(<span class="code-keyword">int</span> num, <span class="code-keyword">int</span> base) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (num == 0) <span class="code-keyword">return</span> "0";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (num &gt; 0) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = getChar(num % base) + result;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num /= base;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> result;<br>
+        }<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num, base;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cin >> num >> base;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << convert(num, base) << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="highlight-box">
+        <p><strong>练习1：</strong> 实现八进制转十进制。</p>
+        <br>
+        <p><strong>练习2：</strong> 实现十六进制转二进制。</p>
+        <br>
+        <p><strong>练习3：</strong> 实现任意进制转十进制。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第九课 数制转换</p>
+</div>

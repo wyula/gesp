@@ -19,15 +19,25 @@ class CoursePlayer {
     
     async loadCourseData() {
         try {
-            const response = await fetch(`data/${this.currentLevel}/lesson${this.currentLesson}.json`);
+            const response = await fetch(`data/${this.currentLevel}/lesson${this.currentLesson}.html`);
             if (!response.ok) {
                 throw new Error(`加载课程数据失败: ${response.status}`);
             }
-            this.slides = await response.json();
+            const htmlContent = await response.text();
+            this.slides = this.parseHTMLSlides(htmlContent);
         } catch (error) {
             console.error('加载课程数据失败:', error);
             this.slides = [];
         }
+    }
+    
+    parseHTMLSlides(htmlContent) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlContent;
+        const slideElements = tempDiv.querySelectorAll('.slide');
+        return Array.from(slideElements).map(slide => ({
+            content: slide.innerHTML
+        }));
     }
     
     renderSlides() {
@@ -42,156 +52,11 @@ class CoursePlayer {
         this.slides.forEach((slide, index) => {
             const slideElement = document.createElement('div');
             slideElement.className = `slide ${index === 0 ? 'active' : ''}`;
-            slideElement.innerHTML = this.generateSlideHTML(slide, index);
+            slideElement.innerHTML = slide.content;
             container.appendChild(slideElement);
         });
         
         this.updateProgress();
-    }
-    
-    generateSlideHTML(slide, index) {
-        let content = '';
-        
-        switch (slide.type) {
-            case 'title':
-                content = `
-                    <h1 class="slide-title">${slide.title}</h1>
-                    ${slide.subtitle ? `<p style="text-align:center; color:#666; font-size:18px;">${slide.subtitle}</p>` : ''}
-                    ${slide.author ? `<p style="text-align:center; color:#999; margin-top:20px;">${slide.author}</p>` : ''}
-                `;
-                break;
-                
-            case 'subtitle':
-                content = `
-                    <h2 class="slide-subtitle">${slide.title}</h2>
-                    ${slide.content ? `<div class="slide-content">${this.processContent(slide.content)}</div>` : ''}
-                `;
-                break;
-                
-            case 'content':
-                content = `
-                    ${slide.title ? `<h2 class="slide-subtitle">${slide.title}</h2>` : ''}
-                    <div class="slide-content">${this.processContent(slide.content)}</div>
-                `;
-                break;
-                
-            case 'code':
-                content = `
-                    ${slide.title ? `<h2 class="slide-subtitle">${slide.title}</h2>` : ''}
-                    <div class="code-block">${this.highlightCode(slide.code)}</div>
-                    ${slide.explanation ? `<div class="slide-content"><p><strong>说明：</strong>${slide.explanation}</p></div>` : ''}
-                `;
-                break;
-                
-            case 'quiz':
-                content = `
-                    <div class="quiz-container">
-                        <div class="quiz-question">${slide.question}</div>
-                        <div class="quiz-options">
-                            ${slide.options.map((opt, i) => `
-                                <div class="quiz-option" data-quiz-index="${index}" data-option="${i}" onclick="coursePlayer.selectQuizOption(this)">
-                                    <span>${String.fromCharCode(65 + i)}</span>
-                                    <span>${opt}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                        <div class="quiz-feedback" id="feedback-${index}"></div>
-                        <button class="btn-submit" id="submit-${index}" onclick="coursePlayer.submitQuiz(${index})" disabled>提交答案</button>
-                    </div>
-                `;
-                break;
-                
-            case 'example':
-                content = `
-                    ${slide.title ? `<h2 class="slide-subtitle">${slide.title}</h2>` : ''}
-                    <div class="example-box">
-                        ${slide.description ? `<p>${slide.description}</p>` : ''}
-                        ${slide.code ? `<div class="code-block">${this.highlightCode(slide.code)}</div>` : ''}
-                    </div>
-                `;
-                break;
-                
-            case 'highlight':
-                content = `
-                    ${slide.title ? `<h2 class="slide-subtitle">${slide.title}</h2>` : ''}
-                    <div class="highlight-box">${this.processContent(slide.content)}</div>
-                `;
-                break;
-                
-            case 'array':
-                content = `
-                    ${slide.title ? `<h2 class="slide-subtitle">${slide.title}</h2>` : ''}
-                    <div class="slide-content">${this.processContent(slide.description)}</div>
-                    <div class="array-visual">
-                        <div class="array-box">
-                            ${slide.values.map((val, i) => `
-                                <div class="array-item">
-                                    <div class="array-value">${val}</div>
-                                    <div class="array-index">${i}</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-                break;
-                
-            case 'two-column':
-                content = `
-                    ${slide.title ? `<h2 class="slide-subtitle">${slide.title}</h2>` : ''}
-                    <div class="two-column">
-                        ${slide.columns.map(col => `
-                            <div class="info-card">
-                                ${col.title ? `<h4>${col.title}</h4>` : ''}
-                                ${col.content ? `<div class="slide-content">${this.processContent(col.content)}</div>` : ''}
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-                break;
-                
-            default:
-                content = `
-                    ${slide.title ? `<h2 class="slide-subtitle">${slide.title}</h2>` : ''}
-                    <div class="slide-content">${this.processContent(slide.content || '')}</div>
-                `;
-        }
-        
-        return content;
-    }
-    
-    processContent(content) {
-        if (!content) return '';
-        
-        let result = content;
-        
-        result = result.replace(/\n\|(.*)\|\n\|[-|]+\|\n((?:\|.*\|\n?)+)/g, (match, header, body) => {
-            const headerCells = header.split('|').map(cell => cell.trim()).filter(cell => cell);
-            const bodyRows = body.trim().split('\n').map(row => {
-                const cells = row.split('|').map(cell => cell.trim()).filter(cell => cell);
-                return `<tr>${cells.map(cell => `<td>${cell}</td>`).join('')}</tr>`;
-            }).join('');
-            
-            return `<table class="content-table"><thead><tr>${headerCells.map(cell => `<th>${cell}</th>`).join('')}</tr></thead><tbody>${bodyRows}</tbody></table>`;
-        });
-        
-        result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        result = result.replace(/`([^`]+)`/g, '<code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;">$1</code>');
-        result = result.replace(/\n/g, '<br>');
-        
-        return result;
-    }
-    
-    highlightCode(code) {
-        const keywords = ['int', 'float', 'double', 'char', 'bool', 'void', 'string', 'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'break', 'continue', 'return', 'include', 'using', 'namespace', 'std', 'cin', 'cout', 'endl', 'true', 'false', 'const', 'static', 'struct', 'class', 'public', 'private', 'protected'];
-        
-        return code
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/\/\/.*$/gm, '<span class="code-comment">$&</span>')
-            .replace(/("[^"]*"|'[^']*')/g, '<span class="code-string">$1</span>')
-            .replace(/\b(\d+)\b/g, '<span class="code-number">$1</span>')
-            .replace(new RegExp(`\\b(${keywords.join('|')})\\b`, 'g'), '<span class="code-keyword">$1</span>');
     }
     
     setupEventListeners() {
@@ -280,18 +145,17 @@ class CoursePlayer {
     }
     
     submitQuiz(quizIndex) {
-        const slide = this.slides[quizIndex];
         const selectedOption = document.querySelector(`[data-quiz-index="${quizIndex}"].selected span:first-child`);
         
         if (!selectedOption) return;
         
         const selectedIndex = selectedOption.textContent.charCodeAt(0) - 65;
-        const isCorrect = selectedIndex === slide.answer;
+        const isCorrect = this.isQuizCorrect(quizIndex, selectedIndex);
         
         const options = document.querySelectorAll(`[data-quiz-index="${quizIndex}"]`);
         options.forEach((opt, i) => {
             opt.classList.remove('selected');
-            if (i === slide.answer) {
+            if (i === this.getCorrectAnswer(quizIndex)) {
                 opt.classList.add('correct');
             } else if (i === selectedIndex && !isCorrect) {
                 opt.classList.add('incorrect');
@@ -301,12 +165,53 @@ class CoursePlayer {
         
         const feedback = document.getElementById(`feedback-${quizIndex}`);
         feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-        const correctAnswerText = slide.options[slide.answer];
-        feedback.textContent = isCorrect ? '✅ 回答正确！' : `❌ 回答错误，正确答案是：${correctAnswerText}`;
+        feedback.textContent = isCorrect ? '✅ 回答正确！' : `❌ 回答错误，正确答案是：${this.getCorrectAnswerText(quizIndex)}`;
         
         document.getElementById(`submit-${quizIndex}`).disabled = true;
         
         this.quizState[quizIndex] = isCorrect;
+    }
+    
+    isQuizCorrect(quizIndex, selectedIndex) {
+        const quizAnswers = {
+            1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
+            2: { 0: 1, 1: 0, 2: 1 },
+            3: { 0: 1, 1: 0, 2: 1 },
+            4: { 0: 2, 1: 1 },
+            5: { 0: 1, 1: 2 },
+            6: { 0: 1, 1: 0 },
+            7: { 0: 1, 1: 2 },
+            8: { 0: 1, 1: 0 },
+            9: { 0: 1, 1: 0 },
+            10: { 0: 2, 1: 2 }
+        };
+        
+        return quizAnswers[this.currentLesson] && quizAnswers[this.currentLesson][quizIndex] === selectedIndex;
+    }
+    
+    getCorrectAnswer(quizIndex) {
+        const quizAnswers = {
+            1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
+            2: { 0: 1, 1: 0, 2: 1 },
+            3: { 0: 1, 1: 0, 2: 1 },
+            4: { 0: 2, 1: 1 },
+            5: { 0: 1, 1: 2 },
+            6: { 0: 1, 1: 0 },
+            7: { 0: 1, 1: 2 },
+            8: { 0: 1, 1: 0 },
+            9: { 0: 1, 1: 0 },
+            10: { 0: 2, 1: 2 }
+        };
+        
+        return quizAnswers[this.currentLesson] && quizAnswers[this.currentLesson][quizIndex] !== undefined 
+            ? quizAnswers[this.currentLesson][quizIndex] 
+            : 0;
+    }
+    
+    getCorrectAnswerText(quizIndex) {
+        const options = document.querySelectorAll(`[data-quiz-index="${quizIndex}"] span:last-child`);
+        const correctIndex = this.getCorrectAnswer(quizIndex);
+        return options[correctIndex] ? options[correctIndex].textContent : '';
     }
     
     async loadLesson(lessonNum) {
@@ -325,12 +230,12 @@ class CoursePlayer {
             2: '第2课 数组进阶',
             3: '第3课 字符串1',
             4: '第4课 字符串2',
-            5: '第5课 数制和编码1',
-            6: '第6课 数制和编码2',
-            7: '第7课 位运算1',
-            8: '第8课 位运算2',
-            9: '第9课 模拟算法',
-            10: '第10课 枚举算法'
+            5: '第5课 枚举算法',
+            6: '第6课 模拟算法',
+            7: '第7课 函数进阶',
+            8: '第8课 位运算',
+            9: '第9课 数制转换',
+            10: '第10课 综合复习'
         };
         document.getElementById('lesson-title').textContent = `CCF-GESP C++三级 - ${lessonTitles[lessonNum] || '第' + lessonNum + '课'}`;
     }

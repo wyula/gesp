@@ -1,0 +1,307 @@
+<div class="slide">
+    <h1 class="slide-title">CCF-GESP C++三级</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
+    <p style="text-align:center; color:#999; margin-top:20px;">第五课 枚举算法</p>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 什么是枚举算法</h2>
+    <div class="slide-content">
+        <p><strong>枚举算法</strong>也叫穷举算法，是一种基本的算法思想。它的核心思想是：</p>
+        <br>
+        <p>将问题的所有可能解一一列举出来，然后逐一验证每个解是否满足问题的条件。</p>
+        <br>
+        <p><strong>枚举算法的特点：</strong></p>
+        <p>1. <strong>简单直观：</strong>容易理解和实现</p>
+        <p>2. <strong>适用范围广：</strong>可以解决很多问题</p>
+        <p>3. <strong>效率较低：</strong>时间复杂度通常较高</p>
+        <p>4. <strong>结果可靠：</strong>只要枚举完全，一定能找到正确解</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">枚举算法的基本步骤</h2>
+    <div class="slide-content">
+        <p>1. <strong>确定枚举范围：</strong>确定所有可能的解的范围</p>
+        <p>2. <strong>枚举每个可能的解：</strong>用循环遍历所有可能</p>
+        <p>3. <strong>验证条件：</strong>检查当前解是否满足条件</p>
+        <p>4. <strong>输出结果：</strong>如果满足条件，输出解</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">枚举算法流程图</h2>
+    <div class="slide-content">
+        <p style="font-family: monospace; line-height: 2;">开始</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">确定枚举范围 [start, end]</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">i = start</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">┌─ 循环: i &lt;= end ─┐</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ 检查条件(i)是否满足 │</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ ├─ 是 → 输出/记录解 │</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ └─ 否 → 继续       │</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ i++                │</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">└─────────────────────┘</p>
+        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">结束</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">枚举算法的核心思想是（）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>分而治之</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>递归调用</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>穷举所有可能</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>动态规划</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 枚举算法的应用场景</h2>
+    <div class="slide-content">
+        <p><strong>场景1：查找问题</strong></p>
+        <p>- 在数组中查找某个元素</p>
+        <p>- 在字符串中查找子串</p>
+        <br>
+        <p><strong>场景2：组合问题</strong></p>
+        <p>- 排列组合问题</p>
+        <p>- 子集问题</p>
+        <br>
+        <p><strong>场景3：优化问题</strong></p>
+        <p>- 求最大值/最小值</p>
+        <p>- 求最优解</p>
+        <br>
+        <p><strong>场景4：验证问题</strong></p>
+        <p>- 判断是否存在满足条件的解</p>
+        <p>- 判断某个命题是否成立</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">示例1：查找最大值</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr[] = {5, 3, 9, 1, 7, 4};<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> len = <span class="code-keyword">sizeof</span>(arr) / <span class="code-keyword">sizeof</span>(arr[0]);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> max_val = arr[0];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt; len; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (arr[i] &gt; max_val) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_val = arr[i];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "最大值：" << max_val << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">示例2：百鸡问题</h2>
+    <div class="slide-content">
+        <p><strong>问题描述：</strong></p>
+        <p>公鸡5元一只，母鸡3元一只，小鸡1元三只。用100元买100只鸡，问公鸡、母鸡、小鸡各买多少只？</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">百鸡问题代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> x = 0; x &lt;= 20; x++) {      // 公鸡数量<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> y = 0; y &lt;= 33; y++) {  // 母鸡数量<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> z = 100 - x - y;            // 小鸡数量<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (z % 3 == 0 && 5 * x + 3 * y + z / 3 == 100) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "公鸡：" << x << "只，母鸡：" << y << "只，小鸡：" << z << "只" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">百鸡问题中，公鸡最多可以买多少只？</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>15只</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>18只</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>20只</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>25只</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 枚举算法的优化</h2>
+    <div class="slide-content">
+        <p><strong>优化策略1：缩小枚举范围</strong></p>
+        <p>根据问题的约束条件，尽可能缩小枚举的范围。</p>
+        <br>
+        <p><strong>优化策略2：剪枝</strong></p>
+        <p>在枚举过程中，提前排除不可能的情况，减少不必要的计算。</p>
+        <br>
+        <p><strong>优化策略3：利用对称性</strong></p>
+        <p>如果问题具有对称性，可以只枚举一半，另一半通过对称得到。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">示例3：寻找水仙花数</h2>
+    <div class="slide-content">
+        <p><strong>问题描述：</strong></p>
+        <p>水仙花数是指一个3位数，其各位数字的立方和等于该数本身。例如153 = 1³ + 5³ + 3³。</p>
+        <p>找出所有的水仙花数。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">水仙花数代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << "水仙花数：" << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> num = 100; num &lt; 1000; num++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> hundreds = num / 100;      // 百位<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> tens = (num / 10) % 10;    // 十位<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> units = num % 10;          // 个位<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (hundreds * hundreds * hundreds +<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tens * tens * tens +<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;units * units * units == num) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << num << " ";<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">04 真题解析</h2>
+    <div class="slide-content">
+        <p>让我们来看一些关于枚举算法的真题。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">判断题</h2>
+    <div class="slide-content">
+        <p><strong>（2023年6月）</strong> 枚举算法的时间复杂度一定是O(n)。</p>
+        <br>
+        <p>答案：<strong>错误</strong></p>
+        <br>
+        <p>解析：枚举算法的时间复杂度取决于枚举的范围和每个解的验证时间，可能是O(n)、O(n²)等。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">选择题</h2>
+    <div class="slide-content">
+        <p><strong>（样题）</strong> 枚举算法的主要优点是（）</p>
+        <br>
+        <p>A. 时间效率高</p>
+        <p>B. 空间效率高</p>
+        <p>C. 逻辑简单，容易实现</p>
+        <p>D. 不需要考虑边界条件</p>
+        <br>
+        <p>答案：<strong>C</strong></p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle">编程题：完数</h2>
+    <div class="slide-content">
+        <p><strong>题目描述：</strong></p>
+        <p>一个数如果恰好等于它的真因子之和，这个数就称为"完数"。例如6 = 1 + 2 + 3。</p>
+        <p>找出1000以内的所有完数。</p>
+        <br>
+        <p><strong>输出格式：</strong></p>
+        <p>每行输出一个完数</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完数参考代码</h2>
+    <div class="code-block">
+        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
+        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
+        <br>
+        <span class="code-keyword">int</span> main() {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> num = 2; num &lt; 1000; num++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> sum = 1;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 2; i * i &lt;= num; i++) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (num % i == 0) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += i;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (i != num / i) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += num / i;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (sum == num) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << num << endl;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
+        }
+    </div>
+</div>
+
+<div class="slide">
+    <div class="highlight-box">
+        <p><strong>练习1：</strong> 找出1000以内的所有质数。</p>
+        <br>
+        <p><strong>练习2：</strong> 输入两个整数，找出它们的最大公约数。</p>
+        <br>
+        <p><strong>练习3：</strong> 找出所有满足a² + b² = c²的勾股数（a, b, c ≤ 100）。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h1 class="slide-title">感谢你的学习</h1>
+    <p style="text-align:center; color:#666; font-size:18px;">第五课 枚举算法</p>
+</div>
