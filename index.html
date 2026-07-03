@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCF-GESP C++三级课程</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>📚 课程目录</h2>
+            <div class="course-selector">
+                <button class="course-tab active" onclick="coursePlayer.loadLevel('level3')">三级课程</button>
+                <button class="course-tab" onclick="coursePlayer.loadLevel('level2')">二级课程</button>
+                <button class="course-tab" onclick="coursePlayer.loadLevel('level1')">一级课程</button>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#" data-lesson="1" onclick="coursePlayer.loadLesson(1); return false;" class="active">第1课 数组</a></li>
+                <li><a href="#" data-lesson="2" onclick="coursePlayer.loadLesson(2); return false;">第2课 数组进阶</a></li>
+                <li><a href="#" data-lesson="3" onclick="coursePlayer.loadLesson(3); return false;">第3课 字符串1</a></li>
+                <li><a href="#" data-lesson="4" onclick="coursePlayer.loadLesson(4); return false;">第4课 字符串2</a></li>
+                <li><a href="#" data-lesson="5" onclick="coursePlayer.loadLesson(5); return false;">第5课 数制和编码1</a></li>
+                <li><a href="#" data-lesson="6" onclick="coursePlayer.loadLesson(6); return false;">第6课 数制和编码2</a></li>
+                <li><a href="#" data-lesson="7" onclick="coursePlayer.loadLesson(7); return false;">第7课 位运算1</a></li>
+                <li><a href="#" data-lesson="8" onclick="coursePlayer.loadLesson(8); return false;">第8课 位运算2</a></li>
+                <li><a href="#" data-lesson="9" onclick="coursePlayer.loadLesson(9); return false;">第9课 模拟算法</a></li>
+                <li><a href="#" data-lesson="10" onclick="coursePlayer.loadLesson(10); return false;">第10课 枚举算法</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1 id="lesson-title">CCF-GESP C++三级 - 第1课 数组</h1>
+                <div class="header-right">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <button class="btn-presentation" id="btn-presentation">🎤 演示模式</button>
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container">
+            </div>
+            <div class="nav-buttons">
+                <button class="btn-nav" id="btn-prev">◀ 上一页</button>
+                <span class="page-indicator" id="page-indicator">第 1 / 1 页</span>
+                <button class="btn-nav next" id="btn-next">下一页 ▶</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
