@@ -226,16 +226,17 @@ class CoursePlayer {
         this.updateNavigation();
         
         const lessonTitles = {
+            0: '考级标准',
             1: '第1课 数组',
             2: '第2课 数组进阶',
             3: '第3课 字符串1',
             4: '第4课 字符串2',
-            5: '第5课 枚举算法',
-            6: '第6课 模拟算法',
-            7: '第7课 函数进阶',
-            8: '第8课 位运算',
-            9: '第9课 数制转换',
-            10: '第10课 综合复习'
+            5: '第5课 数制和编码1',
+            6: '第6课 数制和编码2',
+            7: '第7课 位运算1',
+            8: '第8课 位运算2',
+            9: '第9课 模拟算法',
+            10: '第10课 枚举算法'
         };
         document.getElementById('lesson-title').textContent = `CCF-GESP C++三级 - ${lessonTitles[lessonNum] || '第' + lessonNum + '课'}`;
     }
