@@ -1,98 +1,4 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++三级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第七课</h2>
-    <div class="slide-content">
-        <p>位 运 算 1</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>位运算</p>
-        <p>位运算就是直接对整数在内存中的二进制位进行运算。</p>
-        <p>由于位运算直接对内存数据进行操作，不需要转换成</p>
-        <p>十进制，因此处理速度非常快。</p>
-        <p>& 按位与</p>
-        <p>| 按位或</p>
-        <p>^ 按位异或</p>
-        <p>~ 取反</p>
-        <p><< 左移</p>
-        <p>>> 右移</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 按位与运算符&</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>按位与运算符&</p>
-        <p>参加运算的两个数据，按二进制位进行“与”运算。</p>
-        <p>例如：3&5=1 例如：3&(-5)=3</p>
-        <p>运算规则：</p>
-        <p>0&0=0</p>
-        <p>0000 0011 0000 0011 -5的补码</p>
-        <p>& 0000 0101 & 1111 1011</p>
-        <p>0&1=0</p>
-        <p>0000 0001 0000 0011</p>
-        <p>1&0=0</p>
-        <p>1&1=1</p>
-        <p>两位同时为1，结果才为1， 负数按补码形式参与运算</p>
-        <p>否则结果为0。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>与运算的用途</p>
-        <p>1）判断奇偶</p>
-        <p>根据未位是0还是1来决定，为0就是偶数，为1就是奇数。</p>
-        <p>因此可以用if((a&1)==0)代替if(a%2==0)来判断a是不是偶数。</p>
-        <p>例如：a=4 例如：a=5</p>
-        <p>0000 0100 0000 0101</p>
-        <p>& 0000 0001 & 0000 0001</p>
-        <p>0000 0000 0000 0001</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>与运算的用途</p>
-        <p>2）清零</p>
-        <p>如果想将一个单元清零，即使其全部二进制位为0，只要与一个各位都</p>
-        <p>为零的数值相与，结果为零。</p>
-        <p>0000 1111</p>
-        <p>& 0000 0000</p>
-        <p>0000 0000</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>与运算的用途</p>
-        <p>3）取一个数的指定位</p>
-        <p>比如取数 X=1010 1110 的低4位，只需要另找一个数Y，令Y的低4位为1，</p>
-        <p>其余位为0，即Y=0000 1111，然后将X与Y进行按位与运算</p>
-        <p>（X&Y=0000 1110）即可得到X的指定位。</p>
-        <p>1010 1110</p>
-        <p>& 0000 1111</p>
-        <p>0000 1110</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（2023年6月）以下哪个不是C++语言中的运算符？（ D ）</div>
         <div class="quiz-options">
@@ -164,47 +70,6 @@
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">02 按位或运算符 |</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>按位或运算符|</p>
-        <p>参加运算的两个数据，按二进制位进行“或”运算。</p>
-        <p>如果位运算的结果最高位为1，则将其看做是补码，需要计算出它的原码作为答案。</p>
-        <p>例如：3|5=7 例如：3|(-5)=-5</p>
-        <p>运算规则：</p>
-        <p>0|0=0</p>
-        <p>0000 0011 0000 0011</p>
-        <p>| 0000 0101 | 1111 1011</p>
-        <p>0|1=1</p>
-        <p>负数</p>
-        <p>0000 0111 1111 1011 补码</p>
-        <p>1|0=1</p>
-        <p>1|1=1</p>
-        <p>1111 1010 反码</p>
-        <p>只要有一个为1，其值为1。 原码</p>
-        <p>1000 0101</p>
-        <p>-5</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>或运算的用途</p>
-        <p>1）将某些位设置为1</p>
-        <p>比如将数 X=1010 1110 的低4位设置为1，只需要另找一个数Y，</p>
-        <p>令Y的低4位为1，其余位为0，即Y=0000 1111，然后将X与Y进</p>
-        <p>行按位或运算（X|Y=1010 1111）即可得到。</p>
-        <p>1010 1110</p>
-        <p>| 0000 1111</p>
-        <p>1010 1111</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（2023年9月）如果 a是int类型的变量 ，下列哪个表达式的值 ⼀定为 true？（ A ）</div>
         <div class="quiz-options">
@@ -214,15 +79,15 @@
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>a*2/2==a 可能越界 例例：：aa为为45 00000000 00110001</span>
+                <span>a*2/2==a 可能越界</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>(a&1)==1 如果a为偶数，结果为0 &| 00000000 00000011</span>
+                <span>(a&1)==1 如果a为偶数，结果为0</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>(a|1)==a+1 如果a为奇数，不成立 00000000 00010001</span>
+                <span>(a|1)==a+1 如果a为奇数，不成立</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
@@ -255,75 +120,24 @@
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">03 按位异或运算符^</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>按位异或运算符^</p>
-        <p>参加运算的两个数据，按二进制位进行“异或”运算。</p>
-        <p>例如：3^5=6 例如：3^(-5)=-8</p>
-        <p>运算规则：</p>
-        <p>0^0=0</p>
-        <p>0000 0011 0000 0011</p>
-        <p>0^1=1 ^ 0000 0101 ^ 1111 1011</p>
-        <p>负数</p>
-        <p>0000 0110 1111 1000 补码</p>
-        <p>1^0=1</p>
-        <p>1^1=0</p>
-        <p>1111 0111 反码</p>
-        <p>相同为0，相异为1。</p>
-        <p>原码</p>
-        <p>1000 1000</p>
-        <p>-8</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>异或运算符的性质和用途</p>
-        <p>1）交换两个数</p>
-        <p>a=a^b;</p>
-        <p>b=a^b;</p>
-        <p>异或的性质：</p>
-        <p>a=a^b;</p>
-        <p>1. 交换律：a^b=b^a</p>
-        <p>2. 结合律：(a^b)^c==a^(b^c)</p>
-        <p>2）翻转指定位</p>
-        <p>3. 对于任何数x，都有x^x=0, x^0=x</p>
-        <p>比如将数 X=1010 1110 的低4位进行翻转，只需要另</p>
-        <p>4. 自反性：a^b^b=a^0=a</p>
-        <p>找</p>
-        <p>一个数Y，令Y的低4位为1，其余位为0，即Y=00001111，</p>
-        <p>然后将X与Y进行异或运算（X^Y=1010 0001）即可得到。</p>
-        <p>1010 1110</p>
-        <p>0000 1111</p>
-        <p>^</p>
-        <p>1010 0001</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（2023年6月）如果 a 和 b 均为 int 类型的变量，下列表达式 能正确判断“a 等于 b”的是（ C ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>((a/b)==1) BD：：例例如如aa==55,,bb==1155，， A：例如a=5,b=3，</span>
+                <span>((a/b)==1)</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>((a&b)==a) aa&|bb结结果果为为155，， a/b结果为1，</span>
+                <span>((a&b)==a)</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>((a^b)==0)说明每一位都相同 但但aa不不等等于于bb。。 但a不等于b。</span>
+                <span>((a^b)==0)说明每一位都相同</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>((a|b)==b) 00000000 00110011 & | 00000000 11111111 00000000 01110111</span>
+                <span>((a|b)==b)</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
@@ -336,15 +150,15 @@
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ B ），可以使得输 出是“24 12“。 #include <iostream> using namespace std;</div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ B ），可以使得输 出是“24 12"。 #include <iostream> using namespace std;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>a=a^b int main(){ int a=12,b=24; B. b=a^b ;//在此处填入代码</span>
+                <span>a=a^b</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>a=a+b a=a^b; b=a^b; D. b=a+b cout<<a<<" "<<b<<endl; return 0; }</span>
+                <span>a=a+b</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
@@ -361,11 +175,11 @@
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>res=res+array[i] int main(){ int array[5]={1,2,4,8,16}; B. res=res&array[i] int res=0;</span>
+                <span>res=res+array[i]</span>
             </div>
             <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>res=res|array[i] for(int i=0;i<5;i++) ;//在此处填写代码 D. res=res^array[i] cout<<res<<endl; return 0; 数组中的5个数的二进制分别是： 1、10、100、1000和10000， } 所以进行&运算后结果为0。</span>
+                <span>res=res|array[i]</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
@@ -373,51 +187,6 @@
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
             【解析】本题考查相关知识点，请结合课堂内容进行分析。
         </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">04 按位取反运算符~</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>按位取反运算符~</p>
-        <p>参加运算的一个数据，按二进制进行“取反”运算。</p>
-        <p>运算规则： 例如：~9=-10</p>
-        <p>例如：~(-15)=14</p>
-        <p>1111 0001</p>
-        <p>~1=0 0000 1001 补码</p>
-        <p>取反 取反</p>
-        <p>~0=1 负数</p>
-        <p>1111 0110 补码 0000 1110</p>
-        <p>0变1，1变0</p>
-        <p>反码</p>
-        <p>1111 0101</p>
-        <p>1000 1010 原码</p>
-        <p>-10</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>运算符的优先级</p>
-        <p>运算符 描述</p>
-        <p>括号 ()、[]</p>
-        <p>自增自减，非 ++、--、！、~</p>
-        <p>乘除，取余 *、/、%</p>
-        <p>加减 +、-</p>
-        <p>大小关系 >、>=、<、<=</p>
-        <p>相等关系 ==、!=</p>
-        <p>按位与 &</p>
-        <p>按位异或 ^</p>
-        <p>按位或 |</p>
-        <p>逻辑与 &&</p>
-        <p>逻辑或 ||</p>
-        <p>条件运算 ?:</p>
-        <p>赋值运算符 =、+=、-=、*=、/=、%=</p>
     </div>
 </div>
 
@@ -498,8 +267,4 @@
             【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

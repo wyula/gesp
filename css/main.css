@@ -137,7 +137,7 @@ body {
 }
 
 .slide {
-    background: white;
+    background: #f8fcff;
     width: 100%;
     max-width: 1200px;
     min-height: 100%;
@@ -228,7 +228,7 @@ body {
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 18px;
-    background: white;
+    background: #f8fcff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -400,7 +400,7 @@ body {
 
 .quiz-option {
     padding: 18px 22px;
-    background: white;
+    background: #f8fcff;
     border: 2px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
@@ -494,7 +494,7 @@ body {
 }
 
 .btn-nav {
-    background: white;
+    background: #f8fcff;
     color: #667eea;
     border: 2px solid #667eea;
     padding: 10px 25px;
@@ -587,7 +587,7 @@ body {
     justify-content: center;
     align-items: center;
     border-right: 1px solid #ddd;
-    background: white;
+    background: #f8fcff;
 }
 
 .array-item:last-child {
