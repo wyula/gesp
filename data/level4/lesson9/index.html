@@ -1,93 +1,6 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第九课</h2>
-    <div class="slide-content">
-        <p>二 维 数 组 3</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">多维数组</h2>
-    <div class="slide-content">
-        <p>01</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>多维数组</p>
-        <p>一维 二维</p>
-        <p>{{1,2,3},</p>
-        <p>{1,2,3,4,5,6}</p>
-        <p>一维数组 {4,5,6},</p>
-        <p>三维</p>
-        <p>{7,8,9}}</p>
-        <p>一维</p>
-        <p>{{{1,2,3},</p>
-        <p>二维数组</p>
-        <p>{{4{,15,,26,}3,},</p>
-        <p>{{1,2,3},</p>
-        <p>{{74,8,5,9,6}}},，</p>
-        <p>{4,5,6},</p>
-        <p>二维 {7,8,9}}, 三维数组</p>
-        <p>{7,8,9}}}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>三维数组</p>
-        <p>• 三维数组的定义和初始化：</p>
-        <p>一维长度 三维长度</p>
-        <p>int a[4][3][3]={0};</p>
-        <p>二维长度</p>
-        <p>• 元素访问：</p>
-        <p>a[一维下标][二维下标][三维下标];</p>
-        <p>a[2][1][1];</p>
-        <p>• 三维数组的存储空间：</p>
-        <p>单个元素的存储空间×元素的个数</p>
-        <p>三维数组a的内存空间：4×4×3×3  144</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>存储结构</p>
-        <p>• 多维数组的元素在内存中是连续存放的，其本质也是按</p>
-        <p>照一维数组的方式存储；</p>
-        <p>int a[4][3][3]={0};</p>
-        <p>展开成对应一维数组的下标范围：0~35</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>计算元素位置</p>
-        <p>• 按照一维数组的方式访问元素，需要根据所访问的元素</p>
-        <p>各维度下标计算出元素的位置。</p>
-        <p>一维下标×二维长度×三维长度+二维下标×三维长度+三维下标</p>
-        <p>int a[4][3][3]={0};</p>
-        <p>对应一维数组的下标范围：0~35</p>
-        <p>a[2×3×3+1×3+1]a[22]</p>
-        <p>a[2][1][1];</p>
-        <p>a[1×3×3+5×3+4]a[28]</p>
-        <p>a[1][5][4];</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">(2023年6月)在 C++语言中，可以定义四维数组，但在解决实际问题时 不可能用到，因为世界是三维的。</div>
+        <div class="quiz-question">(2023年6月)在 C++语言中，可以定义四维数组，但在解决实际问题时不可能用到，因为世界是三维的。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -101,14 +14,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】本题考查多维数组。C++中可以定义四维及更高维数组，虽然世界是三维的，但在数学建模和计算机科学中，高维数组有实际应用场景。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">(2023年9月)下列关于C++语⾔中数组的叙述，不正确的是（ D ）</div>
+        <div class="quiz-question">(2023年9月)下列关于C++语言中数组的叙述，不正确的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -130,14 +43,14 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查多维数组的应用。四维数组在计算机科学和数学中有实际应用，例如时间序列的三维数据等，所以选项D不正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）⼀个三维数组定义为 long long array[6][6][6]; ， 则 array[1][2][3] 和 array[3][2][1] 在内存中的位置相差多少字节？ （ ）</div>
+        <div class="quiz-question">（2023年9月）一个三维数组定义为 long long array[6][6][6]; ，则 array[1][2][3] 和 array[3][2][1] 在内存中的位置相差多少字节？ （ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -159,34 +72,14 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】本题考查三维数组内存布局。array[1][2][3]的一维下标为1×6×6+2×6+3=51，array[3][2][1]的一维下标为3×6×6+2×6+1=121，相差70个元素。long long占8字节，所以相差70×8=560字节。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>元素位置计算</p>
-        <p>三维数组也是按顺序连续存储的，可以计算元素对应一维数组的下标：</p>
-        <p>一维下标×二维长度×三维长度+二维下标×三维长度+三维下标</p>
-        <p>long long array[6][6][6];</p>
-        <p>① 先计算array[1][2][3]和array[3][2][1]在内存里相差几个元素；</p>
-        <p>array[1][2][3]在一维数组中的下标：1×6×6+2×6+3=51</p>
-        <p>•</p>
-        <p>array[3][2][1]在一维数组中的下标：3×6×6+2×6+1=121</p>
-        <p>•</p>
-        <p>相差元素的个数：121-51=70</p>
-        <p>•</p>
-        <p>② 再计算相差的字节数：long long字节数×相差的元素个数</p>
-        <p>8×70=560</p>
-        <p>•</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）⼀个三维数组定义为 long long array[6][6][6]; ， 则 array[1][2][3] 和 array[3][2][1] 在内存中的位置相差多少字节？ （ C ）</div>
+        <div class="quiz-question">（2023年9月）一个三维数组定义为 long long array[6][6][6]; ，则 array[1][2][3] 和 array[3][2][1] 在内存中的位置相差多少字节？ （ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -208,287 +101,7 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】本题考查三维数组内存布局。array[1][2][3]的一维下标为1×6×6+2×6+3=51，array[3][2][1]的一维下标为3×6×6+2×6+1=121，相差70个元素。long long占8字节，所以相差70×8=560字节。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 综合练习</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>蛇形方阵</p>
-        <p>【问题描述】</p>
-        <p>输入数字N(3<N<20)，输出一个N*N的蛇形方阵。例如输入4时，输出的矩阵如下：</p>
-        <p>1 3 4 10</p>
-        <p>2 5 9 11</p>
-        <p>6 8 12 15</p>
-        <p>7 13 14 16</p>
-        <p>【输入样例1】</p>
-        <p>5</p>
-        <p>【输出样例1】</p>
-        <p>1 3 4 10 11</p>
-        <p>2 5 9 12 19</p>
-        <p>6 8 13 18 20</p>
-        <p>7 14 17 21 24</p>
-        <p>15 16 22 23 25</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>样例分析</p>
-        <p>n×n的蛇形矩阵中，数字依次是1、2、3、…… n×n。</p>
-        <p>【输入样例】 【输入样例】</p>
-        <p>1 3 4 10 11</p>
-        <p>1 3 4 10</p>
-        <p>4 5</p>
-        <p>2 5 9 12 19</p>
-        <p>2 5 9 11</p>
-        <p>【输出样例】 【输出样例】</p>
-        <p>6 8 13 18 20</p>
-        <p>1 3 4 10 11</p>
-        <p>6 8 12 15</p>
-        <p>1 3 4 10</p>
-        <p>2 5 9 12 19</p>
-        <p>2 5 9 11 7 14 17 21 24</p>
-        <p>7 13 14 16</p>
-        <p>6 8 13 18 20</p>
-        <p>6 8 12 15</p>
-        <p>7 14 17 21 24 15 16 22 23 25</p>
-        <p>7 13 14 16</p>
-        <p>15 16 22 23 25</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 创建二维数组。</p>
-        <p>int a[21][21];</p>
-        <p>② 输入数字n。</p>
-        <p>int n;</p>
-        <p>cin>>n;</p>
-        <p>③ 在二维数组a中填充数字1~n×n ，构造出n×n的蛇形方阵。</p>
-        <p>0 1 2 3</p>
-        <p>0 1 3 4 10</p>
-        <p>1 2 5 9 11</p>
-        <p>2 6 8 12 15</p>
-        <p>7 13 14 16</p>
-        <p>3</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>行下标i 列下标j</p>
-        <p>0 1 2 3</p>
-        <p>+</p>
-        <p>0 0 0</p>
-        <p>0 1 3 4 10</p>
-        <p>+</p>
-        <p>0 1</p>
-        <p>1</p>
-        <p>1 2 5 9 11</p>
-        <p>+</p>
-        <p>4×4 1 0</p>
-        <p>2 6 8 12 15 +</p>
-        <p>0 2</p>
-        <p>+</p>
-        <p>3 7 13 14 16 1 1 2</p>
-        <p>+</p>
-        <p>2 0</p>
-        <p>+</p>
-        <p>0 3</p>
-        <p>共有2×n-1条对角线</p>
-        <p>+</p>
-        <p>1 2</p>
-        <p>3</p>
-        <p>每条对角线上元素的行列下标之和是固定的：</p>
-        <p>+</p>
-        <p>2 1</p>
-        <p>行下标i + 列下标j = k</p>
-        <p>+</p>
-        <p>3 0</p>
-        <p>行列下标之和k的取值范围：</p>
-        <p>4</p>
-        <p>……</p>
-        <p>0 1 2 3……2×n-2 5</p>
-        <p>6</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>③ 在二维数组a中填充数字1~n×n ，构造出n×n的蛇形方阵。</p>
-        <p>• 按行由上往下，沿对角线填数</p>
-        <p>记录填充</p>
-        <p>数字</p>
-        <p>0 1 2 3 int m=1;</p>
-        <p>for(int k=0;k<=2*n-2;k++){</p>
-        <p>0 1 5 9 13 17 21 25</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>21 6 10 14 18 22 26 根据k和 i 计 算 int j=k-i;</p>
-        <p>列下 标 a[i][j]=m;</p>
-        <p>3 72 11 15 19 23 27</p>
-        <p>m++;</p>
-        <p>}</p>
-        <p>4 8 132 16 20 24 28</p>
-        <p>}</p>
-        <p>得到的方阵不对</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>③ 在二维数组a中填充数字1~n×n ，构造出n×n的蛇形方阵。</p>
-        <p>• 按行由上往下，沿对角线填数；</p>
-        <p>• 增加由下往上，沿对角线填数；</p>
-        <p>int m=1;</p>
-        <p>for(int k=0;k<=2*n-2;k++){</p>
-        <p>0 1 2 3</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>0 1 2 4 7</p>
-        <p>判断j是否在 if(j>=0&&j<n){</p>
-        <p>1 3 5 8 11 有效范围内 a[i][j]=m;</p>
-        <p>m++;</p>
-        <p>2 6 9 12 14</p>
-        <p>}</p>
-        <p>3 10 13 15 16 }</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>③ 在二维数组a中填充数字1~n×n ，构造出n×n的蛇形方阵。</p>
-        <p>• 按行由上往下，沿对角线填数；</p>
-        <p>• 增加由下往上，沿对角线填数；</p>
-        <p>for(int k=0;k<=2*n-2;k++){</p>
-        <p>k</p>
-        <p>0 1 2 3</p>
-        <p>if(k是偶数){</p>
-        <p>0 1 3 4 7</p>
-        <p>0 由上往下</p>
-        <p>由上往下</p>
-        <p>1 2 5 8 11 }else 由下往上</p>
-        <p>1 由下往上</p>
-        <p>}</p>
-        <p>2 6 9 12 14</p>
-        <p>2 由上往下</p>
-        <p>3 10 13 15 16</p>
-        <p>3 由下往上</p>
-        <p>……</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>由上往下</p>
-        <p>if(k%2==0){</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>int j=k-i;</p>
-        <p>if(j>=0&&j<n){</p>
-        <p>a[i][j]=m;</p>
-        <p>m++;</p>
-        <p>}</p>
-        <p>}</p>
-        <p>由下往上</p>
-        <p>}else{</p>
-        <p>for(int i=n-1;i>=0;i--){</p>
-        <p>int j=k-i;</p>
-        <p>if(j>=0&&j<n){</p>
-        <p>a[i][j]=m;</p>
-        <p>m++;</p>
-        <p>}</p>
-        <p>}</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>④ 按照题目要求输出蛇形方阵。</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>for(int j=0;j<n;j++)</p>
-        <p>cout<<a[i][j]<<" ";</p>
-        <p>cout<<endl;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int a[21][21];<br>
-            int main(){<br>
-            int n;<br>
-            cin&gt;&gt;n;<br>
-            int m=1;<br>
-            for(int k=0;k&lt;=2*n-2;k++){<br>
-            if(k%2==0){<br>
-            // 对角线的k为偶数，由上往下沿对角线填数<br>
-            for(int i=0;i&lt;n;i++){<br>
-            //计算得到列下标<br>
-            int j=k-i;<br>
-            if(j&gt;=0&amp;&amp;j&lt;n){<br>
-            a[i][j]=m;<br>
-            m++;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>}else{</p>
-        <p>}</p>
-        <p>}</p>
-        <p>}</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>for(int j=0;j<n;j++)</p>
-        <p>cout<<a[i][j]<<" ";</p>
-        <p>cout<<endl;</p>
-        <p>}</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            // 对角线的k为奇数，由下往上沿对角线填数<br>
-            for(int i=n-1;i&gt;=0;i--){<br>
-            //计算得到列下标<br>
-            int j=k-i;<br>
-            if(j&gt;=0&amp;&amp;j&lt;n){<br>
-            a[i][j]=m;<br>
-            m++;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

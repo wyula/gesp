@@ -6,6 +6,7 @@ class CoursePlayer {
         this.slides = [];
         this.isPresentationMode = false;
         this.quizState = {};
+        this.lessonData = null;
         
         this.lessonTitles = {
             'level1': {
@@ -90,15 +91,32 @@ class CoursePlayer {
     
     async loadCourseData() {
         try {
-            const response = await fetch(`data/${this.currentLevel}/lesson${this.currentLesson}/index.html`);
-            if (!response.ok) {
-                throw new Error(`加载课程数据失败: ${response.status}`);
+            const [htmlResponse, jsResponse] = await Promise.all([
+                fetch(`data/${this.currentLevel}/lesson${this.currentLesson}/index.html`),
+                fetch(`data/${this.currentLevel}/lesson${this.currentLesson}/lesson.js`)
+            ]);
+            
+            if (!htmlResponse.ok) {
+                throw new Error(`加载课程数据失败: ${htmlResponse.status}`);
             }
-            const htmlContent = await response.text();
+            
+            const htmlContent = await htmlResponse.text();
             this.slides = this.parseHTMLSlides(htmlContent);
+            
+            if (jsResponse.ok) {
+                const jsContent = await jsResponse.text();
+                const script = document.createElement('script');
+                script.textContent = jsContent;
+                document.head.appendChild(script);
+                document.head.removeChild(script);
+                this.lessonData = window.lessonData || null;
+            } else {
+                this.lessonData = null;
+            }
         } catch (error) {
             console.error('加载课程数据失败:', error);
             this.slides = [];
+            this.lessonData = null;
         }
     }
     
@@ -276,141 +294,13 @@ class CoursePlayer {
     }
     
     isQuizCorrect(quizIndex, selectedIndex) {
-        const quizAnswers = {
-            'level1': {
-                1: { 0: 2, 1: 0, 2: 0, 3: 0 },
-                2: { 0: 0 },
-                3: { 0: 0 },
-                4: { 0: 0 },
-                5: { 0: 0 },
-                6: { 0: 0 },
-                7: { 0: 0 },
-                8: { 0: 0 },
-                9: { 0: 0 },
-                10: { 0: 0 }
-            },
-            'level2': {
-                1: { 0: 0 },
-                2: { 0: 0 },
-                3: { 0: 0 },
-                4: { 0: 0 },
-                5: { 0: 0 },
-                6: { 0: 0 },
-                7: { 0: 0 },
-                8: { 0: 0 },
-                9: { 0: 0 },
-                10: { 0: 0 }
-            },
-            'level3': {
-                1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
-                2: { 0: 1, 1: 0, 2: 1 },
-                3: { 0: 1, 1: 0, 2: 1 },
-                4: { 0: 2, 1: 1 },
-                5: { 0: 1, 1: 2 },
-                6: { 0: 1, 1: 0 },
-                7: { 0: 1, 1: 2 },
-                8: { 0: 1, 1: 0 },
-                9: { 0: 1, 1: 0 },
-                10: { 0: 2, 1: 2 }
-            },
-            'level4': {
-                1: { 0: 0 },
-                2: { 0: 0 },
-                3: { 0: 0 },
-                4: { 0: 0 },
-                5: { 0: 0 },
-                6: { 0: 0 },
-                7: { 0: 0 },
-                8: { 0: 0 },
-                9: { 0: 0 },
-                10: { 0: 0 },
-                11: { 0: 0 },
-                12: { 0: 0 },
-                13: { 0: 0 },
-                14: { 0: 0 },
-                15: { 0: 0 },
-                16: { 0: 0 },
-                17: { 0: 0 },
-                18: { 0: 0 }
-            }
-        };
-        
-        const levelAnswers = quizAnswers[this.currentLevel];
-        if (!levelAnswers) return false;
-        
-        const lessonAnswers = levelAnswers[this.currentLesson];
-        if (!lessonAnswers) return false;
-        
-        return lessonAnswers[quizIndex] !== undefined && lessonAnswers[quizIndex] === selectedIndex;
+        if (!this.lessonData || !this.lessonData.answers) return false;
+        return this.lessonData.answers[quizIndex] !== undefined && this.lessonData.answers[quizIndex] === selectedIndex;
     }
     
     getCorrectAnswer(quizIndex) {
-        const quizAnswers = {
-            'level1': {
-                1: { 0: 2, 1: 0, 2: 0, 3: 0 },
-                2: { 0: 0 },
-                3: { 0: 0 },
-                4: { 0: 0 },
-                5: { 0: 0 },
-                6: { 0: 0 },
-                7: { 0: 0 },
-                8: { 0: 0 },
-                9: { 0: 0 },
-                10: { 0: 0 }
-            },
-            'level2': {
-                1: { 0: 0 },
-                2: { 0: 0 },
-                3: { 0: 0 },
-                4: { 0: 0 },
-                5: { 0: 0 },
-                6: { 0: 0 },
-                7: { 0: 0 },
-                8: { 0: 0 },
-                9: { 0: 0 },
-                10: { 0: 0 }
-            },
-            'level3': {
-                1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
-                2: { 0: 1, 1: 0, 2: 1 },
-                3: { 0: 1, 1: 0, 2: 1 },
-                4: { 0: 2, 1: 1 },
-                5: { 0: 1, 1: 2 },
-                6: { 0: 1, 1: 0 },
-                7: { 0: 1, 1: 2 },
-                8: { 0: 1, 1: 0 },
-                9: { 0: 1, 1: 0 },
-                10: { 0: 2, 1: 2 }
-            },
-            'level4': {
-                1: { 0: 0 },
-                2: { 0: 0 },
-                3: { 0: 0 },
-                4: { 0: 0 },
-                5: { 0: 0 },
-                6: { 0: 0 },
-                7: { 0: 0 },
-                8: { 0: 0 },
-                9: { 0: 0 },
-                10: { 0: 0 },
-                11: { 0: 0 },
-                12: { 0: 0 },
-                13: { 0: 0 },
-                14: { 0: 0 },
-                15: { 0: 0 },
-                16: { 0: 0 },
-                17: { 0: 0 },
-                18: { 0: 0 }
-            }
-        };
-        
-        const levelAnswers = quizAnswers[this.currentLevel];
-        if (!levelAnswers) return 0;
-        
-        const lessonAnswers = levelAnswers[this.currentLesson];
-        if (!lessonAnswers) return 0;
-        
-        return lessonAnswers[quizIndex] !== undefined ? lessonAnswers[quizIndex] : 0;
+        if (!this.lessonData || !this.lessonData.answers) return 0;
+        return this.lessonData.answers[quizIndex] !== undefined ? this.lessonData.answers[quizIndex] : 0;
     }
     
     getCorrectAnswerText(quizIndex) {

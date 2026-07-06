@@ -1,653 +1,115 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++二级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第十课</h2>
-    <div class="slide-content">
-        <p>多 层 循 环 2</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 多层循环的应用</h2>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">(2023年9月）以下C++代码实现从大到小的顺序输出N的所有因子， 例如，输入N=18时，输出18 9 6 3 2 1，横线处应该填入C( )。</div>
+        <div class="quiz-question">（2023年9月）以下C++代码实现从大到小的顺序输出N的所有因子，例如，输入N=18时，输出18 9 6 3 2 1，横线处应该填入（ ）。int N=0; cin>>N; for(__________)//此处填写代码 if(!(N%i)) cout<<i<<' ';</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>；； int N=0; cin>>N; B. int i=1; i<N; i++ for(__________)//此处填写代码</span>
+                <span>int i=1; i<N; i++</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>int i=1; i<=N; i++</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>int i=N; i>0; i-- if(!(N%i)) cout<<i<<' '; D. int i=N; i>1; i--</span>
+                <span>int i=N; i>0; i--</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>int i=N; i>1; i--</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>题目解析</p>
-        <p>int N=0;</p>
-        <p>cin>>N;</p>
-        <p>for(_i_n_t_ _i_=_N__;_ i_>__0_;_ i_-_-_) //此处填写代码</p>
-        <p>if(!(N%i))</p>
-        <p>cout<<i<<' ';</p>
-        <p>整数a除以整数b(b≠0) 的商正好是整数而没有余数，b就是a的因子。</p>
-        <p>输入N=18时输出18 9 6 3 2 1</p>
-        <p>i： 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1</p>
-        <p>for( int i=18; i>0; i-- ){</p>
-        <div class="code-block">
-            //找出18的因子<br>
-            }<br>
+            【解析】本题考查因子输出。要从大到小输出因子，循环变量应从N开始递减到1，所以条件应为int i=N; i>0; i--。选项D缺少输出因子1，选项A和B是从小到大输出。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">(2023年9月）某班级人数不知，连续输入成绩直到输入负数停止，输入结束后求 出平均成绩。在以下C++代码横线处应填入是( A )。 double totalScore=0; //总分 int studCount=0; //总人数 while(______){ //此处填写代码 cin>>score; if(score<0) break; totalScore+=score; studCount+=1; } cout<<"平均分="<<totalScore/studCount;</div>
+        <div class="quiz-question">（2023年9月）某班级人数不知，连续输入成绩直到输入负数停止，输入结束后求出平均成绩。在以下C++代码横线处应填入是（ ）。double totalScore=0; //总分 int studCount=0; //总人数 while(______){ //此处填写代码 cin>>score; if(score<0) break; totalScore+=score; studCount+=1; } cout<<"平均分="<<totalScore/studCount;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>true B. false C. True D. False</span>
+                <span>true</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>false</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>True</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>False</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查while循环条件。由于需要无限循环直到输入负数才break退出，所以循环条件应为true。C++中布尔常量是小写的true/false，不是True/False。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">(2023年9月）下面C++代码执行后的输出是( B )。 int cnt=0; for(int i=1; i<13; i+=3) for(int j=1; j<i; j+=2) if(i*j%2==0) break; else cnt+=1; cout<<cnt;</div>
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ ）。int cnt=0; for(int i=1; i<13; i+=3) for(int j=1; j<i; j+=2) if(i*j%2==0) break; else cnt+=1; cout<<cnt;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>1 B. 3 C. 15 D. 没有输出</span>
+                <span>1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>15</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>没有输出</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查嵌套循环和条件判断。i=1时内层不执行；i=4时j=1，4×1%2=0，break；i=7时j=1,3,5，7×1%2=1(cnt=1)，7×3%2=1(cnt=2)，7×5%2=1(cnt=3)；i=10时j=1，10×1%2=0，break。总计cnt=3。
         </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>题目解析</p>
-        <p>i j i*j%2==0</p>
-        <p>int cnt=0;</p>
-        <p>for(int i=1; i<13; i+=3) 1</p>
-        <p>for(int j=1; j<i; j+=2)</p>
-        <p>4 1 当j=1，结果为true，执行break</p>
-        <p>if(i*j%2==0)</p>
-        <p>7 1、3、5 当j=1，结果为false，执行cnt+=1</p>
-        <p>break;</p>
-        <p>当j=3，结果为false，执行cnt+=1</p>
-        <p>else</p>
-        <p>当j=5，结果为false，执行cnt+=1</p>
-        <p>cnt+=1;</p>
-        <p>cout<<cnt; 10 1 当j=1，结果为true，执行break</p>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">(2023年9月）下面C++代码用于判断 N 是否为质数（素数），约定输 入 N 为大于等于2的正整数，请在横线处填入合适的代码( A )。 int N=0，i=0; cout<<"请输入一个大于等于2的正整数："; cin>>N; A. break for(i=2; i<N; i++)</div>
+        <div class="quiz-question">（2023年9月）下面C++代码用于判断 N 是否为质数（素数），约定输入 N 为大于等于2的正整数，请在横线处填入合适的代码（ ）。int N=0，i=0; cout<<"请输入一个大于等于2的正整数："; cin>>N; for(i=2; i<N; i++) if(N%i==0){ cout<<"非质数"; ______________;//此处填写代码 } if(i==N) cout<<"是质数";</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>continue if(N%i==0){ cout<<"非质数";</span>
+                <span>A</span>
+                <span>break</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>continue</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>exit ______________;//此处填写代码 } D. return if(i==N) cout<<"是质数";</span>
+                <span>exit</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>return</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）百鸡问题</p>
-        <p></p>
-        <p>【问题描述】</p>
-        <p>“百鸡问题”是出自我国古代《张丘建算经》的著名数学问题。大意为：“每</p>
-        <p>只公鸡 5 元，每只母鸡 3 元，每 3 只小鸡 1 元；现在有 100 元，买了 100 只</p>
-        <p>鸡， 共有多少种方案？”</p>
-        <p>小明很喜欢这个故事，他决定对这个问题进行扩展，并使用编程解决：如果</p>
-        <p>每只公鸡 x 元，每只母鸡 y 元，每 z 只小鸡 1 元；</p>
-        <p>现在有 n 元，买了 m 只鸡，共有多少种方案？</p>
-        <p>【输入描述】</p>
-        <p>输入一行，包含五个整数，分别为问题描述中的 x、y、z、n、m。</p>
-        <p>约定 1≤ x, y, z ≤10，1≤ n, m ≤1000。</p>
-        <p>【输出描述】</p>
-        <p>输出一行，包含一个整数 C，表示有 C 种方案。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）百鸡问题</p>
-        <p></p>
-        <p>【输入样例1】</p>
-        <p>5 3 3 100 100</p>
-        <p>【输出样例1】</p>
-        <p>4</p>
-        <p>【样例1解释】</p>
-        <p>这就是问题描述中的“百鸡问题”。</p>
-        <p>4 种方案分别为：公鸡 0 只、母鸡 25 只、 小鸡 75 只；</p>
-        <p>公鸡 4 只、母鸡 18 只、小鸡 78 只；</p>
-        <p>公鸡 8 只、母鸡 11 只、小鸡 81 只；</p>
-        <p>公鸡 12 只、母鸡 4 只、小鸡 84 只。</p>
-        <p>【输入样例2】</p>
-        <p>1 1 1 100 100</p>
-        <p>【输出样例2】</p>
-        <p>5151</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>列出题目给出信息：</p>
-        <p>• 鸡的价格：公鸡：x/只 ；母鸡：y/只；小鸡： z 只1元</p>
-        <p>• 手中钱数：n</p>
-        <p>• 购鸡总数：m</p>
-        <p>根据题目给出信息列出解题的条件：</p>
-        <p>• 公鸡数 ✖️ x ➕ 母鸡数 ✖️ y ➕ 小鸡数 ÷ z = n</p>
-        <p>• 公鸡数 ➕ 母鸡数 ➕ 小鸡数 = m</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入公鸡价格x，母鸡价格y，z只小鸡一元，总钱数n，购买鸡数m。</p>
-        <p>int x, y, z, n,m;</p>
-        <p>cin>>x>>y>>z>>n>>m;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>• 公鸡数 ✖️ x ➕ 母鸡数 ✖️ y ➕ 小鸡数 ÷ z = n</p>
-        <p>• 公鸡数 ➕ 母鸡数 ➕ 小鸡数 = m</p>
-        <p>② 使用枚举法列出所有公鸡、母鸡可能的数量、计算小鸡数量。</p>
-        <p>1) 列举公鸡数a的可能性 0 1 2 3 4 ....... a*x<=n 并且 a<=m</p>
-        <p>2) 列举母鸡数b的可能性 0 1 2 3 4 ....... a*x+b*y<=n 并且 a+b<=m</p>
-        <p>3) 根据已知条件计算小鸡数c （总钱数-买公鸡母鸡钱数）* z</p>
-        <p>for(int a=0; _a_*_x_<__=__n_&__&__a_<__=__m__; a++){ 枚举公鸡数量（从0开始）</p>
-        <p>for(int b=0; a__*_x_+__b_*_y_<__=_n__&__&__a_+__b_<__=_m__; b++){ 枚举母鸡数量（从0开始）</p>
-        <p>int c=(n-a*x-b*y)*z; 计算小鸡数量</p>
-        <p>}</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>• 公鸡数 ✖️ x ➕ 母鸡数 ✖️ y ➕ 小鸡数 ÷ z = n</p>
-        <p>• 公鸡数 ➕ 母鸡数 ➕ 小鸡数 = m</p>
-        <p>③ 统计符合条件的购买方案数量。</p>
-        <p>记录方案数量 int cnt=0;</p>
-        <p>for(int a=0; a*x<=n&&a<=m; a++){</p>
-        <p>for(int b=0; a*x+b*y<=n&&a+b<=m; b++){</p>
-        <p>int c=(n-a*x-b*y)*z;</p>
-        <p>若if(满a+足b以+下c=条=件m，) 令cn购t+买+方; 案数+1</p>
-        <p>公鸡数 ➕ 母鸡数 ➕ 小鸡数 = m</p>
-        <p>}</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>}</p>
-        <p>cout<<cnt<<endl;</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main(){<br>
-            int x,y,z,n,m;<br>
-            cin&gt;&gt;x&gt;&gt;y&gt;&gt;z&gt;&gt;n&gt;&gt;m;<br>
-            int cnt=0;<br>
-            for(int a=0; a*x&lt;=n&amp;&amp;a&lt;=m; a++){<br>
-            for(int b=0; a*x+b*y&lt;=n&amp;&amp;a+b&lt;=m; b++){<br>
-            int c=(n-a*x-b*y)*z;<br>
-            if(a+b+c==m) cnt++;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年6月）找素数</p>
-        <p>【问题描述】</p>
-        <p>小明刚刚学习了素数的概念：如果一个大于 1 的正整数，除了 1 和它自身外，</p>
-        <p>不能被其他正整数整除，则这个正整数是素数。现在，小明想找到两个正整数A</p>
-        <p>和B之间（包括A和B）有多少个素数？</p>
-        <p>【输入描述】</p>
-        <p>输入 2 行，第一行包含正整数A，第二行包含正整数B。约定 2 ≤ A ≤ B ≤ 1000。</p>
-        <p>【输出描述】</p>
-        <p>输出一行，包含一个整数C，表示找到C个素数。</p>
-        <p>【输入样例1】</p>
-        <p>2</p>
-        <p>2 3 4 5 6 7 8 9 10</p>
-        <p>10</p>
-        <p>【输出样例2】</p>
-        <p>4</p>
-        <p>【输入样例1】</p>
-        <p>98</p>
-        <p>98 99 100</p>
-        <p>100</p>
-        <p>【输出样例2】</p>
-        <p>0</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入正整数a，正整数b。</p>
-        <p>int a = 0, b = 0；</p>
-        <p>cin >> a >> b;</p>
-        <p>② 创建变量cnt，统计素数个数。</p>
-        <p>int cnt = 0;</p>
-        <p>③ 统计正整数 a 到 b 范围内的素数个数（包含a和b）。</p>
-        <p>for (int n = a; n <= b; n++){</p>
-        <div class="code-block">
-            //判断当前正整数n是否为素数<br>
-            //累加素数的个数<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>判断一个正整数是否为素数</p>
-        <p>素数：如果一个大于 1 的正整数，除了 1 和它自身外，不能被其他正整数整除，则</p>
-        <p>这个正整数是素数。</p>
-        <p>例：判断9是否为素数 2 3 4 5 6 7 8</p>
-        <p>9 % 3 ->0 非素数</p>
-        <p>}</p>
-        <div class="code-block">
-            //判断n是否为素数<br>
-            先假设该数为素数<br>
-            bool flag = true；<br>
-            for (int i = 2; i &lt; n; i++) {<br>
-            if (n % i == 0) {<br>
-            flag = false;<br>
-            break;<br>
-            退出循环<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>③ 统计正整数 a 到 b 范围内的素数个数（包含a和b）。</p>
-        <p>}</p>
-        <p>根据flag的值累加 flag  true 素数</p>
-        <p>if (flag) cnt++;</p>
-        <p>素数的个数 flag  false 非素数</p>
-        <p>}</p>
-        <p>④ 输出素数的个数。</p>
-        <p>cout << cnt << endl;</p>
-        <div class="code-block">
-            //遍历a~b之间所有的正整数<br>
-            for (int n = a; n &lt;= b; n++) {<br>
-            //判断当前正整数n是否为素数<br>
-            bool flag = true;<br>
-            for (int i = 2; i &lt; n; i++) {<br>
-            if (n % i == 0) {<br>
-            flag = false;<br>
-            break;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>}</p>
-        <p>if (flag) cnt++;</p>
-        <p>}</p>
-        <p>cout << cnt << endl;</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main() {<br>
-            int a = 0, b = 0, cnt = 0;<br>
-            cin &gt;&gt; a &gt;&gt; b;<br>
-            for (int n = a; n &lt;= b; n++) {<br>
-            bool flag = true;<br>
-            for (int i = 2; i &lt; n; i++) {<br>
-            if (n % i == 0) {<br>
-            flag = false;<br>
-            break;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）自幂数判断</p>
-        <p>【问题描述】</p>
-        <p>自幂数是指，一个N位数，满足各位数字N次方之和是本身。</p>
-        <p>例如：153 是 3 位数，其每位数的 3 次方之和，13 + 53 + 33 = 153，因此 153 是自幂数；</p>
-        <p>1634 是 4 位数，其每位数的 4 次方之和，14 + 64 + 34 + 44 = 1634，因此 1634 是自幂数。</p>
-        <p>现在，输入若干个正整数，请判断它们是否是自幂数。</p>
-        <p>【输入描述】</p>
-        <p>输入第一行是一个正整数M，表示有M个待判断的正整数。约定 1 ≤ M ≤ 100。</p>
-        <p>从第 2 行开始的M行，每行一个待判断的正整数。约定这些正整数均小于108。</p>
-        <p>【输出描述】</p>
-        <p>输出M行，如果对应的待判断正整数为自幂数，则输出英文大写字母'T'， 否则输出英文大写字</p>
-        <p>母'F'。</p>
-        <p>【提示】</p>
-        <p>不需要等到所有输入结束在依次输出，可以输入一个数就判断一个数并输出，再输入下一个数。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）自幂数判断</p>
-        <p>【输入样例1】</p>
-        <p>3</p>
-        <p>152  13 + 53 + 23 = 134</p>
-        <p>152</p>
-        <p>111</p>
-        <p>111  13 + 13 + 13 = 1</p>
-        <p>153</p>
-        <p>【输出样例1】</p>
-        <p>153  13 + 53 + 33 = 153</p>
-        <p>F</p>
-        <p>F</p>
-        <p>T</p>
-        <p>【输入样例2】</p>
-        <p>5</p>
-        <p>8208  84 + 24 + 04 + 84 = 8208</p>
-        <p>8208</p>
-        <p>548834 548834  56 + 46 + 86 + 86 + 36 + 46 = 548834</p>
-        <p>88593477</p>
-        <p>12345 88593477  88 + 88 + 58 + 98 + 38 + 48 + 78 + 78 = 88593477</p>
-        <p>5432</p>
-        <p>【输出样例2】 12345  15 + 25 + 35 + 45 + 55 = 4425</p>
-        <p>T</p>
-        <p>T 5432  54 + 44 + 34 + 24 = 978</p>
-        <p>T</p>
-        <p>F</p>
-        <p>F</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入待判断整数的个数m。</p>
-        <p>int m = 0;</p>
-        <p>cin >> m;</p>
-        <p>② 输入m个数字，判断每个数字是否为自幂数。</p>
-        <p>int n = 0;</p>
-        <p>for (int i = 1; i <= m; i++) {</p>
-        <p>cin >> n;</p>
-        <p>1）计算当前正整数n是几位数</p>
-        <p>2）判断当前正整数n是否为自幂数</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>1）计算当前正整数n是几位数。</p>
-        <p>不改变n的值</p>
-        <p>int t = n,</p>
-        <p>int l = 0;</p>
-        <p>记录位数</p>
-        <p>while (t != 0) {</p>
-        <p>t /= 10;</p>
-        <p>l++;</p>
-        <p>}</p>
-        <p>2）判断当前正整数n是否为自幂数。 153  13 + 53 + 33 = 153</p>
-        <p>求自幂数的方式：</p>
-        <p>a：累加n的每位数的l次方</p>
-        <p>b：判断累加和是否与n相等</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>记录累加和</p>
-        <p>int sum = 0;</p>
-        <p>t = n; //t的值重置为n</p>
-        <p>2）判断当前正整数n是否为自幂数</p>
-        <p>while (t != 0){</p>
-        <p>求自幂数的方式：</p>
-        <p>int d = t % 10; //计算出每个数位上数字</p>
-        <p>a：累加n的每位数的l次方 t /= 10;</p>
-        <p>sum += pow(d, l); 累加每位数的l次方</p>
-        <p>b：判断累加和是否与n相等</p>
-        <p>}</p>
-        <p>自幂数 T</p>
-        <p>if (sum == n)</p>
-        <p>非自幂数 F cout << "T" << endl;</p>
-        <p>else</p>
-        <p>cout << "F" << endl;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <div class="code-block">
-            #include &lt;iostream&gt; int sum = 0;<br>
-            #include &lt;cmath&gt; 提供pow函数 t = n;<br>
-            using namespace std; while (t != 0) {<br>
-            int main() { int d = t % 10;<br>
-            int m = 0; t /= 10;<br>
-            cin &gt;&gt; m; sum += pow(d, l);<br>
-            for (int i = 1; i &lt;= m; i++){ }<br>
-            int n = 0; if (sum == n)<br>
-            cin &gt;&gt; n; cout &lt;&lt; "T" &lt;&lt; endl;<br>
-            int t = n, l = 0; else<br>
-            while (t != 0) { cout &lt;&lt; "F" &lt;&lt; endl;<br>
-            t /= 10; }<br>
-            l++; return 0;<br>
-            } }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）百鸡问题</p>
-        <p></p>
-        <p>【问题描述】</p>
-        <p>“百鸡问题”是出自我国古代《张丘建算经》的著名数学问题。大意为：“每</p>
-        <p>只公鸡 5 元，每只母鸡 3 元，每 3 只小鸡 1 元；现在有 100 元，买了 100 只</p>
-        <p>鸡， 共有多少种方案？”</p>
-        <p>小明很喜欢这个故事，他决定对这个问题进行扩展，并使用编程解决：如果</p>
-        <p>每只公鸡 x 元，每只母鸡 y 元，每 z 只小鸡 1 元；</p>
-        <p>现在有 n 元，买了 m 只鸡，共有多少种方案？</p>
-        <p>【输入描述】</p>
-        <p>输入一行，包含五个整数，分别为问题描述中的 x、y、z、n、m。</p>
-        <p>约定 1≤ x, y, z ≤10，1≤ n, m ≤1000。</p>
-        <p>【输出描述】</p>
-        <p>输出一行，包含一个整数 C，表示有 C 种方案。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）百鸡问题</p>
-        <p></p>
-        <p>【输入样例1】</p>
-        <p>5 3 3 100 100</p>
-        <p>【输出样例1】</p>
-        <p>4</p>
-        <p>【样例1解释】</p>
-        <p>这就是问题描述中的“百鸡问题”。</p>
-        <p>4 种方案分别为：公鸡 0 只、母鸡 25 只、 小鸡 75 只；</p>
-        <p>公鸡 4 只、母鸡 18 只、小鸡 78 只；</p>
-        <p>公鸡 8 只、母鸡 11 只、小鸡 81 只；</p>
-        <p>公鸡 12 只、母鸡 4 只、小鸡 84 只。</p>
-        <p>【输入样例2】</p>
-        <p>1 1 1 100 100</p>
-        <p>【输出样例2】</p>
-        <p>5151</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 列出题目给出信息。</p>
-        <p>• 鸡的价格：公鸡：x/只 ；母鸡：y/只；小鸡：z只1元</p>
-        <p>• 手中钱数：n</p>
-        <p>• 购鸡总数：m</p>
-        <p>② 根据题目给出信息列出解题的条件。</p>
-        <p>• 公鸡数 ✖️ x ➕ 母鸡数 ✖️ y ➕ 小鸡数 ÷ z = n</p>
-        <p>• 公鸡数 ➕ 母鸡数 ➕ 小鸡数 = m</p>
-        <p>③ 使用枚举法列出所有公鸡、母鸡可能的数量。</p>
-        <p>0 1 2 3 …… n/x</p>
-        <p>公鸡最少0只，最多n/x只</p>
-        <p>母鸡最少0只，最多n/y只 0 1 2 3 …… n/y</p>
-        <p>利用条件求出小鸡数：（总钱数-买公鸡母鸡钱数）* z</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入公鸡价格x，母鸡价格y，z只小鸡一元，总钱数n，购买鸡数m。</p>
-        <p>int x, y, z, n, m;</p>
-        <p>cin>>x>>y>>z>>n>>m;</p>
-        <p>② 枚举公鸡、母鸡数量，计算小鸡数量，找出符合要求的购鸡方案数量。</p>
-        <p>• 公鸡数 ✖️ x ➕ 母鸡数 ✖️ y ➕ 小鸡数 ÷ z = n</p>
-        <p>• 公鸡数 ➕ 母鸡数 ➕ 小鸡数 = m</p>
-        <p>int cnt=0;</p>
-        <p>记录方案数量</p>
-        <p>for(int a=0; a<=n/x; a++){ 枚举公鸡数量（0~n/x）</p>
-        <p>for(int b=0; b<=n/y; b++){ 枚举母鸡数量（0~n/y）</p>
-        <p>int c=(n-a*x-b*y)*z; 计算小鸡数量</p>
-        <p>i当f(满a+足b如+下c=条=件m，) 购cn鸡t+方+案; 数量+1：</p>
-        <p>条件：公鸡数 ➕ 母鸡数 ➕ 小鸡数 = m</p>
-        <p>}</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>② 枚举公鸡、母鸡数量，计算小鸡数量，找出符合要求的购鸡方案数量。</p>
-        <p>int cnt=0;</p>
-        <p>for(int a=0; a<=n/x; a++){</p>
-        <p>for(int b=0; b<=n/y; b++){</p>
-        <p>int c=(n-a*x-b*y)*z;</p>
-        <p>iiff((aa++bb++cc====mm&) c&nat+>+=;0&&b>=0&&c>=0) cnt++;</p>
-        <p>}</p>
-        <p>}</p>
-        <p>例如：公鸡1元/只，母鸡1元/只，小鸡1只1元，总钱数3，购鸡总数为3。</p>
-        <p>公鸡数 母鸡数</p>
-        <p>公鸡数 母鸡数 小鸡数</p>
-        <p>0 0 0 0 3</p>
-        <p>保证公鸡、母鸡、小鸡的数量</p>
-        <p>1 1 1 1 1</p>
-        <p>大于等于0！！！</p>
-        <p>2 2 2 2 -1</p>
-        <p>3 3 3 3 -3</p>
-        <p>... ... ...</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>}</p>
-        <p>cout<<cnt;</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main() {<br>
-            int x, y, z, n, m;<br>
-            cin&gt;&gt;x&gt;&gt;y&gt;&gt;z&gt;&gt;n&gt;&gt;m;<br>
-            int cnt=0;<br>
-            for(int a=0; a&lt;=n/x; a++){<br>
-            for(int b=0; b&lt;=n/y; b++){<br>
-            int c=(n-a*x-b*y)*z;<br>
-            if(a+b+c==m&amp;&amp;a&gt;=0&amp;&amp;b&gt;=0&amp;&amp;c&gt;=0) cnt++;<br>
-            }<br>
+            【解析】本题考查素数判断逻辑。当找到能整除N的因子时，说明N不是质数，应退出循环，然后根据i==N判断是否为质数。break用于跳出当前循环，continue用于跳过本次循环，exit和return会直接退出程序。所以应使用break。
         </div>
     </div>
 </div>

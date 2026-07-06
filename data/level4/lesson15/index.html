@@ -1,218 +1,6 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">第十五课</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>时间复杂度</p>
-        <p>算法在执行时需要消耗的时间。</p>
-        <p>使用某些固定操作被执行的次数，和 的关系来进行度量。</p>
-        <p>n</p>
-        <p>int n=10;</p>
-        <p>• 执行次数与变量n无关</p>
-        <p>int sum=0;</p>
-        <p>sum+=n; 固定操作 • 时间复杂度O(1)</p>
-        <p>sum+=n;</p>
-        <p>• 常量级</p>
-        <p>sum+=n;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>时间复杂度</p>
-        <p>算法在执行时需要消耗的时间。</p>
-        <p>使用某些固定操作被执行的次数，和 的关系来进行度量。</p>
-        <p>n</p>
-        <p>int n=10;</p>
-        <p>n 次 • 执行n次</p>
-        <p>int sum=0;</p>
-        <p>for(int i=0;i<n;i++){ • 时间复杂度O(n)</p>
-        <p>sum+=i; 固定操作</p>
-        <p>• 线性级</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>时间复杂度</p>
-        <p>算法在执行时需要消耗的时间。</p>
-        <p>使用某些固定操作被执行的次数，和 的关系来进行度量。</p>
-        <p>n</p>
-        <p>int a[100][100]={0};</p>
-        <p>次</p>
-        <p>int n=10; n</p>
-        <p>for(int i=1;i<=n;i++){ 次 • 执行n2次</p>
-        <p>n</p>
-        <p>× 次</p>
-        <p>n n for(int j=1;j<=n;j++)</p>
-        <p>• 时间复杂度O(n2)</p>
-        <p>cout<<a[i][j]<<' ';</p>
-        <p>cout<<endl;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>时间复杂度</p>
-        <p>算法在执行时需要消耗的时间。</p>
-        <p>使用某些固定操作被执行的次数，和 的关系来进行度量。</p>
-        <p>n</p>
-        <p>int a[100][100]={0};</p>
-        <p>int n=10;</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>× 次</p>
-        <p>n n for(int j=0;j<n;j++)</p>
-        <p>• 关注随n的增长而增长得更快的</p>
-        <p>cout<<a[i][j]<<' ';</p>
-        <p>cout<<endl; 那一项操作，时间复杂度O(n2)</p>
-        <p>}</p>
-        <p>次</p>
-        <p>n</p>
-        <p>int sum=0;</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>sum+=i;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>时间复杂度</p>
-        <p>算法在执行时需要消耗的时间。</p>
-        <p>使用某些固定操作被执行的次数，和 的关系来进行度量。</p>
-        <p>n</p>
-        <p>int i = 1;</p>
-        <p>• 执行log n次</p>
-        <p>int n=10; 2</p>
-        <p>while(i<n){ • 时间复杂度O(log n)或者O(logn)</p>
-        <p>2</p>
-        <p>i*=2;</p>
-        <p>• 对数级</p>
-        <p>}</p>
-        <p>2x=</p>
-        <p>n</p>
-        <p>其他的时间复杂度还有O(nlogn)、O(n3)、O(2n)、O(n!)</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>时间复杂度的大小关系</p>
-        <p>哪种时间更长，哪种更节省时间呢？</p>
-        <p>按照所消耗时间由少到多进行排序如下：</p>
-        <p>O(1)<O(logn)<O(n)<O(nlog)<O(n2)<O(n3)<O(2n)<O(n!)</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>试一试</p>
-        <p>long long cnt=0;</p>
-        <p>× </p>
-        <p>100000 100000 100</p>
-        <p>int n=100000;</p>
-        <p>亿次</p>
-        <p>for(int i=1;i<=n;i++){</p>
-        <p>for(int j=1;j<=n;j++)</p>
-        <p>cnt++;</p>
-        <p>}</p>
-        <p>一个程序运算次数高达 亿次，提交任何一个</p>
-        <p>100</p>
-        <p>平台都会超时！！！</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法时间复杂度</p>
-        <p>冒泡排序 选择排序</p>
-        <p>n-1</p>
-        <p>次</p>
-        <p>for(int i=0;i<n-1;i++){ int t,min=1000;</p>
-        <p>n-1</p>
-        <p>次</p>
-        <p>bool flag=false; for(int i=0;i<n-1;i++){</p>
-        <p>n-i</p>
-        <p>次</p>
-        <p>for(int j=0;j<n-i;j++){ t=i;</p>
-        <p>if(a[j]>a[j+1]){ min=a[i]; n-i-1</p>
-        <p>次</p>
-        <p>swap(a[j],a[j+1]); for(int j=i+1;j<n;j++){</p>
-        <p>flag=true; if(a[j]<min){</p>
-        <p>} min=a[j];</p>
-        <p>} t=j;}}</p>
-        <p>if(!flag) break; swap(a[t],a[i]);</p>
-        <p>} }</p>
-        <p>(n-1)+(n-2)+...+1</p>
-        <p>�(�−�) 平均时间复杂度</p>
-        <p>O(n2)</p>
-        <p>=平均时间 复杂度</p>
-        <p>� O(n2)</p>
-        <p>最优情况是初始序列有序，则时间复杂度为</p>
-        <p>O(n)</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法时间复杂度</p>
-        <p>插入排序</p>
-        <p>次</p>
-        <p>n-1</p>
-        <p>for(int i=1;i<n;i++){</p>
-        <p>int x=a[i];</p>
-        <p>i-1 排序算法 平均时间复杂度</p>
-        <p>int j;</p>
-        <p>次</p>
-        <p>for(j=i-1;j>=0;j--){</p>
-        <p>冒泡排序 O(n2)</p>
-        <p>if(a[j]>x)a[j+1]=a[j];</p>
-        <p>else break; 选择排序 O(n2)</p>
-        <p>}</p>
-        <p>插入排序 O(n2)</p>
-        <p>a[j+1]=x;</p>
-        <p>}</p>
-        <p>平均时间复杂度</p>
-        <p>O(n2)</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法时间复杂度</p>
-        <p>桶排序</p>
-        <p>次</p>
-        <p>排序算法 平均时间复杂度</p>
-        <p>n</p>
-        <p>int a[1000]={};</p>
-        <p>for(int i=0;i<n;i++) { 冒泡排序 O(n2)</p>
-        <p>cin>>x;</p>
-        <p>选择排序 O(n2)</p>
-        <p>a[x]++;</p>
-        <p>插入排序 O(n2)</p>
-        <p>}</p>
-        <p>桶排序 O(n)</p>
-        <p>平均时间复杂度</p>
-        <p>O(n)</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）对包含 n 个元素的数组进行冒泡排序，平均时间复杂度 般为（ C ） ⼀</div>
+        <div class="quiz-question">（2023年9月）对包含 n 个元素的数组进行冒泡排序，平均时间复杂度一般为（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -234,14 +22,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查冒泡排序的时间复杂度。冒泡排序的内层循环需要遍历未排序部分，平均情况下需要进行O(n2)次比较和交换操作，因此平均时间复杂度为O(n2)。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）对N个元素的数组执行插入排序算法， 通常的时间复杂度为O(N2)。</div>
+        <div class="quiz-question">（2023年9月）对N个元素的数组执行插入排序算法，通常的时间复杂度为O(N2)。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -255,7 +43,7 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序的时间复杂度。插入排序在平均情况下需要进行O(n2)次比较和移动操作，因此平均时间复杂度为O(n2)。
         </div>
     </div>
 </div>
@@ -276,14 +64,14 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查递归求阶乘的时间复杂度。递归求阶乘需要调用n次函数，每次调用执行常数时间操作，因此时间复杂度为O(n)。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 在对n个元素进行冒泡排序的过程中，最好情况下的时间复杂度为（ D ）</div>
+        <div class="quiz-question">课堂练习 在对n个元素进行冒泡排序的过程中，最好情况下的时间复杂度为（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -291,7 +79,7 @@
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>O(log n) 2</span>
+                <span>O(log n)</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
@@ -305,103 +93,14 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查冒泡排序的最好时间复杂度。当数组已经有序时，冒泡排序只需进行一轮比较，没有交换发生即可提前结束，因此最好情况下的时间复杂度为O(n)。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>空间复杂度</p>
-        <p>算法在运行过程中所需的存储空间</p>
-        <p>空间复杂度O(1)：当一个算法的空间复杂度为一个常量，</p>
-        <p>运行时所需空间不随被处理数据量的大小而改变。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法空间复杂度</p>
-        <p>冒泡排序 选择排序</p>
-        <p>for(int i=0;i<n-1;i++){ int t,min=1000;</p>
-        <p>bool flag=false; for(int i=0;i<n-1;i++){</p>
-        <p>for(int j=0;j<n-i;j++){ t=i;</p>
-        <p>if(a[j]>a[j+1]){ min=a[i];</p>
-        <p>swap(a[j],a[j+1]); for(int j=i+1;j<n;j++){</p>
-        <p>flag=true; if(a[j]<min){</p>
-        <p>} min=a[j];</p>
-        <p>} t=j;}}</p>
-        <p>if(!flag) break; swap(a[t],a[i]);}</p>
-        <p>}</p>
-        <p>平均空间复杂度 平均空间复杂度</p>
-        <p>O(1) O(1)</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法空间复杂度</p>
-        <p>插入排序</p>
-        <p>int x;</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>int x=a[i]; 排序算法 空间复杂度</p>
-        <p>int j;</p>
-        <p>冒泡排序 O(1)</p>
-        <p>for(j=i-1;j>=0;j--){</p>
-        <p>选择排序 O(1)</p>
-        <p>if(a[j]>x) a[j+1]=a[j];</p>
-        <p>else break;</p>
-        <p>插入排序 O(1)</p>
-        <p>}</p>
-        <p>a[j+1]=x;</p>
-        <p>}</p>
-        <p>平均空间复杂度</p>
-        <p>O(1)</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法空间复杂度</p>
-        <p>桶排序</p>
-        <p>额外申</p>
-        <p>请空间</p>
-        <p>排序算法 空间复杂度</p>
-        <p>int a[1000]={};</p>
-        <p>冒泡排序 O(1)</p>
-        <p>for(int i=0;i<n;i++) {</p>
-        <p>cin>>x; 选择排序 O(1)</p>
-        <p>a[x]++;</p>
-        <p>插入排序 O(1)</p>
-        <p>}</p>
-        <p>桶排序 O(n)</p>
-        <p>平均空间复杂度</p>
-        <p>O(n)</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法时间空间复杂度</p>
-        <p>• 一般情况下，空间复杂度没有时间复杂度重要，只要不是创建</p>
-        <p>多个大容量的数组，存储空间都是够用。</p>
-        <p>• 在解决问题时常常会采用空间换时间的策略，例如桶排序。</p>
-        <p>排序算法 平均时间复杂度 空间复杂度</p>
-        <p>冒泡排序 O(n2) O(1)</p>
-        <p>选择排序 O(n2) O(1)</p>
-        <p>插入排序 O(n2) O(1)</p>
-        <p>桶排序 O(n) O(n)</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 插入排序平均时间复杂度为O(n2)，空间复杂度为1。</div>
+        <div class="quiz-question">课堂练习 插入排序平均时间复杂度为O(n2)，空间复杂度为O(1)。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -415,14 +114,14 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序的复杂度。插入排序平均时间复杂度为O(n2)，只需要常数级别的额外空间（用于临时变量），因此空间复杂度为O(1)。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 在对n个元素进行直接插入排序的过程中，算法的空间复杂度为（ A ）</div>
+        <div class="quiz-question">课堂练习 在对n个元素进行直接插入排序的过程中，算法的空间复杂度为（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -430,7 +129,7 @@
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>O(log n) 2</span>
+                <span>O(log n)</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
@@ -444,167 +143,7 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序的空间复杂度。插入排序只需要常数级别的额外空间（用于临时变量），不需要额外的数组或数据结构，因此空间复杂度为O(1)。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>信息老师的前缀和</p>
-        <p>【问题描述】</p>
-        <p>运用前缀和思想进行数据预处理，能够避免数据的重复计算，且大大降低了</p>
-        <p>算法的时间复杂度。这天，大白老师想考一考大家对前缀和的掌握情况，于</p>
-        <p>是出了一道题：求a~b之间1出现的次数。</p>
-        <p>【输入描述】</p>
-        <p>共 n+1 行；</p>
-        <p>第一行，一个整数 n（1≤n≤105），表示查询次数。</p>
-        <p>接下来n行，每行包含两个整数 a 和 b （1≤a＜b≤105），数与数之间以</p>
-        <p>一个空格隔开。</p>
-        <p>【输出描述】</p>
-        <p>n行，每行一个整数，分别表示每次循环时1出现的次数。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>信息老师的前缀和</p>
-        <p>1~10： 1出现的次数：2</p>
-        <p>【输入样例】</p>
-        <p>1 2 3 4 5 6 7 8 9 10</p>
-        <p>3</p>
-        <p>1 10</p>
-        <p>20~30：1出现的次数：1</p>
-        <p>20 30</p>
-        <p>100 110 20 21 22 23 24 25 26 27 28 29 30</p>
-        <p>【输出样例】</p>
-        <p>2</p>
-        <p>100~110：1出现的次数：13</p>
-        <p>1</p>
-        <p>100 101 102 103 104 105 106 107 108 109 110</p>
-        <p>13</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>预处理</p>
-        <p>预先算出1~100000每个数有多少个1：</p>
-        <p>1~100000:</p>
-        <p>0 1 2 3 4 5 6 ... 10 11 12 13 14 15 .. 101 102 ...</p>
-        <p>.</p>
-        <p>数组a保存每个数字中1出现的次数:</p>
-        <p>0 1 0 0 0 0 0 ... 1 2 1 1 1 1 .. 2 1 ...</p>
-        <p>.</p>
-        <p>1 7 3</p>
-        <p>计算1~5之间1出现的次数：1</p>
-        <p>计算10~15之间1出现的次数：7</p>
-        <p>计算101~102之间1出现的次数：3</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>预处理</p>
-        <p>数组a保存每个数字中1出现的次数:</p>
-        <p>0 1 0 0 0 0 0 0 0 0 1 2 ...</p>
-        <p>0 1 2 3 4 5 6 7 8 9 10</p>
-        <p>11 ...</p>
-        <p>使用前缀和数组sum:</p>
-        <p>0 1 1 1 1 1 1 1 1 1 2 4 ...</p>
-        <p>0 1 2 3 4 5 6 7 8 9 10</p>
-        <p>11 ...</p>
-        <p>sum[1] = sum[1]</p>
-        <p>sum[2] = sum[2] + sum[1]</p>
-        <p>sum[3] = sum[3] + sum[2] + sum[1]</p>
-        <p>......</p>
-        <p>sum[3] 表示1~3范围内，1累计出现的次数</p>
-        <p>sum[6] 表示1~6范围内，1累计出现的次数</p>
-        <p>sum[6]-sum[3] -> 4~6范围内，1累计出现的次数</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 预先算出1~100000每个数有多少个1。</p>
-        <p>int sum[100005]={0};</p>
-        <p>前缀和数组</p>
-        <p>return cnt;</p>
-        <p>}</p>
-        <p>}</p>
-        <div class="code-block">
-            //func函数求当前数字有多少个1<br>
-            for(int i=1;i&lt;=100000;i++){<br>
-            int func(int x){<br>
-            //求当前数字有多少个1<br>
-            int cnt=0;<br>
-            int cnt=func(i); while(x!=0){<br>
-            if(x%10==1)cnt++;<br>
-            sum[i]=sum[i-1]+cnt;<br>
-            x/=10;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>② 输入查询次数n，每次查询的区间。</p>
-        <p>③ 一边输入，一边计算本次查询的区间范围内1出现的次数。</p>
-        <p>int n;</p>
-        <p>cin>>n;</p>
-        <p>int a,b;</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>1~a-1范围内1出现的次数</p>
-        <p>cin>>a>>b;</p>
-        <p>cout<<sum[b]-sum[a-1]<<endl;</p>
-        <p>}</p>
-        <p>1~b范围内1出现的次数</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>int func(int x){</p>
-        <p>int n;</p>
-        <p>int cnt=0;</p>
-        <p>cin>>n;</p>
-        <p>while(x!=0){</p>
-        <p>int a,b;</p>
-        <p>if(x%10==1)cnt++;</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>x/=10;</p>
-        <p>cin>>a>>b;</p>
-        <p>}</p>
-        <p>cout<<sum[b]-sum[a-1]<<endl;</p>
-        <p>return cnt;</p>
-        <p>}</p>
-        <p>}</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            int main(){<br>
-            for(int i=1;i&lt;=100000;i++){<br>
-            #include &lt;bits/stdc++.h&gt;<br>
-            int cnt=func(i);<br>
-            using namespace std;<br>
-            sum[i]=sum[i-1]+cnt;<br>
-            int sum[100005];<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

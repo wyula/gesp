@@ -1,36 +1,6 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++二级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第五课</h2>
-    <div class="slide-content">
-        <p>数 学 函 数</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 常用的数学函数</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>数学函数</p>
-        <p>头文件中<cmath> 或 <math.h>声明了很多函数来执行数学运算</p>
-        <p>数学函数 作用</p>
-        <p>abs() 计算一个数的绝对值</p>
-        <p>pow() 计算幂</p>
-        <p>sqrt() 计算数字的平方根</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在使用C++语言编写程序时，不能使用sqrt、 abs等数学函数，包含<cmath>或<math.h>头文件后就能 够使用了。</div>
+        <div class="quiz-question">（2023年6月）在使用C++语言编写程序时，不能使用sqrt、abs等数学函数，包含<cmath>或<math.h>头文件后就能够使用了。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -44,43 +14,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】sqrt、abs等数学函数声明在<cmath>或<math.h>头文件中，包含这些头文件后才能使用这些函数。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>绝对值</p>
-        <p>绝对值：指一个数在数轴上所对应点到原点的距离</p>
-        <p>1 1</p>
-        <p>-5 -4 -3 -2 -1 0 1 2 3 4 5</p>
-        <p>原点</p>
-        <p>绝对值 绝对值</p>
-        <p>-1 1 -4 4</p>
-        <p>绝对值 绝对值</p>
-        <p>1 1 4 4</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>求绝对值函数</p>
-        <p>作用: 计算一个数（整数、小数）的绝对值。</p>
-        <p>语法格式: abs(x)</p>
-        <p>说明：abs函数的返回值类型与传入的参数类型相同</p>
-        <p>abs(-2); 2</p>
-        <p>abs(2); 2</p>
-        <p>abs(-3.14); 3.14</p>
-        <p>abs(3.14); 3.14</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 如下哪个函数是计算一个数的绝对值( B )。</div>
+        <div class="quiz-question">课堂练习 如下哪个函数是计算一个数的绝对值( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -102,14 +43,14 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】abs函数用于计算绝对值，sqrt用于计算平方根，min用于求最小值，pow用于计算幂。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 假设 j=4，下面哪个选项是 abs(4j-5) 的结果( A )</div>
+        <div class="quiz-question">课堂练习 假设 j=4，下面哪个选项是 abs(4*j-5) 的结果( )</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -131,31 +72,14 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】j=4时，4*j-5=4*4-5=11，abs(11)=11。绝对值函数返回非负数。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>幂函数</p>
-        <p>作用: 计算x（底数）的y（指数）次幂。</p>
-        <p>语法格式: pow(x,y)</p>
-        <p>说明：pow()函数返回值为double类型</p>
-        <p>指数</p>
-        <p>23</p>
-        <p>2×2×2 8</p>
-        <p>底数</p>
-        <p>pow(2，3); 8</p>
-        <p>pow(4，2); 16</p>
-        <p>pow(3，3); 27</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 与数学表达式 xn ÷ (2x - 1) 对应的C++语言表达式是( C )。</div>
+        <div class="quiz-question">课堂练习 与数学表达式 x^n ÷ (2x - 1) 对应的C++语言表达式是( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -177,31 +101,14 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】C++中没有**运算符，求幂需要使用pow函数，pow(x,n)表示x的n次方。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>求平方根函数</p>
-        <p>作用: 计算一个数（整数，小数）的平方根。</p>
-        <p>语法格式: sqrt(x)</p>
-        <p>说明：sqrt()函数返回值为double类型</p>
-        <p>22 4</p>
-        <p>4的平方根</p>
-        <p>32 9</p>
-        <p>9的平方根</p>
-        <p>sqrt(4); 2</p>
-        <p>sqrt(9); 3</p>
-        <p>sqrt(81); 9</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）表达式sqrt(9.0)的计算结果为3，且 结果类型为int。</div>
+        <div class="quiz-question">（2023年6月）表达式sqrt(9.0)的计算结果为3，且结果类型为int。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -215,14 +122,14 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】sqrt函数的返回值类型是double，不是int。sqrt(9.0)的结果是3.0，类型为double。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年12月）以下C++代码用于输出1-100（含）的整数平方数 （完全平方数），如16是4的平方，横线处应填写( C ) for(int i=1; i<100+1; i++) if(__________________________)//此处填写代码 cout<<i<<" ";</div>
+        <div class="quiz-question">（2023年12月）以下C++代码用于输出1-100（含）的整数平方数（完全平方数），如16是4的平方，横线处应填写( ) for(int i=1; i<100+1; i++) if(__________________________)//此处填写代码 cout<<i<<" ";</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -244,71 +151,14 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 其他常用的函数</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>随机数函数</p>
-        <p>作用：返回一个 0~RAND_MAX 之间的整数。</p>
-        <p>（RAND_MAX 最小是 32767 ）</p>
-        <p>语法格式：rand()</p>
-        <p>说明：所在头文件<cstdlib></p>
-        <p>cout<< rand(); 3</p>
-        <p>3</p>
-        <p>多次运行结果相同</p>
-        <p>3</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>srand()函数设置随机种子</p>
-        <p>srand()</p>
-        <p>作用：设置随机种子，根据不同参数可以产生不同的种子，令rand()每</p>
-        <p>次生成的随机整数不同。</p>
-        <p>参数：一般传入time(0)，返回值为1970年1月1日至今所经历的时间。</p>
-        <p>srand(time(0)); 使用 函数之</p>
-        <p>rand()</p>
-        <p>前</p>
-        <p>cout<< rand(); 3</p>
-        <p>0 多次运行结果不同</p>
-        <p>4</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>生成指定范围内的随机整数</p>
-        <p>生成指定范围(a~b)内的一个随机整数</p>
-        <p>语法格式：a + rand() % (b-a+1)</p>
-        <p>起始值 终止值</p>
-        <div class="code-block">
-            //生成0~4之间的整数<br>
-            简写<br>
-            0 + rand()% (4-0+1)； rand()% 5； 3<br>
-            //生成1~5之间的整数<br>
-            简写<br>
-            1 + rand()% (5-1+1)； 1 + rand()% 5； 5<br>
-            //生成5~10之间的整数<br>
-            简写<br>
-            5 + rand()% (10-5+1)； 5 + rand()% 6； 8<br>
+            【解析】判断完全平方数的方法是：计算i的平方根并取整，再将其平方后与i比较。如果相等，则i是完全平方数。选项A和D使用了赋值号=而非比较号==，语法错误。选项B虽然能判断整数平方根，但不如选项C直接判断。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年12月）在C++代码中，执行 srand(0) 后连续两 次执行 rand() 的结果相等。</div>
+        <div class="quiz-question">（2023年12月）在C++代码中，执行 srand(0) 后连续两次执行 rand() 的结果相等。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -322,14 +172,14 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】srand(0)设置固定种子后，每次程序运行时rand()生成的随机数序列相同，但连续两次调用rand()的结果是不同的，因为随机数生成器会内部状态。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 如下选项中，哪个能随机生成4~25之间的一个整数( C )。</div>
+        <div class="quiz-question">课堂练习 如下选项中，哪个能随机生成4~25之间的一个整数( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -351,14 +201,14 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】生成a~b范围内随机整数的公式是：a + rand() % (b-a+1)。对于4~25，范围是25-4+1=22，所以公式是4 + rand() % 22。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 在使用rand()函数时需要导入以下哪个头文件( D )。</div>
+        <div class="quiz-question">课堂练习 在使用rand()函数时需要导入以下哪个头文件( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -380,14 +230,14 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】rand()函数声明在<cstdlib>头文件中。<cmath>包含数学函数，<algorithm>包含算法函数如min/max。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 补全横线处的代码，令程序能够生成10个1~1000之间的整 数，要求每次随机生成的数字不同( A )。 #include <iostream> #include <cstdlib> using namespace std;</div>
+        <div class="quiz-question">课堂练习 补全横线处的代码，令程序能够生成10个1~1000之间的整数，要求每次随机生成的数字不同( )。 #include <iostream> #include <cstdlib> using namespace std;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -401,110 +251,14 @@
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】使用srand(time(0))可以设置随时间变化的种子，使每次程序运行时生成不同的随机数序列。srand(1)和srand(0)都会生成固定的随机数序列。
         </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>判断勾股数</p>
-        <p>【问题描述】</p>
-        <p>勾股数是很有趣的数学概念。如果有三个正整数a、b、c，满足a2+b2=c2，而且</p>
-        <p>1≤a≤b≤c，我们就将a、b、c构成的一组数称为勾股数。你能通过编程，判断</p>
-        <p>输入的三个数是否为勾股数么？</p>
-        <p>【输入描述】</p>
-        <p>输入一行，包含三个正整数a,b,c，每个数字之间使用一个空格分隔。</p>
-        <p>(1≤a≤b≤c≤100)</p>
-        <p>【输出描述】</p>
-        <p>是勾股数则输出"YES"，不是则输出"NO"。</p>
-        <p>【输入样例1】</p>
-        <p>3 4 5</p>
-        <p>【输出样例1】</p>
-        <p>YES</p>
-        <p>【输入样例2】</p>
-        <p>6 10 23</p>
-        <p>【输出样例2】</p>
-        <p>NO</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入三个正整数(1≤a≤b≤c≤100)。</p>
-        <p>int a,b,c;</p>
-        <p>cin>>a>>b>>c;</p>
-        <p>② 判断a、b、c能否构成一组勾股数。</p>
-        <p>勾股数成立条件：a2+b2=c2</p>
-        <p>if(pow(a,2)+pow(b,2)==pow(c,2))</p>
-        <p>cout<<"YES";</p>
-        <p>else</p>
-        <p>cout<<"NO";</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            #include &lt;cmath&gt; 提供pow函数<br>
-            using namespace std;<br>
-            int main(){<br>
-            int a,b,c;<br>
-            cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;<br>
-            if(pow(a,2)+pow(b,2)==pow(c,2))<br>
-            cout&lt;&lt;"YES";<br>
-            else<br>
-            cout&lt;&lt;"NO";<br>
-            return 0;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>max函数</p>
-        <p>作用: 计算两个数（整数、小数、字符）中较大的数。</p>
-        <p>语法格式: max(x, y)</p>
-        <p>说明：1) x和y必须是同一类型的数据。</p>
-        <p>2) max函数的返回值类型与传入的参数类型相同。</p>
-        <p>3) 所在头文件<algorithm></p>
-        <p>max(5,10); 10</p>
-        <p>max(3.14,5.8); 5.8</p>
-        <p>max('A','C'); 'C'</p>
-        <p>比较ASCII码值</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>min函数</p>
-        <p>作用: 计算两个数（整数、小数、字符）中较小的数。</p>
-        <p>语法格式: min(x, y)</p>
-        <p>说明：1）x和y必须是同一类型的数据。</p>
-        <p>2) min函数的返回值类型与传入的参数类型相同。</p>
-        <p>3）所在头文件<algorithm></p>
-        <p>min(5,10); 5</p>
-        <p>min(3.14,5.8); 3.14</p>
-        <p>min('A','C'); 'A'</p>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 现有一行代码：cout<<max(10, 20.5); 这行代码输出的 结果是20.5。</div>
+        <div class="quiz-question">课堂练习 现有一行代码：cout<<max(10, 20.5); 这行代码输出的结果是20.5。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -518,14 +272,14 @@
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】max函数要求两个参数类型相同。10是int类型，20.5是double类型，参数类型不一致会导致编译错误。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 现要求使用min函数找出a、b、c三个变量中的较小值， 可以通过cout<<min(min(a,b),c)；这行代码来实现。</div>
+        <div class="quiz-question">课堂练习 现要求使用min函数找出a、b、c三个变量中的较小值，可以通过cout<<min(min(a,b),c)；这行代码来实现。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="11" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -539,14 +293,14 @@
         <div class="quiz-feedback" id="feedback-11"></div>
         <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】min函数每次只能比较两个数。要找出三个数中的最小值，可以嵌套使用min函数：min(min(a,b),c)，先比较a和b取较小值，再与c比较。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 在使用min函数时需要导入以下哪个头文件( C )。</div>
+        <div class="quiz-question">课堂练习 在使用min函数时需要导入以下哪个头文件( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="12" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -568,7 +322,7 @@
         <div class="quiz-feedback" id="feedback-12"></div>
         <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】min和max函数声明在<algorithm>头文件中。<cmath>和<math.h>包含数学函数，<iostream>包含输入输出函数。
         </div>
     </div>
 </div>

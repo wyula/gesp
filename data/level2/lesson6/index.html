@@ -1,34 +1,4 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++二级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第六课</h2>
-    <div class="slide-content">
-        <p>A S C I I 编 码</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 ASCII编码</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>ASCII编码表</p>
-        <p>ASCII码值：0~127</p>
-        <p>重点记忆：</p>
-        <p>阿拉伯数字0：48</p>
-        <p>大写字母A：65</p>
-        <p>小写字母a：97</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（样题）汉字没有对应的ASCII码。</div>
         <div class="quiz-options">
@@ -44,14 +14,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】ASCII码只包含0~127的字符，包括英文字母、数字和基本符号，不包含汉字。汉字使用GB2312、GBK、UTF-8等编码。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果 a 为 char 类型的变量，下列哪个表达式 可以正确判断"a 是数字"?( A )</div>
+        <div class="quiz-question">（2023年6月）如果 a 为 char 类型的变量，下列哪个表达式可以正确判断"a 是数字"?( )</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -73,30 +43,14 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】判断字符是否为数字，需要判断其ASCII码是否在'0'(48)到'9'(57)之间。选项A使用逻辑与运算符&&连接两个比较条件，是正确的写法。选项C的写法在C++中会先计算'0'<=a，结果为bool类型，再与'9'比较，是错误的。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>字符与数字运算</p>
-        <p>字符类型数据可以像整数一样进行运算。</p>
-        <p>参与运算的实际上是字符的ASCII码，都是整数。</p>
-        <p>char a = 'A';</p>
-        <p>68</p>
-        <p>cout << a+3 << endl;</p>
-        <p>char b = 'B';</p>
-        <p>64</p>
-        <p>cout << b-2 << endl;</p>
-        <p>字符与整数之间进行运算的结果是整数!!!</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）如果a是char类型的变量，且a的值为'2', 则下列哪条语句执行后，a的值不会变为'3'?（ B ）</div>
+        <div class="quiz-question">（2023年3月）如果a是char类型的变量，且a的值为'2', 则下列哪条语句执行后，a的值不会变为'3'?（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -118,39 +72,43 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B的a+1只是计算表达式的值，并没有将结果赋值给a，所以a的值不会改变。其他选项都有赋值操作或自增操作，会改变a的值。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）在下列代码的横线处填写( D )，可以使得输出是5。 #include <iostream> using namespace std; int main(){</div>
+        <div class="quiz-question">（2023年3月）在下列代码的横线处填写( )，可以使得输出是5。 #include <iostream> using namespace std; int main(){ int cnt=0; for(char ch='1'; ch<='9'; ch++) if(_______) cnt++; cout<<cnt<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>ch<'5' int cnt=0; for(char ch='1'; ch<='9'; ch++) B. ch>=5 if(_______) //此处填入代码</span>
+                <span>ch<'5'</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>ch>='4' cnt++; cout<<cnt<<endl;</span>
+                <span>B</span>
+                <span>ch>=5</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>ch>='4'</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>ch%2==1 return 0; }</span>
+                <span>ch%2==1</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】循环从'1'到'9'共9个字符。选项D的条件ch%2==1判断字符的ASCII码是否为奇数。'1'(49)、'3'(51)、'5'(53)、'7'(55)、'9'(57)都是奇数，共5个，所以cnt=5。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a为char类型的变量，且取值为大写字 母'F'，则执行语句a=a+1；后，a的值会变为大写字母'G'。</div>
+        <div class="quiz-question">（2023年6月）如果a为char类型的变量，且取值为大写字母'F'，则执行语句a=a+1；后，a的值会变为大写字母'G'。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -164,14 +122,14 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】'F'的ASCII码是70，加1后变为71，71对应的字符是'G'。大写字母的ASCII码是连续的（A-Z：65-90），所以a+1会正确变为下一个字母。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a为char类型的变量，且a的值为'C'（已 知'C'的ASCII码为67）则执行cout<<(a+2);会输出( D )。</div>
+        <div class="quiz-question">（2023年6月）如果a为char类型的变量，且a的值为'C'（已知'C'的ASCII码为67）则执行cout<<(a+2);会输出( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -193,29 +151,14 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】字符与整数运算时，使用的是字符的ASCII码。a='C'=67，a+2=69。由于结果是整数类型，cout会输出69而不是字符'E'。要输出'E'需要强制类型转换：cout<<char(a+2)。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>字符与字符运算</p>
-        <p>字符类型数据之间也可以进行运算。</p>
-        <p>参与运算的实际上也是字符的ASCII码，都是整数。</p>
-        <p>char c1 = 'c';</p>
-        <p>char c2 = 'a';</p>
-        <p>2</p>
-        <p>cout << c1-c2 << endl;</p>
-        <p>cout << c1+c2 << endl; 196</p>
-        <p>字符与字符之间进行运算的结果也是整数!!!</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）如果a为char类型的变量，且取值为小写 字母，则执行语句a=a-'a'+'A';后，a的值会变为与原值 对应的大写字母。</div>
+        <div class="quiz-question">（2023年3月）如果a为char类型的变量，且取值为小写字母，则执行语句a=a-'a'+'A';后，a的值会变为与原值对应的大写字母。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -229,61 +172,14 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】小写字母a-z的ASCII码是97-122，大写字母A-Z是65-90。a-'a'计算出该字母在字母表中的位置（0-25），再加上'A'的ASCII码65，就得到对应的大写字母。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">02 数据类型转换</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>自动数据类型转换</p>
-        <p>① 赋值运算时的自动转换：</p>
-        <p>int a='5';</p>
-        <p>53</p>
-        <p>cout<<a<<endl; int类型</p>
-        <p>int b=3.125;</p>
-        <p>3</p>
-        <p>cout<<b <<endl; int类型</p>
-        <p>char c=66;</p>
-        <p>B</p>
-        <p>cout<<c<<endl; char类型</p>
-        <p>double d='A';</p>
-        <p>65.0</p>
-        <p>cout<<d<<endl; double类型</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>自动数据类型转换</p>
-        <p>② 算术运算时的自动转换： 转换规则：小类型向大类型转换</p>
-        <p>int a=5;</p>
-        <p>char</p>
-        <p>double b=3.14 ;</p>
-        <p>cout<<a+b<<endl; 8.14 double类型 int</p>
-        <p>char c='A';</p>
-        <p>long long</p>
-        <p>70</p>
-        <p>cout<<a+c<<endl; int类型</p>
-        <p>cout<<a+b+c<<endl; 73.14 double类型 float</p>
-        <p>char s;</p>
-        <p>double</p>
-        <p>s='A'+5;</p>
-        <p>F</p>
-        <p>char类型</p>
-        <p>cout<<s<<endl;</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）表达式(10.0 / 2)的计算结果为5.0，且 结果类型为double。</div>
+        <div class="quiz-question">（2023年3月）表达式(10.0 / 2)的计算结果为5.0，且结果类型为double。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -297,14 +193,14 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】10.0是double类型，2是int类型。在运算时，int会自动转换为double，所以结果是5.0，类型为double。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）如果a、b、c和d都是int类型的变量， 则下列哪个表达式能够正确计算他们的平均值?( C )</div>
+        <div class="quiz-question">（2023年3月）如果a、b、c和d都是int类型的变量，则下列哪个表达式能够正确计算他们的平均值?( )</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -326,14 +222,14 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】整数相除会进行截断取整。选项C使用4.0（double类型），会使整数和变为double类型，从而进行浮点除法，得到精确的平均值。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）下列关于C++语言的叙述，正确的是?( B )</div>
+        <div class="quiz-question">（2023年6月）下列关于C++语言的叙述，正确的是?( )</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -345,24 +241,24 @@
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>计算两个int类型变量相乘时，如果乘积超出了int类型 的取值范围，程序会报错崩溃。</span>
+                <span>计算两个int类型变量相乘时，如果乘积超出了int类型的取值范围，程序会报错崩溃。</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>计算两个double类型变量相除时，如果除数的值为0.0， 程序会报错崩溃。</span>
+                <span>计算两个double类型变量相除时，如果除数的值为0.0，程序会报错崩溃。</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】选项B正确。int类型变量相乘结果仍是int类型。选项A错误，char可以赋值给int。选项C错误，整型溢出是未定义行为，不会报错崩溃。选项D错误，double除以0.0得到无穷大或NaN，不会崩溃。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果用两个int类型的变量a和b分别表达平 行四边形的两条边长，用int类型的变量h表达a边对应的高， 则下列哪个表达式不能用来计算b边对应的高?( A )</div>
+        <div class="quiz-question">（2023年6月）如果用两个int类型的变量a和b分别表达平行四边形的两条边长，用int类型的变量h表达a边对应的高，则下列哪个表达式不能用来计算b边对应的高?( )</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -384,7 +280,7 @@
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】平行四边形面积S=a*h=b*h_b，所以b边的高h_b=a*h/b。选项A先计算a/b（整数除法会截断），再乘以(0.0+h)，结果错误。其他选项都能正确计算。
         </div>
     </div>
 </div>
@@ -405,32 +301,14 @@
         <div class="quiz-feedback" id="feedback-11"></div>
         <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>强制数据类型转换</p>
-        <p>强制数据类型转换格式一: （数据类型）变量 强制数据类型转换格式二: 数据类型（变量或表达式）</p>
-        <div class="code-block">
-            //将变量a的值转化为char类型 //将变量a的值转化为char类型<br>
-            int a=65; int a=65;<br>
-            A A<br>
-            cout&lt;&lt;(char) a&lt;&lt;endl; cout&lt;&lt;char (a)&lt;&lt;endl;<br>
-            //将数值65转化为char类型 //将表达式a+b的结果转化为char类型<br>
-            cout&lt;&lt;(char) 65&lt;&lt;endl; A int b=1;<br>
-            B<br>
-            cout&lt;&lt;char (a+b)&lt;&lt;endl;<br>
+            【解析】7.8是double类型，2是int类型。运算时2转换为double，结果3.9也是double类型，不是float。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a是double类型的变量，而且值为3.5， 则表达式a*10的计算结果为35，且结果类型为int 。</div>
+        <div class="quiz-question">（2023年6月）如果a是double类型的变量，而且值为3.5，则表达式a*10的计算结果为35，且结果类型为int。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="12" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -444,14 +322,14 @@
         <div class="quiz-feedback" id="feedback-12"></div>
         <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】double乘以int，结果仍是double类型。a*10=35.0，类型为double，不是int。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a为int类型的变量，b为char类型的变量， 则下列哪个语句不符合C++语法( D )。</div>
+        <div class="quiz-question">（2023年6月）如果a为int类型的变量，b为char类型的变量，则下列哪个语句不符合C++语法( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="13" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -473,39 +351,43 @@
         <div class="quiz-feedback" id="feedback-13"></div>
         <button class="btn-submit" id="submit-13" onclick="coursePlayer.submitQuiz(13)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-13">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项D错误。强制类型转换的结果是右值，不能作为赋值语句的左值。正确的写法应该是b=(char)a;或者a=(int)b;。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在下列代码的横线处填写( D )，使得输出是9。 #include <iostream></div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写( )，使得输出是9。 #include <iostream> using namespace std; int main(){ char a='3', b='6'; cout<<________; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="14" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>(a+b) using namespace std; int main(){ B. (a+b-'0') char a='3', b='6';</span>
+                <span>(a+b)</span>
             </div>
             <div class="quiz-option" data-quiz-index="14" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>(char)(a+b) cout<<________; //此处填入代码 return 0;</span>
+                <span>B</span>
+                <span>(a+b-'0')</span>
             </div>
             <div class="quiz-option" data-quiz-index="14" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>(char)(a+b)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="14" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>(char)(a+b-'0') }</span>
+                <span>(char)(a+b-'0')</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-14"></div>
         <button class="btn-submit" id="submit-14" onclick="coursePlayer.submitQuiz(14)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-14">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】'3'的ASCII码是51，'6'是54。a+b=105。要输出字符'9'（ASCII码57），需要计算：a+b-'0'=51+54-48=57='9'。再强制转换为char类型即可输出字符9。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）C++表达式 int(-123.123 / 10) 的值是( D )。</div>
+        <div class="quiz-question">（2023年9月）C++表达式 int(-123.123 / 10) 的值是( )。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="15" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -527,96 +409,7 @@
         <div class="quiz-feedback" id="feedback-15"></div>
         <button class="btn-submit" id="submit-15" onclick="coursePlayer.submitQuiz(15)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-15">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】-123.123 / 10 = -12.3123，强制转换为int类型时截断小数部分，结果为-12。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>变换密码</p>
-        <p>【问题描述】</p>
-        <p>一密码变换规则如下：一个正整数对应一个字符；</p>
-        <p>如果该数对123取余的值在97-122范围，将余数作为变换后字符密码的ASCII码，此时变</p>
-        <p>换后的字符密码为小写字母；</p>
-        <p>如果变换不了小写字母，将该数对91取余，若余数在65-90范围，依旧将余数作为变换</p>
-        <p>后字符密码的ASCII码，此时变换后的字符密码为大写字母；</p>
-        <p>如果变换不了大小写字母，直接变换为"*"。</p>
-        <p>输入一个正整数，输出变换后的字符。</p>
-        <p>【输入描述】</p>
-        <p>输入一个正整数n(1≤n≤1000)，表示原始密码。</p>
-        <p>【输出描述】</p>
-        <p>输出变换后的密码。</p>
-        <p>【输入样例】</p>
-        <p>97 ≤ 42%123 ≤ 122</p>
-        <p>42</p>
-        <p>65 ≤ 42%91 ≤ 90</p>
-        <p>【输出样例】</p>
-        <p>*</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>1、创建变量n保存整数密码。</p>
-        <p>int n;</p>
-        <p>cin>>n;</p>
-        <p>2、将整数密码变换成字符密码。</p>
-        <p>变换规则：</p>
-        <p>如果 97 ≤ (n%123) ≤ 122</p>
-        <p>变换后字符密码的ASCII码：n%123；</p>
-        <p>否则如果 65 ≤ (n%91) ≤ 90</p>
-        <p>变换后字符密码的ASCII码：n%91；</p>
-        <p>否则 变换为"*"</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>2、将整数密码变换成字符密码。</p>
-        <p>char b; //存储字符密码</p>
-        <p>变换规则：</p>
-        <p>if(n%123>=97&&n%123<=122)</p>
-        <p>如果 97 ≤ (n%123) ≤ 122</p>
-        <p>b=n%123;</p>
-        <p>else if(n%91>=65&&n%91<=90) 变换后字符密码的ASCII码：n%123；</p>
-        <p>b=n%91;</p>
-        <p>否则如果 65 ≤ (n%91) ≤ 90</p>
-        <p>else</p>
-        <p>b='*'; 变换后字符密码的ASCII码：n%91；</p>
-        <p>cout<<b; 否则 变换为"*"</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <div class="code-block">
-            #include&lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main(){<br>
-            int n;<br>
-            cin&gt;&gt;n;<br>
-            char b;<br>
-            if(n%123&gt;=97&amp;&amp;n%123&lt;=122)<br>
-            b=n%123;<br>
-            else if(n%91&gt;=65&amp;&amp;n%91&lt;=90)<br>
-            b=n%91;<br>
-            else<br>
-            b='*';<br>
-            cout&lt;&lt;b;<br>
-            return 0;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

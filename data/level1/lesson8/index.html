@@ -1,51 +1,4 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++一级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第八课</h2>
-    <div class="slide-content">
-        <p>循 环 结 构 1</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 for循环</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>程序的三种结构</p>
-        <p>1 2</p>
-        <p>3</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>for循环</p>
-        <p>循环变量 循环条件 循环步长</p>
-        <p>for(表达式1;表达式2;表达式3) 语句；</p>
-        <p>• 表达式1：</p>
-        <p>1. 定义循环变量</p>
-        <p>2. 确定循环开始的值（0、1等）</p>
-        <p>3. 只执行一次</p>
-        <p>• 表达式2：</p>
-        <p>1. 条件成立，继续计数，执行循环语句</p>
-        <p>2. 条件不成立，结束计数，结束循环</p>
-        <p>• 表达式3：</p>
-        <p>1. 确定循环间隔（循环步长）</p>
-        <p>• 循环体：循环执行的语句，可以是一条语句，也可以是复合语句</p>
-        <p>• 循环是在"表达式2"、"表达式3"和循环体之间进行的。</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（2023年9月） C++的循环语句for(int i=0; i<10; i+=2) 表示 i从0开始到10结束但不包含10，间隔为 2。</div>
         <div class="quiz-options">
@@ -61,7 +14,7 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】for循环中，表达式1初始化循环变量，表达式2是循环条件，表达式3是循环步长。当表达式2为false时，循环结束。i从0开始，每次加2，当i=10时，条件i<10不成立，循环结束，所以i的取值为0,2,4,6,8。
         </div>
     </div>
 </div>
@@ -82,24 +35,28 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】for循环是遍历数组的常用方式，循环变量从0到数组长度-1。
+            【解析】for循环先判断条件，再执行循环体。如果初始条件就不满足，循环体不会执行。只有do-while循环的循环体至少执行一次。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）执行以下C++语言程序后，输出结果是（ A ）。 int n=5,s=1;</div>
+        <div class="quiz-question">（2023年9月）执行以下C++语言程序后，输出结果是（ ）。 int n=5,s=1; for(;n=0;n--) s*=n; cout<<s<<endl;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>1 for(;n=0;n--) s*=n; B. 0 cout<<s<<endl;</span>
+                <span>1</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>0</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
                 <span>120</span>
             </div>
-            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
                 <span>无法确定</span>
             </div>
@@ -107,343 +64,239 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】for循环条件是n=0，这是一个赋值表达式，结果为0（false），所以循环体不会执行，s保持初始值1。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）在下列代码的横线处填写（ B ），可以使得输出是“1248”。 每个数之间是2倍的关系 #include <iostream></div>
+        <div class="quiz-question">（2023年3月）在下列代码的横线处填写（ ），可以使得输出是“1248”。 #include <iostream> using namespace std; int main(){ for(int i=1;i<=8; )//在此处填入代码 cout<<i; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>i++ using namespace std; int main(){ B. i*=2 for(int i=1;i<=8; )//在此处填入代码</span>
+                <span>i++</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>i*=2</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>i+=2 cout<<i; return 0; D. i*2 }</span>
+                <span>i+=2</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>i*2</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】输出是"1248"，每个数之间是2倍的关系（1→2→4→8）。所以循环步长应该是i*=2，即每次将i乘以2。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）下面C++代码段执行后的输出是（ C ）。 #include <iostream></div>
+        <div class="quiz-question">（2023年9月）下面C++代码段执行后的输出是（ ）。 #include <iostream> using namespace std; int main(){ int cnt=0; for(int i=1;i<=5;i++) cnt=cnt+1; cout<<cnt; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>1 using namespace std; int main(){ B. 4 int cnt=0;</span>
+                <span>1</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>5 for(int i=1;i<=5;i++) cnt=cnt+1; D. 10 每次循环cnt的值加1 cout<<cnt; return 0; }</span>
+                <span>5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>10</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】循环从i=1到i=5，共执行5次，每次cnt加1，所以cnt最终为5。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ B ）。 #include <iostream></div>
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ ）。 #include <iostream> using namespace std; int main(){ int tnt=0; for(int i=1;i<5;i+=2) tnt=tnt+i; cout<<tnt; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>2 using namespace std; int main(){ B. 4 int tnt=0; 循环间隔为2</span>
+                <span>2</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>9 for(int i=1;i<5;i+=2) tnt=tnt+i; D. 10 cout<<tnt; i tnt return 0; 1 1 } 3 4 5 循环结束</span>
+                <span>9</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>10</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】循环i从1开始，步长为2，i<5，所以i的取值为1和3。tnt = 0 + 1 + 3 = 4。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在下列代码的横线处填写（ D ），可以使得输出是正整 数1234各位数字的平方和。 #include <iostream></div>
+        <div class="quiz-question">（2023年9月）在下列代码的横线处填写（ ），可以使得输出是正整数1234各位数字的平方和。 #include <iostream> using namespace std; int main(){ int n=1234,s=0; for(;n;n/=10) s+= ;//在此处填入代码 cout<<s<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>n/10 using namespace std; int main(){</span>
+                <span>n/10</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>(n/10)*(n/10) int n=1234,s=0;</span>
+                <span>(n/10)*(n/10)</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>n%10 for(;n;n/=10) s+= ;//在此处填入代码</span>
+                <span>n%10</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>(n%10)*(n%10) cout<<s<<endl; return 0; 取出每一位数字：n%10 } 平方： (n%10)*(n%10)</span>
+                <span>(n%10)*(n%10)</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】n%10取出个位数字，(n%10)*(n%10)是该数字的平方。循环每次取出个位数字，计算平方并累加，然后n=n/10去掉个位。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年6月）累计相加</p>
-        <p>【问题描述】</p>
-        <p>输入一个正整数n，求形如：</p>
-        <p>1+(1+2)+(1+2+3)+(1+2+3+4)+…(1+2+3+4+5+…n)的累计相加。</p>
-        <p>【输入描述】</p>
-        <p>输入一个正整数。约定1≤n≤100。</p>
-        <p>【输出描述】</p>
-        <p>输出累计相加的结果。</p>
-        <p>【样例输入 1】 【样例输入 2】 【样例输入 3】</p>
-        <p>3 4 10</p>
-        <p>【样例输出 1】 【样例输出 2】 【样例输出 3】</p>
-        <p>10 20 220</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>1+(1+2)+(1+2+3)+(1+2+3+4)+…(1+2+3+4+5+…n)</p>
-        <p>1+2+3+4+5+…+(n-2)+(n-1)+n</p>
-        <p>n+1</p>
-        <p>n+1</p>
-        <p>n+1</p>
-        <p>1~n的累加和： (n+1) *n/2</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 定义变量n，输入一个正整数</p>
-        <p>int n;</p>
-        <p>cin>>n;</p>
-        <p>② 循环遍历n个数，计算累加和，将累加和保存到变量sum</p>
-        <p>int sum=0; i值 累加范围</p>
-        <p>for(int i=1;i<=n;i++)</p>
-        <p>1 1</p>
-        <p>sum+=(i+1)*i/2;</p>
-        <p>2 1~2</p>
-        <p>③ 输出结果 3 1~3</p>
-        <p>cout<<sum<<endl;</p>
-        <p>… …</p>
-        <p>n 1~n</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>写一写</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main(){<br>
-            int n;<br>
-            cin&gt;&gt;n;<br>
-            int sum=0;<br>
-            for(int i=1;i&lt;=n;i++)<br>
-            sum+=(i+1)*i/2;<br>
-            cout&lt;&lt;sum&lt;&lt;endl;<br>
-            return 0;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 for循环结合if-else语句</h2>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ B ），可以使得输出是“147”。 #include <iostream></div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使得输出是“147”。 #include <iostream> using namespace std; int main(){ for(int i=1;i<=8;i++) if( )//在此处填入代码 cout<<i; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>i%2==1 只有i为奇数才会输出 using namespace std; int main(){ B. i%3==1 ii值值 输输出出 for(int i=1;i<=8;i++)</span>
+                <span>i%2==1</span>
             </div>
             <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>i%3==1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>i=i+3 11 14 if( )//在此处填入代码 25 8 cout<<i; D. i+3 return 0; 39 循环结束 只要i+3的值不为0都成立， } 4 4 输出：12345678 5 6 7 7 8 9 循环结束</span>
+                <span>i=i+3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>i+3</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】输出是"147"，即i=1,4,7时输出。i%3==1时，i=1,4,7满足条件（1%3=1, 4%3=1, 7%3=1）。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）执行以下C++语言程序后，输出结果是（ C ）。 #include <iostream></div>
+        <div class="quiz-question">（2023年3月）执行以下C++语言程序后，输出结果是（ ）。 #include <iostream> using namespace std; int main(){ int sum=0; for(int i=1;i<=20;i++) if(i%3==0||i%5==0) sum+=i; cout<<sum<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>210 using namespace std; int main(){ B. 113 int sum=0;</span>
+                <span>210</span>
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>113</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>98 for(int i=1;i<=20;i++) if(i%3==0||i%5==0) D. 15 sum+=i; 是3或者是5的倍数 cout<<sum<<endl; 就进行累加 return 0; }</span>
+                <span>98</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>15</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】1-20中是3或5的倍数的数有：3,5,6,9,10,12,15,18,20。求和：3+5+6+9+10+12+15+18+20 = 98。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）执行以下C++语言程序后，输出结果是（ D ）。 #include <iostream></div>
+        <div class="quiz-question">（2023年6月）执行以下C++语言程序后，输出结果是（ ）。 #include <iostream> using namespace std; int main(){ int sum; for(int i=1;i<=20;i++) if(i%3==0||i%5==0) sum+=i; cout<<sum<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>63 using namespace std; int main(){ B. 98 int sum; 没有进行初始化</span>
+                <span>63</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>98</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>113 for(int i=1;i<=20;i++) if(i%3==0||i%5==0) D. 无法确定 sum+=i; cout<<sum<<endl; return 0; }</span>
+                <span>113</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>无法确定</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】sum变量没有初始化，未初始化的局部变量值是不确定的。每次累加时，sum的初始值未知，所以最终结果无法确定。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）下面C++代码用于求正整数的所有因数，即输出所有能 整除⼀个正整数的数。如输入10，则输出为1、2、5、10；输入12，则 输出为1、2、3、4、6、12；输入17，则输出为1、17。在横线处应填 入代码是（ D ）。 包含输入的数字 #include <iostream> using namespace std;</div>
+        <div class="quiz-question">（2023年9月）下面C++代码用于求正整数的所有因数，即输出所有能整除一个正整数的数。如输入10，则输出为1、2、5、10；输入12，则输出为1、2、3、4、6、12；输入17，则输出为1、17。在横线处应填入代码是（ ）。 #include <iostream> using namespace std; int main(){ int n=0; cout<<"请输入一个正整数："; cin>>n; for( )//此处填写代码 if(n%i==0) cout<<i<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>int i=1;i<n;i+1 int main(){ int n=0; B. int i=1;i<n+1;i+1 没有给i赋值 cout<<"请输入一个正整数：";</span>
+                <span>int i=1;i<n;i+1</span>
             </div>
             <div class="quiz-option" data-quiz-index="10" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>int i=1;i<n;i++ cin>>n; for( )//此处填写代码</span>
+                <span>B</span>
+                <span>int i=1;i<n+1;i+1</span>
             </div>
             <div class="quiz-option" data-quiz-index="10" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>int i=1;i<n;i++</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>int i=1;i<n+1;i++ if(n%i==0) cout<<i<<endl; return 0; }</span>
+                <span>int i=1;i<n+1;i++</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】要输出所有因数，包括n本身，所以循环条件应该是i<=n，即i<n+1。循环步长必须用i++，而不是i+1（i+1不会改变i的值）。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）长方形面积</p>
-        <p>【问题描述】</p>
-        <p>小明刚刚学习了如何计算长方形面积。他发现，如果一个长方形的长和宽都</p>
-        <p>是整数，它的面积一定也是整数。现在，小明想知道如果给定长方形的面积，</p>
-        <p>有多少种可能的长方形，满足长和宽都是整数？ 如果两个长方形的长相等、</p>
-        <p>宽也相等，则认为是同一种长方形。约定长方形的长大于等于宽。正方形是</p>
-        <p>长方形的特例，即长方形的长和宽可以相等。</p>
-        <p>【输入描述】</p>
-        <p>输入一行，包含一个整数，表示长方形的面积。约定 2 ≤ A ≤ 1000。</p>
-        <p>【输出描述】</p>
-        <p>输出一行，包含一个整数，表示有种可能的长方形。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年3月）长方形面积</p>
-        <p>【样例输入 1】 【样例输入 2】</p>
-        <p>4 6</p>
-        <p>【样例输出 1】 【样例输出 2】</p>
-        <p>2 2</p>
-        <p>宽 长 宽 长</p>
-        <p>1 4 1 6</p>
-        <p>2种 2种</p>
-        <p>2 2 2 3</p>
-        <p>3 3 2 重复</p>
-        <p>4 1 重复 4</p>
-        <p>5</p>
-        <p>6 1 重复</p>
-        <p>从1开始遍历，到宽×宽<=面积</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>写一写</p>
-        <p>① 定义变量area，保存输入的面积</p>
-        <p>int area=0;</p>
-        <p>cin>>area;</p>
-        <p>② 遍历所有宽的可能：1~宽×宽<=面积</p>
-        <p>③ 定义变量cnt统计个数</p>
-        <p>int cnt=0;</p>
-        <p>for(int w=1;w*w<=area;w++){</p>
-        <p>i如f(果a面re积a%对w=宽=0取)余 为0，说明能构成长方形</p>
-        <p>数 c量n加t+1+;</p>
-        <p>}</p>
-        <p>④ 输出结果</p>
-        <p>cout<<cnt<<endl;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>写一写</p>
-        <p>cout<<cnt<<endl;</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main(){<br>
-            int area=0,cnt=0;<br>
-            cin&gt;&gt;area;<br>
-            for(int w=1;w*w&lt;=area;w++){<br>
-            if(area%w==0)<br>
-            cnt++;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

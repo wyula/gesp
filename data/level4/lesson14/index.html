@@ -1,689 +1,173 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第十四课</h2>
-    <div class="slide-content">
-        <p>排 序 算 法 2</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 插入排序</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>插入排序（升序）</p>
-        <p>将待排序的数字依次插入到已有序的数列中，并仍然保持有序。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>对数组中的n个元素进行升序排序</p>
-        <p>内层循环</p>
-        <p>i 比较的数据</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>0 -</p>
-        <p>int x=a[i];</p>
-        <p>int j;</p>
-        <p>1 a[0]</p>
-        <p>外 for(j=i-1;j>=0;j--){</p>
-        <p>层 升 序 if(a[j]>x) a[j+1]=a[j];</p>
-        <p>2 a[1] a[0]</p>
-        <p>else break;</p>
-        <p>循</p>
-        <p>}</p>
-        <p>环 3 a[2] a[1] a[0]</p>
-        <p>a[j+1]=x;</p>
-        <p>4 a[3] a[2] a[1] a[0] }</p>
-        <p>… …</p>
-        <p>n-1 a[n-2] a[n-3] a[n-4] … a[0]</p>
-        <p>i-1 ~ 0</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>对数组中的n个元素进行降序排序</p>
-        <p>内层循环</p>
-        <p>i 比较的数据</p>
-        <p>for(int i=0;i<n;i++){</p>
-        <p>0 -</p>
-        <p>int x=a[i];</p>
-        <p>int j;</p>
-        <p>1 a[0]</p>
-        <p>外 for(j=i-1;j>=0;j--){</p>
-        <p>层 降 序 if(a[j]<x) a[j+1]=a[j];</p>
-        <p>2 a[1] a[0]</p>
-        <p>else break;</p>
-        <p>循</p>
-        <p>}</p>
-        <p>环 3 a[2] a[1] a[0]</p>
-        <p>a[j+1]=x;</p>
-        <p>4 a[3] a[2] a[1] a[0] }</p>
-        <p>… …</p>
-        <p>n-1 a[n-2] a[n-3] a[n-4] … a[0]</p>
-        <p>i-1 ~ 0</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 插入排序，是指将数据按照一定的顺序一个一个的插入到有序的 表中，最终得到的序列就是已经排序好的数据。</div>
+        <div class="quiz-question">（样题）在下列代码的横线处填写（ ），完成对有 n个int类型元素的数组 array由小到大排序。void InsertSort(int array[], int n){ for(int i=1;i<n;i++){ int t=array[i]; int j; for(j=i-1;j>=0;____) array[j+1]=array[j]; array[j+1]=t; }}</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>正确</span>
+                <span>j--</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>错误</span>
+                <span>j--</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>j--</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>j--</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序算法。插入排序需要将当前元素插入到已排序部分的正确位置，当array[j]>t时需要继续向前比较。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 若对n个元素进行插入排序的过程中，共需进行（ C ）趟。</div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），完成对有 n个int类型元素的数组 array由小到大排序。void InsertSort(int array[], int n){ for(int i=1;i<n;i++){ int t=array[i]; int j; for(j=i-1;j>=0;____) array[j+1]=array[j]; array[j+1]=t; }}</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>n</span>
+                <span>j--</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>n+1</span>
+                <span>j--</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>n-1</span>
+                <span>j--</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>2n</span>
+                <span>j--</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序算法。插入排序需要将当前元素插入到已排序部分的正确位置，当array[j]>t时需要继续向前比较。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 使用插入排序算法对序列18, 23, 19, 9, 23, 15 进行升序排序, 第 3 趟排序后的结果为9, 18, 19, 23, 23,15。</div>
+        <div class="quiz-question">课堂练习 使用插入排序对序列 5, 2, 9, 1, 5, 6 进行升序排序，请问第3趟排序后的结果是？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>正确</span>
+                <span>1, 2, 5, 9, 5, 6</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>错误</span>
+                <span>2, 5, 9, 1, 5, 6</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>1, 2, 5, 9, 5, 6</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>1, 2, 5, 5, 6, 9</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序的过程。初始序列：5,2,9,1,5,6。第1趟（i=1）：2,5,9,1,5,6。第2趟（i=2）：2,5,9,1,5,6（9已有序）。第3趟（i=3）：1,2,5,9,5,6。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">04</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法稳定性</p>
-        <p>在待排序数据中存在多个相同的数，排序后这些相同的</p>
-        <p>数先后顺序能够保持不变，则称排序算法是稳定的；否</p>
-        <p>则称为不稳定的。</p>
-        <p>① ②</p>
-        <p>5 1 1 0 4</p>
-        <p>① ② ② ①</p>
-        <p>0 1 1 4 5 0 1 1 4 5</p>
-        <p>稳定 不稳定</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>排序算法对比</p>
-        <p>排序算法 稳定性</p>
-        <p>选择排序 不稳定</p>
-        <p>冒泡排序 稳定</p>
-        <p>插入排序 稳定</p>
-        <p>快速排序 不稳定</p>
-        <p>归并排序 稳定</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）冒泡排序是一种稳定的排序算法。</div>
+        <div class="quiz-question">课堂练习 有如下序列 5,4,3,2,1，采用插入排序进行升序排序，请问第3趟排序之后的结果是？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>正确</span>
+                <span>2,3,4,5,1</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>错误</span>
+                <span>3,4,5,2,1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>2,3,4,5,1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>1,2,3,4,5</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序的过程。初始序列：5,4,3,2,1。第1趟（i=1）：4,5,3,2,1。第2趟（i=2）：3,4,5,2,1。第3趟（i=3）：2,3,4,5,1。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）排序算法的稳定性是指（ A ）</div>
+        <div class="quiz-question">课堂练习 有如下序列 9,2,8,6,3,4，采用插入排序进行升序排序，请问第2趟排序之后的结果是？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>相同元素在排序后的相对顺序保持不变</span>
+                <span>2,8,9,6,3,4</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>排序算法的性能稳定</span>
+                <span>2,9,8,6,3,4</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>排序算法对任意输入都有较好的效果</span>
+                <span>2,8,9,6,3,4</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>排序算法容易实现</span>
+                <span>2,6,8,9,3,4</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查插入排序的过程。初始序列：9,2,8,6,3,4。第1趟（i=1）：2,9,8,6,3,4。第2趟（i=2）：2,8,9,6,3,4。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）排序算法是稳定的（Stable Sorting），就是指排序算法可以保证，在待排 序数据中有两个相等记录的关键字 R 和 S（R 出现在 S 之前），在排序后的列表中 R 也一 定在 S 前。下面关于排序稳定性的描述，正确的是（ C ）</div>
+        <div class="quiz-question">课堂练习 有如下序列 5,1,3,4,2，采用插入排序进行升序排序，请问第3趟排序之后的结果是？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>冒泡排序是不稳定的。</span>
+                <span>1,3,4,5,2</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>插入排序是不稳定的。</span>
+                <span>1,3,5,4,2</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>选择排序是不稳定的。</span>
+                <span>1,3,4,5,2</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>以上都不正确。</span>
+                <span>1,2,3,4,5</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查插入排序的过程。初始序列：5,1,3,4,2。第1趟（i=1）：1,5,3,4,2。第2趟（i=2）：1,3,5,4,2。第3趟（i=3）：1,3,4,5,2。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>插入排序</p>
-        <p>【问题描述】</p>
-        <p>插入排序是一种非常常见且简单的排序算法。小 Z 是一名大一的新生，今天H老师刚刚</p>
-        <p>在上课的时候讲了插入排序算法。</p>
-        <p>假设比较两个元素的时间为O(1)，则插入排序可以O(n2)的时间复杂度完成长度为n的数</p>
-        <p>组的排序。不妨假设这 n 个数字分别存储在 a , a , …… , a 之中，则如下伪代码给出了</p>
-        <p>1 2 n</p>
-        <p>插入排序算法的一种最简单的实现方式。</p>
-        <p>这下面是 C/C++ 的示范代码：</p>
-        <p>for (int i = 1; i <= n; i++)</p>
-        <p>for (int j = i; j >= 2; j--)</p>
-        <p>if (a[j] < a[j-1]){</p>
-        <p>int t = a[j-1];</p>
-        <p>a[j-1] = a[j];</p>
-        <p>a[j] = t;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>插入排序</p>
-        <p>【问题描述】</p>
-        <p>为了帮助小 Z 更好的理解插入排序，H老师留下了这么一道家庭作业：</p>
-        <p>H老师给了一个长度为n的数组a，数组下标从1开始，并且数组中的所有元素均为非负整数。</p>
-        <p>小 Z 需要支持在数组a上的Q次操作，操作共两种，参数分别如下：</p>
-        <p>① x v：这是第一种操作，会将a的第x个元素，也就是a 的值，修改为 v。保证 1≤x≤n，</p>
-        <p>x</p>
-        <p>1≤v≤109。注意这种操作会改变数组的元素，修改得到的数组会被保留，也会影响后续</p>
-        <p>的操作。</p>
-        <p>② x：这是第二种操作，假设H老师按照上面的伪代码对a数组进行排序，你需要告诉H老</p>
-        <p>师原来a的第x个元素，也就是a ，在排序后的新数组所处的位置。保证 1≤x≤n。注意</p>
-        <p>x</p>
-        <p>这种操作不会改变数组的元素，排序后的数组不会被保留，也不会影响后续的操作。</p>
-        <p>H 老师不喜欢过多的修改，所以他保证类型 1 的操作次数不超过 5000。</p>
-        <p>小 Z 没有学过计算机竞赛，因此小 Z 并不会做这道题。他找到了你来帮助他解决这个问题。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>插入排序</p>
-        <p>【输入格式】</p>
-        <p>第一行，包含两个正整数 n, Q，表示数组长度和操作次数。</p>
-        <p>第二行，包含 n 个空格分隔的非负整数，其中第 i 个非负整数表示 a 。</p>
-        <p>i</p>
-        <p>接下来 Q 行，每行 2∼ 3 个正整数，表示一次操作，操作格式见【题目描述】。</p>
-        <p>【输出格式】</p>
-        <p>对于每一次类型为 2 的询问，输出一行一个正整数表示答案。</p>
-        <p>【输入样例】</p>
-        <p>3 4</p>
-        <p>3 2 1</p>
-        <p>2 3</p>
-        <p>1 3 2</p>
-        <p>对于所有测试数据，满足 ，</p>
-        <p>1≤n≤8000</p>
-        <p>2 2</p>
-        <p>1≤Q≤2</p>
-        <p>× 105，</p>
-        <p>1≤x≤n</p>
-        <p>， 1≤v,a≤109。</p>
-        <p>i</p>
-        <p>2 3</p>
-        <p>【输出样例】</p>
-        <p>1</p>
-        <p>1</p>
-        <p>2</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>3 2 1</p>
-        <p>【输入样例】</p>
-        <p>3个数 3 4 3次操作 下标：1 2 3</p>
-        <p>3 2 1</p>
-        <p>输入的3个数</p>
-        <p>2 3 表示原序列第三个位置 第一次操作： 1. 排序 1 2 3 2. 查询 1</p>
-        <p>1 3 2</p>
-        <p>下标：1 2 3</p>
-        <p>原序列第三个位</p>
-        <p>2 2</p>
-        <p>置的值修改为2</p>
-        <p>3 2 2</p>
-        <p>第二次操作： 修改</p>
-        <p>2 3</p>
-        <p>下标：1 2 3</p>
-        <p>2：表示查询</p>
-        <p>查询前要先稳定排序(升序) 第三次操作： 1. 排序 2 2 3 2. 查询 1</p>
-        <p>1：表示修改</p>
-        <p>下标： 1 2 3</p>
-        <p>第四次操作： 1. 排序 2 2 3 2. 查询 2</p>
-        <p>下标： 1 2 3</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>初始化相关操作</p>
-        <p>const int MAXN=8005;</p>
-        <p>题目中n值最大为8000</p>
-        <p>struct node{</p>
-        <p>int val,id;</p>
-        <p>} a[MAXN];</p>
-        <p>val为数据，id为下标</p>
-        <p>3 2 1</p>
-        <div class="code-block">
-            int main(){<br>
-            int n,q;<br>
-            下标：1 2 3<br>
-            scanf("%d%d",&amp;n,&amp;q);<br>
-            for(int i=1;i&lt;=n;i++){<br>
-            scanf("%d",&amp;a[i].val);<br>
-            a[i].id=i;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>对初始数据进行稳定排序</p>
-        <p>bool cmp(node x, node y) {</p>
-        <p>if (x.val != y.val) val升序</p>
-        <p>return x.val < y.val;</p>
-        <p>return x.id < y.id;</p>
-        <p>}</p>
-        <p>val相等，按id</p>
-        <p>int t[MAXN];</p>
-        <div class="code-block">
-            排序后 1 2 3 int main() {<br>
-            ...<br>
-            下标：1 2 3<br>
-            sort(a+1, a+n+1, cmp);<br>
-            for (int i=1;i&lt;=n;i++)<br>
-            t[a[i].id] = i;<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>对初始数据进行稳定排序</p>
-        <p>bool cmp(node x, node y) {</p>
-        <p>if (x.val != y.val)</p>
-        <p>return x.val < y.val;</p>
-        <p>3 2 1</p>
-        <p>原数组a： 排序后 1 2 3 return x.id < y.id;</p>
-        <p>： }</p>
-        <p>下标：1 2 3</p>
-        <p>int t[MAXN];</p>
-        <div class="code-block">
-            int main() {<br>
-            ...<br>
-            数组t：1 2 3 元素新位置<br>
-            stable_sort(a+1, a+n+1, cmp);<br>
-            下标：3 2 1 元素原位置<br>
-            for (int i=1;i&lt;=n;i++)<br>
-            t[a[i].id] = i;<br>
-            元素原位置 元素新位置<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>执行Q次操作</p>
-        <p>for(int i=1;i<=q;i++){</p>
-        <p>int opt;</p>
-        <p>scanf("%d",&opt);</p>
-        <p>if(opt==2){</p>
-        <p>}</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            //查询操作<br>
-            }else if(opt==1) {<br>
-            //修改操作<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>如果操作选项为2，则进行查询操作</p>
-        <p>元素原位置</p>
-        <p>if(opt==2){</p>
-        <p>scanf("%d",&x);</p>
-        <p>printf("%d\n",t[x]);</p>
-        <p>3 2 1</p>
-        <p>原数组a： 排序后 1 2 3 访问数组t</p>
-        <p>}else if(opt==1) {</p>
-        <p>下标：1 2 3</p>
-        <p>数组t：1 2 3 元素新位置</p>
-        <p>}</p>
-        <p>下标：3 2 1 元素原位置</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <p>第一次操作：</p>
-        <p>2 3</p>
-        <div class="code-block">
-            //修改操作<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>如果操作选项为1，则进行修改操作</p>
-        <p>if(opt==1){</p>
-        <p>元素原位置</p>
-        <p>int x, v;</p>
-        <p>scanf("%d%d", &x, &v);</p>
-        <p>a[t[x]].val = v;</p>
-        <p>for(int j=t[x];j>=2;j--)</p>
-        <p>if(cmp(a[j],a[j-1])){</p>
-        <p>node k=a[j];</p>
-        <p>a[j]=a[j-1];</p>
-        <p>a[j-1]=k;</p>
-        <p>}</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>如果操作选项为1，则进行修改操作</p>
-        <p>if(opt==1){</p>
-        <p>int x, v;</p>
-        <p>scanf("%d%d", &x, &v);</p>
-        <p>3 2 1</p>
-        <p>原数组a：</p>
-        <p>a[t[x]].val = v;</p>
-        <p>排序后:12 22 33</p>
-        <p>下标：1 2 3 for(int j=t[x];j>=2;j--)</p>
-        <p>if(cmp(a[j],a[j-1])){</p>
-        <p>数组t 1 2 3 元素新位置</p>
-        <p>node k=a[j];</p>
-        <p>下标：3 2 1 元素原位置</p>
-        <p>a[j]=a[j-1];</p>
-        <p>a[j-1]=k;</p>
-        <p>第二次操作：</p>
-        <p>}</p>
-        <p>1 3 2</p>
-        <p>元素原位置</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>如果操作选项为1，则进行修改操作</p>
-        <p>if(opt==1){</p>
-        <p>int x, v;</p>
-        <p>scanf("%d%d", &x, &v);</p>
-        <p>3 2 1</p>
-        <p>原数组a：</p>
-        <p>a[t[x]].val = v; 循环不执行</p>
-        <p>排序后: 2 2 3</p>
-        <p>下标：1 2 3 for(int j=t[x];j>=2;j--)</p>
-        <p>待排序元素</p>
-        <p>if(cmp(a[j],a[j-1])){</p>
-        <p>node k=a[j];</p>
-        <p>a[j]=a[j-1];</p>
-        <p>a[j-1]=k;</p>
-        <p>}</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>如果操作选项为1，则进行修改操作</p>
-        <p>if(opt==1){</p>
-        <p>int x, v;</p>
-        <p>scanf("%d%d", &x, &v);</p>
-        <p>a[t[x]].val = v;</p>
-        <p>3 2 1</p>
-        <p>原数组a： 2 2 3</p>
-        <p>...</p>
-        <p>排序后:</p>
-        <p>for(int j=t[x];j<n;j++)</p>
-        <p>下标：1 2 3 id：3 待 2 排 1 序元素</p>
-        <p>if(cmp(a[j+1],a[j])){</p>
-        <p>node k=a[j];</p>
-        <p>值相同时，按</p>
-        <p>a[j]=a[j+1];</p>
-        <p>id升序排序</p>
-        <p>a[j+1]=k;</p>
-        <p>排序后: 2 2 3 }</p>
-        <p>for(int i=1;i<=n;i++)</p>
-        <p>id：2 3 1</p>
-        <p>t[a[i].id]=i;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>如果操作选项为1，则进行修改操作</p>
-        <p>if(opt==1){</p>
-        <p>int x, v;</p>
-        <p>scanf("%d%d", &x, &v);</p>
-        <p>a[t[x]].val = v;</p>
-        <p>...</p>
-        <p>排序后: 2 2 3 数组t 1 2 3 元素新位置 for(int j=t[x];j<n;j++)</p>
-        <p>if(cmp(a[j+1],a[j])){</p>
-        <p>id：2 3 1 下标：2 3 1 元素原位置</p>
-        <p>node k=a[j];</p>
-        <p>a[j]=a[j+1];</p>
-        <p>a[j+1]=k;</p>
-        <p>}</p>
-        <p>for(int i=1;i<=n;i++)</p>
-        <p>t[a[i].id]=i;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>如果操作选项为1，则进行修改操作</p>
-        <p>if(opt==1){</p>
-        <p>int x, v;</p>
-        <p>scanf("%d%d", &x, &v);</p>
-        <p>a[t[x]].val = v;</p>
-        <p>...</p>
-        <p>排序后: 2 2 3 数组t 1 2 3 元素新位置 for(int j=t[x];j<n;j++)</p>
-        <p>id：2 3 1 下标：2 3 1 元素原位置 if(cmp(a[j+1],a[j])){</p>
-        <p>node k=a[j];</p>
-        <p>第三次操作： a[j]=a[j+1];</p>
-        <p>2 2 a[j+1]=k;</p>
-        <p>}</p>
-        <p>for(int i=1;i<=n;i++)</p>
-        <p>t[a[i].id]=i;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>} a[MAXN];</p>
-        <p>sort(a+1,a+n+1,cmp);</p>
-        <p>bool cmp(node x,node y)</p>
-        <p>for(int i=1; i<=n; i++)</p>
-        <p>{</p>
-        <p>t[a[i].id]=i;</p>
-        <p>if(x.val!=y.val) return x.val<y.val;</p>
-        <p>return x.id<y.id;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include&lt;bits/stdc++.h&gt;<br>
-            int main()<br>
-            using namespace std;<br>
-            {<br>
-            const int MAXN=8005;<br>
-            scanf("%d%d",&amp;n,&amp;q);<br>
-            int n,q;<br>
-            for(int i=1; i&lt;=n; i++)<br>
-            int t[MAXN];<br>
-            {<br>
-            struct node<br>
-            scanf("%d",&amp;a[i].val);<br>
-            {<br>
-            a[i].id=i;<br>
-            int val,id;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>for (int j = t[x]; j < n; j++)</p>
-        <p>for (int i = 1; i <= q; i++) {</p>
-        <p>if (cmp(a[j + 1], a[j])) {</p>
-        <p>int opt, x, v;</p>
-        <p>node k = a[j];</p>
-        <p>scanf("%d", &opt);</p>
-        <p>a[j] = a[j + 1];</p>
-        <p>if (opt == 1) {</p>
-        <p>a[j + 1] = k;</p>
-        <p>scanf("%d%d", &x, &v);</p>
-        <p>}</p>
-        <p>a[t[x]].val = v;</p>
-        <p>for (int i = 1; i <= n; i++)</p>
-        <p>for (int j=t[x];j>=2;j--)</p>
-        <p>t[a[i].id] = i;</p>
-        <p>if(cmp(a[j],a[j-1])){</p>
-        <p>} else {</p>
-        <p>node k = a[j];</p>
-        <p>scanf("%d", &x);</p>
-        <p>a[j] = a[j - 1];</p>
-        <p>printf("%d\n", t[x]);</p>
-        <p>a[j - 1] = k;</p>
-        <p>}</p>
-        <p>}</p>
-        <p>}</p>
-        <p>return 0;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

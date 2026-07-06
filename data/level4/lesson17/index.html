@@ -1,41 +1,6 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">第十七课</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>异常</p>
-        <p>异常是程序在运行期间，由于系统环境或者用户操作不当</p>
-        <p>等原因引起的问题，比如：除数为 、内存分配失败、文</p>
-        <p>0</p>
-        <p>件不存在等。</p>
-        <p>int a = 100, b = 0;</p>
-        <p>int c = a / b; 除数为0！</p>
-        <p>cout << c << endl;</p>
-        <p>cout << a << ' ' << b << endl;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>异常处理</p>
-        <p>在发生异常时，尽量做到能够保证程序正</p>
-        <p>函数f()捕获并处理异常</p>
-        <p>常运行，至少给出适当的提示信息。</p>
-        <p>充分考虑各种意外情况，并给予恰当处理， 调用关系 …… 异常传播关系</p>
-        <p>称为异常处理。</p>
-        <p>函数g()</p>
-        <p>当发生了异常不处理，系统就会执行默认</p>
-        <p>的操作，终止程序运行!</p>
-        <p>函数h()引发异常</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）C++语言中，如果异常发生，但没有处理异常的代码，则程序 会由于一直等待处理而死机。</div>
+        <div class="quiz-question">（样题）C++语言中，如果异常发生，但没有处理异常的代码，则程序会由于一直等待处理而死机。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -49,14 +14,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查异常处理的概念。如果异常发生但没有处理异常的代码，程序会直接终止运行，而不是一直等待处理。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 异常是指（ D ）</div>
+        <div class="quiz-question">课堂练习 异常是指（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -78,121 +43,14 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查异常的定义。异常是指程序在运行过程中发生的错误，如除数为0、内存分配失败、文件不存在等。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>异常处理的实现</p>
-        <p>try，catch，throw语句就是实现异常处理的语句</p>
-        <p>关键字 作用</p>
-        <p>try 执行一段有可能存在异常的代码</p>
-        <p>catch 用于捕获异常</p>
-        <p>throw 抛出一个异常</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>try-catch</p>
-        <p>try-catch用于捕获异常，必须配合使用！</p>
-        <p>throw关键字用于抛出异常</p>
-        <p>try{</p>
-        <p>可能有异常的代码块</p>
-        <p>throw 表达式;</p>
-        <p>抛出异常</p>
-        <p>}catch(异常类型) {</p>
-        <p>捕获异常</p>
-        <p>异常处理代码块</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>try-catch执行流程</p>
-        <p>try-catch用于 捕获异常，必须配合使用！</p>
-        <p>throw关键字用于抛出异常</p>
-        <p>执行try代码块</p>
-        <p>try{</p>
-        <p>如果发出异</p>
-        <p>发生异常 可能有异常的代码块 常发生异常</p>
-        <p>throw 表达式;</p>
-        <p>true</p>
-        <p>}</p>
-        <p>异常类型</p>
-        <p>throw抛出异常</p>
-        <p>匹配</p>
-        <p>catch(异常类型 变量) {</p>
-        <p>catch异</p>
-        <p>false</p>
-        <p>异常处理代码块 终止 常类型比</p>
-        <p>对</p>
-        <p>}</p>
-        <p>true</p>
-        <p>异常未进行处理，那么程序就会终止，</p>
-        <p>执行异常处理代码块</p>
-        <p>try...catch 后面的内容都不会被执行</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>try-catch执行流程</p>
-        <p>try-catch用于 捕获异常，必须配合使用！</p>
-        <p>throw关键字用于抛出异常</p>
-        <p>执行try代码块</p>
-        <p>false</p>
-        <p>try{</p>
-        <p>如果发出异</p>
-        <p>未发生异常</p>
-        <p>常发生异常</p>
-        <p>可能有异常的代码块</p>
-        <p>throw 表达式; true</p>
-        <p>} throw抛出异常</p>
-        <p>catch(异常类型 变量) {</p>
-        <p>catch异</p>
-        <p>false</p>
-        <p>异常处理代码块 终止 常类型比</p>
-        <p>不执行</p>
-        <p>对</p>
-        <p>}</p>
-        <p>true</p>
-        <p>执行异常处理代码块</p>
-        <p>try-catch后的代码</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>写一写</p>
-        <p>try {</p>
-        <p>如果除数为0，抛</p>
-        <p>int n,m; 出int类型的异常</p>
-        <p>cin>>n>>m;</p>
-        <p>if(m==0) throw m;</p>
-        <p>6 0</p>
-        <p>cout<<n/m<<endl;</p>
-        <p>除数为0</p>
-        <p>捕获int类型的异常</p>
-        <p>}catch(int e){</p>
-        <p>我是下方的代码！</p>
-        <p>cout<<"除数为"<<e<<endl;</p>
-        <p>}</p>
-        <p>cout<<"我是下方的代码！"<<endl;</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）在 C++中，以下哪个关键字用来捕获异常 B （ ）</div>
+        <div class="quiz-question">（样题）在 C++中，以下哪个关键字用来捕获异常（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -214,14 +72,14 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查异常处理关键字。try用于包裹可能发生异常的代码，catch用于捕获异常，throw用于抛出异常。C++中没有finally关键字（Java中有）。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 与 总是结合使用的。 try catch</div>
+        <div class="quiz-question">课堂练习 try与catch总是结合使用的。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -235,124 +93,14 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查try-catch的用法。try必须和catch配合使用，单独的try或catch都是语法错误。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>多个catch捕获异常</p>
-        <p>try{</p>
-        <p>• try可以配合多个catch，处理不同类型的异常； 可能有异常的代码块</p>
-        <p>throw 表达式;</p>
-        <p>• 当抛出一个异常时，按顺序从上到下依次比对</p>
-        <p>}catch(异常类型1) {</p>
-        <p>异常类型；</p>
-        <p>异常处理代码块1</p>
-        <p>• 找到匹配的异常类型，则执行对应的处理代码，</p>
-        <p>} catch(异常类型2) {</p>
-        <p>执行完毕结束整个try-catch语句。</p>
-        <p>异常处理代码块2</p>
-        <p>可捕获任何异常， } catch(...) {</p>
-        <p>通常放最后</p>
-        <p>异常处理代码块3</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>多个catch捕获异常</p>
-        <p>try {</p>
-        <p>int n,m; 抛出int类型的异常</p>
-        <p>cin>>n>>m;</p>
-        <p>if(m==0) throw m;</p>
-        <p>cout<<n/m<<endl;</p>
-        <p>double a,b;</p>
-        <p>cin>>a>>b;</p>
-        <p>6 0</p>
-        <p>if(b==0) throw b;</p>
-        <p>除数为0</p>
-        <p>cout<<a/b<<endl;</p>
-        <p>string str="i love tctm!";</p>
-        <p>int i;cin>>i;</p>
-        <p>if(i>11) throw "error";</p>
-        <p>cout<<str.at(i)<<endl;</p>
-        <p>} catch (int e){ 捕获int类型的异常</p>
-        <p>cout<<"除数为"<<e<<endl;</p>
-        <p>} catch(double f){</p>
-        <p>cout<<"除数为"<<f<<endl;</p>
-        <p>} catch(...){</p>
-        <p>cout<<"下标越界"<<endl;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>多个catch捕获异常</p>
-        <p>try {</p>
-        <p>int n,m;</p>
-        <p>cin>>n>>m;</p>
-        <p>if(m==0) throw m;</p>
-        <p>cout<<n/m<<endl;</p>
-        <p>double a,b; 抛出double类型的异常</p>
-        <p>cin>>a>>b;</p>
-        <p>8.5 0</p>
-        <p>if(b==0) throw b;</p>
-        <p>除数为0.00</p>
-        <p>cout<<a/b<<endl;</p>
-        <p>string str="i love tctm!";</p>
-        <p>int i;cin>>i;</p>
-        <p>if(i>11) throw "error";</p>
-        <p>cout<<str.at(i)<<endl;</p>
-        <p>} catch (int e){</p>
-        <p>cout<<"除数为"<<e<<endl;</p>
-        <p>} catch(double f){ 捕获double类型的异常</p>
-        <p>cout<<"除数为"<<f<<endl;</p>
-        <p>} catch(...){</p>
-        <p>cout<<"下标越界"<<endl;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>多个catch捕获异常</p>
-        <p>try {</p>
-        <p>int n,m;</p>
-        <p>cin>>n>>m;</p>
-        <p>if(m==0) throw m;</p>
-        <p>cout<<n/m<<endl;</p>
-        <p>double a,b;</p>
-        <p>cin>>a>>b;</p>
-        <p>13</p>
-        <p>if(b==0) throw b;</p>
-        <p>下标越界</p>
-        <p>cout<<a/b<<endl;</p>
-        <p>string str="i love tctm!";</p>
-        <p>int i;cin>>i;</p>
-        <p>抛出异常</p>
-        <p>if(i>11) throw "error";</p>
-        <p>cout<<str.at(i)<<endl;</p>
-        <p>} catch (int e){</p>
-        <p>cout<<"除数为"<<e<<endl;</p>
-        <p>} catch(double f){</p>
-        <p>cout<<"除数为"<<f<<endl;</p>
-        <p>} catch(...){ 捕获任何类型的异常</p>
-        <p>cout<<"下标越界"<<endl;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）下列关于C++语言中异常处理的叙述，正确的是 A （ ）</div>
+        <div class="quiz-question">（2023年9月）下列关于C++语言中异常处理的叙述，正确的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -374,129 +122,14 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>函数的异常处理</p>
-        <p>当某段程序(函数)不能处理异常，可以将异常抛给上一级</p>
-        <p>调用者进行处理</p>
-        <p>cout<< "捕获到除数为:"<<e<<endl;</p>
-        <p>}catch(string s){</p>
-        <p>cout<<s<<endl;</p>
-        <p>}</p>
-        <p>cout<<"我是下方代码！"<<endl;</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            int main(){<br>
-            try{<br>
-            cout&lt;&lt;get_div(10,2)&lt;&lt;endl;<br>
-            int get_div(int a,int b){<br>
-            cout&lt;&lt;get_div(10,0)&lt;&lt;endl;<br>
-            if(b==0)throw b; 抛出异常<br>
-            cout&lt;&lt;get_div(10,5)&lt;&lt;endl;<br>
-            return a/b;<br>
-            }catch (int e){ 捕获异常<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>函数的异常处理执行流程</p>
-        <p>函数执行时抛出异常，函数自身没有对异常的处理，则返回上层</p>
-        <p>调用处！</p>
-        <p>cout<< "捕获到除数为:"<<e<<endl;</p>
-        <p>}catch(string s){</p>
-        <p>cout<<s<<endl;</p>
-        <p>}</p>
-        <p>5 cout<<"我是下方代码！"<<endl;</p>
-        <p>return 0;</p>
-        <p>捕获到除数为:0</p>
-        <p>}</p>
-        <p>我是下方代码！</p>
-        <div class="code-block">
-            int main(){<br>
-            try{<br>
-            cout&lt;&lt;get_div(10,2)&lt;&lt;endl;<br>
-            int get_div(int a,int b){<br>
-            cout&lt;&lt;get_div(10,0)&lt;&lt;endl;<br>
-            if(b==0)throw b;<br>
-            cout&lt;&lt;get_div(10,5)&lt;&lt;endl;<br>
-            return a/b; 返回调用处<br>
-            }catch (int e){ 捕获成功<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>函数内无异常处理</p>
-        <p>函数执行时抛出异常，函数自身有对异常的处理，则先进行处理；</p>
-        <p>不能处理，则返回上层调用处处理。</p>
-        <p>捕获到除数为:0</p>
-        <p>我是下方代码！</p>
-        <div class="code-block">
-            int main(){<br>
-            try{<br>
-            int get_div(int a,int b){ cout&lt;&lt;get_div(10,2)&lt;&lt;endl;<br>
-            返回调用处<br>
-            try{ cout&lt;&lt;get_div(10,0)&lt;&lt;endl;<br>
-            if(b == 0)throw b; cout&lt;&lt;get_div(10,5)&lt;&lt;endl;<br>
-            return a/b; }catch (int e){ 捕获成功<br>
-            } catch(string s){ cout&lt;&lt; "捕获到除数为:"&lt;&lt;e&lt;&lt;endl;<br>
-            return 0; }catch(string s){<br>
-            捕获不成功<br>
-            } cout&lt;&lt;s&lt;&lt;endl;<br>
-            } }<br>
-            cout&lt;&lt;"我是下方代码！"&lt;&lt;endl;<br>
-            return 0;<br>
-            5<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>函数内有异常处理</p>
-        <p>函数执行时抛出异常，函数自身有对异常的处理，则先进行处理；</p>
-        <p>不能处理，则返回上层调用处处理。</p>
-        <p>2</p>
-        <p>我是下方代码！</p>
-        <div class="code-block">
-            int main(){<br>
-            try{<br>
-            int get_div(int a,int b){ cout&lt;&lt;get_div(10,2)&lt;&lt;endl;<br>
-            返回调用处<br>
-            try{ cout&lt;&lt;get_div(10,0)&lt;&lt;endl;<br>
-            if(b == 0)throw b; cout&lt;&lt;get_div(10,5)&lt;&lt;endl;<br>
-            return a/b; }catch (int e){<br>
-            } catch(int e){ 捕获成功 cout&lt;&lt; "捕获到除数为:"&lt;&lt;e&lt;&lt;endl;<br>
-            return 0; }catch(string s){<br>
-            } cout&lt;&lt;s&lt;&lt;endl;<br>
-            } } try-catch结束<br>
-            5<br>
-            cout&lt;&lt;"我是下方代码！"&lt;&lt;endl;<br>
-            0 return 0;<br>
-            }<br>
+            【解析】本题考查异常处理的特性。一个try子句可以对应多个catch子句，分别处理不同类型的异常。选项B错误，因为如果没有匹配的catch，异常会继续向上传播；选项C错误，try块中可以没有异常语句；选项D错误，catch处理完后不会重新执行try。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在 C++语言中，如果一个函数可能抛出异常，那么一定 要在 try 子句里调用这个函数。</div>
+        <div class="quiz-question">（2023年6月）在 C++语言中，如果一个函数可能抛出异常，那么一定要在 try 子句里调用这个函数。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -510,14 +143,14 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查异常处理的使用。函数可能抛出异常，但不一定要在try子句中调用。如果不在try中调用且发生异常，异常会向上传播，直到被捕获或程序终止。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）一个可能抛出异常的函数，调用它的位置没有在 try 子 句中，会引起编译错误。</div>
+        <div class="quiz-question">（2023年9月）一个可能抛出异常的函数，调用它的位置没有在 try 子句中，会引起编译错误。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -531,14 +164,14 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查异常处理的规则。在C++中，调用可能抛出异常的函数不需要必须在try子句中，这不会引起编译错误。只是如果发生异常且没有被捕获，程序会终止。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 如果某段程序中发现了自己不能处理的异常，就可以使用throw<表 达式>抛掷这个异常，其中的<表达式>表示异常类型。</div>
+        <div class="quiz-question">课堂练习 如果某段程序中发现了自己不能处理的异常，就可以使用throw<表达式>抛掷这个异常，其中的<表达式>表示异常类型。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -552,7 +185,7 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查throw语句的用法。throw后面的表达式的值和类型决定了抛出的异常，catch根据类型进行匹配。
         </div>
     </div>
 </div>
@@ -573,14 +206,14 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查异常处理机制。C++的异常处理采用栈展开机制，异常可以从被调用函数抛出，由调用链上层的try-catch捕获处理。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 下列关于异常处理的流程的描述中，错误的是（ D ）</div>
+        <div class="quiz-question">课堂练习 下列关于异常处理的流程的描述中，错误的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -602,11 +235,7 @@
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查异常处理流程。选项D错误，因为异常可以向上传播，如果本层没有匹配的catch，异常会继续向上层调用栈传播，直到被捕获或程序终止。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

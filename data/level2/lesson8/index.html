@@ -1,657 +1,202 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++二级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第八课</h2>
-    <div class="slide-content">
-        <p>循 环 与 分 支</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 循环与分支</h2>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）执行以下C++语言程序后，输出结果是( C )。 #include <iostream> using namespace std; int main(){</div>
+        <div class="quiz-question">（2023年3月）执行以下C++语言程序后，输出结果是（ ）。#include <iostream> using namespace std; int main(){ int n=17; bool isprime=true; for(int i=2;i<=n;i++) if(n%i==0) isprime=false; cout<<isprime<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>false int n=17; bool isprime=true;</span>
+                <span>false</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>true for(int i=2;i<=n;i++)</span>
+                <span>true</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>0 if(n%i==0) isprime=false;</span>
+                <span>0</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>1 cout<<isprime<<endl; return 0; }</span>
+                <span>1</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查素数判断逻辑。n=17，循环从i=2到i=17。当i=17时，n%i==0成立，isprime被设为false。bool类型输出时，false显示为0，true显示为1。所以最终输出0。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>题目解析</p>
-        <p>int n=17;</p>
-        <p>bool isprime=true;</p>
-        <p>for(int i=2;i<=n;i++)</p>
-        <p>if(n%i==0) 17%i==0</p>
-        <p>isprime=false;</p>
-        <p>cout<<isprime<<endl;</p>
-        <p>i 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</p>
-        <p>17%i==0 成立</p>
-        <p>isprime=false;</p>
-        <p>执行程序输出结果：0</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在下列代码的横线处填写( B )，可以使输出是42。 #include <iostream> using namespace std;</div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使输出是42。#include <iostream> using namespace std; int main(){ int sum=0; for(int i=1; i<=20; i++) if(___________) sum+=i; cout<<sum<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>i%3==0 int main(){ int sum=0;</span>
+                <span>i%3==0</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>20%i==0 for(int i=1; i<=20; i++) if(___________) C. i<=8 sum+=i;</span>
+                <span>20%i==0</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>i<=8</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>i>=18 cout<<sum<<endl; return 0; }</span>
+                <span>i>=18</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查循环条件判断。20的因子有1、2、4、5、10、20，求和结果为1+2+4+5+10+20=42。所以条件应为20%i==0。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">题目解析</div>
+        <div class="quiz-question">（2023年6月）执行以下C++语言程序后，输出结果是（ ）。#include <iostream> using namespace std; int main(){ for(char x='A'; x<='D'; x++){ if((x!='A')+(x=='C')+(x=='D')+(x!='D')==3) cout<<x; } return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>i%3==0 求和结果：63 i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span>
+                <span>A</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>20%i==0 求和结果：42 i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span>
+                <span>B</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>i<=8 求和结果：36 i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span>
+                <span>C</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>i>=18 求和结果：57 i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</span>
+                <span>D</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查条件表达式求值。当x='C'时，(x!='A')=1, (x=='C')=1, (x=='D')=0, (x!='D')=1，求和为3，条件成立，输出C。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）执行以下C++语言程序后，输出结果是( C )。 #include <iostream> using namespace std; int main(){ for(char x='A'; x<='D'; x++){ if((x!='A')+(x=='C')+(x=='D')+(x!='D')==3) cout<<x; } return 0; }</div>
+        <div class="quiz-question">（2023年9月）下列流程图的输出结果是？（x=5, y=12）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>A B. B C. C D. D</span>
+                <span>5 12</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>12 5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>5 5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>12 12</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查流程图逻辑。由于x=5 < y=12，执行交换操作，a=x=5, b=y=12，然后交换得到a=12, b=5，最后输出12 5。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>题目解析</p>
-        <p>① x='A'</p>
-        <p>判断条件：(x!='A')+(x=='C')+(x=='D')+(x!='D')==3</p>
-        <p>0 0 0 1</p>
-        <p>② x='B'</p>
-        <p>判断条件：(x!='A')+(x=='C')+(x=='D')+(x!='D')==3</p>
-        <p>1 0 0 1</p>
-        <p>③ x='C'</p>
-        <p>判断条件：(x!='A')+(x=='C')+(x=='D')+(x!='D')==3</p>
-        <p>1 1 0 1</p>
-        <p>④ x='D'</p>
-        <p>判断条件：(x!='A')+(x=='C')+(x=='D')+(x!='D')==3</p>
-        <p>1 0 1 0</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">开始 （2023年9月）下列流程图的输出 x=5, y=12 结果是?( B ) 是 x>y 否</div>
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ ）。#include <iostream> using namespace std; int main(){ int N=9; for(int i=2; i<N; i++) if(N%i) cout<<"1#"; cout<<"0"<<endl; return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>5 12</span>
+                <span>1#0</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>12 5 a=x a=y b=y b=x</span>
+                <span>1#</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>5 5</span>
+                <span>1#1#1#1#1#1</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>12 12 输出a,b 结束</span>
+                <span>1#1#1#1#1#1#0</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查循环和条件判断。N=9，i从2到8：i=2时9%2=1(true)输出"1#"；i=3时9%3=0(false)不输出；i=4时9%4=1输出"1#"；i=5时9%5=4输出"1#"；i=6时9%6=3输出"1#"；i=7时9%7=2输出"1#"；i=8时9%8=1输出"1#"。最后输出"0"，总计输出"1#1#1#1#1#1#0"。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是( D ) #include <iostream> using namespace std;</div>
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ ）。int x=1; while(x<100){ if(!(x%3)) cout<<x<<","; else if(x/10) break; x+=2; } cout<<x;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>1#0 int main(){ int N=9; B. 1# for(int i=2; i<N; i++)</span>
+                <span>1</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>1#1#1#1#1#1 if(N%i)</span>
+                <span>B</span>
+                <span>3,9,11</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>3,6,9,10</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>1#1#1#1#1#1#0 cout<<"1#"; cout<<"0"<<endl; return 0; }</span>
+                <span>1,5,7,11,13,15</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>题目解析</p>
-        <div class="code-block">
-            #include &lt;iostream&gt; i N%i的结果 输出<br>
-            using namespace std;<br>
-            2 True 1#<br>
-            int main(){<br>
-            3 False<br>
-            int N=9;<br>
-            for(int i=2; i&lt;N; i++) 4 True 1#<br>
-            if(N%i)<br>
-            5 True 1#<br>
-            cout&lt;&lt;"1#";<br>
-            6 True 1#<br>
-            cout&lt;&lt;"0"&lt;&lt;endl;<br>
-            7 True 1#<br>
-            return 0;<br>
-            } 8 False 1# 循环结束<br>
-            程序输出的结果为：1#1#1#1#1#1#0<br>
+            【解析】本题考查while循环和条件判断。x=1→x=3→输出"3,"→x=5→x=7→x=9→输出"9,"→x=11→x/10=1(true)→break。最后输出x=11，结果为"3,9,11"。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是( B ) int x=1; while(x<100){</div>
+        <div class="quiz-question">（2023年12月）下面C++代码执行后的输出是（ ）。int N=100; while(N>0){ if(N%2) break; else if(N%3==0) N-=5; else N-=20; } cout<<N;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>1 if(!(x%3)) cout<<x<<","; B. 3,9,11 else if(x/10)</span>
+                <span>100</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>3,6,9,10 break;</span>
+                <span>B</span>
+                <span>95</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>55</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>1,5,7,11,13,15 x+=2; } cout<<x;</span>
+                <span>0</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查while循环和条件判断。N=100→80→60(60%3==0)→55(55%2==1)→break。最终输出55。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>题目解析</p>
-        <p>x !(x%3)的结果 x/10的结果 x+=2</p>
-        <p>int x=1;</p>
-        <p>1 False False x->3</p>
-        <p>while(x<100){</p>
-        <p>if(!(x%3)) 3 True 输出：3， False x->5</p>
-        <p>cout<<x<<",";</p>
-        <p>5 False False x->7</p>
-        <p>else if(x/10)</p>
-        <p>7 False False x->9</p>
-        <p>break;</p>
-        <p>9 True 输出：9， False x->11</p>
-        <p>x+=2;</p>
-        <p>} 11 False True 循环结束</p>
-        <p>cout<<x;</p>
-        <p>程序输出的结果为：3,9,11</p>
-    </div>
-</div>
-
-<div class="slide">
-    <div class="quiz-container">
-        <div class="quiz-question">（2023年12月）下面C++代码执行后的输出是( C ) int N=100; while(N>0){ if(N%2)</div>
-        <div class="quiz-options">
-            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>A</span>
-                <span>100 break; else if(N%3==0) B. 95 N-=5;</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>55 else N-=20; D. 0 } cout<<N;</span>
-            </div>
-        </div>
-        <div class="quiz-feedback" id="feedback-7"></div>
-        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>选择题</p>
-        <p>int N=100;</p>
-        <p>while(N>0){</p>
-        <p>if(N%2) N N%2 N%3==0 执行语句</p>
-        <p>break;</p>
-        <p>100 False False N-=20</p>
-        <p>else if(N%3==0)</p>
-        <p>80 False False N-=20</p>
-        <p>N-=5;</p>
-        <p>else 60 False True N-=5</p>
-        <p>N-=20;</p>
-        <p>55 True 循环结束</p>
-        <p>}</p>
-        <p>cout<<N;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>(2023年9月)数字黑洞</p>
-        <p>【问题描述】</p>
-        <p>给定一个三位数，要求各位不能相同。例如：352是符合要求的， 112是不符合要求的。将这个三位数</p>
-        <p>的三个数字重新排列，得到的最大的数，减去得到的最小的数，形成一个新的三位数。对这个新的三位</p>
-        <p>数可以重复上述过程。神奇的是，最终一定会得到495！</p>
-        <p>试试看，重新排列352，得到的最大数为532，最小数为235，它们的差是297；变换297，得到972-</p>
-        <p>279=693；变换693，963-369=594；变换594，954-459=495。因此，352经过4次变换得到了495。</p>
-        <p>现在，输入的三位数，你能通过编程得出，这个三位数经过多少次变换能够得到495吗？</p>
-        <p>【输入描述】</p>
-        <p>输入一行，包含一个符合要求的三位数N。</p>
-        <p>【输出描述】</p>
-        <p>输出一行，包含一个整数C ，表示经过C次变换得到495。</p>
-        <p>【输入样例】</p>
-        <p>352</p>
-        <p>【输出样例】</p>
-        <p>4</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入一个三位数n。</p>
-        <p>int n;</p>
-        <p>cin >> n;</p>
-        <p>② 计算三位数经过多少次变换能够得到495。</p>
-        <p>int t=0; //记录变换次数</p>
-        <p>while( n ! = 4 9 5 ){</p>
-        <p>当n为495时</p>
-        <p>停止变换</p>
-        <p>1）变换数字n</p>
-        <p>2）将下一个要变换的数赋值给n</p>
-        <p>t++;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>如何变换一个数？</p>
-        <p>例：重新排列352，得到的最大数为532，最小数为235，它们的差是297</p>
-        <p>① 数位分离</p>
-        <p>个位：352%10 2 最小</p>
-        <p>十位：352/10%10 5 最大</p>
-        <p>百位：352/100 3 次大</p>
-        <p>② 对分离出的数重新排列，计算最大数和最小数</p>
-        <p>最大数：5*100+3*10+2 532</p>
-        <p>最小数：2*100+3*10+5 235</p>
-        <p>③ 将最大数和最小数的差作为下一个要变换的数</p>
-        <p>最大数-最小数：532-235 297</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>实现变换一个数n</p>
-        <p>① 数位分离(a:个位，b:十位，c:百位)。</p>
-        <p>int a = n % 10;</p>
-        <p>int b = n / 10 % 10;</p>
-        <p>int c= n / 100;</p>
-        <p>② 对分离出的数重新排列，计算最大数和最小数。</p>
-        <p>1) 找出a,b,c中的最大、次大、最小数</p>
-        <p>a记录最小数，b记录次大数，c记录最大数</p>
-        <p>a b c a b c a b c</p>
-        <p>a和b比 a和c比 b和c比</p>
-        <p>if(a>b){ if(a>c){ if(b>c){</p>
-        <div class="code-block">
-            // a和b交换 // a和c交换 // b和c交换<br>
-            } } }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>实现变换一个数n</p>
-        <p>② 对分离出的数重新排列，计算最大数和最小数。</p>
-        <p>1) 找出a,b,c中的最大、次大、最小数</p>
-        <p>a记录最小数，b记录次大数，c记录最大数</p>
-        <p>if(a>b) swap(a,b);</p>
-        <p>if(a>c) swap(a,c);</p>
-        <p>if(b>c) swap(b,c);</p>
-        <p>2) 计算最大数、最小数</p>
-        <p>int tmax=c*100+b*10+a;</p>
-        <p>int tmin=a*100+b*10+c;</p>
-        <p>③ 将最大数和最小数的差作为下一个要变换的数。</p>
-        <p>n=tmax-tmin;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>② 计算三位数经过多少次变换能够得到495。</p>
-        <p>while(n!=495){</p>
-        <p>int a=n%10, b=n/10%10, c=n/100;</p>
-        <p>if(a>b) swap(a,b);</p>
-        <p>if(a>c) swap(a,c);</p>
-        <p>if(b>c) swap(b,c);</p>
-        <p>int tmax=c*100+b*10+a;</p>
-        <p>int tmin=a*100+b*10+c;</p>
-        <p>n=tmax-tmin;</p>
-        <p>t++;</p>
-        <p>}</p>
-        <p>③ 输出变换次数。</p>
-        <p>cout<<t;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>cout<<t;</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;bits/stdc++.h&gt;<br>
-            using namespace std;<br>
-            int main() {<br>
-            int n;<br>
-            cin &gt;&gt; n;<br>
-            int t=0;<br>
-            while(n!=495){<br>
-            int a=n%10, b=n/10%10, c=n/100;<br>
-            if(a&gt;b) swap(a,b);<br>
-            if(a&gt;c) swap(a,c);<br>
-            if(b&gt;c) swap(b,c);<br>
-            int tmax=c*100+b*10+a;<br>
-            int tmin=a*100+b*10+c;<br>
-            n=tmax-tmin;<br>
-            t++;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>公交卡充值问题</p>
-        <p>【问题描述】</p>
-        <p>小明去公交卡充值中心为自己的公交卡充值，公交充值中心搞了一个充值优惠活动，活动详情如下：</p>
-        <p>（1）充值200元~299元，赠送50元余额到卡中；</p>
-        <p>（2）充值300元~499元，赠送100元余额到卡中；</p>
-        <p>（3）充值500元及500元以上，赠送200元余额到卡中；</p>
-        <p>（4）充值200元以下，没有赠送活动；</p>
-        <p>例如：小明如果充值350元，那么实际卡中到账的金额将会是450元（350元充值 + 100元赠送）。</p>
-        <p>请编程帮助公交卡充值中心，根据客户的充值金额，计算实际应当到账的金额。</p>
-        <p>【输入描述】</p>
-        <p>一个正整数n，代表充值金额（n是1~999之间的整数）。</p>
-        <p>【输出描述】</p>
-        <p>一个正整数，代表实际到账的金额。</p>
-        <p>【输入样例】</p>
-        <p>200</p>
-        <p>【输出样例】</p>
-        <p>250</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入充值金额n。(1≤n≤999)</p>
-        <p>int n;</p>
-        <p>cin>>n;</p>
-        <p>② 根据客户的充值金额，计算实际应当到账的金额。</p>
-        <p>if(n>=200 && n<300){</p>
-        <p>cout<<n+50;</p>
-        <p>充值规则：</p>
-        <p>}</p>
-        <p>200元~299元，赠送50元；</p>
-        <p>else if(n>=300 && n<500 ){</p>
-        <p>cout<<n+100; 300元~499元，赠送100元；</p>
-        <p>} 500元及500元以上，赠送200元；</p>
-        <p>else if(n>=500){ 200元以下，没有赠送活动；</p>
-        <p>cout<<n+200;</p>
-        <p>}</p>
-        <p>实际到账金额=充值金额+赠送金额</p>
-        <p>else {</p>
-        <p>cout<<n;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>else if(n>=300&&n<500){</p>
-        <p>cout<<n+100;</p>
-        <p>}</p>
-        <p>else if(n>=500){</p>
-        <p>cout<<n+200;</p>
-        <p>}</p>
-        <p>else {</p>
-        <p>cout<<n;</p>
-        <p>}</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main(){<br>
-            int n;<br>
-            cin&gt;&gt;n;<br>
-            if(n&gt;=200&amp;&amp;n&lt;300){<br>
-            cout&lt;&lt;n+50;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>足球联赛积分</p>
-        <p>【问题描述】</p>
-        <p>一场比赛中，两支参赛队A，B。如果A队的进球数大于B队，则A赢，A积3分，B积0分。如果A队的</p>
-        <p>进球数等于B队，则两队打平，各积1分。如果A队的进球数小于B队，则A输，A积分0分，B积分3分。</p>
-        <p>【输入描述】</p>
-        <p>第一行，一个正整数n，代表比赛场数(1≤n≤40)。</p>
-        <p>接下来n行，每行两个整数，数字之间使用一个空格隔开，表示一场该球队的进球数以及对手球队的</p>
-        <p>进球数。（输入整数的范围：0~10）</p>
-        <p>【输出描述】</p>
-        <p>一个整数，表示该球队的赛季积分。</p>
-        <p>【输入样例】</p>
-        <p>5</p>
-        <p>3 1</p>
-        <p>0 0</p>
-        <p>1 2</p>
-        <p>3 2</p>
-        <p>3 3</p>
-        <p>【输出样例】</p>
-        <p>8</p>
-        <p>【提示】</p>
-        <p>该球队5场比赛的结果分别为赢，平，输，赢，平，总计2赢2平1输，积分为8分。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>【输入样例】</p>
-        <p>5</p>
-        <p>每场进球数</p>
-        <p>3 1 我方积分+3</p>
-        <p>我 0 0 对 我方积分+1</p>
-        <p>方 方</p>
-        <p>1 2 我方积分+0</p>
-        <p>球 球</p>
-        <p>队 3 2 队 我方积分+3</p>
-        <p>3 3</p>
-        <p>我方积分+1</p>
-        <p>【输出样例】</p>
-        <p>我方球队</p>
-        <p>8</p>
-        <p>赛季积分</p>
-        <p>比赛积分规则：</p>
-        <p>① A队的进球数大于B队，A队积3分，B积0分。</p>
-        <p>② A队的进球数等于B队，A队积1分，B积1分。</p>
-        <p>③ A队的进球数小于B队，A队积0分，B积3分。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 输入比赛场数n。(1≤n≤40)</p>
-        <p>int n;</p>
-        <p>cin>>n;</p>
-        <p>② 输入n场比赛的两队的进球数，同时计算我方球队的总积分。</p>
-        <p>记录我方球队</p>
-        <p>int sum=0;</p>
-        <p>赛季总积分</p>
-        <p>iinntt xx,,yy;; ////xx::我我方方，，yy::对对方方 比赛规则：</p>
-        <p>ffoorr((iinntt ii==11;;ii<<==nn;;ii++++)){{</p>
-        <p>① A队的进球数大于B队，A队积3分，B积0分。</p>
-        <p>cciinn>>>>xx>>>>yy;;</p>
-        <p>② A队的进球数等于B队，A队积1分，B积1分。</p>
-        <p>iiff((xx>>yy)){{</p>
-        <p>③ A队的进球数小于B队，A队积0分，B积3分。</p>
-        <p>ssuumm++==33;;</p>
-        <p>}}eellssee iiff((xx====yy)){{</p>
-        <p>ssuumm++==11;;</p>
-        <p>}}else{</p>
-        <p>}</p>
-        <p>sum+=0; 可以省略</p>
-        <p>}</p>
-        <p>③ 输出我方球队的赛季总积分。</p>
-        <p>cout<<sum;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">课堂练习</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>}</p>
-        <p>cout<<sum;</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include&lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main(){<br>
-            int n;<br>
-            cin&gt;&gt;n;<br>
-            int x,y;<br>
-            int sum=0;<br>
-            for(int i=1;i&lt;=n;i++){<br>
-            cin&gt;&gt;x&gt;&gt;y;<br>
-            if(x&gt;y){<br>
-            sum+=3;<br>
-            }else if(x==y){<br>
-            sum+=1;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

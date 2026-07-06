@@ -1,90 +1,6 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++一级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第五课</h2>
-    <div class="slide-content">
-        <p>比 较 运 算 符 和 逻 辑 运 算 符</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 比较运算符</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>比较运算符</p>
-        <p>比较运算符用于对数据进行比较，计算两个数据的大小</p>
-        <p>关系，因此也称为关系运算符。</p>
-        <p>名称 数学 C++</p>
-        <p>大于 > > 注意书写形</p>
-        <p>式的区别</p>
-        <p>小于 < <</p>
-        <p>大于等于 ≥ >=</p>
-        <p>小于等于 ≤ <=</p>
-        <p>等于 = ==</p>
-        <p>不等于 ≠ !=</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>C++中"=="和"="的区别</p>
-        <p>== 等于</p>
-        <p>例如：a==5，表示判断a与5是否相等</p>
-        <p>= 赋值</p>
-        <p>例如：a=5，表示将5赋值给变量a</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>比较运算的结果</p>
-        <p>计算两个数据</p>
-        <p>此处需要小括号</p>
-        <p>的大小关系</p>
-        <p>cout<<(98>85)<<endl; 1 成立</p>
-        <p>1</p>
-        <p>cout<<(98<85)<<endl; 0 不成立</p>
-        <p>0</p>
-        <p>不会报错</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>① 比较运算符：> >= < <= 高于 == !=</p>
-        <p>② 算术运算符 高于 输出运算符 高于 比较运算符 高于 赋值运算符</p>
-        <p>类别 运算符 优先级</p>
-        <p>小括号 ()</p>
-        <p>* / %</p>
-        <p>算术运算符</p>
-        <p>由</p>
-        <p>+ -</p>
-        <p>输出运算符 >></p>
-        <p>< > <= >=</p>
-        <p>比较运算符</p>
-        <p>== !=</p>
-        <p>赋值运算符 = += -= *= /= %=</p>
-        <p>高</p>
-        <p>到</p>
-        <p>运算符的优先级</p>
-        <p>低</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）表达式((3 == 0) + 'A' + 1 + 3.0)的结果类型为（ A ）</div>
+        <div class="quiz-question">（2023年3月）表达式((3 == 0) + 'A' + 1 + 3.0)的结果类型为（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -92,28 +8,28 @@
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>int (((33 ==== 00)) + 'A' + 1 + 3.0)</span>
+                <span>int</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>char (0 + 'A' + 1 + 3.0)</span>
+                <span>char</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>bool bool char int double 转换规则：低精度  高精度</span>
+                <span>bool</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查C++的类型转换规则。表达式中包含double类型（3.0），根据类型转换规则，所有操作数都会转换为double类型，所以结果类型为double。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a、b和c都是int类型的变量，下列哪个语 句不符合C++语法？（ D ）</div>
+        <div class="quiz-question">（2023年6月）如果a、b和c都是int类型的变量，下列哪个语句不符合C++语法？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -129,49 +45,49 @@
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>a+c=b+c; 赋值运算符的左边是表达式而不是变量</span>
+                <span>a+c=b+c;</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查C++赋值语句的语法。赋值运算符的左边必须是左值（可以被赋值的变量），选项D中a+c是表达式，不是左值，所以不符合语法。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）如果a为int类型的变量，下列表达式不能正确表达 “a是奇数时结果为0，否则结果非0”的是（ A ）</div>
+        <div class="quiz-question">（样题）如果a为int类型的变量，下列表达式不能正确表达"a是奇数时结果为0，否则结果非0"的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>a%=2 假设奇数为5，偶数为6</span>
+                <span>a%=2</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>a/2*2==a A：5%=2 1</span>
+                <span>a/2*2==a</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>a%2==0 B：5/2*2==5 0 6/2*2==6 1 C：5%2==0 0 6%2==0 1</span>
+                <span>a%2==0</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>(a+1)%2 D：(5+1)%2 0 (6+1)%2 1</span>
+                <span>(a+1)%2</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查判断奇数和偶数的表达式。选项A：a%=2是赋值语句，不是表达式，且当a为奇数时a%=2结果为1（非0），当a为偶数时结果为0，与题目要求相反。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a和b为int类型的变量，则表达式a=b可以 判断a和b是否相等。 判断相等需要使用==，=是赋值符号</div>
+        <div class="quiz-question">（2023年6月）如果a和b为int类型的变量，则表达式a=b可以判断a和b是否相等。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -185,14 +101,14 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查赋值运算符和比较运算符的区别。a=b是赋值语句，将b的值赋给a；判断相等需要使用==运算符，即a==b。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a为int类型的变量，则表达式(a%4==2)可 以判断a的值是否为偶数。 例如，4是偶数 4%4结果为0，而不是2</div>
+        <div class="quiz-question">（2023年6月）如果a为int类型的变量，则表达式(a%4==2)可以判断a的值是否为偶数。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -206,14 +122,14 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查偶数的判断方法。表达式(a%4==2)只能判断a除以4余2，例如6%4==2，但4%4==0，所以不能判断所有偶数。判断偶数应该使用a%2==0。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）如果a为int类型的变量，且表达式(a%4==0)的计算结 果为真，说明a的值是4的倍数。</div>
+        <div class="quiz-question">（样题）如果a为int类型的变量，且表达式(a%4==0)的计算结果为真，说明a的值是4的倍数。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -227,109 +143,26 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查取余运算的含义。a%4==0表示a除以4余数为0，说明a是4的倍数。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>布尔类型bool</p>
-        <p>布尔bool是一种数据类型，常用于表示比较运算的结果；</p>
-        <p>bool类型的数据只有两种取值， 0/false 和 1/true ；</p>
-        <p>布尔类型 含义 bool a; 定义布尔类型</p>
-        <p>的变量</p>
-        <p>a = 0;</p>
-        <p>0 false 假，不成立</p>
-        <p>a = false;</p>
-        <p>a = 1;</p>
-        <p>1 true 真，成立</p>
-        <p>a = true;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>数据真假性</p>
-        <p>① C++中的所有数据都有真假性。</p>
-        <p>非0值代表真 ，0值代表假。</p>
-        <p>② 布尔值可以用来表示数据的真假性：</p>
-        <p>true为真 ，false为假。</p>
-        <p>③ 任何类型的数据都可以赋值给bool类型的变量，都会将该</p>
-        <p>数据转换为布尔值，该布尔值即为该数据的真假性。</p>
-        <p>bool b; bool a;</p>
-        <p>b = 0; 0 a = 100; 1</p>
-        <p>b = '\0'; 0 a = 'A'; 1</p>
-        <p>b = false; 0 a = "orange"; 1</p>
-        <p>b = NULL; 0 a = 2.5; 1</p>
-        <p>a= -1; 1</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 逻辑运算符</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>逻辑运算符</p>
-        <p>逻辑运算符用于计算逻辑关系，其计算结果是一个布尔值。</p>
-        <p>名称 符号 含义</p>
-        <p>对两个条件进行并且关系的运算，两个</p>
-        <p>逻辑与 &&</p>
-        <p>条件都成立，运算结果才成立</p>
-        <p>对两个条件进行或者关系的运算，两个</p>
-        <p>逻辑或 ||</p>
-        <p>条件其中之一成立，运算结果就成立</p>
-        <p>逻辑非 ! 表示否定，对布尔值取反</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>运算符优先级的一般规律</p>
-        <p>类别 运算符</p>
-        <p>小括号 ()</p>
-        <p>① 小括号优先级最高</p>
-        <p>逻辑非 ！</p>
-        <p>② 单目运算符 高于 双目运算符 高于 三目运算符</p>
-        <p>* / %</p>
-        <p>算术运算符</p>
-        <p>③ 双目运算符：</p>
-        <p>+ -</p>
-        <p>算术 高于 比较 高于 逻辑 高于 赋值</p>
-        <p>输出运算符 <<</p>
-        <p>④ 算术运算符遵循数学规则</p>
-        <p>< <= > >=</p>
-        <p>比较运算符</p>
-        <p>== !=</p>
-        <p>⑤ 运算符优先级相同，按照从左往右的顺序进</p>
-        <p>&&</p>
-        <p>逻辑运算符 行计算，只有赋值运算符是从右往左计算。</p>
-        <p>||</p>
-        <p>赋值运算符 = += -= *= /= %=</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年3月）如果a和b均为int类型的变量，下列表达式不能 正确判断“a等于0且b等于0”的是（ B ）</div>
+        <div class="quiz-question">（2023年3月）如果a和b均为int类型的变量，下列表达式不能正确判断"a等于0且b等于0"的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>(a == 0) && (b == 0) 先判断a和b是否相等，再判断a==b</span>
+                <span>(a == 0) && (b == 0)</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>(a == b == 0) 的结果是否与0相等，只有a和b不相</span>
+                <span>(a == b == 0)</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>(!a) && (!b) 等时，整个表达式才成立。</span>
+                <span>(!a) && (!b)</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
@@ -339,14 +172,14 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查逻辑表达式的运算顺序。选项B中(a == b == 0)的运算顺序是先计算a==b，得到bool值0或1，再将结果与0比较，不能正确判断a和b都等于0。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果a和b均为int类型的变量，下列表达式能正 确判断“a等于0且b等于0”的是（ B ）</div>
+        <div class="quiz-question">（2023年6月）如果a和b均为int类型的变量，下列表达式能正确判断"a等于0且b等于0"的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -368,14 +201,14 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查逻辑表达式。选项B：!(a || b)表示a和b都为假（即都为0），可以正确判断a等于0且b等于0。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）C++表达式 2-1&&2%10 的值是（ B ）</div>
+        <div class="quiz-question">（2023年9月）C++表达式 2-1&&2%10 的值是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -387,7 +220,7 @@
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>2 2-1&&2%10 1&&2 1</span>
+                <span>2</span>
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
@@ -397,14 +230,14 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查运算符优先级和逻辑运算。算术运算符优先级高于逻辑运算符，所以先计算2-1=1和2%10=2，然后1&&2=1（非0值在逻辑运算中视为真）。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在C++语言中，int类型的变量x、y、z的值分 别为2、4、6，以下表达式的值为真的是（ D ）</div>
+        <div class="quiz-question">（2023年9月）在C++语言中，int类型的变量x、y、z的值分别为2、4、6，以下表达式的值为真的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -412,28 +245,28 @@
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>x!=z-y A：2>4||2>6 0||0 0 B：2!=6-4 2!=2 0</span>
+                <span>x!=z-y</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>z>y+x C：6>4+2 6>6 0</span>
+                <span>z>y+x</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>x<y||!x<z D：2<4||!2<6 1||0<6 1||1 1</span>
+                <span>x<y||!x<z</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查逻辑表达式的计算。选项D：x<y=2<4=1（真），由于||运算的短路求值，整个表达式为真。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">a除以4的商为2 （2023年3月）如果a为int类型的变量，则表达式(a / 4 == 2) 和表达式(a >= 8 && a <= 11)的结果总是相同的。</div>
+        <div class="quiz-question">（2023年3月）如果a为int类型的变量，则表达式(a / 4 == 2)和表达式(a >= 8 && a <= 11)的结果总是相同的。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -447,82 +280,7 @@
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查整数除法。a/4==2表示a除以4的商为2，即a在[8, 12)范围内（8<=a<12），而a>=8 && a<=11表示a在[8, 11]范围内。当a=11时，两个表达式都为真；当a=12时，a/4==2为假（12/4=3），a>=8 && a<=11也为假。所以两个表达式结果总是相同。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（样题）当天的第几秒</p>
-        <p>【问题描述】</p>
-        <p>小明刚刚学习了小时、分和秒的换算关系。他想知道一个给定的时刻是这一</p>
-        <p>天的第几秒，你能编写一个程序帮帮他吗？</p>
-        <p>【输入描述】</p>
-        <p>输入一行，包含三个整数和一个字符。三个整数分别表示时刻的时、分、秒；</p>
-        <p>字符有两种取值，大写字母'A'表示上午，大写字母'P'表示下午。</p>
-        <p>【输出描述】</p>
-        <p>输出一行，包含一个整数，表示输入时刻是当天的第几秒。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（样题）当天的第几秒</p>
-        <p>【样例输入1】</p>
-        <p>0 0 0 A</p>
-        <p>【样例输出1】</p>
-        <p>0</p>
-        <p>下午</p>
-        <p>【样例输入2】</p>
-        <p>11 59 59 P 11时59分59秒 11*60*60+59*60+59=43199</p>
-        <p>【样例输出2】 相差12小时</p>
-        <p>86399 23时59分59秒 43199+12*60*60=86399</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>① 定义整型变量h，m，s分别保存时、分、秒；</p>
-        <p>定义字符型变量noon保存输入的字符</p>
-        <p>int h, m, s;</p>
-        <p>char noon;</p>
-        <p>cin>>h>>m>>s>>noon;</p>
-        <p>② 计算秒数：小时*60*60+分钟*60+秒</p>
-        <p>int sec=h*60*60+m*60+s; // 计算秒数</p>
-        <p>③ 判断字符是上午还是下午，如果是下午需要再加上12个小时的分钟数</p>
-        <p>if(noon=='P') // 处理上下午</p>
-        <p>sec+=12*60*60;</p>
-        <p>④ 输出秒数</p>
-        <p>cout<<sec;</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>写一写</p>
-        <div class="code-block">
-            #include &lt;iostream&gt;<br>
-            using namespace std;<br>
-            int main(){<br>
-            int h, m, s;<br>
-            char noon;<br>
-            cin&gt;&gt;h&gt;&gt;m&gt;&gt;s&gt;&gt;noon;<br>
-            int sec=h*60*60+m*60+s; // 计算秒数<br>
-            if(noon=='P') // 处理上下午<br>
-            sec+=12*60*60;<br>
-            cout&lt;&lt;sec;<br>
-            return 0;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

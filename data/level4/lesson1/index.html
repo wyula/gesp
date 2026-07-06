@@ -1,99 +1,4 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>GESP四级考核知识点</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>GESP四级题型</p>
-        <p>满分100分，60分以上合格</p>
-        <p>考试时间：120分钟</p>
-        <p>单选题 判断题 编程题</p>
-        <p>15道（2分/道） 10道（2分/道） 2道（25分/道）</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第一课</h2>
-    <div class="slide-content">
-        <p>指 针 1</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 指针的定义</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针变量</p>
-        <p>定义普通的变量： int a;</p>
-        <p>定义指针变量： 数据类型</p>
-        <p>int* p;</p>
-        <p>指针变量名</p>
-        <p>• 指针变量，用来存储地址。</p>
-        <p>• int类型的指针可以存储int类型变量的地址。</p>
-        <p>p=&a;</p>
-        <p>取地址运算符</p>
-        <p>cout << p; 0x73fd3ff998</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针变量</p>
-        <p>int a=10;</p>
-        <p>int *p=&a;</p>
-        <p>• 指针存储变量地址，代表</p>
-        <p>a 10</p>
-        <p>指针指向这个变量。</p>
-        <p>• 指针类似一个指示器，它</p>
-        <p>00xx7733ffdd33ffff999988</p>
-        <p>会告诉程序可以在哪块区</p>
-        <p>指</p>
-        <p>域找到数据。</p>
-        <p>向</p>
-        <p>p 0x73fd3ff998</p>
-        <p>0x73fd3ff990</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针变量的注意事项</p>
-        <p>int c=10,d=20;</p>
-        <p>连续定义多个</p>
-        <p>int *p2=&c,*p3=&d;</p>
-        <p>int *p4,p5;</p>
-        <p>int a=10;</p>
-        <p>int *p=&a; p4是指针类型，</p>
-        <p>p5是int类型</p>
-        <p>cout<<p<<endl; 0x73fd3ff998</p>
-        <p>cout<<&a<<endl; 0x73fd3ff998</p>
-        <p>double e=1.5;</p>
-        <p>cout<<&p<<endl; 0x73fd3ff990</p>
-        <p>×</p>
-        <p>int *p6=&e;</p>
-        <p>double *p6=&e;</p>
-        <p>指针类型与所指向变量类型</p>
-        <p>要保持一致。</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（样题）C++语言中的指针变量可以指向任何类型的数据。</div>
         <div class="quiz-options">
@@ -109,14 +14,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查指针类型匹配。指针变量的类型必须与所指向变量的类型一致，例如int*指针只能指向int类型变量，不能指向double类型变量。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）以下哪个选项是 C++中正确的指针变量声明（ A ）</div>
+        <div class="quiz-question">（样题）以下哪个选项是 C++中正确的指针变量声明（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -138,7 +43,7 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查指针变量声明语法。正确的指针声明格式是"数据类型 *指针名;"，其中*表示该变量是指针类型。选项A符合语法规范。
         </div>
     </div>
 </div>
@@ -167,28 +72,14 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查指针变量的基本概念。int *p = &n; 表示p存储的是n的地址，即p的值等于&n。p指向的值是*p，等于n的值。所以选项B正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-        <p>int n;</p>
-        <p>int *p=&n;</p>
-        <p>针对以上代码，注意如下内容的区分</p>
-        <p>int 普通变量类型 int* 指针类型</p>
-        <p>n 整型变量 p 指针类型变量</p>
-        <p>&n 普通变量地址 p=&n p保存变量n的地址</p>
-        <p>&p 指针变量的地址</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）如果 n 为 int 类型的变量，一个指针变量定义为 int *p = &n; ，则下列说法正确的是（ B ）。</div>
+        <div class="quiz-question">（2023年9月）如果 n 为 int 类型的变量，一个指针变量定义为 int *p = &n; ，则下列说法正确的是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -210,14 +101,14 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查指针变量的基本概念。int *p = &n; 表示p存储的是n的地址，即p的值等于&n。p指向的值是*p，等于n的值。所以选项B正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 关于指针变量的创建和赋值正确的是哪一项（ B ）</div>
+        <div class="quiz-question">课堂练习 关于指针变量的创建和赋值正确的是哪一项（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -225,24 +116,28 @@
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>int a=10; p1=&a; int *p1=&a; int *p1;</span>
+                <span>int a=10; int *p1=&a;</span>
             </div>
             <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>double b=10.5; D. double b=10.5; int *p1=&b; int *p1; p1=&b;</span>
+                <span>double b=10.5; int *p1=&b;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>double b=10.5; int *p1; p1=&b;</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查指针变量的创建和赋值。选项B正确，先定义int变量a，然后定义int指针p1并初始化为a的地址。选项C和D错误，因为int指针不能指向double类型变量。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 关于代码int a, *p = &a；下列语句描述正确的是（ B ）。</div>
+        <div class="quiz-question">课堂练习 关于代码int a, *p = &a；下列语句描述正确的是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -264,18 +159,18 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查指针类型判断。int *p = &a; 定义了一个指向int类型的指针p，p存储的是变量a的地址，而不是a的数值。所以选项B正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 阅读以下程序，说法错误的是（ D ）。</div>
+        <div class="quiz-question">课堂练习 阅读以下程序，说法错误的是（ ）。int a=50; int *p=&a;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>创建p时，*表示p是一个指针 int a=50; int *p=&a;</span>
+                <span>创建p时，*表示p是一个指针</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
@@ -293,49 +188,14 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查指针变量的存储内容。p是指针变量，存储的是变量a的地址，而不是a的值50。*p才是指向的值，等于50。所以选项D的说法错误。
         </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针变量的存储空间</p>
-        <p>int a=10;</p>
-        <p>int *p=&a;</p>
-        <p>a 10 4个字节</p>
-        <p>0x73fd3ff998</p>
-        <p>编译器 内存地址 字节</p>
-        <p>32位编译器 32位二进制数 4</p>
-        <p>p 0x73fd3ff998 ？</p>
-        <p>64位编译器 64位二进制数 8</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针变量的存储大小</p>
-        <p>指针变量大小与其指向的数据类型无关，而与编译器有关</p>
-        <p>int a=10;</p>
-        <p>int *p=&a;</p>
-        <p>cout<<sizeof(p)<<endl;</p>
-        <p>64位编译器</p>
-        <p>8个字节</p>
-        <p>double f = 10.5;</p>
-        <p>double *p7 = &f;</p>
-        <p>cout << sizeof(p7) <<endl; 32位编译器</p>
-        <p>4个字节</p>
-        <p>char ch = 'a';</p>
-        <p>char *p8 = &ch;</p>
-        <p>cout << sizeof(p8) << endl;</p>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在C++语言中，指针变量在逻辑上指向另一个变量在 内存中的位置，指针变量本身不占用内存。</div>
+        <div class="quiz-question">（2023年9月）在C++语言中，指针变量在逻辑上指向另一个变量在内存中的位置，指针变量本身不占用内存。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -349,14 +209,14 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查指针变量的存储空间。指针变量本身也占用内存空间，在32位系统中占4字节，在64位系统中占8字节。所以题目说法错误。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）在 C++中，指针变量的大小（单位：字节）是（ D ）</div>
+        <div class="quiz-question">（样题）在 C++中，指针变量的大小（单位：字节）是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -378,78 +238,14 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 指针的使用</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针运算符</p>
-        <p>指针运算符*：获取该指针所指空间的数据</p>
-        <p>格式：*指针名</p>
-        <p>int a=10;</p>
-        <p>a 10</p>
-        <p>int *p=&a;</p>
-        <p>cout << *p;</p>
-        <p>指向</p>
-        <p>p</p>
-        <p>10</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>通过指针修改数据</p>
-        <p>int a=10;</p>
-        <p>int *p=&a;</p>
-        <p>修改指向</p>
-        <p>*p=20; a 1200</p>
-        <p>的数据</p>
-        <p>cout<<*p<<endl; 20</p>
-        <p>指向</p>
-        <p>cout<<a<<endl;</p>
-        <p>20</p>
-        <p>p</p>
-        <p>变量a也同样修改</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>空指针</p>
-        <p>赋值为 NULL 或者 nullptr 的指针变量称为空指针</p>
-        <p>空指针不指向任何变量（存储空间）！</p>
-        <p>int *p = NULL;</p>
-        <p>0</p>
-        <p>cout<< p<<endl;</p>
-        <p>int *p1 = NULL; NULL本质是0，</p>
-        <p>cout<< *p<<endl;</p>
-        <p>表示一个空地址。</p>
-        <p>p1称为空指针</p>
-        <p>int *p1 = nullptr;</p>
-        <div class="code-block">
-            //C++新增的空指针表示方式<br>
-            0<br>
-            int *p2 = nullptr; cout&lt;&lt;p1&lt;&lt;endl;<br>
-            cout&lt;&lt;*p1&lt;&lt;endl;<br>
-            C++的关键字，<br>
-            表示空指针<br>
-            不能通过空指针访问内存区域中的数据！<br>
+            【解析】本题考查指针变量的大小。指针变量的大小与编译器有关：32位编译器下占4字节，64位编译器下占8字节。所以选项D正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）一个变量定义为int *p = nullptr;，则下列说法 正确的是（ B ）</div>
+        <div class="quiz-question">（2023年6月）一个变量定义为int *p = nullptr;，则下列说法正确的是（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -471,14 +267,14 @@
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查空指针概念。int *p = nullptr; 定义了一个指向int类型的空指针，p本身是int*类型，指向的类型是int。nullptr是C++关键字，表示空地址，不是随机地址。访问空指针会导致运行时错误而非编译错误。所以选项B正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）下列关于 C++语言中指针的叙述，不正确的是（ C ）。</div>
+        <div class="quiz-question">（2023年6月）下列关于 C++语言中指针的叙述，不正确的是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -500,20 +296,28 @@
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查指针的基本概念。指针变量可以指向指针变量，即可以定义指针的指针（int **pp）。所以选项C的叙述不正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年12月）如果变量x的地址是0x6ffe14,下面C++代码执行 以后输出的是（ C ）。 int *p=NULL; A. 0x6ffe11 int x=2;</div>
+        <div class="quiz-question">（2023年12月）如果变量x的地址是0x6ffe14,下面C++代码执行以后输出的是（ ）。int *p=NULL; int x=2; p=&x; p++; cout<<p<<endl;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="11" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>0x6ffe14 p=&x; p++; C. 0x6ffe18 cout<<p<<endl;</span>
+                <span>A</span>
+                <span>0x6ffe11</span>
             </div>
             <div class="quiz-option" data-quiz-index="11" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>0x6ffe14</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="11" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>0x6ffe18</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="11" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
                 <span>0x6ffe15</span>
             </div>
@@ -521,22 +325,22 @@
         <div class="quiz-feedback" id="feedback-11"></div>
         <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查指针运算。p=&x使p指向x的地址0x6ffe14。p++使指针移动一个int存储单元，在32位系统中int占4字节，所以p变为0x6ffe18。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 阅读以下程序，下面选项中全部表示地址的是（ D ）。</div>
+        <div class="quiz-question">课堂练习 阅读以下程序，下面选项中全部表示地址的是（ ）。int *p=NULL; int a=10; p=&a;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="12" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>a，p，*p int *p=NULL;</span>
+                <span>a，p，*p</span>
             </div>
             <div class="quiz-option" data-quiz-index="12" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>*a，&a，*p int a=10; p=&a;</span>
+                <span>*a，&a，*p</span>
             </div>
             <div class="quiz-option" data-quiz-index="12" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
@@ -550,14 +354,14 @@
         <div class="quiz-feedback" id="feedback-12"></div>
         <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查地址和值的区别。&a是变量a的地址，p是指针变量存储的地址，&*p等价于p（先解引用再取地址）。而a是变量的值，*p是指针指向的值。所以选项D全部表示地址。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 现有代码int k=5；int *pk=&k，下面不能正确执行的赋值语句是（ D ）。</div>
+        <div class="quiz-question">课堂练习 现有代码int k=5；int *pk=&k，下面不能正确执行的赋值语句是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="13" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -579,20 +383,28 @@
         <div class="quiz-feedback" id="feedback-13"></div>
         <button class="btn-submit" id="submit-13" onclick="coursePlayer.submitQuiz(13)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-13">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查指针赋值操作。pk是指针变量存储的是地址（通常是4或8字节），而k是int类型（4字节），将地址赋值给int变量会导致类型不匹配，不能正确执行。选项D错误。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 阅读以下程序，想要输出结果为200，则横线处需要填写的代码是（ A ）。</div>
+        <div class="quiz-question">课堂练习 阅读以下程序，想要输出结果为200，则横线处需要填写的代码是（ ）。int a = 1000; int *p = &a; ________________ cout << a << endl;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="14" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>*p = 200; int a = 1000; int *p = &a; B. p = 200; ________________ cout << a << endl; C. &a = 200;</span>
+                <span>*p = 200;</span>
             </div>
             <div class="quiz-option" data-quiz-index="14" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>p = 200;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="14" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>&a = 200;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="14" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
                 <span>200 = *p;</span>
             </div>
@@ -600,11 +412,7 @@
         <div class="quiz-feedback" id="feedback-14"></div>
         <button class="btn-submit" id="submit-14" onclick="coursePlayer.submitQuiz(14)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-14">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查通过指针修改变量值。*p = 200; 通过指针p修改其所指向的变量a的值为200，这样输出a就是200。选项B将200赋值给指针本身（地址），选项C试图修改变量地址（非法），选项D将值赋给表达式（非法）。所以选项A正确。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

@@ -1,100 +1,4 @@
 <div class="slide">
-    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
-    <div class="slide-content">
-        <p>编程能力等级认证</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">第四课</h2>
-    <div class="slide-content">
-        <p>函 数 2</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 指针和函数</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>自定义交换两个变量的函数</p>
-        <p>void SWAP(int a,int b){</p>
-        <p>int t=a;</p>
-        <p>a=b;</p>
-        <p>a 10 b 20</p>
-        <p>a=x</p>
-        <p>b=t;</p>
-        <p>}</p>
-        <p>b=y</p>
-        <div class="code-block">
-            int main(){ x 10 y 20<br>
-            int x=10;<br>
-            int y=20;<br>
-            SWAP(x,y);<br>
-            x和y无法<br>
-            cout&lt;&lt;x&lt;&lt;" "&lt;&lt;y;<br>
-            交换<br>
-            return 0;<br>
-            10 20 ×<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针作为函数的参数</p>
-        <p>指针参数：定义函数时指针作为形参，在函数调用时传递</p>
-        <p>变量的地址</p>
-        <p>指针</p>
-        <p>}</p>
-        <div class="code-block">
-            int main(){<br>
-            int x=10; 传地址<br>
-            void SWAP(int *a, int *b){<br>
-            int y=20;<br>
-            int t = *a;<br>
-            SWAP(&amp;x,&amp;y);<br>
-            *a = *b;<br>
-            cout&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;<br>
-            *b = t;<br>
-            return 0;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>指针（地址）传递的过程</p>
-        <p>void SWAP(int *a,int *b){</p>
-        <p>a b</p>
-        <p>int t=*a;</p>
-        <p>*a=*b;</p>
-        <p>int *a=&x</p>
-        <p>*b=t; int *b=&y</p>
-        <p>}</p>
-        <p>x 10 y 20</p>
-        <div class="code-block">
-            int main(){<br>
-            int x=10;<br>
-            int y=20;<br>
-            SWAP(&amp;x,&amp;y);<br>
-            这种传递参数的方式称为地址（指针）传递。<br>
-            cout&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;<br>
-            对形参的操作，实际上就是对实参的操作！<br>
-            return 0;<br>
-            20 10<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（样题）如果希望设计一个函数 xchg，实现交换两个 int 变量的值， 则它的声明可以写为 void xchg(int a, int b);。</div>
         <div class="quiz-options">
@@ -110,7 +14,7 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】本题考查值传递的特点。使用值传递时，函数内部对形参的修改不会影响实参。要实现交换两个变量的值，需要使用指针传递或引用传递，而不是值传递。
         </div>
     </div>
 </div>
@@ -131,14 +35,14 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查函数参数传递方式。C++语言中，函数参数默认以值传递方式进行传递，而不是地址传递。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ B ），可以使得输出是“20 10”。</div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使得输出是“20 10”。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -160,14 +64,14 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查指针传递。要实现交换两个变量的值，需要使用指针传递或引用传递。选项B使用指针传递，可以通过解引用修改实参；选项D使用引用传递也可以实现交换。根据题目要求输出"20 10"，选项B正确。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年12月）下面有关于参数的说法，正确的是（ A ）。</div>
+        <div class="quiz-question">（2023年12月）下面有关于参数的说法，正确的是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -189,14 +93,14 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】本题考查参数传递方式的特点。值传递时，子函数对参数的修改不会影响主函数中的实参，所以选项A正确。地址传递时，子函数可以通过指针修改主函数中的变量值。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年12月）下面C++代码执行后输出的是( D )。 int fun1(int *n){ return *n**n; }</div>
+        <div class="quiz-question">（2023年12月）下面C++代码执行后输出的是( )。 int fun1(int *n){ return *n**n; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -218,157 +122,7 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>传递数组</p>
-        <p>• 数组也可以作为函数的参数传递，传递数组其实传递的是数组的地址。</p>
-        <p>• 函数内部无法获取数组长度，通常将数组长度也作为参数传递。</p>
-        <p>数组作为形参 数组长度 指针的形式 数组长度</p>
-        <p>void printArr(int a[],int n){ void printArr(int* a,int n){</p>
-        <p>for(int i=0;i<n;i++){ for(int i=0;i<n;i++){</p>
-        <p>cout<<a[i]<<" "; cout<<a[i]<<" ";</p>
-        <p>} }</p>
-        <p>传递地址 传递地址</p>
-        <p>} }</p>
-        <div class="code-block">
-            int main(){ int main(){<br>
-            int a[5]={1,2,3,4,5}; int a[5]={1,2,3,4,5};<br>
-            printArr(a,5); printArr(a,5);<br>
-            return 0; return 0;<br>
-            实参 实参<br>
-            } }<br>
-            1 2 3 4 5 1 2 3 4 5<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>传递数组</p>
-        <p>由于传递的是数组的地址，形参和实参指向的是同一个数组，</p>
-        <p>函数内部可以直接对数组进行操作和修改。</p>
-        <p>void addOne(int a[],int n){</p>
-        <p>for(int i=0;i<n;i++)</p>
-        <p>a[i]+=1;</p>
-        <p>}</p>
-        <p>12 23 34 45 56</p>
-        <div class="code-block">
-            int main(){<br>
-            int a[5]={1,2,3,4,5};<br>
-            数组a<br>
-            addOne(a,5);<br>
-            return 0;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 引用</h2>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>引用</p>
-        <p>引用：一种特殊类型的变量，可以被认为是另一个变量的别名</p>
-        <p>某个已存</p>
-        <p>在变量</p>
-        <p>数据类型 &引用变量名 = 被引用变量名称;</p>
-        <p>int b=200;</p>
-        <p>q是b的别名</p>
-        <p>int &q=b;</p>
-        <p>定义引用时，必须同时进行初始化</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>引用</p>
-        <p>引用和其绑定的变量是同一个变量，操作引用即为操作变量本身。</p>
-        <p>int b=200;</p>
-        <p>200</p>
-        <p>int &q=b;</p>
-        <p>cout<<b<<" "<<q<<endl; 200 200</p>
-        <p>别名</p>
-        <p>b q</p>
-        <p>cout<<&b<<endl;</p>
-        <p>0x431b1ff914</p>
-        <p>cout<<&q<<endl; 0x431b1ff914 变量</p>
-        <p>q=500; b和q是同一个变量</p>
-        <p>cout<<b<<" "<<q<<endl; 500 500</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>引用的注意事项</p>
-        <p>已存在的引用不能再作为其他变量的别名</p>
-        <p>int b=200;</p>
-        <p>int &q=b;</p>
-        <p>int c=300;</p>
-        <p>q=c; ×</p>
-        <p>q不能再作为其</p>
-        <p>他变量的别名</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>引用作为函数的参数</p>
-        <p>引用参数：定义函数时引用作为形参，在函数调用时传递变量，</p>
-        <p>相当于传递变量本身</p>
-        <p>引用</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            int main(){<br>
-            void SWAP(int &amp;a,int &amp;b){<br>
-            int x=10;<br>
-            int t=a; 传变量本身<br>
-            int y=20;<br>
-            a=b;<br>
-            SWAP(x,y);<br>
-            b=t;<br>
-            cout&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">知识讲解</h2>
-    <div class="slide-content">
-        <p>引用传递的过程</p>
-        <p>void SWAP(int &a,int &b){</p>
-        <p>int t=a;</p>
-        <p>a=b;</p>
-        <p>int &a=x</p>
-        <p>x a y b</p>
-        <p>b=t; int &b=y</p>
-        <p>}</p>
-        <p>10 20</p>
-        <div class="code-block">
-            int main(){<br>
-            int x=10;<br>
-            int y=20;<br>
-            SWAP(x,y);<br>
-            传参的过程给实参起别名，形参作为实参的别名，<br>
-            cout&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;endl;<br>
-            相当于传递变量本身，形参和实参是同一个变量！<br>
-            return 0;<br>
-            20 10 这种传递参数的的方式称为引用传递。<br>
-            }<br>
+            【解析】本题考查指针传递和数组初始化。arr[10]={2}表示arr[0]=2，其余元素初始化为0。fun1(arr)中*n是arr[0]=2，返回2*2=4，所以arr[1]=4，输出4。
         </div>
     </div>
 </div>
@@ -389,7 +143,7 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查C++运算符。&是引用运算符和取地址运算符，&&是逻辑与运算符，*是解引用运算符和乘法运算符，但**不是C++语言的运算符。
         </div>
     </div>
 </div>
@@ -410,7 +164,7 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查函数参数传递方式。C++语言中，函数参数默认以值传递方式进行传递，需要显式使用指针或引用才能实现地址传递或引用传递。
         </div>
     </div>
 </div>
@@ -431,14 +185,14 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查引用传递的特点。引用传递时，形参是实参的别名，不会复制实际参数，因此不会额外占用内存空间。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）在 C++中，以下哪个关键字或符号用于声明引用（ B ）</div>
+        <div class="quiz-question">（样题）在 C++中，以下哪个关键字或符号用于声明引用（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -460,14 +214,14 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查引用的声明方式。在C++中，使用&符号来声明引用，如int &ref = var;表示ref是var的引用。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）在 C++中，以下哪种方式不能用于向函数传递参数（ D ）</div>
+        <div class="quiz-question">（样题）在 C++中，以下哪种方式不能用于向函数传递参数（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -489,324 +243,7 @@
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】本题考查函数参数传递方式。C++中常用的参数传递方式有值传递、引用传递和指针传递。模板传递不是参数传递方式，而是一种编程范式。
         </div>
     </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年9月）进制转换</p>
-        <p>【问题描述】</p>
-        <p>进制数指的是逢N进一的计数制。例如，人们日常生活中大多使用十进制计数，而计算机</p>
-        <p>底层则一般使用二进制。除此之外，八进制和十六进制在一些场合也是常用的计数制（十六进</p>
-        <p>制中，一般使用字母A至F表示十至十五；本题中，十一进制到十五进制也是类似的）。</p>
-        <p>在本题中，我们将给出N个不同进制的数。你需要分别把它们转换成十进制数。</p>
-        <p>【提示】</p>
-        <p>对于任意⼀个L位K进制数，假设其最右边的数位为第 0 位，最左边的数位为第L-1位，我</p>
-        <p>们只需要将其第i位的数码乘以权值Ki，再将每位的结果相加，即可得到原K进制数对应的十进</p>
-        <p>制数。下面是两个例子：</p>
-        <p>1. 八进制数1362 对应的十进制数为 1x83+3x82+6x81+2x80 = 754</p>
-        <p>2. 十六进制数3F0 对应的十进制为 3x162+15x161+0x160 = 1008</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>（2023年9月）进制转换</p>
-        <p>【输入格式】</p>
-        <p>输入的第一行为一个十进制表示的整数N。</p>
-        <p>接下来N行，每行一个整数K，随后是一个空格，紧接着是一个K进制数，表示需要转换的</p>
-        <p>数。保证所有K进制数均由数字和大写字母组成，且不以0开头。保证K进制数合法。</p>
-        <p>保证N≤1000，保证2≤K≤16。</p>
-        <p>保证所有K进制数的位数不超过9。</p>
-        <p>【输出格式】</p>
-        <p>输出N行，每一个十进制数，表示对应K进制数的十进制数值。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>数据分析</p>
-        <p>【输入样例1】 【输入样例2】</p>
-        <p>2 2</p>
-        <p>8 1362 2 11011</p>
-        <p>16 3F0 10 123456789</p>
-        <p>【输出样例1】 【输出样例2】</p>
-        <p>754 27</p>
-        <p>1008 123456789</p>
-        <p>八进制数1362长度-1</p>
-        <p>8 1362 1x83+3x82+6x81+2x80 = 754</p>
-        <p>16 3F0 3x162+15x161+0x160 = 1008</p>
-        <p>12 11011 1x24+1x23+0x22+1x21+1x20 = 27</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>数据分析</p>
-        <p>八进制数1362长度-1</p>
-        <p>8 1362 1x83+3x82+6x81+2x80 = 754</p>
-        <p>字符数组 1 3 6 2</p>
-        <p>循环次数 循环变量 8进制字符转为int值 pw值 表达式 res值</p>
-        <p>第一次 3 2 1 1 * 80 2</p>
-        <p>第二次 2 6 倒序 1*8 6 * 81 50</p>
-        <p>第三次 1 3 8*8 3*82 242</p>
-        <p>第四次 0 1 64*8 1*83 754</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>思路分析</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写字符转数字函数trans_digit</p>
-        <p>形参为字符类型</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c-'0');</p>
-        <p>return (c-'A'+10);</p>
-        <p>}</p>
-        <p>long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>for(int i=l-1;i>=0;i--){</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>pw *= k;</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写字符转数字函数trans_digit</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c-'0');</p>
-        <p>return (c-'A'+10);</p>
-        <p>对字符A-F的处理</p>
-        <p>}</p>
-        <p>K进制数：2≤K≤16 long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>十一到十六进制数中：</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>使⽤字母A至F表示十至十五</p>
-        <p>for(int i=l-1;i>=0;i--){</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>pw *= k;</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写转为十进制数函数trans</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c-'0');</p>
-        <p>return (c-'A'+10);</p>
-        <p>} K进制 进制数</p>
-        <p>long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>K进制数，使用字符数组存储</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>for(int i=l-1;i>=0;i--){</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>pw *= k;</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写转为十进制数函数trans</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c-'0');</p>
-        <p>return (c-'A'+10);</p>
-        <p>}</p>
-        <p>long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>八进制数1362长度-1</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>8 1362 1x83+3x82+6x81+2x80=754 for(int i=l-1;i>=0;i--){</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>pw *= k;</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写转为十进制数函数trans</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c-'0');</p>
-        <p>return (c-'A'+10);</p>
-        <p>}</p>
-        <p>long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>8 1362 1x83+3x82+6x81+2x80=754 for(int i=l-1;i>=0;i--){</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>3 2 1 0 pw *= k;</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写转为十进制数函数trans</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c-'0');</p>
-        <p>return (c-'A'+10);</p>
-        <p>}</p>
-        <p>long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>8 1362 1x83+3x82+6x81+2x80=754 for(int i=l-1;i>=0;i--){</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>pw *= k;</p>
-        <p>依次获取：2 6 3 1</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写转为十进制数函数trans</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c - '0');</p>
-        <p>return (c-'A'+ 10);</p>
-        <p>}</p>
-        <p>long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>for(int i=l-1;i>=0;i--) {</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>pw *= k;</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>编写转为十进制数函数trans</p>
-        <p>int trans_digit(char c) {</p>
-        <p>if (c<='9')</p>
-        <p>return (c-'0');</p>
-        <p>return (c-'A'+ 10);</p>
-        <p>}</p>
-        <p>long long trans(int k,char str[]){</p>
-        <p>int l = strlen(str);</p>
-        <p>long long res = 0, pw =1;</p>
-        <p>for(int i=l-1;i>=0;i--) {</p>
-        <p>res+=pw*trans_digit(str[i]);</p>
-        <p>pw *= k;</p>
-        <p>}</p>
-        <p>return res;</p>
-        <p>}</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>调用函数trans，输出结果</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            int main() {<br>
-            int n=0;<br>
-            cin&gt;&gt;n;<br>
-            for (int t=0;t&lt;n;t++) {<br>
-            int k=0;<br>
-            char str[10]; 字符数组，存储进制数<br>
-            cin&gt;&gt;k&gt;&gt;str;<br>
-            cout&lt;&lt;trans(k,str)&lt;&lt;endl;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>调用函数trans，输出结果</p>
-        <p>return 0;</p>
-        <p>}</p>
-        <div class="code-block">
-            int main() {<br>
-            int n=0;<br>
-            cin&gt;&gt;n;<br>
-            for (int t=0;t&lt;n;t++) {<br>
-            int k=0;<br>
-            char str[10];<br>
-            cin&gt;&gt;k&gt;&gt;str;<br>
-            cout&lt;&lt;trans(k,str)&lt;&lt;endl;<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题解析</h2>
-    <div class="slide-content">
-        <p>【完整代码】</p>
-        <p>return res;</p>
-        <p>}</p>
-        <div class="code-block">
-            #include &lt;bits/stdc++.h&gt;<br>
-            using namespace std;<br>
-            int trans_digit(char c) { int main(){<br>
-            if (c&lt;='9') int n = 0;<br>
-            return (c-'0'); cin&gt;&gt;n;<br>
-            return (c-'A'+10); for (int t=0;t&lt;n;t++) {<br>
-            } int k = 0;<br>
-            long long trans(int k, char str[]){ char str[10];<br>
-            int l = strlen(str); cin&gt;&gt;k&gt;&gt;str;<br>
-            long long res = 0, pw = 1; cout&lt;&lt;trans(k, str)&lt;&lt;endl;<br>
-            for (int i=l-1;i&gt;=0;i--) { }<br>
-            res +=pw*trans_digit(str[i]); return 0;<br>
-            pw *= k; }<br>
-            }<br>
-        </div>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>
