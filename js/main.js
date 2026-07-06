@@ -90,7 +90,7 @@ class CoursePlayer {
     
     async loadCourseData() {
         try {
-            const response = await fetch(`data/${this.currentLevel}/lesson${this.currentLesson}.html`);
+            const response = await fetch(`data/${this.currentLevel}/lesson${this.currentLesson}/index.html`);
             if (!response.ok) {
                 throw new Error(`加载课程数据失败: ${response.status}`);
             }
