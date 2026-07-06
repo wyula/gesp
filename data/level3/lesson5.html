@@ -1,307 +1,478 @@
 <div class="slide">
-    <h1 class="slide-title">CCF-GESP C++三级</h1>
-    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
-    <p style="text-align:center; color:#999; margin-top:20px;">第五课 枚举算法</p>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 什么是枚举算法</h2>
+    <h2 class="slide-subtitle-center">CCF-GESP C++三级</h2>
     <div class="slide-content">
-        <p><strong>枚举算法</strong>也叫穷举算法，是一种基本的算法思想。它的核心思想是：</p>
-        <br>
-        <p>将问题的所有可能解一一列举出来，然后逐一验证每个解是否满足问题的条件。</p>
-        <br>
-        <p><strong>枚举算法的特点：</strong></p>
-        <p>1. <strong>简单直观：</strong>容易理解和实现</p>
-        <p>2. <strong>适用范围广：</strong>可以解决很多问题</p>
-        <p>3. <strong>效率较低：</strong>时间复杂度通常较高</p>
-        <p>4. <strong>结果可靠：</strong>只要枚举完全，一定能找到正确解</p>
+        <p>编程能力等级认证</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">枚举算法的基本步骤</h2>
+    <h2 class="slide-subtitle-center">第五课</h2>
     <div class="slide-content">
-        <p>1. <strong>确定枚举范围：</strong>确定所有可能的解的范围</p>
-        <p>2. <strong>枚举每个可能的解：</strong>用循环遍历所有可能</p>
-        <p>3. <strong>验证条件：</strong>检查当前解是否满足条件</p>
-        <p>4. <strong>输出结果：</strong>如果满足条件，输出解</p>
+        <p>数 制 和 编 码 1</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">枚举算法流程图</h2>
+    <h2 class="slide-subtitle-center">01 二进制</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p style="font-family: monospace; line-height: 2;">开始</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">确定枚举范围 [start, end]</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">i = start</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">┌─ 循环: i &lt;= end ─┐</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ 检查条件(i)是否满足 │</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ ├─ 是 → 输出/记录解 │</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ └─ 否 → 继续       │</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 4em;">│ i++                │</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">└─────────────────────┘</p>
-        <p style="font-family: monospace; line-height: 2; text-indent: 2em;">结束</p>
+        <p>计算机只认识二进制数</p>
+        <p>01110101011010101011101010110</p>
+        <p>10101011101010110101010111010</p>
+        <p>8275297592</p>
+        <p>10110101010111010101101010101</p>
+        <p>(数字)</p>
+        <p>11010101101010101110101011010</p>
+        <p>(图片) 10101110101011010101011101010</p>
+        <p>11010101011101010110101010111</p>
+        <p>床前明月光（文字）</p>
+        <p>01010110101010111010101101010</p>
+        <p>10111110101010111010101101010</p>
+        <p>(邮件)</p>
+        <p>(视频)</p>
+        <p>数字、文字、图片、视频等，在计算机中都被存储为01。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二进制的计数规则</p>
+        <p>C++中的表示</p>
+        <p>进制 表示数字 进位结尾原则</p>
+        <p>形式</p>
+        <p>逢十进一</p>
+        <p>十进制 0~9 默认</p>
+        <p>借一当十</p>
+        <p>逢二进一</p>
+        <p>二进制 0~1 0b/0B开头</p>
+        <p>借一当二</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二进制与十进制转换</p>
+        <p>十进制转二进制：除以2取余，除到</p>
+        <p>二进制转十进制：</p>
+        <p>商是0为止，然后逆序输出余数。</p>
+        <p>将二进制数按位权展开后求和。</p>
+        <p>2 89 ······1</p>
+        <p>2 44 ······0</p>
+        <p>1 0 0 1</p>
+        <p>2 22 ······0</p>
+        <p>数位 3位 2位 1位 0位</p>
+        <p>2 11 ······1</p>
+        <p>1011001</p>
+        <p>位权 23 22 21 20</p>
+        <p>2 5 ······1</p>
+        <p>2 2 ······0</p>
+        <p>1×23+0×22+0×21+1×20=9</p>
+        <p>2 1 ······1</p>
+        <p>(1001) = (9) 0</p>
+        <p>2 10</p>
+        <p>(89) = (1011001)</p>
+        <p>10 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二进制数与十进制数转换</p>
+        <p>0 0</p>
+        <p>1 1</p>
+        <p>2 10</p>
+        <p>3 11</p>
+        <p>十 二</p>
+        <p>4 100</p>
+        <p>进 进</p>
+        <p>制 5 101 制</p>
+        <p>数 6 110 数</p>
+        <p>7 111</p>
+        <p>8 1000</p>
+        <p>9 1001</p>
+        <p>10 1010</p>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">枚举算法的核心思想是（）</div>
+        <div class="quiz-question">（2023年6月）计算机中存储的数据都是二进制形式。因此，在使用 C++ 语言编写程序时，将所有十进制数改写为相同数值的二进制数，会使得程序 运行效率更高。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>分而治之</span>
+                <span>正确</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>递归调用</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>穷举所有可能</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>动态规划</span>
+                <span>错误</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 枚举算法的应用场景</h2>
-    <div class="slide-content">
-        <p><strong>场景1：查找问题</strong></p>
-        <p>- 在数组中查找某个元素</p>
-        <p>- 在字符串中查找子串</p>
-        <br>
-        <p><strong>场景2：组合问题</strong></p>
-        <p>- 排列组合问题</p>
-        <p>- 子集问题</p>
-        <br>
-        <p><strong>场景3：优化问题</strong></p>
-        <p>- 求最大值/最小值</p>
-        <p>- 求最优解</p>
-        <br>
-        <p><strong>场景4：验证问题</strong></p>
-        <p>- 判断是否存在满足条件的解</p>
-        <p>- 判断某个命题是否成立</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">示例1：查找最大值</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr[] = {5, 3, 9, 1, 7, 4};<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> len = <span class="code-keyword">sizeof</span>(arr) / <span class="code-keyword">sizeof</span>(arr[0]);<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> max_val = arr[0];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt; len; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (arr[i] &gt; max_val) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_val = arr[i];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "最大值：" << max_val << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">示例2：百鸡问题</h2>
-    <div class="slide-content">
-        <p><strong>问题描述：</strong></p>
-        <p>公鸡5元一只，母鸡3元一只，小鸡1元三只。用100元买100只鸡，问公鸡、母鸡、小鸡各买多少只？</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">百鸡问题代码</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> x = 0; x &lt;= 20; x++) {      // 公鸡数量<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> y = 0; y &lt;= 33; y++) {  // 母鸡数量<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> z = 100 - x - y;            // 小鸡数量<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (z % 3 == 0 && 5 * x + 3 * y + z / 3 == 100) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << "公鸡：" << x << "只，母鸡：" << y << "只，小鸡：" << z << "只" << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">百鸡问题中，公鸡最多可以买多少只？</div>
+        <div class="quiz-question">（样题）对于一个十进制数 37，以下哪个是它的二进制表示 （ B ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>15只</span>
+                <span>10101</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>18只</span>
+                <span>100101</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>20只</span>
+                <span>101001</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>25只</span>
+                <span>1000101</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">03 枚举算法的优化</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>优化策略1：缩小枚举范围</strong></p>
-        <p>根据问题的约束条件，尽可能缩小枚举的范围。</p>
-        <br>
-        <p><strong>优化策略2：剪枝</strong></p>
-        <p>在枚举过程中，提前排除不可能的情况，减少不必要的计算。</p>
-        <br>
-        <p><strong>优化策略3：利用对称性</strong></p>
-        <p>如果问题具有对称性，可以只枚举一半，另一半通过对称得到。</p>
+        <p>带小数部分的转换</p>
+        <p>二进制转十进制：将二进制数按位权展开后求和</p>
+        <p>小数部分位权的权值从左往右依次为-1,-2,-3...</p>
+        <p>1 0 0 1 1 1 1 0 1×23+0×22+0×21+1×20+1×2-1</p>
+        <p>+1×2-2+1×2-3+0×2-4</p>
+        <p>=9.875</p>
+        <p>数位 3位 2位 1位 0位 -1位 -2位 -3位 -4位</p>
+        <p>位权 23 22 21 20 2-1 2-2 2-3 2-4 (1001.1111) = (9.875)</p>
+        <p>2 10</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">示例3：寻找水仙花数</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>问题描述：</strong></p>
-        <p>水仙花数是指一个3位数，其各位数字的立方和等于该数本身。例如153 = 1³ + 5³ + 3³。</p>
-        <p>找出所有的水仙花数。</p>
+        <p>带小数部分的转换</p>
+        <p>十进制转二进制：整数部分除2取余，逆序输出；</p>
+        <p>小数部分，乘2取整法，顺序输出</p>
+        <p>2 89 ······1</p>
+        <p>89.125</p>
+        <p>2 44 ······0</p>
+        <p>2 22 ······0</p>
+        <p>2 11 ······1</p>
+        <p>1011001</p>
+        <p>2 5 ······1</p>
+        <p>2 2 ······0</p>
+        <p>2 1 ······1</p>
+        <p>0</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">水仙花数代码</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "水仙花数：" << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> num = 100; num &lt; 1000; num++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> hundreds = num / 100;      // 百位<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> tens = (num / 10) % 10;    // 十位<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> units = num % 10;          // 个位<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (hundreds * hundreds * hundreds +<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tens * tens * tens +<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;units * units * units == num) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << num << " ";<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">04 真题解析</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p>让我们来看一些关于枚举算法的真题。</p>
+        <p>带小数部分的转换</p>
+        <p>十进制转二进制：整数部分除2取余，逆序输出；</p>
+        <p>小数部分，乘2取整法，顺序输出</p>
+        <p>0.125</p>
+        <p>x</p>
+        <p>2</p>
+        <p>0.250······0</p>
+        <p>89.125 0.250</p>
+        <p>x</p>
+        <p>2</p>
+        <p>001</p>
+        <p>(89.125) = (1011001.001)</p>
+        <p>0.500······0 10 2</p>
+        <p>0.500</p>
+        <p>x</p>
+        <p>2</p>
+        <p>1.000······1</p>
+        <p>0.000 到0结束</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">判断题</h2>
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）⼆进制数101.101在十进制下是5.005。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）二进制数11.01在十进制下是（ D ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>3.01</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>3.05</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>3.125</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>3.25</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 十进制小数13.375对应的二进制数是（ A ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>1101.011</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>1011.011</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>1101.101</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>1010.01</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 二进制数的编码表示</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>（2023年6月）</strong> 枚举算法的时间复杂度一定是O(n)。</p>
-        <br>
-        <p>答案：<strong>错误</strong></p>
-        <br>
-        <p>解析：枚举算法的时间复杂度取决于枚举的范围和每个解的验证时间，可能是O(n)、O(n²)等。</p>
+        <p>机器数和真值</p>
+        <p>一个数在计算机中的表示形式，称为机器数。</p>
+        <p>机器数最高位为符号位，0表示正数，1表示负数。</p>
+        <p>机器数所对应的原来的数值，称为真值。</p>
+        <p>机器数 0 0 0 1 1 1 0 0 真值：28</p>
+        <p>符号位 数值位</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">选择题</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>（样题）</strong> 枚举算法的主要优点是（）</p>
-        <br>
-        <p>A. 时间效率高</p>
-        <p>B. 空间效率高</p>
-        <p>C. 逻辑简单，容易实现</p>
-        <p>D. 不需要考虑边界条件</p>
-        <br>
-        <p>答案：<strong>C</strong></p>
+        <p>原码</p>
+        <p>机器数采用了不同的编码方法，称为码制。</p>
+        <p>常见码制有原码，反码，补码</p>
+        <p>数字N原码：数符部分和数值部分</p>
+        <p>数符：0表示正数，1表示负数。数值：为N的绝对值的二进制形式。</p>
+        <p>真值 二进制数 原码</p>
+        <p>+28 +0011100 00011100</p>
+        <p>-28 -0011100 10011100</p>
+        <p>0 0000000 00000000</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">编程题：完数</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>题目描述：</strong></p>
-        <p>一个数如果恰好等于它的真因子之和，这个数就称为"完数"。例如6 = 1 + 2 + 3。</p>
-        <p>找出1000以内的所有完数。</p>
-        <br>
-        <p><strong>输出格式：</strong></p>
-        <p>每行输出一个完数</p>
+        <p>反码</p>
+        <p>数字N的反码：若数N为正数，则其反码和原码相同；</p>
+        <p>若为负数，则在原码的基础上符号位不变，数值位各位取反(0变1,1变0)。</p>
+        <p>真值 二进制数 原码 反码</p>
+        <p>+28 +0011100 00011100 00011100</p>
+        <p>-28 -0011100 10011100 11100011</p>
+        <p>0 +0000000 00000000 00000000</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">完数参考代码</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> num = 2; num &lt; 1000; num++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> sum = 1;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 2; i * i &lt;= num; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (num % i == 0) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += i;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (i != num / i) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += num / i;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (sum == num) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << num << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>补码</p>
+        <p>数字N补码：若数N为正数，则其补码和原码相同；</p>
+        <p>若为负数，则在原码的基础上符号位不变，数值位各位取反，再+1。</p>
+        <p>真值 二进制数 原码 反码 补码</p>
+        <p>+28 +0011100 00011100 00011100 00011100</p>
+        <p>-28 -0011100 10011100 11100011 11100100</p>
+        <p>0 +0000000 00000000 00000000 00000000</p>
     </div>
 </div>
 
 <div class="slide">
-    <div class="highlight-box">
-        <p><strong>练习1：</strong> 找出1000以内的所有质数。</p>
-        <br>
-        <p><strong>练习2：</strong> 输入两个整数，找出它们的最大公约数。</p>
-        <br>
-        <p><strong>练习3：</strong> 找出所有满足a² + b² = c²的勾股数（a, b, c ≤ 100）。</p>
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）数据编码方式只有原码、反码、补码三种。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
     </div>
 </div>
 
 <div class="slide">
-    <h1 class="slide-title">感谢你的学习</h1>
-    <p style="text-align:center; color:#666; font-size:18px;">第五课 枚举算法</p>
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）二进制数据编码中，负数的补码是通过对原码按位取 反并加1得到的。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）下列关于负数的原码、反码、补码的描述中， 正确的是（ A ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>原码和反码互为按位取反（符号位除外），补码为反码加 1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>原码和反码互为按位取反（符号位除外），补码为原码加 1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>反码和补码互为按位取反（符号位除外），原码为反码加 1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>补码和原码互为按位取反（符号位除外），反码为补码加 1</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 在8位二进制补码中，10101011表示的数是十进制的（ B ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>43</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>-85</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>-43</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>-84</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 一个字长为8位的整数的补码是11111001，则它的原码是（ D ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>00000111</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>01111001</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>11111001</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>10000111 补码的补码， 即为原码！</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

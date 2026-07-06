@@ -1,0 +1,438 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++一级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第十课</h2>
+    <div class="slide-content">
+        <p>b rea k 和c o n t i n u e 关 键字</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 break关键字</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>break终止</p>
+        <p>break：结束、终止。</p>
+        <p>当break语句出现在循环中，用于终止循环。</p>
+        <p>秒表计时</p>
+        <p>游戏中的退出按钮</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>break终止</p>
+        <p>for(循环变量；循环条件；循环步长){</p>
+        <p>if（判断条件）{</p>
+        <p>break;</p>
+        <p>}</p>
+        <p>语句1；</p>
+        <p>}</p>
+        <p>语句2；</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>填空题</p>
+        <p>以下程序的输出结果是什么 B</p>
+        <p>（ ）</p>
+        <p>A. 1 2 3 4 5</p>
+        <p>D. 1 2 3 4 5 7 8 9</p>
+        <p>return 0;</p>
+        <p>10</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            for(int i=1;i&lt;=10;i++){ B. 1 2 3 4 5 6<br>
+            cout&lt;&lt;i&lt;&lt;" ";<br>
+            if(i==6) C. 1 2 3 4 5 6 7<br>
+            break;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>特殊求和</p>
+        <p>【问题描述】</p>
+        <p>如果一个数能够被7整除或者含有数字7，那么我们称这个数为幻数，比如17，</p>
+        <p>21，73是幻数，而6，59不是。求出1~100(包含1和100)中所有幻数的和，</p>
+        <p>当累加和大于等于1000时停止累加，输出所有满足条件的数字。</p>
+        <p>【输出描述】</p>
+        <p>一行，1~100中所有满足条件的数字，使用空格隔开。</p>
+        <p>【样例输出】</p>
+        <p>7 14 17 21 27 28 35 37 42 47 49 56 57 63 67 70 71 72 73 74 75</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <div class="code-block">
+            //定义变量sum进行累加<br>
+            int sum=0;<br>
+            //循环1~100之间的整数<br>
+            for(int i=1; i&lt;=100; i++){<br>
+            //判断是否能被7整除，或者个位为7 ，或者十位为7<br>
+            if( i % 7 = = 0 || i % 1 0 = = 7 || i / 1 0 = = 7 ) {<br>
+            cout&lt;&lt;i&lt;&lt;" ";<br>
+            sum+=i;<br>
+            }<br>
+        </div>
+        <div class="code-block">
+            //如果累加和大于等于1000，终止循环<br>
+            if(sum&gt;=1000) break;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>写一写</p>
+        <p>if(sum>=1000) break;</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int sum=0;<br>
+            for(int i=1;i&lt;=100;i++){<br>
+            if(i%7==0||i%10==7||i/10==7){<br>
+            cout&lt;&lt;i&lt;&lt;" ";<br>
+            sum+=i;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 continue关键字</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>continue</p>
+        <p>continue：继续，结束本次循环，进入到下一次循环当中。</p>
+        <p>下一曲</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>continue和break区别</p>
+        <p>for(循环变量；循环条件；循环步长){ for(循环变量；循环条件；循环步长){</p>
+        <p>if（判断条件）{ if（判断条件）{</p>
+        <p>语句1； break;</p>
+        <p>continue; }</p>
+        <p>} 语句1；</p>
+        <p>语句2； }</p>
+        <p>} 语句2；</p>
+        <p>continue语句的作用是跳过本次循环， break语句的作用是终止整个循环，</p>
+        <p>进入下一次循环。 执行循环后面的语句。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）在下面的C++代码中，由于循环中的continue是 无条件被执行，因此将导致死循环。 for(int i=1;i<10;i++) continue;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>填空题</p>
+        <p>以下程序的输出结果是什么（ C ）</p>
+        <p>A. 5 5 5</p>
+        <p>B. 5 4</p>
+        <p>D. 4 2</p>
+        <div class="code-block">
+            #include &lt;iostream&gt; i 输出<br>
+            using namespace std;<br>
+            int main(){<br>
+            4 过<br>
+            for(int i=5;i&gt;=1;i--){<br>
+            if(i%2==0) 3 3<br>
+            continue; C. 5 3 1<br>
+            2 过<br>
+            cout&lt;&lt;i&lt;&lt;" ";<br>
+            } 1 1<br>
+            return 0;<br>
+            0 循环结束<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>满足条件的数的累加</p>
+        <p>【问题描述】</p>
+        <p>现有n个整数，将其中个位数为k的数进行累加求和。</p>
+        <p>【输入描述】</p>
+        <p>第一行两个整数n、k，以空格分隔。（0<n<1000, 0≤k≤9）</p>
+        <p>第二行n个非负整数，以空格分隔，每个数不大于100000。</p>
+        <p>【输出描述】</p>
+        <p>输出满足题目要求的累加和。</p>
+        <p>【样例输入】</p>
+        <p>10 7</p>
+        <p>2 5 7 17 11 18 4 27 1 7</p>
+        <p>【样例输出】</p>
+        <p>58</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>满足条件的数的累加</p>
+        <p>个位数为7</p>
+        <p>10个整数</p>
+        <p>【样例输入】</p>
+        <p>10 7</p>
+        <p>2 5 7 17 11 18 4 27 1 7</p>
+        <p>【样例输出】</p>
+        <p>58</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 定义变量n，k，输入两个整数</p>
+        <p>int n,k;</p>
+        <p>cin>>n>>k;</p>
+        <p>② 循环输入n个整数</p>
+        <p>③ 累加满足条件的数</p>
+        <p>int sum=0;</p>
+        <p>int a;</p>
+        <p>for(int i=0;i<n;i++){</p>
+        <p>cin>>a;</p>
+        <p>如if(果a% 个10位!=数k不) 为k</p>
+        <p>过continue;</p>
+        <p>累su加ma+=a;</p>
+        <p>}</p>
+        <p>④ 输出累加和</p>
+        <p>cout<<sum;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>写一写</p>
+        <p>cout<<sum;</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int n,k;<br>
+            cin&gt;&gt;n&gt;&gt;k;<br>
+            int a;<br>
+            int sum=0;<br>
+            for(int i=0;i&lt;n;i++){<br>
+            cin&gt;&gt;a;<br>
+            if(a%10!=k) continue;<br>
+            sum+=a;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">03 格式化输入输出</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>printf()和scanf()</p>
+        <p>• printf()和scanf()包含在cstdio文件中，所以必须在程序中先包含该文件</p>
+        <p>按规定格式</p>
+        <p>scanf()</p>
+        <p>scanf("格式字符串"，数据1,数据2……)</p>
+        <p>输入内容</p>
+        <p>按规定格式</p>
+        <p>printf()</p>
+        <p>printf("格式字符串"，数据1,数据2……)</p>
+        <p>输出内容</p>
+        <p>占位符</p>
+        <p>int a;</p>
+        <p>scanf("%d", &a);</p>
+        <p>printf("%d-%d-%d\n",2023,5,1);</p>
+        <p>换行符 占位符 取地址符</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>占位符</p>
+        <p>占位符 说明</p>
+        <p>%d 整数int</p>
+        <p>%c 字符char</p>
+        <p>%f 浮点数float</p>
+        <p>%g 浮点数去除小数尾0</p>
+        <p>双精度浮点数</p>
+        <p>%lf</p>
+        <p>double</p>
+        <p>去除双精度浮点数</p>
+        <p>%lg</p>
+        <p>double小数尾0</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>修饰符</p>
+        <p>• 可以在占位符中添加修饰符，进一步修饰格式</p>
+        <p>原宽度比2大，则原数据原样输出</p>
+        <p>设置输出内容宽度</p>
+        <p>%02d 原宽度比2小，则填充0后进行输出</p>
+        <p>设置填充字符</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>指定小数位数</p>
+        <p>float b=2.50;</p>
+        <p>小数点后输</p>
+        <p>出保留1位</p>
+        <p>printf("%.1f",b); 2.5</p>
+        <p>小数点后输</p>
+        <p>出保留2位</p>
+        <p>printf("%.2f",b); 2.50</p>
+        <p>小数点后输</p>
+        <p>出保留5位</p>
+        <p>printf("%.5f",b); 2.50000</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>指定输入格式</p>
+        <p>例如输入形式为：23-12</p>
+        <p>int a,b;</p>
+        <p>scanf("%d-%d",&a,&b);</p>
+        <p>printf("%d-%d",a,b);</p>
+        <p>23-12 23:12</p>
+        <p>23-12 23-0</p>
+        <p>一定要按照scanf()指定格式输入！</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>小玉家的电费</p>
+        <p>【题目描述】</p>
+        <p>夏天到了，各家各户的用电量都增加了许多，相应的电费也交的更多了。小玉家今天收到</p>
+        <p>了一份电费通知单。小玉看到上面写，据闽价电 [2006]27规定：</p>
+        <p>月用电量在150千瓦时及以下部分按每千瓦时 0.4463元执行，</p>
+        <p>月用电量在151∼ 400千瓦时的部分按每千瓦时0.4663执行，</p>
+        <p>月用电量在401千瓦时及以上部分按每千瓦时0.5663元执行;</p>
+        <p>小玉想自己验证一下，电费通知单上应交电费的数目到底是否正确呢。请编写一个程序，</p>
+        <p>已知用电总计，根据电价规定，计算出应交的电费应该是多少。</p>
+        <p>要求：使用scanf()和printf()完成。</p>
+        <p>【输入格式】</p>
+        <p>输入一个小数，精确到小数点后2位，表示用电总计（单位以千瓦时计），不超过10000。</p>
+        <p>【输出格式】</p>
+        <p>输出一个小数，保留到小数点后1位（单位以元计）。</p>
+        <p>【输入样例】</p>
+        <p>267.50</p>
+        <p>【输出样例】</p>
+        <p>121.7</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 输入一个小数，表示用电量</p>
+        <p>double a;</p>
+        <p>scanf("%lf",&a);</p>
+        <p>电量 单价 ② 判断电量属于哪个等级并计算费用，保存到变量m中</p>
+        <p>double m=0;</p>
+        <p><=150 0.4463</p>
+        <p>if(a<=150)</p>
+        <p>151~400 0.4663</p>
+        <p>m=a*0.4463;</p>
+        <p>>=401 0.5663 else if(a>=151&&a<=400)</p>
+        <p>m=150*0.4463+(a-150)*0.4663;</p>
+        <p>else if(a>=401)</p>
+        <p>m=150*0.4463+250*0.4663+(a-400)*0.5663;</p>
+        <p>③ 输出结果，保留一位小数</p>
+        <p>printf("%.1lf",m);</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>写一写</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            double a;<br>
+            scanf("%lf",&amp;a);<br>
+            double m=0;<br>
+            if(a&lt;=150) m=a*0.4463;<br>
+            else if(a&gt;=151&amp;&amp;a&lt;=400) m=150*0.4463+(a-150)*0.4663;<br>
+            else if(a&gt;=401) m=150*0.4463+250*0.4663+(a-400)*0.5663;<br>
+            printf("%.1lf",m);<br>
+            return 0;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

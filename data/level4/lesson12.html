@@ -1,0 +1,451 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第十二课</h2>
+    <div class="slide-content">
+        <p>递 推 算 法 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>剪绳子</p>
+        <p>【问题描述】</p>
+        <p>在给定绳子对折次数n次，计算出中间剪一刀后可剪出绳子的段数。</p>
+        <p>【输入格式】</p>
+        <p>输入一个正整数n(2<n<20)作为绳子对折的次数。</p>
+        <p>【输出格式】</p>
+        <p>输出一个正整数，表示对折次后的绳子中间剪一刀可以剪出绳子的段数。</p>
+        <p>【输入样例1】</p>
+        <p>3</p>
+        <p>【输出样例1】</p>
+        <p>9</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>剪绳子</p>
+        <p>对折1次，中间剪一刀可以剪出3段绳子</p>
+        <p>3段绳子</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>问题分析</p>
+        <p>对折2次，中间剪一刀可以剪出5段绳子</p>
+        <p>5段绳子</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>问题分析</p>
+        <p>对折3次，中间剪一刀可以剪出9段绳子</p>
+        <p>9段绳子</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>递推关系式</p>
+        <p>对折次数 绳子段数</p>
+        <p>已知条件 1 3 21 + 1</p>
+        <p>2 5 22 + 1</p>
+        <p>递推关系式：</p>
+        <p>3 9 23 + 1</p>
+        <p>2当前对折次数 + 1</p>
+        <p>4 17 24 + 1</p>
+        <p>...</p>
+        <p>顺推</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            #include &lt;cmath&gt;<br>
+            using namespace std;<br>
+            int main() {<br>
+            int n;<br>
+            求2的n次幂<br>
+            cin &gt;&gt; n;<br>
+            int res = pow(2, n) + 1;<br>
+            cout&lt;&lt;res&lt;&lt; endl;<br>
+            return 0;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>简单的数字问题</p>
+        <p>【问题描述】</p>
+        <p>在所有的 N 位数中，有多少个数中有偶数个数字 3 ？由于结果可能很大，</p>
+        <p>你只需要输出这个答案对 12345 取余的值。</p>
+        <p>【输入格式】</p>
+        <p>读入一个数 N ，其中 1 ≤ N ≤ 1000</p>
+        <p>【输出格式】</p>
+        <p>输出有多少个数中有偶数个数字 3。</p>
+        <p>【输入样例】</p>
+        <p>2</p>
+        <p>【输出样例】</p>
+        <p>73</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>1位数 0~9</p>
+        <p>偶数个3： 0 1 2 4 5 6 7 8 9 共：9个数字</p>
+        <p>奇数个3： 3 共：1个数字</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>1位数 0~9</p>
+        <p>2位数</p>
+        <p>偶数个3： 00 11 22 44 55 66 77 88 99 72</p>
+        <p>偶数个3</p>
+        <p>奇数个3： 3 奇数个3 9</p>
+        <p>2位数 10~99</p>
+        <p>尝试给每个数添加</p>
+        <p>偶数个3： 43201</p>
+        <p>十位数字0~9</p>
+        <p>5</p>
+        <p>:个位</p>
+        <p>最十位高为位3不，能是为奇0数个3</p>
+        <p>6 9*1，共9个奇数个3</p>
+        <p>9*8，共72个偶数个3</p>
+        <p>7</p>
+        <p>8 十位可以添加：1、2、4、5、6、7、8、9。共：8个数字</p>
+        <p>9</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>简单的数字问题</p>
+        <p>1位数 0~9</p>
+        <p>奇数个3： 33</p>
+        <p>2位数</p>
+        <p>7723</p>
+        <p>偶数个3</p>
+        <p>2位数 10~99</p>
+        <p>奇数个3 197</p>
+        <p>尝试给每个数添加十位数字0~9</p>
+        <p>奇数个3： 12340</p>
+        <p>:个位</p>
+        <p>5</p>
+        <p>6</p>
+        <p>十最位高为位3不，能偶为数0个3</p>
+        <p>7</p>
+        <p>8</p>
+        <p>9 十位可以添加：1、2、4、5、6、7、8、9。共：8个数字</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>简单的数字问题</p>
+        <p>1位数</p>
+        <p>9</p>
+        <p>偶数个3 a[1]=9;</p>
+        <p>b[1]=1;</p>
+        <p>奇数个3 1</p>
+        <p>十位添加1、2、4、5、6、7、8、9共8个数字时:</p>
+        <p>2位数 a[2]=a[1]*8;</p>
+        <p>73 偶数个3: 9 * 8</p>
+        <p>偶数个3</p>
+        <p>b[2]=b[1]*8;</p>
+        <p>奇数个3: 8</p>
+        <p>奇数个3 17</p>
+        <p>十位添加3时，共1个数字</p>
+        <p>a[2]=a[2]+b[1]; a[2]=a[1]*8+b[1];</p>
+        <p>偶数个3: 1</p>
+        <p>最高位不能 奇数个3: 9 b[2]=b[2]+a[1]; b[2]=b[1]*8+a[1];</p>
+        <p>为0，其它位</p>
+        <p>最终结果</p>
+        <p>可以有数字0</p>
+        <p>最高位是8，</p>
+        <p>3位数</p>
+        <p>73 否则是9</p>
+        <p>a[3]=a[2]*8+b[2]; 递推公式：</p>
+        <p>偶数个3</p>
+        <p>b[3]=b[2]*8+a[2]; a[i] = a[i-1] * 8 + b[i-1]</p>
+        <p>奇数个3 17</p>
+        <p>b[i] = b[i-1] * 8 + a[i-1]</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>定义变量 n，接收位数个数</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>定义两个数组a和b，进行相关数据初始化</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            偶in数t 个n;3 奇数个3<br>
+            cin&gt;&gt;n;<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>定义两个数组a和b，进行相关数据初始化</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            1位数 0~9 cin&gt;&gt;n;<br>
+            偶数个3的个数<br>
+            a[1]=9;<br>
+            偶数个3： 0 1 2 4 5 6 7 8 9 b[1]=1;<br>
+            奇数个3的个数<br>
+            int k = 9;<br>
+            奇数个3： 3 for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>定义两个数组a和b，进行相关数据初始化</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>根据递推公式统计计算，最终输出结果</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>根据递推公式统计计算，最终输出结果</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            1 2 4 5 6 7 8 9<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            0 1 2 4 5 6 7 8 9 for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>根据递推公式统计计算，最终输出结果</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>根据递推公式统计计算，最终输出结果</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>偶数个3个数</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>cout<<a[n];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[1001],b[1001];<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            a[1]=9;<br>
+            b[1]=1;<br>
+            int k = 9;<br>
+            for(int i=2;i&lt;=n;i++){<br>
+            if(i==n) k=8;<br>
+            a[i]=(a[i-1]*k+b[i-1])%12345;<br>
+            b[i]=(b[i-1]*k+a[i-1])%12345;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

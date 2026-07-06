@@ -1,0 +1,662 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第十三课</h2>
+    <div class="slide-content">
+        <p>排 序 算 法 1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 冒泡排序</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>冒泡排序（升序）</p>
+        <p>每次比较两个相邻的元素，如果前者比后者大，就把它们交换过来。</p>
+        <p>每一轮进行两两比较，将该轮中最大元素冒出来。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>对数组中的n个元素进行升序排序</p>
+        <p>内层循环</p>
+        <p>a[0] a[1]</p>
+        <p>a[1] a[2]</p>
+        <p>a[2] a[3]</p>
+        <p>0</p>
+        <p>a[3] a[4]</p>
+        <p>for(int i=0;i<n-1;i++){</p>
+        <p>…</p>
+        <p>a[n-i-2] a[n-i-1] for(int j=0;j<n-1-i;j++){</p>
+        <p>外 if(a[j]>a[j+1]){ 升序</p>
+        <p>… …</p>
+        <p>层 swap(a[j],a[j+1]);</p>
+        <p>循 a[0] a[1] }</p>
+        <p>n-4 a[1] a[2]</p>
+        <p>环</p>
+        <p>}</p>
+        <p>a[2] a[3]</p>
+        <p>}</p>
+        <p>a[0] a[1]</p>
+        <p>n-3</p>
+        <p>a[1] a[2]</p>
+        <p>n-2 a[0] a[1]</p>
+        <p>每轮最后一次比较始终保持 i+j==n-2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>对数组中的n个元素进行降序排序</p>
+        <p>内层循环</p>
+        <p>a[0] a[1]</p>
+        <p>a[1] a[2]</p>
+        <p>a[2] a[3]</p>
+        <p>0</p>
+        <p>a[3] a[4]</p>
+        <p>for(int i=0;i<n-1;i++){</p>
+        <p>…</p>
+        <p>a[n-i-2] a[n-i-1] for(int j=0;j<n-1-i;j++){</p>
+        <p>外 if(a[j]<a[j+1]){ 降序</p>
+        <p>… …</p>
+        <p>层 swap(a[j],a[j+1]);</p>
+        <p>循 a[0] a[1] }</p>
+        <p>n-4 a[1] a[2]</p>
+        <p>环</p>
+        <p>}</p>
+        <p>a[2] a[3]</p>
+        <p>}</p>
+        <p>a[0] a[1]</p>
+        <p>n-3</p>
+        <p>a[1] a[2]</p>
+        <p>n-2 a[0] a[1]</p>
+        <p>每轮最后一次比较始终保持 i+j==n-2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）在下列代码的横线处填写（ ），完成对有 n个int类 型元素的数组 array由小到大排序。 void BubbleSort(int array[], int n){ for (int i=n;i>1;i--)</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>int j =i – 2; j >= 0; j-- for ( ) // 在此处填入代码</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>int j =i - 1; j >= 0; j-- if(array[j]>array[j+1]){</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>int j =0; j<i-1; j++ int t=array[j];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>int j =0; j<i; j++ array[j]=array[j+1]; array[j+1]=t; } }</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>对数组中的n个元素进行降序排序</p>
+        <p>内层循环</p>
+        <p>a[0] a[1] void BubbleSort(int array[], int n){</p>
+        <p>a[1] a[2]</p>
+        <p>a[2] a[3] for (int i=n;i>1;i--)</p>
+        <p>n</p>
+        <p>a[3] a[4]</p>
+        <p>… for ( i n t j = 0 ; j< i - 1 ; j + + )</p>
+        <p>a[n-2] a[n-1]</p>
+        <p>if(array[j]>array[j+1]){</p>
+        <p>外</p>
+        <p>… …</p>
+        <p>层 int t=array[j];</p>
+        <p>循 a[0] a[1]</p>
+        <p>array[j]=array[j+1];</p>
+        <p>4 a[1] a[2]</p>
+        <p>环</p>
+        <p>a[2] a[3]</p>
+        <p>array[j+1]=t;</p>
+        <p>n-1轮</p>
+        <p>a[0] a[1]</p>
+        <p>3 }</p>
+        <p>a[1] a[2]</p>
+        <p>}</p>
+        <p>2 a[0] a[1]</p>
+        <p>每轮最后一次比较：i-j==2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）在下列代码的横线处填写（ C ），完成对有 n个int类 型元素的数组 array由小到大排序。 void BubbleSort(int array[], int n){ for (int i=n;i>1;i--)</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>int j =i – 2; j >= 0; j-- for ( ) // 在此处填入代码</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>int j =i - 1; j >= 0; j-- if(array[j]>array[j+1]){</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>int j =0; j<i-1; j++ int t=array[j];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>int j =0; j<i; j++ array[j]=array[j+1]; array[j+1]=t; } }</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 有如下序列9,2,8,6,3,4，采用冒泡排序进行升序排序，请问第2趟排序之后的结果是？（ C ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>2,3,8,6,9,4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>2,8,6,3,4,9</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>2,6,3,4,8,9</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>2,3,4,6,8,9</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 有如下序列8,7,9,6,3,8，采用冒泡排序进行降序排序，请问第2趟排序之后的结果是？（ C ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>9,8,7,6,8,3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>8,9,7,8,6,3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>9,8,7,8,6,3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>9,8,8,6,7,3</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 使用冒泡排序对序列进行升序排序，每执行一次交换操作将会减少1个逆序对，因此 序列 5, 4, 3, 2, 1 需要执行（ C ）次交换操作，才能完成冒泡排序。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>10</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>15</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>排队看电影</p>
+        <p>【问题描述】</p>
+        <p>今天是星期五，班主任老师提前跟同学们说好，今天组织大家去电影院看一场历史</p>
+        <p>革命主题的电影。来到电影院，全班 n 位同学已经排成一队，班主任老师请班长小蓝</p>
+        <p>根据同学们的身高进行从低到高排序，方便观影。</p>
+        <p>小蓝思考了一下，决定采取以下策略来排队，比较相邻两位同学的身高，将身高低</p>
+        <p>一点的调整到前面，直到所有同学有序排队。为防止混乱，规定只能相邻的两位同学</p>
+        <p>可调整位置，请问最少需要多少次交换才能完成从小到大排序。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>排队看电影</p>
+        <p>【输入格式】</p>
+        <p>共两行，第一行输入一个正整数 n（3 < n < 100），表示全班同学人数；</p>
+        <p>第二行输入 n 个正整数 a1, a2, ... an(1 < ai <= 200)，表示正在排队中的同学身</p>
+        <p>高，正整数之间一个空格隔开。</p>
+        <p>【输出格式】</p>
+        <p>一个正整数，表示最少需要多少次交换才能完成从小到大排序。</p>
+        <p>【输入样例】</p>
+        <p>4</p>
+        <p>150 154 149 162</p>
+        <p>【输出样例】</p>
+        <p>2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>150 115449 114594 162</p>
+        <p>交换1次</p>
+        <p>114590 115409 154 162</p>
+        <p>交换1次</p>
+        <p>149 150 154 162</p>
+        <p>交换0次</p>
+        <p>一共2次</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>定义变量和数组，并初始化数组</p>
+        <div class="code-block">
+            int main() {<br>
+            int n, a[101]={0};<br>
+            cin&gt;&gt;n;<br>
+            for(int i=0;i&lt;n;i++)cin&gt;&gt;a<br>
+            [i];<br>
+            return 0;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>对数组进行冒泡排序，同时统计交换次数</p>
+        <p>}</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main() {<br>
+            int n, a[101];<br>
+            cin &gt;&gt; n;<br>
+            for(int i=0;i&lt;n;i++)cin&gt;&gt;a<br>
+            [i];<br>
+            int cnt = 0;<br>
+            for(int i=0;i&lt;n-1;i++){<br>
+            for(int j=0;j&lt;n-i-1;j++){<br>
+            if(a[j]&gt;a[j+1]){<br>
+            swap(a[j],a[j+1]);<br>
+            cnt++;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>输出结果</p>
+        <p>退出循环</p>
+        <p>if(!flag) break;</p>
+        <p>}</p>
+        <p>cout<<cnt;</p>
+        <p>return 0;}</p>
+        <div class="code-block">
+            int main() {<br>
+            int n, a[101];<br>
+            cin &gt;&gt; n;<br>
+            for(int i=0;i&lt;n;i++)cin&gt;&gt;a<br>
+            [i];<br>
+            标记该轮比较是否发<br>
+            int cnt = 0; 生交换，false为没有，<br>
+            true为有<br>
+            for(int i=0;i&lt;n-1;i++){<br>
+            bool flag = false;<br>
+            for(int j=0;j&lt;n-i-1;j++){<br>
+            if(a[j]&gt;a[j+1]){<br>
+            swap(a[j],a[j+1]);<br>
+            cnt++; 发生交换，flag<br>
+            修改为true<br>
+            flag=true;<br>
+            该轮未发生交换， }<br>
+            说明数据有序，<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>int cnt = 0;</p>
+        <p>for (int i = 0; i < n - 1; i++) {</p>
+        <p>cin >> a[i];</p>
+        <p>}</p>
+        <p>}</p>
+        <p>if(!flag) break;</p>
+        <p>}</p>
+        <p>cout << cnt;</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;bits/stdc++.h&gt;<br>
+            using namespace std; bool flag = false;<br>
+            for (int j=0;j&lt;n-i-1;j++){<br>
+            int main() {<br>
+            if (a[j] &gt; a[j + 1]) {<br>
+            int n;<br>
+            swap(a[j],a[j+1]);<br>
+            cin &gt;&gt; n;<br>
+            cnt++;<br>
+            int a[101]={0};<br>
+            for (int i = 0; i &lt; n; i++) { flag = true;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 选择排序</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>选择排序（升序）</p>
+        <p>每一轮从待排序的数据元素中选出最小元素，顺序放在待排</p>
+        <p>序数列的最前面，直到待排序的数据元素全部排完。</p>
+        <p>0 1 2 3 4</p>
+        <p>第一轮 9 77 45 86 26</p>
+        <p>第二轮 9 26 77 86 45</p>
+        <p>第三轮 9 26 45 86 77</p>
+        <p>第四轮 9 26 45 77 86</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>对数组中的n个元素进行升序排序</p>
+        <p>内层循环</p>
+        <p>a[1] a[2] a[3] … a[n-1]</p>
+        <p>a[0]</p>
+        <p>for(int i=0;i<n-1;i++){</p>
+        <p>a[1] a[2] a[3] … a[n-1]</p>
+        <p>for(int j=i+1;j<n;j++){</p>
+        <p>a[2] a[3] … a[n-1] if(a[i]>a[j]){升序</p>
+        <p>外层循环</p>
+        <p>swap(a[i],a[j]);</p>
+        <p>a[3] … a[n-1]</p>
+        <p>}</p>
+        <p>}</p>
+        <p>… …</p>
+        <p>}</p>
+        <p>a[n-1]</p>
+        <p>a[n-2]</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>对数组中的n个元素进行降序排序</p>
+        <p>内层循环</p>
+        <p>a[1] a[2] a[3] … a[n-1]</p>
+        <p>a[0]</p>
+        <p>for(int i=0;i<n-1;i++){</p>
+        <p>a[1] a[2] a[3] … a[n-1]</p>
+        <p>for(int j=i+1;j<n;j++){</p>
+        <p>a[2] a[3] … a[n-1] if(a[i]<a[j]){降序</p>
+        <p>外层循环</p>
+        <p>swap(a[i],a[j]);</p>
+        <p>a[3] … a[n-1]</p>
+        <p>}</p>
+        <p>}</p>
+        <p>… …</p>
+        <p>}</p>
+        <p>a[n-1]</p>
+        <p>a[n-2]</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），完成对有 n 个 int 类型 元素的数组 array由小到大排序</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>array[min] > array[j]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>array[min] > array[i]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>min > array[j]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>min > array[i]</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>优化的选择排序算法，其基本思路是尽量减少交换次数，以提升性能。</p>
+        <p>以升序为例，每一轮比较找出待排序数中的最小值，和当前位置的元素交换。</p>
+        <p>内层循环</p>
+        <p>第一轮：找出a[0]~a[n-1] 中的</p>
+        <p>a[1] a[2] a[3] … a[n-1]</p>
+        <p>a[0] 最小值，和a[0]交换；</p>
+        <p>第二轮：找出a[1]~a[n-1] 中的</p>
+        <p>a[1] a[2] a[3] … a[n-1]</p>
+        <p>最小值，和a[1]交换</p>
+        <p>第三轮：找出a[2]~a[n-1] 中的</p>
+        <p>a[2] a[3] … a[n-1]</p>
+        <p>最小值，和a[2]交换</p>
+        <p>外层循环</p>
+        <p>a[3] … a[n-1] 第四轮：找出a[3]~a[n-1] 中的</p>
+        <p>最小值，和a[3]交换</p>
+        <p>… … ……</p>
+        <p>第n-1轮：找出a[n-2]~a[n-1]中的</p>
+        <p>a[n-1]</p>
+        <p>a[n-2]</p>
+        <p>最小值，和a[n-2]交换</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>int a[5]={77,45,26,86,9};</p>
+        <p>for(int i=0;i<4;i++){</p>
+        <p>0 1 2 3 4</p>
+        <p>min=4，a[4]和a[3]交换</p>
+        <p>9 26 45 86 77</p>
+        <div class="code-block">
+            //记录该轮最小元素下标<br>
+            min=4，a[4]和a[0]交换<br>
+            77 45 26 86 9<br>
+            int min=i; // 假设当前的i就是最小元素的下标<br>
+            min=2，a[2]和a[1]交换<br>
+            for(int j=i+1;j&lt;5;j++){ 9 45 26 86 77<br>
+            if(a[j]&lt;a[min])min=j; 找该轮最小值 min=2，a[2]和a[2]交换<br>
+            9 26 45 86 77<br>
+            }<br>
+        </div>
+        <div class="code-block">
+            // 最小值和当前元素交换<br>
+            √<br>
+            9 26 45 77 86<br>
+            swap(a[i],a[min]);<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ A ），完成对有 n 个 int 类型 元素的数组 array由小到大排序</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>array[min] > array[j]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>array[min] > array[i]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>min > array[j]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>min > array[i]</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 选择排序算法对一组学生的身高数据进行升序排序，已知第一遍排序结束 后的数据序列为166、169、177、175、172，则下列选项中可能是原始 数据序列的是（ B ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>175、177、169、166、172</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>177、169、166、 175、172</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>166、177、169、175、172</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>166、169、 172、 175、177</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 某校通过招投标中心采购一套多媒体教学设备，有5家单位参加竞标竞标 价分别为18万元、17万元、23万元、15万元、16万元。若采用选择排序 算法对标价从高到低排序，需要进行数据互换的次数是（ B ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>5</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

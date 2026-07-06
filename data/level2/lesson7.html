@@ -1,0 +1,625 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++二级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第七课</h2>
+    <div class="slide-content">
+        <p>多 层 分 支</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 分支结构的嵌套</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>if语句的嵌套</p>
+        <p>当 语句中的执行语句又是 语句时，则形成了 语句嵌套。</p>
+        <p>if if if</p>
+        <p>if (条件1){</p>
+        <p>if (条件2) 语句1；</p>
+        <p>else 语句2；</p>
+        <p>}else{</p>
+        <p>语句3；</p>
+        <p>}</p>
+        <p>在嵌套的if语句中，if和else按照“ 就近配对 ”的原则配对，</p>
+        <p>即相距最近且还没有配对的一对if和else首先配对。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>if语句嵌套的不同形式</p>
+        <p>if (条件1){</p>
+        <p>if (条件1){ if (条件2) 语句1；</p>
+        <p>if (条件2) 语句1； else 语句2；</p>
+        <p>if (条件3) 语句2； }else if (条件3) {</p>
+        <p>...... 语句3；</p>
+        <p>}else{</p>
+        <p>} 语句4；</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>switch语句的嵌套</p>
+        <p>语句中也可以嵌套 语句或者 语句。</p>
+        <p>switch if switch</p>
+        <p>switch (表达式){ switch (表达式1){</p>
+        <p>case 数值1：if (条件1) 语句1；break; case 数值1：switch (表达式2){...}</p>
+        <p>case 数值2：语句2；break; case 数值2：语句2；break;</p>
+        <p>.... ....</p>
+        <p>case 数值n: 语句n; break; case 数值n: 语句n; break;</p>
+        <p>default: 语句n+1; break; default: 语句n+1; break;</p>
+        <p>} }</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年3月）在if...else语句中，else子句可以嵌套if...else语句，但if子 句不可以，因为会造成二义性。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 嵌套的if语句可以有任意多层。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 在分支语句中，if的个数一定不小于else的个数，因为每个else的 前面必须有一个if与之相对应。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 为了避免嵌套的条件分支语句if...else的二义性，程序中else总 是与( A )组成配对关系。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>其上面距它最近的，并且没有其他else与其配对的if相配对</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>在同一行上的if</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>缩进位置相同的if</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>在其之前未配对的if</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 阅读如下程序，当输入5 2时，程序的运行结果为( C )。 #include<iostream> using namespace std; int main(){ int m,n;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>6 cin>>m>>n; int pay=0;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>10 if(m<4) pay=3*n; else{</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>8 if(m<=9) pay=4*n; else pay=5*n;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>0 } cout<<pay; return 0; }</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>选择题</p>
+        <p>x=1 a<b且c=d</p>
+        <p>现有一分段函数：</p>
+        <p>x=2 a>=b</p>
+        <p>则下列程序段哪个是正确的？（ A）</p>
+        <p>Ａ．if(a<b){ Ｂ．if(a<b){ Ｃ．if(a>b){</p>
+        <p>Ｄ．if(a>b)</p>
+        <p>x=2;</p>
+        <p>if(c==d) x=1; if(c==d) x=1; if(c==d) x=1;</p>
+        <p>else{</p>
+        <p>}else x=2; else x=2; }else x=2;</p>
+        <p>if(c==d) x=1;</p>
+        <p>}</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>选择题</p>
+        <p>现有ｘ和ｙ的关系如下表： Ａ． y=x+1; Ｂ．y=x-1;</p>
+        <p>if(x>=0){ if(x!=0){</p>
+        <p>ｘ ｙ</p>
+        <p>if(x==0) y=x; if(x>0) y=x+1;</p>
+        <p>ｘ＜０ ｘ－１ else y=x-1; else y=x;</p>
+        <p>} }</p>
+        <p>ｘ＝０ ｘ</p>
+        <p>ｘ＞０ ｘ＋１</p>
+        <p>Ｃ．if(x<=0){ Ｄ．y=x;</p>
+        <p>if(x<0) y=x-1; if(x<=0){</p>
+        <p>给出的程序段中能正确表示</p>
+        <p>else y=x; if(x<0) y=x-1;</p>
+        <p>上面关系的是（ C ） }else y=x+1; else y=x+1;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>题目解析</p>
+        <p>Ａ． y=x+1; ｘ ｙ Ｂ．y=x-1; ｘ ｙ</p>
+        <p>if(x>=0){ if(x!=0){</p>
+        <p>ｘ＜０ ｘ + １ ｘ＜０ ｘ</p>
+        <p>if(x==0) y=x; if(x>0) y=x+1;</p>
+        <p>else y=x-1; ｘ＝０ ｘ else y=x; ｘ＝０ ｘ - 1</p>
+        <p>} ｘ＞０ ｘ - １ } ｘ＞０ ｘ＋１</p>
+        <p>Ｃ．if(x<=0){ ｘ ｙ Ｄ．y=x; ｘ ｙ</p>
+        <p>if(x<0) y=x-1; if(x<=0){</p>
+        <p>ｘ＜０ ｘ－１ ｘ＜０ ｘ－１</p>
+        <p>else y=x; if(x<0) y=x-1;</p>
+        <p>ｘ＝０ ｘ ｘ＝０ ｘ + 1</p>
+        <p>}else y=x+1; else y=x+1;</p>
+        <p>ｘ＞０ ｘ＋１ } ｘ＞０ ｘ</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 下列条件语句中输出结果与其他语句不同的是( D )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>if(a) cout<<x; B. if(a==0) cout<<y; else cout<<y; else cout<<x;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>if(a!=0) cout<<x; D. if(a==0) cout<<x; else cout<<y; else cout<<y;</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 阅读如下程序，分析以下程序的执行结果为( D )。 int a=100, x=10, y=20, m=5, n=0;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>1 if(x<y){ if(!m) a=1; B. 10 }else{</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>0 if(n) a=10; }</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>100 cout<<a;</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 已知a=1, b=0,则执行以下语句后输出为( B )。 switch(a){ case 1:</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>**0** switch(b){ case 0: cout<<"**0**"; break; B. **0****2** case 1: cout<<"**1**"; break;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>**0****1****2** } case 2:</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>有语法错误 cout<<"**2**";break; }</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>判断生肖</p>
+        <p>【问题描述】</p>
+        <p>我们中国人对老鼠的感情可不一般，鼠是中国传统十二生肖之首。2020年是鼠年，那么 2020 年出生</p>
+        <p>的“20 后”是否都是“鼠宝宝"呢？</p>
+        <p>其实不是，2020年1月1日～1月24 日出生的“20 后”，仍然是“猪宝宝"，因为他们出生在农历己</p>
+        <p>亥猪年；大年初一（1月25日）及之后出生的“20 后”才是“鼠宝宝”。</p>
+        <p>输入一个2020年出生的宝宝的生日，请你编写程序判断一下，是“猪宝宝”还是“鼠宝宝”？</p>
+        <p>【输入描述】</p>
+        <p>一行，两个正整数 month, day，中间使用一个空格隔开，分别代表宝宝出生的月份及日子。</p>
+        <p>(1≤month≤12, 1≤day≤31)</p>
+        <p>【输出描述】</p>
+        <p>若是“猪宝宝”请输出 "Pig"；若是“鼠宝宝”请输出 "Mouse"。</p>
+        <p>【输入样例】</p>
+        <p>1 23</p>
+        <p>【输出样例】</p>
+        <p>Pig</p>
+        <p>【注意】</p>
+        <p>输入的日期为有效的日期。例如：6月31日非有效日期。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>月(m) 日(d)</p>
+        <p>① 输入月 m和日 d。</p>
+        <p>1~24 猪</p>
+        <p>1</p>
+        <p>25~31 鼠</p>
+        <p>int m,d;</p>
+        <p>cin>>m>>d; 2 1~29</p>
+        <p>3 1~31</p>
+        <p>② 根据输入日期判断生肖。</p>
+        <p>4 1~30</p>
+        <p>5 1~31</p>
+        <p>if(m==1){</p>
+        <p>6 1~30</p>
+        <p>if(d>=1&&d<=24) cout<<"Pig";</p>
+        <p>else cout<<"Mouse"; 7 1~31 鼠</p>
+        <p>} else{ 8 1~31</p>
+        <p>cout<<"Mouse"; 9 1~30</p>
+        <p>}</p>
+        <p>10 1~31</p>
+        <p>11 1~30</p>
+        <p>12 1~31</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int m,d;<br>
+            cin&gt;&gt;m&gt;&gt;d;<br>
+            if(m==1){<br>
+            if(d&gt;=1&amp;&amp;d&lt;=24) cout&lt;&lt;"Pig";<br>
+            else cout&lt;&lt;"Mouse";<br>
+            }else{<br>
+            cout&lt;&lt;"Mouse";<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>判断日期格式</p>
+        <p>【问题描述】</p>
+        <p>要求输入两个正整数，表示2020年的一个日期，判断此日期是否输入正确。</p>
+        <p>【输入描述】</p>
+        <p>第一行，两个正整数a、b，分别表示2020年的某月、某日。（1≤a、b≤10000）</p>
+        <p>【输出描述】</p>
+        <p>判断输入的日期是否正确，若正确输出"yes"，否则输出"no"。</p>
+        <p>【输入样例1】</p>
+        <p>2 30</p>
+        <p>【输出样例1】</p>
+        <p>no</p>
+        <p>【输入样例2】</p>
+        <p>6 28</p>
+        <p>【输出样例2】</p>
+        <p>yes</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 输入某月 a、某日 b。</p>
+        <p>int a,b;</p>
+        <p>cin>>a>>b;</p>
+        <p>② 判断输入的日期是否正确，正确输出"yes"，否则输出"no"。</p>
+        <div class="code-block">
+            //判断月份是否正确（月：1~12）<br>
+            if(a&gt;=1&amp;&amp;a&lt;=12){<br>
+            //根据输入月份，判断日是否正确<br>
+            }else{<br>
+            cout&lt;&lt;"no";<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>根据输入月份，判断日是否正确</p>
+        <p>月(a) 日(b)</p>
+        <p>1、3、5、7、8、10、12 1~31</p>
+        <p>4、6、9、11 1~30</p>
+        <p>2 1~29</p>
+        <p>if(a==1||a==3||a==5||a==7||a==8||a==10||a==12){</p>
+        <p>if(b>=1&&b<=31) cout<<"yes";</p>
+        <p>else cout<<"no";</p>
+        <p>}</p>
+        <p>else if(a==4||a==6||a==9||a==11){</p>
+        <p>i f ( b>=1&&b<=30) cout<<"yes";</p>
+        <p>else cout<<"no";</p>
+        <p>}</p>
+        <p>else{</p>
+        <p>i f (b>=1&&b<=29) cout<<"yes";</p>
+        <p>else cout<<"no";</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>② 判断输入的日期是否正确，正确输出"yes"，否则输出"no"。</p>
+        <p>else if(a==4||a==6||a==9||a==11){</p>
+        <p>if(b>=1&&b<=30) cout<<"yes";</p>
+        <p>else cout<<"no";</p>
+        <p>}</p>
+        <p>else{</p>
+        <p>if(b>=1&&b<=29) cout<<"yes";</p>
+        <p>else cout<<"no";</p>
+        <p>}</p>
+        <p>}else cout<<"no";</p>
+        <div class="code-block">
+            //判断月份是否正确（月：1~12）<br>
+            if(a&gt;=1&amp;&amp;a&lt;=12){<br>
+            //根据输入月份，判断日是否正确<br>
+            if(a==1||a==3||a==5||a==7||a==8||a==10||a==12){<br>
+            if(b&gt;=1&amp;&amp;b&lt;=31) cout&lt;&lt;"yes";<br>
+            else cout&lt;&lt;"no";<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>else if(a==4||a==6||a==9||a==11){</p>
+        <p>if(b>=1&&b<=30) cout<<"yes";</p>
+        <p>else cout<<"no";</p>
+        <p>}</p>
+        <p>else{</p>
+        <p>if(b>=1&&b<=29) cout<<"yes";</p>
+        <p>else cout<<"no";</p>
+        <p>}</p>
+        <p>}else cout<<"no";</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main() {<br>
+            int a, b;<br>
+            cin&gt;&gt;a&gt;&gt;b;<br>
+            if(a&gt;=1&amp;&amp;a&lt;=12){<br>
+            if(a==1||a==3||a==5||a==7||a==8||a==10||a==12){<br>
+            if(b&gt;=1&amp;&amp;b&lt;=31) cout&lt;&lt;"yes";<br>
+            else cout&lt;&lt;"no";<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>景区出票系统</p>
+        <p>【问题描述】</p>
+        <p>某新开景区想要实现出票系统，已知该景区在4~10月为旺季，成人（18-60）票价为60元，儿童</p>
+        <p>（<18）票价为半价，老人（>60）票价为20。其余月份为淡季，成人票价为40，其他人票价均为</p>
+        <p>20。编写程序：输入月份，购票人数，以及每个购票人的年龄，计算买票需要支付的总钱数。</p>
+        <p>【输入描述】</p>
+        <p>一行，一个正整数，代表月份m。（1≤m≤12）</p>
+        <p>一行，一个正整数，代表购票人数n。(1≤n≤1000)</p>
+        <p>一行，n个整数，每个数字之间使用空格隔开，代表每个购票人的年龄age。（0≤age≤100）</p>
+        <p>【输出描述】</p>
+        <p>一个正整数，代表买票需要支付的总钱数。</p>
+        <p>【输入样例】</p>
+        <p>6</p>
+        <p>5</p>
+        <p>26 27 2 60 62</p>
+        <p>【输出样例】</p>
+        <p>230</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 输入月份m 和 购票人数 n。</p>
+        <p>int m，n;</p>
+        <p>cin>>n;</p>
+        <p>② 根据输入的月份选择不同的购票方案，计算购票总钱数。</p>
+        <p>if(m>=4&&m<=10){ 旺季 月份 人员 票价</p>
+        <p>1、输入n名购票人的年龄 成人（18~60） 60元</p>
+        <p>2、计算购票总支出 4~10</p>
+        <p>儿童（<18） 30元</p>
+        <p>（旺季）</p>
+        <p>}else{ 淡季 老人（>60） 20元</p>
+        <p>1、输入n名购票人的年龄 1~3 成人 40元</p>
+        <p>11~12</p>
+        <p>2、计算购票总支出</p>
+        <p>老人、儿童 20元</p>
+        <p>(淡季)</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>② 根据输入的月份选择不同的购票方案，计算购票总钱数。</p>
+        <p>int sum=0; 记录总钱数</p>
+        <p>int age；</p>
+        <p>if(m>=4&&m<=10){</p>
+        <p>for(int i=1; i<=n; i++){ 月份 人员 票价</p>
+        <p>cin>>age;</p>
+        <p>1、输入n名购票人的年龄 成人（18~60） 60元</p>
+        <p>}</p>
+        <div class="code-block">
+            //边输入，边统计<br>
+            2、计算购票总支出 4~10<br>
+            if(age&gt;=18&amp;&amp;age&lt;=60) sum+=60; 儿童（&lt;18） 30元<br>
+            （旺季）<br>
+            else if(age&lt;18) sum+=30;<br>
+            老人（&gt;60） 20元<br>
+            else sum+=20;<br>
+            } 1~3 成人 40元<br>
+            }else{ 11~12<br>
+            老人、儿童 20元<br>
+            f or(int i=1; i&lt;=n; i++){ (淡季)<br>
+            1 、 c输in入&gt;&gt;n名ag购e;票人的年龄<br>
+            2 、 i计f(a算ge购&gt;票=总18支&amp;出&amp;age&lt;=60) sum+=40;<br>
+            else sum+=20;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>}else{</p>
+        <p>for(int i=1; i<=n; i++){</p>
+        <p>cin>>age;</p>
+        <p>if(age>=18&&age<=60) sum+=40;</p>
+        <p>else sum+=20;</p>
+        <p>}</p>
+        <p>}</p>
+        <p>cout<<sum;</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int m,n;<br>
+            cin&gt;&gt;m&gt;&gt;n;<br>
+            int age, sum=0;<br>
+            if(m&gt;=4&amp;&amp;m&lt;=10){<br>
+            for(int i=1; i&lt;=n; i++){<br>
+            cin&gt;&gt;age;<br>
+            if(age&gt;=18&amp;&amp;age&lt;=60) sum+=60;<br>
+            else if(age&lt;18) sum+=30;<br>
+            else sum+=20;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

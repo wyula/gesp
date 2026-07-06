@@ -7,12 +7,83 @@ class CoursePlayer {
         this.isPresentationMode = false;
         this.quizState = {};
         
+        this.lessonTitles = {
+            'level1': {
+                0: '考级标准',
+                1: '第1课 C++语言入门',
+                2: '第2课 变量和数据类型',
+                3: '第3课 运算符和表达式',
+                4: '第4课 输入输出',
+                5: '第5课 选择结构',
+                6: '第6课 循环结构',
+                7: '第7课 函数基础',
+                8: '第8课 函数进阶',
+                9: '第9课 综合练习',
+                10: '第10课 模拟考试'
+            },
+            'level2': {
+                0: '考级标准',
+                1: '第1课 分支结构进阶',
+                2: '第2课 循环结构进阶',
+                3: '第3课 函数递归',
+                4: '第4课 数组基础',
+                5: '第5课 数组进阶',
+                6: '第6课 字符串处理',
+                7: '第7课 结构体',
+                8: '第8课 文件操作',
+                9: '第9课 综合练习',
+                10: '第10课 模拟考试'
+            },
+            'level3': {
+                0: '考级标准',
+                1: '第1课 数组',
+                2: '第2课 数组进阶',
+                3: '第3课 字符串1',
+                4: '第4课 字符串2',
+                5: '第5课 数制和编码1',
+                6: '第6课 数制和编码2',
+                7: '第7课 位运算1',
+                8: '第8课 位运算2',
+                9: '第9课 模拟算法',
+                10: '第10课 枚举算法'
+            },
+            'level4': {
+                0: '考级标准',
+                1: '第1课 指针基础',
+                2: '第2课 指针进阶',
+                3: '第3课 动态数组',
+                4: '第4课 链表基础',
+                5: '第5课 链表进阶',
+                6: '第6课 栈和队列',
+                7: '第7课 二叉树基础',
+                8: '第8课 二叉树遍历',
+                9: '第9课 图论基础',
+                10: '第10课 排序算法',
+                11: '第11课 查找算法',
+                12: '第12课 贪心算法',
+                13: '第13课 动态规划入门',
+                14: '第14课 综合练习',
+                15: '第15课 模拟考试',
+                16: '第16课 真题讲解',
+                17: '第17课 考前冲刺',
+                18: '第18课 复习总结'
+            }
+        };
+        
+        this.levelNames = {
+            'level1': '一级',
+            'level2': '二级',
+            'level3': '三级',
+            'level4': '四级'
+        };
+        
         this.init();
     }
     
     async init() {
         await this.loadCourseData();
         this.renderSlides();
+        this.renderNav();
         this.setupEventListeners();
         this.updateNavigation();
     }
@@ -57,6 +128,33 @@ class CoursePlayer {
         });
         
         this.updateProgress();
+    }
+    
+    renderNav() {
+        const navList = document.getElementById('nav-list');
+        navList.innerHTML = '';
+        
+        const titles = this.lessonTitles[this.currentLevel];
+        if (!titles) return;
+        
+        Object.keys(titles).forEach(lessonNum => {
+            const num = parseInt(lessonNum);
+            const title = titles[num];
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#';
+            a.dataset.lesson = num;
+            a.textContent = title;
+            a.onclick = (e) => {
+                e.preventDefault();
+                this.loadLesson(num);
+            };
+            if (num === this.currentLesson) {
+                a.classList.add('active');
+            }
+            li.appendChild(a);
+            navList.appendChild(li);
+        });
     }
     
     setupEventListeners() {
@@ -169,43 +267,150 @@ class CoursePlayer {
         
         document.getElementById(`submit-${quizIndex}`).disabled = true;
         
+        const analysis = document.getElementById(`analysis-${quizIndex}`);
+        if (analysis) {
+            analysis.style.display = 'block';
+        }
+        
         this.quizState[quizIndex] = isCorrect;
     }
     
     isQuizCorrect(quizIndex, selectedIndex) {
         const quizAnswers = {
-            1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
-            2: { 0: 1, 1: 0, 2: 1 },
-            3: { 0: 1, 1: 0, 2: 1 },
-            4: { 0: 2, 1: 1 },
-            5: { 0: 1, 1: 2 },
-            6: { 0: 1, 1: 0 },
-            7: { 0: 1, 1: 2 },
-            8: { 0: 1, 1: 0 },
-            9: { 0: 1, 1: 0 },
-            10: { 0: 2, 1: 2 }
+            'level1': {
+                1: { 0: 2, 1: 0, 2: 0, 3: 0 },
+                2: { 0: 0 },
+                3: { 0: 0 },
+                4: { 0: 0 },
+                5: { 0: 0 },
+                6: { 0: 0 },
+                7: { 0: 0 },
+                8: { 0: 0 },
+                9: { 0: 0 },
+                10: { 0: 0 }
+            },
+            'level2': {
+                1: { 0: 0 },
+                2: { 0: 0 },
+                3: { 0: 0 },
+                4: { 0: 0 },
+                5: { 0: 0 },
+                6: { 0: 0 },
+                7: { 0: 0 },
+                8: { 0: 0 },
+                9: { 0: 0 },
+                10: { 0: 0 }
+            },
+            'level3': {
+                1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
+                2: { 0: 1, 1: 0, 2: 1 },
+                3: { 0: 1, 1: 0, 2: 1 },
+                4: { 0: 2, 1: 1 },
+                5: { 0: 1, 1: 2 },
+                6: { 0: 1, 1: 0 },
+                7: { 0: 1, 1: 2 },
+                8: { 0: 1, 1: 0 },
+                9: { 0: 1, 1: 0 },
+                10: { 0: 2, 1: 2 }
+            },
+            'level4': {
+                1: { 0: 0 },
+                2: { 0: 0 },
+                3: { 0: 0 },
+                4: { 0: 0 },
+                5: { 0: 0 },
+                6: { 0: 0 },
+                7: { 0: 0 },
+                8: { 0: 0 },
+                9: { 0: 0 },
+                10: { 0: 0 },
+                11: { 0: 0 },
+                12: { 0: 0 },
+                13: { 0: 0 },
+                14: { 0: 0 },
+                15: { 0: 0 },
+                16: { 0: 0 },
+                17: { 0: 0 },
+                18: { 0: 0 }
+            }
         };
         
-        return quizAnswers[this.currentLesson] && quizAnswers[this.currentLesson][quizIndex] === selectedIndex;
+        const levelAnswers = quizAnswers[this.currentLevel];
+        if (!levelAnswers) return false;
+        
+        const lessonAnswers = levelAnswers[this.currentLesson];
+        if (!lessonAnswers) return false;
+        
+        return lessonAnswers[quizIndex] !== undefined && lessonAnswers[quizIndex] === selectedIndex;
     }
     
     getCorrectAnswer(quizIndex) {
         const quizAnswers = {
-            1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
-            2: { 0: 1, 1: 0, 2: 1 },
-            3: { 0: 1, 1: 0, 2: 1 },
-            4: { 0: 2, 1: 1 },
-            5: { 0: 1, 1: 2 },
-            6: { 0: 1, 1: 0 },
-            7: { 0: 1, 1: 2 },
-            8: { 0: 1, 1: 0 },
-            9: { 0: 1, 1: 0 },
-            10: { 0: 2, 1: 2 }
+            'level1': {
+                1: { 0: 2, 1: 0, 2: 0, 3: 0 },
+                2: { 0: 0 },
+                3: { 0: 0 },
+                4: { 0: 0 },
+                5: { 0: 0 },
+                6: { 0: 0 },
+                7: { 0: 0 },
+                8: { 0: 0 },
+                9: { 0: 0 },
+                10: { 0: 0 }
+            },
+            'level2': {
+                1: { 0: 0 },
+                2: { 0: 0 },
+                3: { 0: 0 },
+                4: { 0: 0 },
+                5: { 0: 0 },
+                6: { 0: 0 },
+                7: { 0: 0 },
+                8: { 0: 0 },
+                9: { 0: 0 },
+                10: { 0: 0 }
+            },
+            'level3': {
+                1: { 0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1, 9: 0, 10: 0 },
+                2: { 0: 1, 1: 0, 2: 1 },
+                3: { 0: 1, 1: 0, 2: 1 },
+                4: { 0: 2, 1: 1 },
+                5: { 0: 1, 1: 2 },
+                6: { 0: 1, 1: 0 },
+                7: { 0: 1, 1: 2 },
+                8: { 0: 1, 1: 0 },
+                9: { 0: 1, 1: 0 },
+                10: { 0: 2, 1: 2 }
+            },
+            'level4': {
+                1: { 0: 0 },
+                2: { 0: 0 },
+                3: { 0: 0 },
+                4: { 0: 0 },
+                5: { 0: 0 },
+                6: { 0: 0 },
+                7: { 0: 0 },
+                8: { 0: 0 },
+                9: { 0: 0 },
+                10: { 0: 0 },
+                11: { 0: 0 },
+                12: { 0: 0 },
+                13: { 0: 0 },
+                14: { 0: 0 },
+                15: { 0: 0 },
+                16: { 0: 0 },
+                17: { 0: 0 },
+                18: { 0: 0 }
+            }
         };
         
-        return quizAnswers[this.currentLesson] && quizAnswers[this.currentLesson][quizIndex] !== undefined 
-            ? quizAnswers[this.currentLesson][quizIndex] 
-            : 0;
+        const levelAnswers = quizAnswers[this.currentLevel];
+        if (!levelAnswers) return 0;
+        
+        const lessonAnswers = levelAnswers[this.currentLesson];
+        if (!lessonAnswers) return 0;
+        
+        return lessonAnswers[quizIndex] !== undefined ? lessonAnswers[quizIndex] : 0;
     }
     
     getCorrectAnswerText(quizIndex) {
@@ -219,26 +424,18 @@ class CoursePlayer {
         this.currentPage = 0;
         
         document.querySelectorAll('.nav-list a').forEach(a => a.classList.remove('active'));
-        document.querySelector(`[data-lesson="${lessonNum}"]`).classList.add('active');
+        const activeLink = document.querySelector(`[data-lesson="${lessonNum}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
         
         await this.loadCourseData();
         this.renderSlides();
         this.updateNavigation();
         
-        const lessonTitles = {
-            0: '考级标准',
-            1: '第1课 数组',
-            2: '第2课 数组进阶',
-            3: '第3课 字符串1',
-            4: '第4课 字符串2',
-            5: '第5课 数制和编码1',
-            6: '第6课 数制和编码2',
-            7: '第7课 位运算1',
-            8: '第8课 位运算2',
-            9: '第9课 模拟算法',
-            10: '第10课 枚举算法'
-        };
-        document.getElementById('lesson-title').textContent = `CCF-GESP C++三级 - ${lessonTitles[lessonNum] || '第' + lessonNum + '课'}`;
+        const titles = this.lessonTitles[this.currentLevel];
+        const levelName = this.levelNames[this.currentLevel];
+        document.getElementById('lesson-title').textContent = `CCF-GESP C++${levelName} - ${titles[lessonNum] || '第' + lessonNum + '课'}`;
     }
     
     async loadLevel(level) {
@@ -246,9 +443,20 @@ class CoursePlayer {
         this.currentLesson = 1;
         this.currentPage = 0;
         
+        document.querySelectorAll('.course-tab').forEach(tab => tab.classList.remove('active'));
+        const activeTab = document.querySelector(`.course-tab[onclick="coursePlayer.loadLevel('${level}')"]`);
+        if (activeTab) {
+            activeTab.classList.add('active');
+        }
+        
         await this.loadCourseData();
         this.renderSlides();
+        this.renderNav();
         this.updateNavigation();
+        
+        const titles = this.lessonTitles[this.currentLevel];
+        const levelName = this.levelNames[this.currentLevel];
+        document.getElementById('lesson-title').textContent = `CCF-GESP C++${levelName} - ${titles[1] || '第1课'}`;
     }
 }
 

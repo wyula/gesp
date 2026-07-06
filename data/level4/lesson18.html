@@ -1,0 +1,431 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">第十八课</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年9月）变长编码</p>
+        <p>【问题描述】</p>
+        <p>小明刚刚学习了三种整数编码方式：原码、反码、补码，并了解到计算机存储整数</p>
+        <p>通常使用补码。但他总是觉得，生活中很少用到231-1这么大的数，生活中常用的</p>
+        <p>0~100这种数也同样需要4个字节的补码表示，太浪费了些。热爱学习的小明通过搜索，</p>
+        <p>发现了 种正整数的变长编码方式。这种编码方式的规则如下：</p>
+        <p>⼀</p>
+        <p>1. 对于给定的正整数，首先将其表达为二进制形式。例如，(0) =(0) ,</p>
+        <p>{10} {2}</p>
+        <p>(926) =(1110011110) 。</p>
+        <p>{10} {2}</p>
+        <p>2. 将二进制数从低位到高位切分成每组7bit，不足7bit的在高位用0填补。例如，</p>
+        <p>(0) 变为0000000的一组，(1110011110) 变为0011110和0000111的两组。</p>
+        <p>{2} {2}</p>
+        <p>3. 由代表低位的组开始，为其加入最高位。如果这组是最后一组，则在最高位填</p>
+        <p>上0 ，否则在最高位填上1 。于是， 0的变长编码为00000000 个字节，926的变</p>
+        <p>⼀</p>
+        <p>长编码为10011110和00000111两个字节。</p>
+        <p>这种编码方式可以用更少的字节表达比较小的数，也可以用很多的字节表达非常大</p>
+        <p>的数。例如，987654321012345678的二进制为(0001101 1011010 0110110</p>
+        <p>1001011 1110100 0100110 1001000 0010110 1001110){2}，于是它的变长编</p>
+        <p>码为（十六进制表示） CE 96 C8 A6 F4 CB B6 DA 0D ，共9个字节。</p>
+        <p>你能通过编写程序，找到一个正整数的变长编码吗？</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年9月）变长编码</p>
+        <p>【输入格式】</p>
+        <p>输入第一行，包含 个正整数N。约定0≤N≤1018。</p>
+        <p>⼀</p>
+        <p>【输出格式】</p>
+        <p>输出一行，输出N对应的变长编码的每个字节，每个字节均以2位十六进制表示（其中 A-</p>
+        <p>F 使用大写字母表示）， 两个字节间以空格分隔。</p>
+        <p>【输入样例1】 【输入样例2】 【输入样例3】</p>
+        <p>0 926 987654321012345678</p>
+        <p>【输出样例1】 【输出样例2】 【输出样例3】</p>
+        <p>00 9E 07 CE 96 C8 A6 F4 CB B6 DA 0D</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>数据分析</p>
+        <p>【输入样例1】 【输入样例2】 【输入样例3】</p>
+        <p>0 926 987654321012345678</p>
+        <p>【输出样例1】 【输出样例2】 【输出样例3】</p>
+        <p>00 9E 07 CE 96 C8 A6 F4 CB B6 DA 0D</p>
+        <p>原数据 二进制数据 ⼆进制数从低位到⾼ 由代表低位的组开始， 最终结果(每个字节</p>
+        <p>位切分(每组7bit) 加⼊最⾼位 均以2位十六进制)</p>
+        <p>0 0 0000000 00000000 00</p>
+        <p>926 1110011110 0011110 0000111 10011110 9E 07</p>
+        <p>00000111</p>
+        <p>9 E 0 7</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>数据分析</p>
+        <p>原数据 二进制数据 ⼆进制数从低位到⾼ 由代表低位的组开始， 最终结果(每个字节</p>
+        <p>位切分(每组7bit) 加⼊最⾼位 均以2位十六进制)</p>
+        <p>0 0 0000000 00000000 00</p>
+        <p>926 1110011110 0011110 0000111 10011110 9E 07</p>
+        <p>00000111</p>
+        <p>926 &0x7f 保留二进制形式的后7位</p>
+        <p>----926 00000111 ----7</p>
+        <p>1110011110</p>
+        <p>& &</p>
+        <p>01111111 ----127 01111111 ----127</p>
+        <p>--------- ---------</p>
+        <p>- 00011110 ----30 - 00000111 ----7</p>
+        <p>数组{30} 数组{30,7}</p>
+        <p>926>>7</p>
+        <p>7>>7</p>
+        <p>1110011110 00000111 00000111 00000000</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>数据分析</p>
+        <p>原数据 二进制数据 ⼆进制数从低位到⾼ 由代表低位的组开始， 最终结果(每个字节</p>
+        <p>位切分(每组7bit) 加⼊最⾼位 均以2位十六进制)</p>
+        <p>0 0 0000000 00000000 00</p>
+        <p>926 1110011110 0011110 0000111 10011110 9E 07</p>
+        <p>00000111</p>
+        <p>数组{30,7} 30 |0x80 对高位补位1处理</p>
+        <p>----30</p>
+        <p>00011110</p>
+        <p>|</p>
+        <p>10000000 ----128</p>
+        <p>---------</p>
+        <p>- 10011110 ----158</p>
+        <p>数组{30,7} 数组{158,7}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>数据分析</p>
+        <p>原数据 二进制数据 ⼆进制数从低位到⾼ 由代表低位的组开始， 最终结果(每个字节</p>
+        <p>位切分(每组7bit) 加⼊最⾼位 均以2位十六进制)</p>
+        <p>0 0 0000000 00000000 00</p>
+        <p>926 1110011110 0011110 0000111 10011110 9E 07</p>
+        <p>00000111</p>
+        <p>数组{158,7}</p>
+        <p>158>>4 10011110 00001001 ----9</p>
+        <p>10011110 &0x0f 00001110 ----14 E</p>
+        <p>7>>4 00000111 00000000----0</p>
+        <p>00000111 &0x0f 00000111 ----7</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>把输入数据的二进制数从低位到高位切分</p>
+        <p>for(int i=0;i<l-1;i++)</p>
+        <p>split[i]|=0x80;</p>
+        <p>output_code(split[0]);</p>
+        <p>for(int i=1;i<l;i++){</p>
+        <p>cout << " ";</p>
+        <p>output_code(split[i]);</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main() {<br>
+            long long n = 0;<br>
+            cin &gt;&gt; n;<br>
+            int split[10];<br>
+            int l = 0;<br>
+            while(n&gt;0){<br>
+            split[l]=(int)(n &amp; 0x7f);<br>
+            n&gt;&gt;=7;<br>
+            l++;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>把输入数据的二进制数从低位到高位切分</p>
+        <p>for(int i=0;i<l-1;i++)</p>
+        <p>split[i]|=0x80;</p>
+        <p>output_code(split[0]);</p>
+        <p>for(int i=1;i<l;i++){</p>
+        <p>cout << " ";</p>
+        <p>output_code(split[i]);</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main() {<br>
+            long long n = 0;<br>
+            cin &gt;&gt; n;<br>
+            int split[10];<br>
+            拆分结果保存在int数组<br>
+            int l = 0;<br>
+            while(n&gt;0){<br>
+            split[l]=(int)(n&amp;0x7f);<br>
+            n&gt;&gt;=7;<br>
+            l++;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>把输入数据的二进制数从低位到高位切分</p>
+        <p>for(int i=0;i<l-1;i++)</p>
+        <p>split[i]|=0x80;</p>
+        <p>output_code(split[0]);</p>
+        <p>for(int i=1;i<l;i++){</p>
+        <p>cout << " ";</p>
+        <p>output_code(split[i]);</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main() {<br>
+            long long n = 0;<br>
+            cin &gt;&gt; n;<br>
+            int split[10];<br>
+            int l = 0;<br>
+            保留二进制形式的后7位<br>
+            while(n&gt;0){<br>
+            split[l]=(int)(n&amp;0x7f);<br>
+            n&gt;&gt;=7;<br>
+            l++;<br>
+            n的二进制右移7位<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>对切分后的数据，加入最高位</p>
+        <p>for(int i=0;i<l-1;i++)</p>
+        <p>split[i]|=0x80;</p>
+        <p>output_code(split[0]);</p>
+        <p>for(int i=1;i<l;i++){</p>
+        <p>cout << " ";</p>
+        <p>output_code(split[i]);</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main() {<br>
+            long long n = 0;<br>
+            cin &gt;&gt; n;<br>
+            int split[10];<br>
+            int l = 0;<br>
+            while(n&gt;0){<br>
+            split[l]=(int)(n&amp;0x7f);<br>
+            n&gt;&gt;=7;<br>
+            l++;<br>
+            l-1结束<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>对切分后的数据，加入最高位</p>
+        <p>for(int i=0;i<l-1;i++)</p>
+        <p>split[i]|=0x80; 异或处理</p>
+        <p>output_code(split[0]);</p>
+        <p>for(int i=1;i<l;i++){</p>
+        <p>cout << " ";</p>
+        <p>output_code(split[i]);</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main() {<br>
+            long long n = 0;<br>
+            cin &gt;&gt; n;<br>
+            int split[10];<br>
+            int l = 0;<br>
+            while(n&gt;0){<br>
+            split[l]=(int)(n&amp;0x7f);<br>
+            n&gt;&gt;=7;<br>
+            l++;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按要求进行最终输出</p>
+        <p>void output_digit(int d) {</p>
+        <p>if(d>=10)</p>
+        <p>cout<<(char)('A'+d-10);</p>
+        <p>else</p>
+        <p>cout<<(char)('0'+d);</p>
+        <p>}</p>
+        <p>10011110 00000111 9E 07 void output_code(int s){</p>
+        <p>output_digit(s >> 4);</p>
+        <p>output_digit(s & 0x0f);</p>
+        <p>}</p>
+        <p>...}</p>
+        <div class="code-block">
+            int main() {<br>
+            ...<br>
+            output_code(split[0]);<br>
+            for(int i=1;i&lt;l;i++){<br>
+            cout &lt;&lt; " ";<br>
+            output_code(split[i]);<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按要求进行最终输出</p>
+        <p>void output_digit(int d) {</p>
+        <p>if(d>=10)</p>
+        <p>cout<<(char)('A'+d-10);</p>
+        <p>else</p>
+        <p>cout<<(char)('0'+d);</p>
+        <p>}</p>
+        <p>10011110 00000111 9E 07 void output_code(int s){</p>
+        <p>获取前四位</p>
+        <p>output_digit(s >> 4);</p>
+        <p>output_digit(s & 0x0f);</p>
+        <p>获取后四位</p>
+        <p>}</p>
+        <p>...}</p>
+        <div class="code-block">
+            int main() {<br>
+            ...<br>
+            output_code(split[0]);<br>
+            for(int i=1;i&lt;l;i++){<br>
+            cout &lt;&lt; " ";<br>
+            output_code(split[i]);<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按要求进行最终输出</p>
+        <p>void output_digit(int d) {</p>
+        <p>A-F表示10-</p>
+        <p>if(d>=10) 15</p>
+        <p>cout<<(char)('A'+d-10);</p>
+        <p>else</p>
+        <p>cout<<(char)('0'+d);</p>
+        <p>}</p>
+        <p>10011110 00000111 9E 07 void output_code(int s){</p>
+        <p>output_digit(s >> 4);</p>
+        <p>output_digit(s & 0x0f);</p>
+        <p>}</p>
+        <p>...}</p>
+        <div class="code-block">
+            int main() {<br>
+            ...<br>
+            output_code(split[0]);<br>
+            for(int i=1;i&lt;l;i++){<br>
+            cout &lt;&lt; " ";<br>
+            output_code(split[i]);<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按要求进行最终输出</p>
+        <p>void output_digit(int d) {</p>
+        <p>if(d>=10)</p>
+        <p>cout<<(char)('A'+d-10);</p>
+        <p>else</p>
+        <p>cout<<(char)('0'+d);</p>
+        <p>}</p>
+        <p>10011110 00000111 9E 07 void output_code(int s){</p>
+        <p>output_digit(s >> 4);</p>
+        <p>output_digit(s & 0x0f);</p>
+        <p>}</p>
+        <p>...}</p>
+        <div class="code-block">
+            int main() {<br>
+            ...<br>
+            output_code(split[0]);<br>
+            for(int i=1;i&lt;l;i++){<br>
+            cout &lt;&lt; " ";<br>
+            output_code(split[i]);<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>}</p>
+        <p>void output_code(int s){</p>
+        <p>for(int i=0;i<l-1;i++) split[i]|=0x80;</p>
+        <p>output_digit(s>>4);</p>
+        <p>output_code(split[0]);</p>
+        <p>output_digit(s&0x0f);</p>
+        <p>for(int i=1;i<l;i++){</p>
+        <p>}</p>
+        <p>cout << " ";</p>
+        <p>output_code(split[i]);</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main() {<br>
+            long long n=0;<br>
+            #include &lt;bits/stdc++.h&gt;<br>
+            cin&gt;&gt;n;<br>
+            using namespace std;<br>
+            int split[10];<br>
+            void output_digit(int d) {<br>
+            int l = 0;<br>
+            if(d&gt;=10)<br>
+            while(n&gt;0){<br>
+            cout&lt;&lt;(char)('A'+d-10);<br>
+            split[l]=(int)(n&amp;0x7f);<br>
+            else<br>
+            n&gt;&gt;=7;<br>
+            cout&lt;&lt;(char)('0'+d);<br>
+            l++;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

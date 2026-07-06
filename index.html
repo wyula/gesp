@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCF-GESP C++三级课程</title>
+    <title>CCF-GESP C++课程</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -11,22 +11,12 @@
         <div class="sidebar">
             <h2>📚 课程目录</h2>
             <div class="course-selector">
-                <button class="course-tab active" onclick="coursePlayer.loadLevel('level3')">三级课程</button>
-                <button class="course-tab" onclick="coursePlayer.loadLevel('level2')">二级课程</button>
                 <button class="course-tab" onclick="coursePlayer.loadLevel('level1')">一级课程</button>
+                <button class="course-tab" onclick="coursePlayer.loadLevel('level2')">二级课程</button>
+                <button class="course-tab active" onclick="coursePlayer.loadLevel('level3')">三级课程</button>
+                <button class="course-tab" onclick="coursePlayer.loadLevel('level4')">四级课程</button>
             </div>
-            <ul class="nav-list">
-                <li><a href="#" data-lesson="0" onclick="coursePlayer.loadLesson(0); return false;">考级标准</a></li>
-                <li><a href="#" data-lesson="1" onclick="coursePlayer.loadLesson(1); return false;" class="active">第1课 数组</a></li>
-                <li><a href="#" data-lesson="2" onclick="coursePlayer.loadLesson(2); return false;">第2课 数组进阶</a></li>
-                <li><a href="#" data-lesson="3" onclick="coursePlayer.loadLesson(3); return false;">第3课 字符串1</a></li>
-                <li><a href="#" data-lesson="4" onclick="coursePlayer.loadLesson(4); return false;">第4课 字符串2</a></li>
-                <li><a href="#" data-lesson="5" onclick="coursePlayer.loadLesson(5); return false;">第5课 数制和编码1</a></li>
-                <li><a href="#" data-lesson="6" onclick="coursePlayer.loadLesson(6); return false;">第6课 数制和编码2</a></li>
-                <li><a href="#" data-lesson="7" onclick="coursePlayer.loadLesson(7); return false;">第7课 位运算1</a></li>
-                <li><a href="#" data-lesson="8" onclick="coursePlayer.loadLesson(8); return false;">第8课 位运算2</a></li>
-                <li><a href="#" data-lesson="9" onclick="coursePlayer.loadLesson(9); return false;">第9课 模拟算法</a></li>
-                <li><a href="#" data-lesson="10" onclick="coursePlayer.loadLesson(10); return false;">第10课 枚举算法</a></li>
+            <ul class="nav-list" id="nav-list">
             </ul>
         </div>
         <div class="main-content">

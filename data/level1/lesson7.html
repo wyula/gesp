@@ -1,0 +1,431 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++一级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第七课</h2>
+    <div class="slide-content">
+        <p>分 支 结 构 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 if-else多分支语句</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>if-else多分支语句</p>
+        <p>① 当条件为真，则执行对应的语句，并终止</p>
+        <p>if (条件1) 语句1; 整个多分支语句的执行；</p>
+        <p>else if (条件2) 语句2; ② 条件都不成立，则执行else语句。</p>
+        <p>…… ③ else if的数量可以有任意多个。</p>
+        <p>else if (条件n) 语句n; ④ 最后的else语句不是必须的。</p>
+        <p>else 语句n+1; ⑤ 当有多个条件成立时，只会执行第一个满</p>
+        <p>足条件的语句。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ A ） int m=14; int n=12;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>都是偶数 if(m%2==0&&n%2==0) cout<<"都是偶数"; B. 都是奇数 else if(m%2==1&&n%2==1)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>不都是偶数或奇数 cout<<"都是奇数"; else</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>以上说法都不正确 cout<<"不都是偶数或奇数"; 14%2==0&&12%2==0 1&&1 1</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ ） int m=14; int n=12;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>都是偶数 if(m%2&&n%2) cout<<"都是偶数"; B. 都是奇数 else if(m%2==1&&n%2==1)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>不都是偶数或奇数 cout<<"都是奇数"; else</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>以上说法都不正确 cout<<"不都是偶数或奇数"; 14%2&&12%2 0&&0 0</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ C ） int m=14; int n=12;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>都是偶数 if(m%2&&n%2) cout<<"都是偶数"; B. 都是奇数 else if(m%2==1&&n%2==1)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>不都是偶数或奇数 cout<<"都是奇数"; else</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>以上说法都不正确 cout<<"不都是偶数或奇数"; 14%2==1&&12%2==1 0&&0 0</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）下面C++代码执行后的输出是（ A ） int m=7; if(m/5||m/3)</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0 cout<<0; else if(m/3) B. 1 cout<<1;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>2 else if(m/5) cout<<2;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>3 else cout<<3; 7/5||7/3 1||2 1</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>每月天数（2023年3月）</p>
+        <p>【问题描述】</p>
+        <p>小明刚刚学习了每月有多少天，以及如何判断平年和闰年，想到可以使用编</p>
+        <p>程方法求出给定的月份有多少天。你能做到吗？</p>
+        <p>【输入描述】</p>
+        <p>输入一行，包含两个整数，分别表示一个日期的年、月。</p>
+        <p>【输出描述】</p>
+        <p>输出一行，包含一个整数，表示输入月份有多少天。</p>
+        <p>【样例输入1】 【样例输入2】</p>
+        <p>2022 1 2020 2</p>
+        <p>【样例输出1】 【样例输出2】</p>
+        <p>31 29</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>分析每个月份的天数</p>
+        <p>月份 天数</p>
+        <p>1月、3月、5月、7月、</p>
+        <p>大月 31天</p>
+        <p>8月、10月、12月</p>
+        <p>小月 4月、6月、9月、11月 30天</p>
+        <p>平月 2月 平年：28天；闰年：29天</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断闰年</p>
+        <p>"四年一闰，百年不闰，四百年再闰"</p>
+        <p>能被4整除但是不能被100整除，或者能被400整除</p>
+        <p>y%4==0 && y%100!=0 || y%400==0</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 定义两个变量，输入年份和月份</p>
+        <p>int y,m;</p>
+        <p>cin>>y>>m;</p>
+        <p>② 判断月份，并输出对应的天数</p>
+        <p>③ 判断闰年，输出二月份的天数</p>
+        <p>bool leap=false;</p>
+        <p>if(y%4==0&&y%100!=0||y%400==0)</p>
+        <p>leap=true;</p>
+        <p>if(m==1||m==3||m==5||m==7||m==8||m==10||m==12)</p>
+        <p>cout<<31<<endl;// 大月</p>
+        <p>else if(m==4||m==6||m==9||m==11)</p>
+        <p>cout<<30<<endl; // 小月</p>
+        <p>else if(leap)</p>
+        <p>cout<<29<<endl;// 闰年2月</p>
+        <p>else</p>
+        <p>cout<<28<<endl;// 平年2月</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>写一写</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int y,m;<br>
+            cin&gt;&gt;y&gt;&gt;m;<br>
+            bool leap=false;<br>
+            // 判断闰年<br>
+            if(y%4==0&amp;&amp;y%100!=0||y%400==0)<br>
+            leap=true;<br>
+            if(m==1||m==3||m==5||m==7||m==8||m==10||m==12)<br>
+            cout&lt;&lt;31&lt;&lt;endl;// 大月<br>
+            else if(m==4||m==6||m==9||m==11)<br>
+            cout&lt;&lt;30&lt;&lt;endl; // 小月<br>
+            else if(leap)<br>
+            cout&lt;&lt;29&lt;&lt;endl;// 闰年2月<br>
+            else<br>
+            cout&lt;&lt;28&lt;&lt;endl;// 平年2月<br>
+            return 0;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 switch语句</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>switch语法格式和注意事项</p>
+        <p>switch(表达式){ ① switch表达式结果必须为整型、字符型、布尔型；</p>
+        <p>case 数值1: 语句1; break； ② case后面不能是变量，必须为具体数值；</p>
+        <p>case 数值2: 语句2; break； ③ case后面的数值可以是整数、字符、布尔值；</p>
+        <p>…… ④ case后面的数值不能重复；</p>
+        <p>case 数值n: 语句n; break; ⑤ default语句是默认语句，当表达式的结果和所有</p>
+        <p>default: 语句; break; case都不匹配时，执行default语句。</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>switch语句的流程图</p>
+        <p>开始</p>
+        <p>入口 终止</p>
+        <p>表达式 case 数值1 语句1 break</p>
+        <p>case 数值2 语句2 break</p>
+        <p>case 数值3 语句3 break</p>
+        <p>default 语句4 break</p>
+        <p>结束</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>break关键字的作用</p>
+        <p>switch(表达式){</p>
+        <p>break的作用是结束整个switch语句。</p>
+        <p>case 数值1: 语句1; break；</p>
+        <p>case 数值2: 语句2; break；</p>
+        <p>switch语句的执行过程：</p>
+        <p>……</p>
+        <p>Ø 通过表达式的结果找到匹配的case分支</p>
+        <p>case 数值n: 语句n; break; 或者default作为入口</p>
+        <p>Ø 直到遇到break，结束整个switch语句。</p>
+        <p>default: 语句; break;</p>
+        <p>Ø 最后一条分支语句，有没有break均可。</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>不同选择结构的特点</p>
+        <p>① if语句适合判断条件比较复杂，但是分支比较少的情况。</p>
+        <p>② switch语句适合判断条件简单，但是分支比较多的情况。</p>
+        <p>③ switch语句只能针对某个表达式的值做出判断，不能直</p>
+        <p>接判断某个范围。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>每月天数（2023年3月）</p>
+        <p>【问题描述】</p>
+        <p>小明刚刚学习了每月有多少天，以及如何判断平年和闰年，想到可以使用编</p>
+        <p>程方法求出给定的月份有多少天。你能做到吗？</p>
+        <p>要求：使用switch语句完成。</p>
+        <p>【输入描述】</p>
+        <p>输入一行，包含两个整数，分别表示一个日期的年、月。</p>
+        <p>【输出描述】</p>
+        <p>输出一行，包含一个整数，表示输入月份有多少天。</p>
+        <p>【样例输入1】 【样例输入2】</p>
+        <p>2022 1 2020 2</p>
+        <p>【样例输出1】 【样例输出2】</p>
+        <p>31 29</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>switch(m){</p>
+        <p>case 1: cout<<31; break;</p>
+        <p>case 3: cout<<31; break;</p>
+        <p>case 5: cout<<31; break;</p>
+        <p>case 7: cout<<31; break; 执行语句相同</p>
+        <p>case 8: cout<<31; break;</p>
+        <p>case 10: cout<<31; break;</p>
+        <p>case 12: cout<<31; break;</p>
+        <p>case 4: cout<<30; break;</p>
+        <p>case 6: cout<<30; break;</p>
+        <p>执行语句相同</p>
+        <p>case 9: cout<<30; break;</p>
+        <p>case 11: cout<<30; break;</p>
+        <p>case 2: 如果为闰年, 输出29天; 否则, 输出28天; break;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>合并case语句语法格式</p>
+        <p>switch(表达式){</p>
+        <p>case 数值1: case 数值2:</p>
+        <p>语句1; break;</p>
+        <p>case 数值3: case 数值4:</p>
+        <p>语句2; break;</p>
+        <p>case 数值5:</p>
+        <p>语句3; break;</p>
+        <p>......</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>执行相同语句的case</p>
+        <p>分支合并</p>
+        <p>switch(m){</p>
+        <p>case 1: case 3: case 5: case 7: case 8: case 10: case 12:</p>
+        <p>cout<<31; break;</p>
+        <p>case 4: case 6: case 9: case 11:</p>
+        <p>cout<<30; break; 执行相同语句的case</p>
+        <p>case 2: 分支合并</p>
+        <p>如果为闰年, 输出29天;</p>
+        <p>否则, 输出28天；</p>
+        <p>break;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>switch(m){</p>
+        <p>case 1: case 3: case 5: case 7: case 8: case 10: case 12:</p>
+        <p>cout<<31; break;</p>
+        <p>case 4: case 6: case 9: case 11:</p>
+        <p>cout<<30; break; 使用条件运算符</p>
+        <p>case 2:</p>
+        <p>y%4==0 && y%100!=0 || y%400==0 ? cout<<29 : cout<<28;</p>
+        <p>break;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 定义两个变量，输入年份和月份</p>
+        <p>int y,m;</p>
+        <p>cin>>y>>m;</p>
+        <p>② 判断月份，并输出对应的天数</p>
+        <p>③ 判断闰年，输出二月份的天数</p>
+        <p>switch(m){</p>
+        <p>case 1:case 3:case 5:case 7:case 8:case 10:case 12:</p>
+        <p>cout<<31;</p>
+        <p>break;</p>
+        <p>case 4:case 6:case 9:case 11:</p>
+        <p>cout<<30;</p>
+        <p>break;</p>
+        <p>case 2:</p>
+        <p>y%4==0&&y%100!=0||y%400==0?cout<<29:cout<<28;</p>
+        <p>break;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>写一写</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int y,m;<br>
+            cin&gt;&gt;y&gt;&gt;m;<br>
+            switch(m){<br>
+            case 1:case 3:case 5:case 7:case 8:case 10:case 12:<br>
+            cout&lt;&lt;31;<br>
+            break;<br>
+            case 4:case 6:case 9:case 11:<br>
+            cout&lt;&lt;30;<br>
+            break;<br>
+            case 2:<br>
+            y%4==0&amp;&amp;y%100!=0||y%400==0?cout&lt;&lt;29:cout&lt;&lt;28;<br>
+            break;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

@@ -1,0 +1,529 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第八课</h2>
+    <div class="slide-content">
+        <p>二 维 数 组 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>(样题)填幻方</p>
+        <p>【问题描述】</p>
+        <p>在一个 N×N 的正方形网格中，每个格子分别填上从 1 到 N×N 的正整数，使得正方形中</p>
+        <p>任一行、任一列及对角线的几个数之和都相等，则这种正方形图案就称为“幻方”（输出样例</p>
+        <p>中展示了一个 3×3 的幻方）。我国古代称为“河图”、“洛书”，又叫“纵横图”。</p>
+        <p>幻方看似神奇，但当 N 为奇数时有很方便的填法：</p>
+        <p>1) 一开始正方形中没有填任何数字。首先，在第一行的正中央填上 1。</p>
+        <p>2) 从上次填数字的位置向上移动一格，如果已经在第一行，则移到同一列的最后一行；</p>
+        <p>再向右移动一格，如果已经在最右一列，则移动至同一行的第一列。如果移动后的位置没有填</p>
+        <p>数字，则把上次填写的数字的下一个数字填到这个位置。</p>
+        <p>3) 如果第 2 步填写失败，则从上次填数字的位置向下移动一格，如果已经在最下一行，</p>
+        <p>则移到同一列的第一行。这个位置一定是空的（这可太神奇了！），把上次填写的数字的下一</p>
+        <p>个数字填到这个位置。</p>
+        <p>4) 重复 2、3 步骤，直到所有格子都被填满，幻方就完成了！</p>
+        <p>快来编写一个程序，按上述规则，制作一个 N×N 的幻方吧。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>(样题)填幻方</p>
+        <p>【输入格式】</p>
+        <p>输入为一个正奇数 N，保证 3≤N≤21。</p>
+        <p>【输出格式】</p>
+        <p>输出 N 行，每行 N 个空格分隔的正整数，内容为 N×N 的幻方。</p>
+        <p>【输入样例】</p>
+        <p>3</p>
+        <p>【输出样例】</p>
+        <p>8 1 6</p>
+        <p>3 5 7</p>
+        <p>4 9 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 第一行的正中央填上 1</p>
+        <p>② 从上次填数字的位置向上移动一格，如果已经在第</p>
+        <p>一行，则移到同一列的最后一行；再向右移动一格</p>
+        <p>8 1 6</p>
+        <p>③ 如果重复第二步向右移动一格，发现已经在最右一</p>
+        <p>3 5 7</p>
+        <p>列，则移动至同一行的第一列</p>
+        <p>4 9 2</p>
+        <p>填写失败，则从原位置向下移动一格，如果已经在最下</p>
+        <p>一行，则移到同一列的第一行</p>
+        <p>核心：向右上移动，填写数字；如果失败，则向下移动一格填写</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>定义N*N二维数组</p>
+        <p>cube[nx][ny]=d;</p>
+        <p>x=nx;</p>
+        <p>y=ny;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++) {<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            if (cube[nx][ny]!=0) {<br>
+            nx=(x+1)%n;<br>
+            ny=y;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>设置第一行最中间值为1</p>
+        <p>cube[nx][ny]=d;</p>
+        <p>x=nx;</p>
+        <p>y=ny;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++){<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            if (cube[nx][ny]!=0){<br>
+            nx=(x+1)%n;<br>
+            ny=y;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按照规则给其他位置依次填写数字</p>
+        <p>cube[nx][ny]=d;</p>
+        <p>x=nx;</p>
+        <p>y=ny;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++){<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            if (cube[nx][ny]!=0){<br>
+            nx=(x+1)%n;<br>
+            ny=y;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按照规则给其他位置依次填写数字</p>
+        <p>1. nx取值范围为：</p>
+        <p>2. 如果已经在第 ny=y;</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++){<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            0~n-1<br>
+            if (cube[nx][ny]!=0){<br>
+            nx=(x+1)%n;<br>
+            一行，则移到同 }<br>
+            一列的最后一行 cube[nx][ny]=d;<br>
+            x=nx;<br>
+            y=ny;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按照规则给其他位置依次填写数字</p>
+        <p>1. ny取值范围为：</p>
+        <p>2. 如果已经在最 cube[nx][ny]=d;</p>
+        <p>后一列，则移到 x=nx;</p>
+        <p>y=ny;</p>
+        <p>同一行的第一列</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++){<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            if (cube[nx][ny]!=0){<br>
+            nx=(x+1)%n;<br>
+            0~n-1<br>
+            ny=y;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按照规则给其他位置依次填写数字</p>
+        <p>cube[nx][ny]=d;</p>
+        <p>填写失败</p>
+        <p>x=nx;</p>
+        <p>y=ny;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++){<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            if (cube[nx][ny]!=0){<br>
+            nx=(x+1)%n;<br>
+            ny=y;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按照规则给其他位置依次填写数字</p>
+        <p>1. 行坐标+1： 2. 列坐标不 cube[nx][ny]=d;</p>
+        <p>x+1 变： y不变 x=nx;</p>
+        <p>y=ny;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++){<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            if (cube[nx][ny]!=0){<br>
+            nx=(x+1)%n;<br>
+            ny=y;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>按照规则给其他位置依次填写数字</p>
+        <p>cube[nx][ny]=d;</p>
+        <p>x=nx;</p>
+        <p>y=ny;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n=0;<br>
+            cin&gt;&gt;n;<br>
+            int cube[21][21]={0};<br>
+            int x=0,y=n/2;<br>
+            cube[x][y] = 1;<br>
+            for(int d=2;d&lt;=n*n;d++){<br>
+            int nx=(x+n-1)%n;<br>
+            int ny=(y + 1)%n;<br>
+            if (cube[nx][ny]!=0){<br>
+            nx=(x+1)%n;<br>
+            ny=y;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>输出幻方</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            ……<br>
+            for(int i=0; i&lt;n; i++){<br>
+            for (int j=0;j&lt;n;j++)<br>
+            cout&lt;&lt;cube[i][j]&lt;&lt;" ";<br>
+            cout&lt;&lt;endl;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>int nx = (x+n-1)%n;</p>
+        <p>return 0;</p>
+        <p>int ny = (y+1)%n;</p>
+        <p>}</p>
+        <p>if (cube[nx][ny]!=0) {</p>
+        <p>nx = (x+1)%n;</p>
+        <p>ny = y;</p>
+        <p>}</p>
+        <p>cube[nx][ny] = d;</p>
+        <p>x = nx;</p>
+        <p>y = ny;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main() {<br>
+            int n = 0;<br>
+            cin&gt;&gt;n;<br>
+            for (int i=0;i&lt;n;i++){<br>
+            int cube[21][21]={0};<br>
+            for (int j=0;j&lt;n;j++)<br>
+            int x=0,y=n/2;<br>
+            cout&lt;&lt;cube[i][j]&lt;&lt;" ";<br>
+            cube[x][y] = 1;<br>
+            cout&lt;&lt;endl;<br>
+            for (int d = 2;d&lt;=n*n;d++) {<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>寻找鞍点</p>
+        <p>【问题描述】</p>
+        <p>求一个n行m列矩阵的鞍点。鞍点指的是矩阵中的一个元素，它是所在行的最大值，</p>
+        <p>并且是所在列的最小值。</p>
+        <p>例如下面的5*5的整数矩阵中，第4行第1列的元素就是鞍点，值为8。</p>
+        <p>编程输入一个n行m列矩阵，寻找矩阵中的鞍点，输出鞍点的位置，如果不存在鞍点，</p>
+        <p>则输出"none" 。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>寻找鞍点</p>
+        <p>【输入格式】</p>
+        <p>共n+1行；</p>
+        <p>第一行两个正整数n和m，1≤n、m≤100，行号列号均从1开始；</p>
+        <p>接下来n行m列的整数矩阵，数据之间使用空格隔开。</p>
+        <p>【输出格式】</p>
+        <p>如果存在鞍点，输出鞍点的行列号和值，三个数据之间用空格隔开。</p>
+        <p>如果不存在鞍点，输出字符串"none"。</p>
+        <p>【输入样例1】 【输入样例2】</p>
+        <p>5 5 2 3</p>
+        <p>11 3 5 6 9 1 2 3</p>
+        <p>12 4 7 8 10 4 5 2</p>
+        <p>10 5 6 9 11 【输出样例2】</p>
+        <p>8 6 4 7 2 none</p>
+        <p>15 10 11 20 25</p>
+        <p>【输出样例1】</p>
+        <p>4 1 8</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>1 2 3 4 5</p>
+        <p>• 先找出每行的最大值</p>
+        <p>1 11 3 5 6 9 ×</p>
+        <p>• 再判断这个最大值是否为</p>
+        <p>2 12 4 7 8 10 ×</p>
+        <p>所在列的最小值</p>
+        <p>3 10 5 6 9 11 × • 如果是，则该值即为鞍点</p>
+        <p>• 如果存在鞍点，是唯一的</p>
+        <p>4 8 6 4 7 2 √</p>
+        <p>4 1 8</p>
+        <p>5 15 10 4 7 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>① 创建全局二维数组，用于保存输入矩阵数据</p>
+        <p>int a[100][100];</p>
+        <p>② 输入整数n和m，以及n行数据，保存在二维数组a中</p>
+        <p>int n,m; 行列位置从1开始</p>
+        <p>cin>>n>>m;</p>
+        <p>for(int i=1;i<=n;i++)</p>
+        <p>for(int j=1;j<=m;j++)</p>
+        <p>cin>>a[i][j];</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>③ 遍历二维数组的每一行，找每一行的最大值</p>
+        <p>记录鞍点的位置</p>
+        <p>int x=0,y=0</p>
+        <p>for(int i=1;i<=n;i++){</p>
+        <p>x=i;y=1;</p>
+        <p>记录最大值</p>
+        <p>for(int j=1;j<=m;j++)</p>
+        <p>的位置</p>
+        <p>if(a[i][j]>a[x][y])y=j;</p>
+        <p>a[x][y]为最大值</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>③ 遍历二维数组的每一行，找每一行的最大值</p>
+        <p>④ 再判断该最大值是否为所在列的最小值</p>
+        <p>记录鞍点的位置</p>
+        <p>int x=0,y=0</p>
+        <p>for(int i=1;i<=n;i++){</p>
+        <p>x=i;y=1;</p>
+        <p>for(int j=1;j<=m;j++)</p>
+        <p>if(a[i][j]>a[x][y])y=j;</p>
+        <p>遍历行</p>
+        <p>for(int h=1;h<=n;h++)</p>
+        <p>if(a[h][y]<a[x][y])</p>
+        <p>break;</p>
+        <p>}</p>
+        <p>判断a[x][y]是否为</p>
+        <p>所在列的最小值</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>int x=0,y=0;</p>
+        <p>用于标记是否找到鞍点</p>
+        <p>bool f=true;</p>
+        <p>⑤ 标记是否找到鞍点</p>
+        <p>for(int i=1;i<=n;i++){</p>
+        <p>• 创建布尔类型变量f用于标记 f=true; 假设每次存在</p>
+        <p>x=i;y=1;</p>
+        <p>是否找到鞍点</p>
+        <p>for(int j=1;j<=m;j++)</p>
+        <p>• true表示存在 false不存在 if(a[i][j]>a[x][y])y=j;</p>
+        <p>for(int h=1;h<=n;h++){</p>
+        <p>if(a[h][y]<a[x][y]){</p>
+        <p>f=false; 确定不是鞍点</p>
+        <p>break;</p>
+        <p>}</p>
+        <p>}</p>
+        <p>if(f)break; 找到鞍点退出循环</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>⑥ 按题目要求输出</p>
+        <p>• 存在鞍点则输出鞍点的行号、列号和数值，不存在则输出none</p>
+        <p>if(f)cout<<x<<" "<<y<<" "<<a[x][y];</p>
+        <p>else cout<<"none";</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>for(int j=1;j<=m;j++)</p>
+        <p>}</p>
+        <p>cin>>a[i][j];</p>
+        <p>if(f)break;</p>
+        <p>int x=0,y=0;</p>
+        <p>}</p>
+        <p>bool f=true;</p>
+        <p>if(f)cout<<x<<" "<<y<<" "<<a[x][y];</p>
+        <p>for(int i=1;i<=n;i++){</p>
+        <p>else cout<<"none";</p>
+        <p>f=true;</p>
+        <p>return 0;</p>
+        <p>x=i;y=1;</p>
+        <p>}</p>
+        <p>for(int j=1;j<=m;j++)</p>
+        <p>if(a[i][j]>a[x][y])y=j;</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[100][100];<br>
+            for(int h=1;h&lt;=n;h++){<br>
+            int main(){<br>
+            if(a[h][y]&lt;a[x][y]){<br>
+            int n,m;<br>
+            f=false;<br>
+            cin&gt;&gt;n&gt;&gt;m;<br>
+            break;<br>
+            for(int i=1;i&lt;=n;i++)<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

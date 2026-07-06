@@ -1,0 +1,562 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第十课</h2>
+    <div class="slide-content">
+        <p>二 维 数 组 4</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年6月）图像压缩</p>
+        <p>【问题描述】</p>
+        <p>图像是由很多的像素点组成的。如果用0表示黑，255表示白，0和255之间的值代表不同程</p>
+        <p>度的灰色，则可以用一个字节表达一个像素（取值范围为十进制0-255、十六进制00-FF）。这</p>
+        <p>样的像素组成的图像，称为256级灰阶的灰度图像。</p>
+        <p>0 255</p>
+        <p>现在希望将256级灰阶的灰度图像压缩为16级灰阶，即每个像素的取值范围为十进制0-15、</p>
+        <p>十六进制0-F。压缩规则为：</p>
+        <p>①统计出每种灰阶的数量，取数量最多的前16种灰阶（如某种灰阶的数量与另外一种灰阶</p>
+        <p>的数量相同，则以灰阶值从小到大为序），分别编号0-F（最多的编号为0，以此类推）。</p>
+        <p>②其他灰阶转换到最近的16种灰阶之一，将某个点灰阶数与16种灰阶中的一种相减，绝对</p>
+        <p>值最小即为最近，如果绝对值相等，则编号较小的灰阶更近。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年6月）图像压缩</p>
+        <p>【输入格式】</p>
+        <p>输入第 1 行为一个正整数N，表示接下来有N行数据组成一副256级灰阶的灰度图像。约</p>
+        <p>定10≤N≤20。</p>
+        <p>第2行开始的行，每行为长度相等且为偶数的字符串，每两个字符用十六进制表示一个像</p>
+        <p>素。约定输入的灰度图像至少有16种灰阶。约定每行最多20个像素。</p>
+        <p>【输出格式】</p>
+        <p>第一行输出压缩选定的 16 种灰阶的十六进制编码，共计 32 个字符。</p>
+        <p>第二行开始的行，输出压缩后的图像，每个像素一位十六进制数表示压缩后的灰阶值。</p>
+        <p>一个像素的灰阶值</p>
+        <p>00FFCFAB00FFAC09071B5CCFAB76</p>
+        <p>00 FF CF AB 00 FF AC 09 07 1B 5C CF AB 76</p>
+        <p>14个像素</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年6月）图像压缩</p>
+        <p>最多的前16种灰阶</p>
+        <p>【输入样例】 【输出样例】</p>
+        <p>10 ABCFFF00CB09AC07101198011B6776FC</p>
+        <p>00FFCFAB00FFAC09071B5CCFAB76 321032657CD10E</p>
+        <p>00AFCBAB11FFAB09981D34CFAF56 36409205ACC16D</p>
+        <p>01BFCEAB00FFAC0907F25FCFBA65 B41032657FD16D</p>
+        <p>10FBCBAB11FFAB09981DF4CFCA67 8F409205ACF14D</p>
+        <p>00FFCBFB00FFAC0907A25CCFFC76 324F326570D1FE</p>
+        <p>00FFCBAB1CFFCB09FC1AC4CFCF67 3240C245FC411D</p>
+        <p>01FCCBAB00FFAC0F071A54CFBA65 BF4032687CD16D</p>
+        <p>10EFCBAB11FFAB09981B34CFCF67 8F409205ACC11D</p>
+        <p>01FFCBAB00FFAC0F071054CFAC76 B240326878D16E</p>
+        <p>1000CBAB11FFAB0A981B84CFCF66 83409205ACE11D</p>
+        <p>【样例解释 1】</p>
+        <p>灰阶'AB'、'CF'和'FF'出现 14 次，'00'出现 10 次，'CB'出现9 次，'09'出现 7 次，'AC'出现 6 次，</p>
+        <p>'07'出现 5 次，'10'、'11'和'98'出现 4 次，'01'、'1B'、'67'、'76'和'FC'出现 3 次。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>图像压缩规则分析</p>
+        <p>16种灰阶值 AB CF FF 00 CB 09 AC 07 10 11 98 01 1B 67 76 FC</p>
+        <p>编号 0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+        <p>00FFCFAB00FFAC09071B5CCFAB76 3 2</p>
+        <p>00AFCBAB11FFAB09981D34CFAF56</p>
+        <p>01BFCEAB00FFAC0907F25FCFBA65 转换为最接近灰</p>
+        <p>压缩</p>
+        <p>阶的编号</p>
+        <p>10FBCBAB11FFAB09981DF4CFCA67</p>
+        <p>00FFCBFB00FFAC0907A25CCFFC76</p>
+        <p>00FFCBAB1CFFCB09FC1AC4CFCF67</p>
+        <p>01FCCBAB00FFAC0F071A54CFBA65</p>
+        <p>10EFCBAB11FFAB09981B34CFCF67</p>
+        <p>01FFCBAB00FFAC0F071054CFAC76</p>
+        <p>1000CBAB11FFAB0A981B84CFCF66</p>
+        <p>原图 灰阶值由两位十六进制数</p>
+        <p>压缩成了一位十六进制数</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>图像压缩规则分析</p>
+        <p>16种灰阶值 AB CF FF 00 CB 09 AC 07 10 11 98 01 1B 67 76 FC</p>
+        <p>编号 0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+        <p>00FFCFAB00FFAC09071B5CCFAB76 321032657CD10E</p>
+        <p>00AFCBAB11FFAB09981D34CFAF56 36409205ACC16D</p>
+        <p>01BFCEAB00FFAC0907F25FCFBA65 B41032657FD16D</p>
+        <p>压缩</p>
+        <p>10FBCBAB11FFAB09981DF4CFCA67 8F409205ACF14D</p>
+        <p>00FFCBFB00FFAC0907A25CCFFC76 324F326570D1FE</p>
+        <p>00FFCBAB1CFFCB09FC1AC4CFCF67 3240C245FC411D</p>
+        <p>01FCCBAB00FFAC0F071A54CFBA65 BF4032687CD16D</p>
+        <p>10EFCBAB11FFAB09981B34CFCF67 8F409205ACC11D</p>
+        <p>01FFCBAB00FFAC0F071054CFAC76 B240326878D16E</p>
+        <p>1000CBAB11FFAB0A981B84CFCF66 83409205ACE11D</p>
+        <p>原图 宽度为原图的一半</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>把图像字符串 找出最多的 根据规则 输出压缩后</p>
+        <p>转为数值 16种灰阶 压缩图像 图像的灰阶值</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>int image[25][25];</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            3F  63 int main(){<br>
+            每行最多20个像素，<br>
+            int n;<br>
+            字符串的长度最多40<br>
+            // 将单个字符转换为一位十六进制数 cin&gt;&gt;n;<br>
+            int trans(char a){ char line[50]={0};<br>
+            两个字符为一个像素，<br>
+            …… for(int i=0;i&lt;n;i++){<br>
+            循环步长为2<br>
+            cin&gt;&gt;line;<br>
+            } for(int j=0;j&lt;strlen(line);j+=2){<br>
+            int c = 将字符串灰阶值转换为十进制数;<br>
+            image[i][j/2]=c;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>trans函数的实现</p>
+        <p>十六进制字符 十进制数值</p>
+        <p>15</p>
+        <p>3</p>
+        <p>3×16 +15=63</p>
+        <div class="code-block">
+            // 将单个字符转换为一位十六进制数<br>
+            int trans(char a){<br>
+            if (a&lt;='9') 3F 63<br>
+            return (a-'0');<br>
+            return (a-'A'+10);<br>
+            '3' - '0' 'F' - 'A'+10<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>int image[25][25];</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n;<br>
+            // 将单个字符转换为一位十六进制数 cin&gt;&gt;n;<br>
+            int trans(char a){ char line[50]={0};<br>
+            if (a&lt;='9') for(int i=0;i&lt;n;i++){<br>
+            return (a-'0'); cin&gt;&gt;line;<br>
+            return (a-'A'+10); for(int j=0;j&lt;strlen(line);j+=2){<br>
+            } int c = trans(line[j])*16+trans(line[j+1]);<br>
+            image[i][j/2]=c;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>把图像字符串 找出最多的 根据规则 输出压缩后</p>
+        <p>转为数值 16种灰阶 压缩图像 图像的灰阶值</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>int his[256]; // 用于统计灰阶值</p>
+        <p>int color[16]; // 用于保存最多的16种灰阶值</p>
+        <p>}</p>
+        <p>……</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            ……<br>
+            for(int i=0;i&lt;n;i++){<br>
+            cin&gt;&gt;line;<br>
+            for(int j=0;j&lt;strlen(line);j+=2){<br>
+            int c = trans(line[j])*16+trans(line[j+1]);<br>
+            image[i][j/2]=c;<br>
+            his[c]++; // 对灰阶值进行计数<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>for(int i=0;i<16;i++){</p>
+        <p>int max=0; // 记录最大值下标</p>
+        <p>for(int j=0;j<256;j++){</p>
+        <p>在his数组中找16</p>
+        <p>if(his[max]<his[j])max=j;</p>
+        <p>次最大值的下标</p>
+        <p>}</p>
+        <p>color[i]=max;</p>
+        <p>his[max]=-1; // 标记为-1，该灰阶值已获取</p>
+        <p>}</p>
+        <p>数组color AB CF FF 00 CB 09 AC 07 10 11 98 01 1B 67 76 FC</p>
+        <p>下标 0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>把图像字符串 找出最多的 根据规则 输出压缩后</p>
+        <p>转为数值 16种灰阶 压缩图像 图像的灰阶值</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>• 遍历image数组，将压缩之后的灰阶值保存在一个新数组cpimg中</p>
+        <p>int cpimg[25][25];// 用于保存压缩图</p>
+        <p>} }</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            CF  1 int main(){<br>
+            计算数组image<br>
+            ……<br>
+            的列长度<br>
+            // 计算整数c的压缩值 int m=strlen(line)/2;<br>
+            int compress(int c){ for(int i=0;i&lt;n;i++){<br>
+            for(int j=0;j&lt;m;j++){<br>
+            cpimg[i][j] = // 计算image[i][j]的压缩值 ;<br>
+            ……<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>compress函数的实现</p>
+        <p>数组color AB CF FF 00 CB 09 AC 07 10 11 98 01 1B 67 76 FC</p>
+        <p>下标 0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+        <div class="code-block">
+            // 计算整数c的压缩值<br>
+            int comprCesFs (in t1 c){ 压缩规则：<br>
+            int min=255,min_i=0;<br>
+            • 在color数组中找到与当前元素最接近的<br>
+            f/o/r (将in整t 数h=c0转;h换&lt;进16行;h压++缩){<br>
+            i n itn cto km=pabress(sc(-icnotl oc)r{[h]); 灰阶值；<br>
+            if(k&lt;min){<br>
+            • 与color数组中其中一个灰阶值相减，绝<br>
+            … …min=k;<br>
+            min_i=h;} 对值最小即为最接近；<br>
+            }}<br>
+            • 最接近的灰阶值所对应的下标即为压缩值。<br>
+            return min_i;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>• 遍历image数组，将压缩之后的灰阶值保存在一个新数组cpimg中</p>
+        <p>int cpimg[25][25];// 用于保存压缩图</p>
+        <p>}</p>
+        <p>}</p>
+        <p>return min_i;</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <p>}</p>
+        <div class="code-block">
+            // 计算整数c的压缩值<br>
+            int main(){<br>
+            int compress(int c){<br>
+            ……<br>
+            int min=255,min_i=0;<br>
+            for(int h=0;h&lt;16;h++){<br>
+            int m=strlen(line)/2;<br>
+            int k=abs(c-color[h]);<br>
+            for(int i=0;i&lt;n;i++){<br>
+            if(k&lt;min){<br>
+            for(int j=0;j&lt;m;j++){<br>
+            min=k;<br>
+            cpimg[i][j]=compress(image[i][j]);<br>
+            min_i=h;}<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>把图像字符串 找出最多的 根据规则 输出压缩后</p>
+        <p>转为数值 16种灰阶 压缩图像 图像的灰阶值</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>• 输出的时候需要转换为十六进制字符的形式</p>
+        <p>63  3F // 输出选取的16个灰阶值</p>
+        <p>for(int i=0;i<16;i++)</p>
+        <p>cout<<color[i];</p>
+        <p>cout<<cpimg[i][j];</p>
+        <p>cout<<endl;</p>
+        <p>}</p>
+        <p>×</p>
+        <div class="code-block">
+            // 一位十六进制数字转换为字符<br>
+            cout&lt;&lt;endl;<br>
+            char itrans(int n) {<br>
+            // 输出压缩后的图像<br>
+            for(int i=0;i&lt;n;i++){<br>
+            ……<br>
+            for(int j=0;j&lt;m;j++)<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>itrans函数的实现</p>
+        <p>十六进制字符</p>
+        <p>十进制数值</p>
+        <p>15</p>
+        <p>3</p>
+        <p>转十六进制字符</p>
+        <p>3+'0' 15-10+'A'</p>
+        <p>'F'</p>
+        <p>'3'</p>
+        <div class="code-block">
+            // 一位十六进制数字转换为字符<br>
+            63 3F<br>
+            char itrans(int n) {<br>
+            63/16 63%16 转十六进制数<br>
+            ……<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>itrans函数的实现</p>
+        <p>十六进制字符</p>
+        <p>十进制数值</p>
+        <p>15</p>
+        <p>3</p>
+        <p>转十六进制字符</p>
+        <p>3+'0' 15-10+'A'</p>
+        <p>'F'</p>
+        <p>'3'</p>
+        <div class="code-block">
+            //// 一一位位十十六六进进制制数数字字转转换换为为字字符符<br>
+            63 3F<br>
+            cchhaarr iittrraannss((iinntt nn)) {{<br>
+            if (n&gt;=10)<br>
+            63/16 63%16 转十六进制数<br>
+            … r…eturn (char)(n-10+'A');<br>
+            } return (char)(n+'0');<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>• 输出的时候需要转换为十六进制字符的形式</p>
+        <p>cout<<itrans(cpimg[i][j]);</p>
+        <p>cout<<endl;</p>
+        <p>}</p>
+        <div class="code-block">
+            // 输出选取的16个灰阶值<br>
+            for (int i=0;i&lt;16;i++)<br>
+            // 一位十六进制数字转换为字符<br>
+            cout&lt;&lt;itrans(color[i]/16)&lt;&lt;itrans(color[i]%16);<br>
+            char itrans(int n) {<br>
+            cout&lt;&lt;endl;<br>
+            if (n&gt;=10)<br>
+            // 输出压缩后的图像<br>
+            return (char)(n-10+'A');<br>
+            for (int i=0;i&lt;n;i++){<br>
+            return (char)(n+'0');<br>
+            for (int j=0;j&lt;m;j++)<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>int image[25][25];</p>
+        <p>int cpimg[25][25];</p>
+        <p>if(k<min){</p>
+        <p>return (char)(n-10+'A');</p>
+        <p>}</p>
+        <p>return (char)(n+'0');</p>
+        <p>return min_i;</p>
+        <p>}</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;bits/stdc++.h&gt;<br>
+            int his[256];<br>
+            using namespace std;<br>
+            int color[16];<br>
+            // 一位十六进制字符转换为数字<br>
+            // 计算整数c的压缩值<br>
+            int trans(char a) {<br>
+            int compress(int c){<br>
+            if (a&lt;='9')<br>
+            int min=255,min_i=0;<br>
+            return (a-'0');<br>
+            for(int h=0;h&lt;16;h++){<br>
+            return (a-'A'+10);<br>
+            int k=abs(c-color[h]);<br>
+            }<br>
+        </div>
+        <div class="code-block">
+            // 一位十六进制数字转换为字符<br>
+            min=k;<br>
+            char itrans(int n) {<br>
+            min_i=h; //下标为转换值<br>
+            if (n&gt;=10)<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            char line[50]={0};<br>
+            for(int i=0;i&lt;n;i++){<br>
+            cin&gt;&gt;line;<br>
+            for(int j=0;j&lt;strlen(line);j+=2){<br>
+            int c = trans(line[j])*16+trans(line[j+1]);<br>
+            image[i][j/2]=c;<br>
+            his[c]++;// 统计灰阶值出现的次数<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>}</p>
+        <p>color[i]=max;</p>
+        <p>his[max]=-1;// 标记为-1，该灰阶值已获取</p>
+        <p>}</p>
+        <p>}</p>
+        <div class="code-block">
+            // 在his数组中找出最多的前16种灰阶值保存在数组color中<br>
+            for(int i=0;i&lt;16;i++){<br>
+            int max=0;<br>
+            for(int j=0;j&lt;256;j++){<br>
+            if(his[max]&lt;his[j]){<br>
+            max=j;<br>
+            }<br>
+        </div>
+        <div class="code-block">
+            // 对image数组中的元素进行压缩处理<br>
+            int m=strlen(line)/2;<br>
+            for(int i=0;i&lt;n;i++){<br>
+            for(int j=0;j&lt;m;j++){<br>
+            cpimg[i][j]=compress(image[i][j]);<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            // 输出选取的16个灰阶<br>
+            for (int i=0;i&lt;16;i++)<br>
+            cout&lt;&lt;itrans(color[i]/16)&lt;&lt;itrans(color[i]%16);<br>
+            cout&lt;&lt;endl;<br>
+            // 输出压缩后的图像<br>
+            for (int i=0;i&lt;n;i++) {<br>
+            for (int j=0;j&lt;m;j++)<br>
+            cout&lt;&lt;itrans(cpimg[i][j]);<br>
+            cout&lt;&lt;endl;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

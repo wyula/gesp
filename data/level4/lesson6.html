@@ -1,0 +1,668 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第六课</h2>
+    <div class="slide-content">
+        <p>结 构 体</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 结构体的定义</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体</p>
+        <p>结构体是由多个类型不同（或相同）的数据组合而成的数据类型。</p>
+        <p>struct stu{</p>
+        <p>struct 结构体名{ int id;</p>
+        <p>string name;</p>
+        <p>数据类型1 变量名1;</p>
+        <p>double score;</p>
+        <p>数据类型2 变量名2; };</p>
+        <p>成员变量</p>
+        <p>……</p>
+        <p>stu a={1,"yaya",98};</p>
+        <p>}; a.score=95;</p>
+        <p>cout<<a.score<<endl;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体变量所占内存</p>
+        <p>结构体变量所占内存，是所有成员变量所需内存空间的总和</p>
+        <p>struct st{</p>
+        <p>char c;</p>
+        <p>1+4+813</p>
+        <p>int id;</p>
+        <p>double s;</p>
+        <p>}a={'a',1,80};</p>
+        <p>为什么计算</p>
+        <p>cout<<sizeof(a.c)<<endl; 1</p>
+        <p>a的存储空</p>
+        <p>cout<<sizeof(a.id)<<endl; 4</p>
+        <p>间是16？</p>
+        <p>cout<<sizeof(a.s)<<endl; 8</p>
+        <p>cout<<sizeof(a)<<endl; 16</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>对齐补齐原则</p>
+        <p>结构体变量的存储空间为最宽成员变量存储单元的整数倍，</p>
+        <p>若所有成员变量相加计算出来的的总空间不是其整数倍，</p>
+        <p>则补齐为它的整数倍。</p>
+        <p>c(char)</p>
+        <p>对齐补齐</p>
+        <p>struct st{</p>
+        <p>id(int)</p>
+        <p>char c;</p>
+        <p>a</p>
+        <p>int id;</p>
+        <p>double s;</p>
+        <p>} a = {'a',1,80}; s(double) 最宽</p>
+        <p>4+4+816</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>对齐补齐原则</p>
+        <p>结构体变量的存储空间为最宽成员变量存储单元的整数倍，</p>
+        <p>若所有成员变量相加计算出来的的总空间不是其整数倍，</p>
+        <p>则补齐为它的整数倍。</p>
+        <p>c(char)</p>
+        <p>struct sd{ b</p>
+        <p>对齐补齐</p>
+        <p>char c[5];</p>
+        <p>i(int) 最宽</p>
+        <p>int i;</p>
+        <p>}b={"1234",100};</p>
+        <p>8+412</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年9月)在C++语言中，可以通过定义结构体，定义一个新的数据类型。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 设有以下说明语句，则下面的叙述不正确的是 （ C ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>struct 是结构体类型的关键字 struct stu{</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>struct stu 是用户定义的结构体类型 int a; float b;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>stutype 是用户定义的结构体类型 } stutype;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>a 和 b 都是结构体成员名</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 当说明一个结构体变量时，系统分配给它的内存是（ A ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>各成员所需内存量的总和，并遵守对齐补齐原则</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>结构中第一个成员所需内存量</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>成员中占内存量最大者所需的容量</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>结构中最后一个成员所需内存量</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 结构体类型变量在程序执行期间（ A ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>所有成员一直驻留在内存中</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>只有一个成员驻留在内存中</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>部分成员驻留在内存中</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>没有成员驻留在内存中</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体嵌套结构体</p>
+        <p>结构体内的成员变量是另一个结构体</p>
+        <p>struct student</p>
+        <p>{ teacher t = {100,"大白",45};</p>
+        <p>string name;</p>
+        <p>t.stu.name = "小童";</p>
+        <p>int age;</p>
+        <p>int score; t.stu.age = 12; 大白 100 45</p>
+        <p>}; 小童 12 100</p>
+        <p>t.stu.score = 100;</p>
+        <p>struct teacher</p>
+        <p>{ cout<<t.name<<" "<<t.id<<" "<<t.age<<endl;</p>
+        <p>int id;</p>
+        <p>cout<<t.stu.name<<" ";</p>
+        <p>string name;</p>
+        <p>int age;</p>
+        <p>cout<<t.stu.age<<" "<<t.stu.score;</p>
+        <p>struct student stu;</p>
+        <p>};</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体作为函数参数</p>
+        <p>struct student</p>
+        <p>{</p>
+        <p>string name; student s={"小童",12,100};</p>
+        <p>int age; stuInfo(s);</p>
+        <p>int score; cout<<s.name; 小童</p>
+        <p>}; 小童</p>
+        <p>void stuInfo(student s) {</p>
+        <p>cout<<s.name<<endl;</p>
+        <p>s.name = "小白";</p>
+        <p>}</p>
+        <p>值传递是把实参赋值给形参。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体作为函数参数</p>
+        <p>struct student</p>
+        <p>{</p>
+        <p>string name; student s={"小童", 12, 100};</p>
+        <p>int age; student *p = &s;</p>
+        <p>int score; stuInfo(p);</p>
+        <p>}; cout<<s.name; 小童</p>
+        <p>void stuInfo(student *s) { 小白</p>
+        <p>cout<<s->name<<endl;</p>
+        <p>s->name = "小白";</p>
+        <p>}</p>
+        <p>地址传递对形参和实参指</p>
+        <p>向同一个结构体变量！</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体中const的使用</p>
+        <p>const作用：防止对结构体进行误操作！</p>
+        <p>struct student</p>
+        <p>{</p>
+        <p>string name; student s={"小童", 12, 100};</p>
+        <p>int age; student *p = &s;</p>
+        <p>int score; stuInfo(p);</p>
+        <p>}; cout<<s.name;</p>
+        <p>void stuInfo(const student *s){</p>
+        <p>cout<<s->name<<endl;</p>
+        <p>s->name = "小白";</p>
+        <p>}</p>
+        <p>不允许修改，程序报错</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 结构体数组</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>定义结构体数组</p>
+        <p>像使用int类型一样，使用结构体类型定义数组。</p>
+        <p>struct stu{ struct stu{</p>
+        <p>int id; int id;</p>
+        <p>char name[15]; char name[15];</p>
+        <p>double score; double score;</p>
+        <p>}; }a[3];</p>
+        <p>定义结构体的</p>
+        <p>stu a[3]; 同时定义数组</p>
+        <p>id name id name id name</p>
+        <p>a</p>
+        <p>score score score</p>
+        <p>0 1 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体数组的初始化</p>
+        <p>定义数组的同时，直接初始化</p>
+        <p>struct stu {</p>
+        <p>int id;</p>
+        <p>char name[15];</p>
+        <p>double score ;</p>
+        <p>};</p>
+        <p>stu a[3]={1,"yaya",98,2,"qiqi",82.5,3,"lili",89};</p>
+        <p>a[0] a[1] a[2]</p>
+        <p>1 yaya 2 qiqi 3 lili</p>
+        <p>a</p>
+        <p>98 82.5 89</p>
+        <p>2</p>
+        <p>0 1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体数组的初始化</p>
+        <p>推荐</p>
+        <p>定义数组的同时，使用{}进行初始化</p>
+        <p>struct stu {</p>
+        <p>int id;</p>
+        <p>char name[15];</p>
+        <p>double score ;</p>
+        <p>};</p>
+        <p>stu a[3]={{1,"yaya",98},{2,"qiqi",82.5},{3,"lili",89}};</p>
+        <p>a[0] a[1] a[2]</p>
+        <p>1 yaya 2 qiqi 3 lili</p>
+        <p>a</p>
+        <p>98 82.5 89</p>
+        <p>2</p>
+        <p>0 1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>数组元素的成员变量</p>
+        <p>访问成员变量语法：数组名[下标].成员变量</p>
+        <p>struct stu {</p>
+        <p>int id;</p>
+        <p>char name[15];</p>
+        <p>double score ;</p>
+        <p>}; a[0].name</p>
+        <p>stu a[2]={{1,"yaya",98},{2,"qiqi",82.5},{3,"lili",89}};</p>
+        <p>a[0].id a[0].score</p>
+        <p>cout << a[0].id << endl; 1</p>
+        <p>cout << a[0].name << endl; yaya</p>
+        <p>cout << a[0].score << endl; 98</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>数组元素的输入</p>
+        <p>struct stu{</p>
+        <p>int id;</p>
+        <p>char name[15];</p>
+        <p>输入：</p>
+        <p>double score;</p>
+        <p>1 yaya 98 }a[3];</p>
+        <p>定义结构体的同时</p>
+        <p>2 qiqi 82.5</p>
+        <p>创建数组</p>
+        <p>3 lili 89</p>
+        <div class="code-block">
+            int main(){<br>
+            for(int i=0;i&lt;3;i++)<br>
+            cin&gt;&gt;a[i].id&gt;&gt;a[i].name&gt;&gt;a[i].score;<br>
+            for(int i=0;i&lt;3;i++)<br>
+            cout&lt;&lt;a[i].id&lt;&lt;" "&lt;&lt;a[i].name&lt;&lt;" "&lt;&lt;a[i].score&lt;&lt;endl;<br>
+            return 0;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>结构体数组排序</p>
+        <p>对结构体数组按分数升序排序，必须自定义排序规则</p>
+        <p>id name id name id name</p>
+        <p>1 yaya 2 qiqi 3 lili</p>
+        <p>98 82.5 89</p>
+        <p>score score score</p>
+        <p>升序排序规则</p>
+        <p>bool cmp( sitnut x, sitnut y ) {</p>
+        <p>sort(a,a+3,cmp);</p>
+        <p>return xx.<syc;ore<y.score;</p>
+        <p>}</p>
+        <p>升序用小于号</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年9月)在C++语言中，可以定义结构体类型的数组变量，定 义结构体时也可以包含数组成员。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 下面程序运行的结果是（ D ） struct cmplx {</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0 int x; int y; B. 1 } cnum[2]={1,3,2,7};</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>3 printf("%d\n",cnum[0].y/cnum[0].x*cnum[1].x); D. 6</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 根据下面的定义，能打印出字母 M 的语句是 （ D ） struct person { char name[9]; int age;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>printf (“%c\n”,a[3].name ); } person a[10] = { B. printf (“%c\n”,a[3].name [1]); "John", 17,</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>printf (“%c\n”,a[2].name [1]); "Paul", 19, "Mary", 18, D. printf (“%c\n”,a[2].name [0]); "adam", 16 };</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>通话次数</p>
+        <p>【问题描述】</p>
+        <p>手机是最常用的通信工具，童童和好朋友之间经常打电话相互问候，现在输入</p>
+        <p>一次通话中两位朋友的姓名，请编程统计一下通话次数最多的人的通话次数。</p>
+        <p>【输入描述】</p>
+        <p>共 n+1 行；</p>
+        <p>第一行，一个正整数 n，表示有 n 对朋友通过话， 1≤n≤1000；</p>
+        <p>接下来 n 行，每行都有两个用空格隔开的姓名，表示通过电话的一对朋友。每</p>
+        <p>个人的姓名仅由小写英文字母组成，不含空格，且 1≤姓名长度 ≤15。</p>
+        <p>【输出描述】</p>
+        <p>一行，一个字符串和一个整数，分别表示通话次数最多的人姓名，和通话次数，</p>
+        <p>两个数据之间使用空格隔开，保证通话次数最多的人只有一个。</p>
+        <p>【输入样例】 【输出样例】</p>
+        <p>4 tongtong 3</p>
+        <p>tongtong lili</p>
+        <p>meimei tongtong</p>
+        <p>lili meimei</p>
+        <p>tongtong yaya</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>统计每个人的通话次数</p>
+        <p>tongtong lili</p>
+        <p>meimei tongtong</p>
+        <p>lili meimei</p>
+        <p>tongtong yaya</p>
+        <p>姓名：tongtong 姓名：lili 姓名： meimei 姓名：yaya</p>
+        <p>1302 210 120 01</p>
+        <p>通话次数： 通话次数： 通话次数： 通话次数：</p>
+        <p>• 将n对好友的通话信息记录在一个数组中</p>
+        <p>• 当前通话人在数组中没有记录，就新添加该通话人，通话次数记为1</p>
+        <p>0</p>
+        <p>• 如果当前通话人数组中已有记录，则通话次数加1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>① 定义结构体类型 con，用于记录通话人的姓名和通话次数</p>
+        <p>struct con{</p>
+        <p>string name;</p>
+        <p>姓名</p>
+        <p>int cnt;</p>
+        <p>姓名</p>
+        <p>};</p>
+        <p>通话次数</p>
+        <p>通话次数</p>
+        <p>con</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>① 定义结构体类型 con，用于记录通话人的姓名和通话次数</p>
+        <p>② 创建结构体数组a，用于保存n对通话人的信息</p>
+        <p>struct con{</p>
+        <p>string name;</p>
+        <p>int cnt;</p>
+        <p>姓名 }a[2010];</p>
+        <p>通话次数</p>
+        <p>数组长度，</p>
+        <p>con 最大n*2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>int n;</p>
+        <p>cin>>n; 循环n*2次</p>
+        <p>string x;</p>
+        <p>③ 输入n和n对好友通话信息。</p>
+        <p>for(int i=0;i<n*2;i++){</p>
+        <p>标记通话人是</p>
+        <p>④ 一边输入一边统计通话次数cnt cin>>x;</p>
+        <p>否已存在</p>
+        <p>bool f=false;</p>
+        <p>• 创建bool变量 ，用于标记数组中 for(int j=0;j<=i;j++){</p>
+        <p>if(a[j].name==x){</p>
+        <p>是否已有通话人记录。</p>
+        <p>f=true;</p>
+        <p>已有，通话</p>
+        <p>a[j].cnt++;</p>
+        <p>false 没有 true 有</p>
+        <p>次数++</p>
+        <p>break;}</p>
+        <p>}</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>int n;</p>
+        <p>cin>>n;</p>
+        <p>string x;</p>
+        <p>③ 输入n和n对好友通话信息。</p>
+        <p>for(int i=0;i<n*2;i++){</p>
+        <p>④ 一边输入一边统计通话次数cnt cin>>x;</p>
+        <p>bool f=false;</p>
+        <p>• 创建bool变量 ，用于标记数组中 for(int j=0;j<=i;j++){</p>
+        <p>if(a[j].name==x){</p>
+        <p>是否已有通话人记录。</p>
+        <p>f=true;</p>
+        <p>a[j].cnt++;</p>
+        <p>false 没有 true 有</p>
+        <p>break;}</p>
+        <p>}</p>
+        <p>if(!f){</p>
+        <p>没有，新添加</p>
+        <p>a[i].name=x;</p>
+        <p>到数组中</p>
+        <p>a[i].cnt=1;</p>
+        <p>}</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>实现步骤</p>
+        <p>⑤ 找出最多通话次数的人，按要求输出</p>
+        <p>int max=0;</p>
+        <p>string maxn="";</p>
+        <p>for(int i=0;i<n*2;i++){</p>
+        <p>if(max<a[i].cnt){</p>
+        <p>max=a[i].cnt;</p>
+        <p>maxn=a[i].name;</p>
+        <p>}</p>
+        <p>}</p>
+        <p>cout<<maxn<<" "<<max;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>string x; int max=0;</p>
+        <p>a[j].cnt++;</p>
+        <p>int n;</p>
+        <p>}</p>
+        <p>break;</p>
+        <p>cin>>n;</p>
+        <p>} cout<<maxn<<" "<<max;</p>
+        <p>} return 0;</p>
+        <p>if(!f){ }</p>
+        <p>a[i].name=x;</p>
+        <p>a[i].cnt=1;</p>
+        <p>}</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            for(int i=0;i&lt;n*2;i++){ string maxn="";<br>
+            using namespace std;<br>
+            cin&gt;&gt;x; for(int i=0;i&lt;n*2;i++){<br>
+            struct con{<br>
+            bool f=false;<br>
+            string name; if(max&lt;a[i].cnt){<br>
+            for(int j=0;j&lt;=i;j++){<br>
+            int cnt; max=a[i].cnt;<br>
+            if(a[j].name==x){<br>
+            }a[2010]; maxn=a[i].name;<br>
+            f=true;<br>
+            int main(){<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

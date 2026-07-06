@@ -1,337 +1,605 @@
 <div class="slide">
-    <h1 class="slide-title">CCF-GESP C++三级</h1>
-    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
-    <p style="text-align:center; color:#999; margin-top:20px;">第六课 模拟算法</p>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 什么是模拟算法</h2>
+    <h2 class="slide-subtitle-center">CCF-GESP C++三级</h2>
     <div class="slide-content">
-        <p><strong>模拟算法</strong>是一种直接按照问题的描述进行求解的算法思想。它的核心思想是：</p>
-        <br>
-        <p>用计算机程序来模拟现实世界中的过程或操作，按照题目给出的规则一步步执行，最终得到结果。</p>
-        <br>
-        <p><strong>模拟算法的特点：</strong></p>
-        <p>1. <strong>直观易懂：</strong>直接模拟问题描述的过程</p>
-        <p>2. <strong>适用性强：</strong>可以解决很多实际问题</p>
-        <p>3. <strong>逻辑清晰：</strong>按照步骤一步步执行</p>
-        <p>4. <strong>可能效率较低：</strong>某些情况下需要模拟大量步骤</p>
+        <p>编程能力等级认证</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">模拟算法的基本步骤</h2>
+    <h2 class="slide-subtitle-center">第六课</h2>
     <div class="slide-content">
-        <p>1. <strong>理解问题：</strong>仔细阅读题目，理解问题描述的过程</p>
-        <p>2. <strong>建立模型：</strong>用数据结构表示问题中的状态</p>
-        <p>3. <strong>模拟过程：</strong>按照题目规则一步步执行</p>
-        <p>4. <strong>输出结果：</strong>根据模拟结果输出答案</p>
+        <p>数 制 和 编 码 2</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 八进制和十六进制</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>八进制和十六进制</p>
+        <p>进制 表示数字 进位结尾原则 C++中的表示形式</p>
+        <p>逢十进一</p>
+        <p>十进制 0~9 默认</p>
+        <p>借一当十</p>
+        <p>逢二进一</p>
+        <p>二进制 0~1 0b/0B开头</p>
+        <p>借一当二</p>
+        <p>逢八进一</p>
+        <p>八进制 0~7 0开头</p>
+        <p>借一当八</p>
+        <p>逢十六进一</p>
+        <p>十六进制 0~9 A~F或(a~f) 0x/0X开头</p>
+        <p>借一当十六</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>计算机的进制对照关系</p>
+        <p>十进制 二进制 八进制 十六进制 十进制 二进制 八进制 十六进制</p>
+        <p>0 0000 0 0 8 1000 10 8</p>
+        <p>1 0001 1 1 9 1001 11 9</p>
+        <p>2 0010 2 2 10 1010 12 A</p>
+        <p>3 0011 3 3 11 1011 13 B</p>
+        <p>4 0100 4 4 12 1100 14 C</p>
+        <p>5 0101 5 5 13 1101 15 D</p>
+        <p>6 0110 6 6 14 1110 16 E</p>
+        <p>7 0111 7 7 15 1111 17 F</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>八进制数与十进制数转换</p>
+        <p>八进制转十进制： 十进制转八进制：</p>
+        <p>按位权8展开后求和 除以8取余，除到商是0停止，逆序输出余数。</p>
+        <p>1×82+2×81+6×80</p>
+        <p>1 2 6 8 89 ······ 1</p>
+        <p>=86</p>
+        <p>8 11 ······ 3 131</p>
+        <p>8 1 ······ 1</p>
+        <p>0</p>
+        <p>数位 2位 1位 0位</p>
+        <p>126 = 86</p>
+        <p>8 10 89 = 131</p>
+        <p>位权 82 81 80 10 8</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>八进制数与二进制数转换</p>
+        <p>八进制数和二进制数按位对应：八进制一位对应二进制三位。</p>
+        <p>0 000</p>
+        <p>327 011010111</p>
+        <p>8</p>
+        <p>1 001</p>
+        <p>327 = 11010111</p>
+        <p>2 010 8 2</p>
+        <p>3 011</p>
+        <p>八 二</p>
+        <p>4 100</p>
+        <p>进 进</p>
+        <p>制 5 101 制 1110101 365</p>
+        <p>2</p>
+        <p>数 6 110 数</p>
+        <p>1110101 = 365</p>
+        <p>2 8</p>
+        <p>7 111</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>十六进制数与十进制数转换</p>
+        <p>十六进制转十进制： 十进制转十六进制：</p>
+        <p>按位权16展开后求和 除以16取余，除到商是0停止，逆序输出余数。</p>
+        <p>10×162+1×161+2×160</p>
+        <p>A 1 2 16 58 ······ 10 A</p>
+        <p>=2578</p>
+        <p>16 3 ······ 3 3A</p>
+        <p>0</p>
+        <p>数位 2位 1位 0位</p>
+        <p>A12 = 2578</p>
+        <p>16 10 58 = 3A</p>
+        <p>位权 162 161 160 10 16</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>十六进制数与二进制数转换</p>
+        <p>十六进制数和二进制数按位对应：十六进制一位对应二进制四位。</p>
+        <p>二进制数</p>
+        <p>0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111</p>
+        <p>0 1 2 3 4 5 6 7 8 9 A(a) B ( b) C (c) D (d) E(e) F(f)</p>
+        <p>十六进制数</p>
+        <p>A1 10100001 111011 3B</p>
+        <p>16 2</p>
+        <p>A1 = 10100001 111011 = 3B</p>
+        <p>16 2 2 16</p>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">模拟算法的核心思想是（）</div>
+        <div class="quiz-question">（ 2023年9月）在C++语言中，表达式 (0xff == 255) 的值为 true 。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>分而治之</span>
+                <span>正确</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>按照题目描述一步步执行</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>递归调用</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>动态规划</span>
+                <span>错误</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">02 模拟算法的应用场景</h2>
-    <div class="slide-content">
-        <p><strong>场景1：游戏模拟</strong></p>
-        <p>- 模拟游戏过程</p>
-        <p>- 模拟棋盘状态变化</p>
-        <br>
-        <p><strong>场景2：物理模拟</strong></p>
-        <p>- 模拟物体运动</p>
-        <p>- 模拟碰撞检测</p>
-        <br>
-        <p><strong>场景3：过程模拟</strong></p>
-        <p>- 模拟排队过程</p>
-        <p>- 模拟生产流程</p>
-        <br>
-        <p><strong>场景4：状态模拟</strong></p>
-        <p>- 模拟状态转换</p>
-        <p>- 模拟系统行为</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">示例1：模拟掷骰子</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">#include</span> &lt;cstdlib&gt;<br>
-        <span class="code-keyword">#include</span> &lt;ctime&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;srand(time(<span class="code-keyword">NULL</span>));<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> count[7] = {0};<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n = 10000;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num = rand() % 6 + 1;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count[num]++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 1; i &lt;= 6; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << i << "点出现次数：" << count[i] << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">示例2：模拟时钟</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> h = 0, m = 0, s = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; 3661; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (s == 60) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (m == 60) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (h == 24) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << h << ":" << m << ":" << s << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">示例3：模拟洗牌</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">#include</span> &lt;cstdlib&gt;<br>
-        <span class="code-keyword">#include</span> &lt;ctime&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;srand(time(<span class="code-keyword">NULL</span>));<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> cards[54];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; 54; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cards[i] = i + 1;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 53; i &gt; 0; i--) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> j = rand() % (i + 1);<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> temp = cards[i];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cards[i] = cards[j];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cards[j] = temp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "洗牌结果：" << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; 54; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << cards[i] << " ";<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> ((i + 1) % 9 == 0) cout << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">模拟洗牌算法中，为什么要从后往前遍历？</div>
+        <div class="quiz-question">（2023年6月）在 C++语言中，表达式(0xf == 015)的值为 true。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>保证随机数生成正确</span>
+                <span>正确</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>确保每个位置都能与前面的任意位置交换</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>提高算法效率</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>减少内存使用</span>
+                <span>错误</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">03 模拟算法的注意事项</h2>
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）下列关于十六进制的描述中，正确的是（ A ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>使用 0-9 和 A-F 表示</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>使用 0-9 和 A-E 表示</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>使用 1-9 和 A-F 表示</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>使用 1-9 和 A-E 表示</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）已知大写字符 'A' 的ASCII编码的⼗六进制表示 为0x41，则字符 'L' 的ASCII编码的十六进制表示为（ C ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>4A</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4B</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>4C</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>52</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）已知大写字符'A'的 ASCII 编码的十六进制表示 为 0x41，则字符'F'的 ASCII 编码的十六进制表示为（ A ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>46</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>47</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>48</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>49</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）下列关于进制的叙述，不正确的是（ B ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正整数的二进制表示中只会出现 0 和 1。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>10 不是 2 的整数次幂，所以十进制数无法转换为二进制数。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>从二进制转换为 8 进制时，可以很方便地由低到高将每 3 位二进制位 转换为对应的一位 8 进制位。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>从二进制转换为 16 进制时，可以很方便地由低到高将每 4 位二进制位 转换为对应的一位 16 进制位</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）下列关于进制的叙述，正确的是（ C ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>只有十进制和⼆进制能够⽤来表示小数，八进制和十六进制不可以</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>常⽤的进制包括⼆进制、八进制、十进制、十六进制，其他进制在日 常⽣活中很少使用</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>对任意正整数，其⼆进制表示不会比它的十进制表⽰更短。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>正整数的八进制表示中，每⼀位可能出现的最大数字是8。</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 二进制数1101111转换为十六进制是（ C ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>157</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>111</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>6f</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>3f</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>注意事项1：数据类型选择</strong></p>
-        <p>选择合适的数据类型来表示状态，避免溢出或精度问题。</p>
-        <br>
-        <p><strong>注意事项2：边界条件处理</strong></p>
-        <p>仔细考虑边界情况，确保模拟过程正确处理各种极端情况。</p>
-        <br>
-        <p><strong>注意事项3：时间复杂度分析</strong></p>
-        <p>对于大规模模拟，需要分析时间复杂度，确保算法能够在规定时间内完成。</p>
-        <br>
-        <p><strong>注意事项4：状态管理</strong></p>
-        <p>清晰地管理模拟过程中的状态，避免状态混乱导致错误。</p>
+        <p>带小数部分的转换</p>
+        <p>八进制、十六进制转十进制：按位权展开后求和</p>
+        <p>小数部分位权的权值从左往右依次为-1,-2,-3...</p>
+        <p>1 7 5 6 2 6 f 2</p>
+        <p>数位 3位 2位 1位 0位 -1位 数位 1位 0位 -1位</p>
+        <p>位权 83 82 81 80 8-1 位权 161 160 16-1</p>
+        <p>(1756.2) = (1006.25) (6f.2) = (111.125)</p>
+        <p>8 10 16 10</p>
+        <p>1×83+7×82+5×81+6×80+2×8-1 6×161+f×160+2×16-1</p>
+        <p>=1006+2×0.125 =111+2×0.0625</p>
+        <p>=1006.25 =111.125</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">示例4：模拟排队系统</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> queue[100];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> front = 0, rear = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;queue[rear++] = 1;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;queue[rear++] = 2;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;queue[rear++] = 3;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "出队：" << queue[front++] << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "出队：" << queue[front++] << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;queue[rear++] = 4;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;queue[rear++] = 5;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "队列剩余：";<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = front; i &lt; rear; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << queue[i] << " ";<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">04 真题解析</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p>让我们来看一些关于模拟算法的真题。</p>
+        <p>带小数部分的转换</p>
+        <p>十进制转八进制：整数部分除8取余，逆序输出；</p>
+        <p>小数部分，乘8取整，顺序输出</p>
+        <p>(78.625) = (116.5)</p>
+        <p>10 8</p>
+        <p>8 78 ······6 0.625</p>
+        <p>x 8</p>
+        <p>8 9 ······1</p>
+        <p>116</p>
+        <p>5.0 ······ 5</p>
+        <p>8 1 ······1</p>
+        <p>0.0 到0结束</p>
+        <p>0</p>
+        <p>整数部分</p>
+        <p>小数部分</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">选择题</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>（2023年6月）</strong> 以下哪个问题最适合用模拟算法解决？</p>
-        <br>
-        <p>A. 求数组的最大值</p>
-        <p>B. 计算斐波那契数列的第n项</p>
-        <p>C. 模拟停车场车辆进出过程</p>
-        <p>D. 查找有序数组中的元素</p>
-        <br>
-        <p>答案：<strong>C</strong></p>
+        <p>带小数部分的转换</p>
+        <p>十进制转十六进制：整数部分除16取余，逆序输出；</p>
+        <p>小数部分，乘16取整，顺序输出</p>
+        <p>(78.625) = (4e.a)</p>
+        <p>10 16</p>
+        <p>16 78 ······14 0.625</p>
+        <p>x 16</p>
+        <p>16 4 ······ 4 4e</p>
+        <p>10.0 ······ 10</p>
+        <p>0</p>
+        <p>0.0 到0结束</p>
+        <p>整数部分 小数部分</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">编程题：报数游戏</h2>
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 与二进制小数0.1相等的八进制数是（ B ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0.8</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>0.4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>0.2</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>0.1</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 以下进制数字中，选项的值与其它三项不同的是（ D ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>10111(2)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>23(10)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>27(8)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>18(16)</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
     <div class="slide-content">
-        <p><strong>题目描述：</strong></p>
-        <p>n个人围成一圈报数，从1开始报数，报到m的人出列，接着从下一个人开始重新报数。</p>
-        <p>求最后剩下的人的编号。</p>
-        <br>
-        <p><strong>输入格式：</strong></p>
-        <p>两个整数n和m</p>
-        <br>
-        <p><strong>输出格式：</strong></p>
-        <p>最后剩下的人的编号</p>
+        <p>进制判断（2023年9月）</p>
+        <p>【问题描述】</p>
+        <p>N进制数指的是逢N进一的计数制。例如，人们日常生活中大多使用十进制计数，而计算机</p>
+        <p>底层则一般使用二进制。除此之外，八进制和十六进制在一些场合也是常用的计数制（十六进制</p>
+        <p>中，一般使用字母 A 至 F 表示十至十五）。</p>
+        <p>现在有N个数，请你分别判断他们是否可能是二进制、八进制、十进制、十六进制。例如，</p>
+        <p>15A6F 就只可能是十六进制，而 1011 则是四种进制皆有可能。</p>
+        <p>【输入描述】</p>
+        <p>输入的第一行为一个十进制表示的整数N。接下来N行，每行一个字符串，表示需要判断的</p>
+        <p>数。保证所有字符串均由数字和大写字母组成，且不以 0 开头。保证不会出现空行。</p>
+        <p>保证1≤N≤1000，保证所有字符串长度不超过10。</p>
+        <p>【输出描述】</p>
+        <p>输出N行，每行4个数，用空格隔开，分别表示给定的字符串是否可能表示一个二进制数、八</p>
+        <p>进制数、十进制数、十六进制数。使用 1 表示可能，使用 0 表示不可能。</p>
+        <p>例如，对于只可能是十六进制数的 15A6F ，就需要输出 0 0 0 1 ；而对于四者皆有可能的</p>
+        <p>1011 ，则需要输出 1 1 1 1</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">报数游戏参考代码</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n, m;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n >> m;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">bool</span> alive[100] = {<span class="code-keyword">false</span>};<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alive[i] = <span class="code-keyword">true</span>;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> count = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> num = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> index = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (count &lt; n - 1) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (alive[index]) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (num == m) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alive[index] = <span class="code-keyword">false</span>;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index = (index + 1) % n;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (alive[i]) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << i + 1 << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">break</span>;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>进制判断</p>
+        <p>【样例输入1】 【样例输出1】 【样例输入2】 【样例输出2】</p>
+        <p>2 0 0 0 1 4 0 1 1 1</p>
+        <p>15A6F 1 1 1 1 1234567 0 0 1 1</p>
+        <p>1011 12345678 0 0 0 1</p>
+        <p>FF 0 0 0 0</p>
+        <p>GG</p>
+        <p>二进制 八进制 十进制 十六进制 只需要判断其</p>
+        <p>中最大数字</p>
+        <p>0~1 0~7 0~9 0~9 A~F</p>
     </div>
 </div>
 
 <div class="slide">
-    <div class="highlight-box">
-        <p><strong>练习1：</strong> 模拟计算器的加减乘除运算。</p>
-        <br>
-        <p><strong>练习2：</strong> 模拟交通信号灯的变化过程。</p>
-        <br>
-        <p><strong>练习3：</strong> 模拟银行排队叫号系统。</p>
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>判断每个字符串中最大字符是否在N进制表示字符范围内，</p>
+        <p>在则为1，不在则为0</p>
+        <p>字符串 二进制 八进制 十进制 十六进制</p>
+        <p>≤'1' ≤'7' ≤'9' ≤'F'</p>
+        <p>15A6F 0 0 0 1</p>
+        <p>1011 1 1 1 1</p>
+        <p>1234567 0 1 1 1</p>
+        <p>1234567 0 0 1 1</p>
+        <p>8</p>
+        <p>0 0 0 0</p>
+        <p>GG</p>
     </div>
 </div>
 
 <div class="slide">
-    <h1 class="slide-title">感谢你的学习</h1>
-    <p style="text-align:center; color:#666; font-size:18px;">第六课 模拟算法</p>
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>输入的n行字符串</p>
+        <p>int n;</p>
+        <p>cin>>n;</p>
+        <p>string s;</p>
+        <p>for(int i=0;i<n;i++){</p>
+        <p>cin>>s;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>求出每个字符串中的最大字符</p>
+        <p>int n;</p>
+        <p>cin>>n;</p>
+        <p>string s;</p>
+        <p>for(int i=0;i<n;i++){</p>
+        <p>cin>>s;</p>
+        <p>char maxc='0';</p>
+        <p>for(int j=0;j<s.length();j++)</p>
+        <p>if(maxc<s[j])maxc=s[j];</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断最大字符是否在N进制字符范围内</p>
+        <p>int n;</p>
+        <p>cin>>n;</p>
+        <p>string s;</p>
+        <p>for(int i=0;i<n;i++){</p>
+        <p>cin>>s;</p>
+        <p>char maxc='0';</p>
+        <p>字符比较结果为0或者1</p>
+        <p>for(int j=0;j<s.length();j++)</p>
+        <p>if(maxc<s[j])maxc=s[j];</p>
+        <p>cout<<(maxc<='1')<<" ";</p>
+        <p>cout<<(maxc<='7')<<" ";</p>
+        <p>cout<<(maxc<='9')<<" ";</p>
+        <p>cout<<(maxc<='F')<<endl;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>cout<<(maxc<='1')<<" ";</p>
+        <p>cout<<(maxc<='7')<<" ";</p>
+        <p>cout<<(maxc<='9')<<" ";</p>
+        <p>cout<<(maxc<='F')<<endl;</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            string s;<br>
+            for(int i=0;i&lt;n;i++){<br>
+            cin&gt;&gt;s;<br>
+            char maxc='0';<br>
+            for(int j=0;j&lt;s.length();j++){<br>
+            if(maxc&lt;s[j])maxc=s[j];<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

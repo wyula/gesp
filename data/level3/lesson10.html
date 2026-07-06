@@ -1,334 +1,569 @@
 <div class="slide">
-    <h1 class="slide-title">CCF-GESP C++三级</h1>
-    <p style="text-align:center; color:#666; font-size:18px;">编程能力等级认证</p>
-    <p style="text-align:center; color:#999; margin-top:20px;">第十课 综合复习</p>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">01 知识回顾</h2>
+    <h2 class="slide-subtitle-center">CCF-GESP C++三级</h2>
     <div class="slide-content">
-        <p><strong>本课程学习的主要内容：</strong></p>
-        <br>
-        <p>1. <strong>数组：</strong>数组的定义、初始化、访问、排序算法</p>
-        <p>2. <strong>字符串：</strong>字符数组、string类、字符串操作</p>
-        <p>3. <strong>枚举算法：</strong>穷举所有可能解</p>
-        <p>4. <strong>模拟算法：</strong>按照题目描述一步步执行</p>
-        <p>5. <strong>函数进阶：</strong>参数传递、函数重载、递归</p>
-        <p>6. <strong>位运算：</strong>按位与、或、异或、移位</p>
-        <p>7. <strong>数制转换：</strong>十进制、二进制、八进制、十六进制</p>
+        <p>编程能力等级认证</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">02 真题演练</h2>
+    <h2 class="slide-subtitle-center">第十课</h2>
     <div class="slide-content">
-        <p>让我们通过一些真题来巩固所学知识。</p>
+        <p>枚 举 算 法</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">真题1：选择题</h2>
+    <h2 class="slide-subtitle-center">01 枚举算法</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>（2023年6月）</strong> 在C++语言中，关于数组的说法，错误的是（）</p>
-        <br>
-        <p>A. 数组的下标从0开始</p>
-        <p>B. 数组的大小必须在定义时确定</p>
-        <p>C. 数组的元素必须是同一类型</p>
-        <p>D. 数组名表示数组第一个元素的地址</p>
-        <br>
-        <p>答案：<strong>B</strong></p>
-        <br>
-        <p>解析：在C++中，数组的大小可以在运行时确定（使用new动态分配），但在栈上定义的数组大小必须在编译时确定。</p>
+        <p>枚举算法的概念</p>
+        <p>枚举算法也称为穷举算法，它的核心思想是根据问题中的“约束条件”，</p>
+        <p>将解的所有可能情况一一列举出来，然后再逐个验证是否符合整个问题的求</p>
+        <p>解要求，从而求得满足问题要求的解。</p>
+        <p>采用枚举算法解题的一般思路如下：</p>
+        <p>1. 确定枚举对象、枚举范围和判断条件，并判断条件设立的正确性。</p>
+        <p>2. 一一枚举可能的情况，并验证是否是问题的解。</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">真题2：选择题</h2>
+    <h2 class="slide-subtitle-center">知识讲解</h2>
     <div class="slide-content">
-        <p><strong>（2023年6月）</strong> 以下代码的输出结果是？</p>
+        <p>枚举算法的特点</p>
+        <p>由于枚举算法要通过列举问题的所有状态来得到满足条件的解，</p>
+        <p>因此在问题规模变大时，其效率一般是比较低的。</p>
+        <p>但是枚举算法也有自己特有的优点：</p>
+        <p>1. 多数情况下容易编程实现，也容易调试。</p>
+        <p>2. 建立在考察大量状态、甚至是穷举所有状态的基础上，</p>
+        <p>所以算法的正确性比较容易证明。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>楼层编号</p>
+        <p>【问题描述】</p>
+        <p>小林在NOIP比赛期间住在“新世界”酒店。和其他酒店不一样的是，这个酒</p>
+        <p>店每天都有一个高能的数字t，这个数字在楼层中是不会出现的，以t=3为例，</p>
+        <p>则3、13、31、33等楼层是不存在的，楼层编号为1,2,4,5，…所以实际上的4</p>
+        <p>楼才是3楼。已知小林预定了编号为m层的房间，并且当天高能数字是t，现在</p>
+        <p>他想知道房间所在的真实楼层是多少。</p>
+        <p>【输入描述】</p>
+        <p>一行两个整数m和t，1≤m≤100000，0≤t≤9，保证m对t合法。</p>
+        <p>【输出描述】</p>
+        <p>一行一个整数，表示真实楼层。</p>
+        <p>【输入样例】</p>
+        <p>14 3</p>
+        <p>【输出样例】</p>
+        <p>12</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 输入两个整数m和t</p>
+        <p>14</p>
+        <p>int m,t;</p>
+        <p>13</p>
+        <p>【输入样例】 cin>>m>>t;</p>
+        <p>12</p>
+        <p>14 3</p>
+        <p>11</p>
+        <p>【输出样例】</p>
+        <p>12 10</p>
+        <p>9</p>
+        <p>8</p>
+        <p>7</p>
+        <p>6</p>
+        <p>5</p>
+        <p>4</p>
+        <p>3</p>
+        <p>2</p>
+        <p>1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 输入两个整数m和t</p>
+        <p>14</p>
+        <p>int m,t;</p>
+        <p>13</p>
+        <p>【输入样例】 cin>>m>>t;</p>
+        <p>12</p>
+        <p>14 3</p>
+        <p>11 ② 枚举所有的楼层编号，每找到一个符合条件的，累加1</p>
+        <p>【输出样例】</p>
+        <p>12 10</p>
+        <p>9 for(int i=1;i<=m;i++){</p>
+        <p>8 // 数位分离</p>
+        <p>int x=i;</p>
+        <p>7</p>
+        <p>while(x>0){</p>
+        <p>6 if(x%10==t) 不符合条件</p>
+        <p>x/=10;</p>
+        <p>5</p>
+        <p>}</p>
+        <p>4</p>
+        <p>3</p>
+        <p>2</p>
+        <p>}</p>
+        <p>1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 输入两个整数m和t</p>
+        <p>14</p>
+        <p>int m,t;</p>
+        <p>13</p>
+        <p>【输入样例】 cin>>m>>t;</p>
+        <p>12</p>
+        <p>14 3</p>
+        <p>11 ② 列举出所有的楼层编号，每找到一个符合条件的，累加1</p>
+        <p>【输出样例】</p>
+        <p>12 10 int ans=0; // 累加符合条件的楼层编号</p>
+        <p>9 for(int i=1;i<=m;i++){</p>
+        <p>8 // 数位分离</p>
+        <p>int x=i;</p>
+        <p>7</p>
+        <p>3</p>
+        <p>if(flag) ans++;</p>
+        <p>2</p>
+        <p>}</p>
+        <p>1</p>
+        <p>③ 输出结果：cout<<ans;</p>
         <div class="code-block">
-            <span class="code-keyword">int</span> arr[] = {1, 2, 3, 4, 5};<br>
-            cout << <span class="code-keyword">sizeof</span>(arr) / <span class="code-keyword">sizeof</span>(arr[0]) << endl;
+            // 标记数字是否符合条件<br>
+            6 bool flag=true;<br>
+            while(x&gt;0){<br>
+            5<br>
+            if(x%10==t) flag=false;<br>
+            4 x/=10;<br>
+            }<br>
         </div>
-        <br>
-        <p>A. 4</p>
-        <p>B. 5</p>
-        <p>C. 20</p>
-        <p>D. 不确定</p>
-        <br>
-        <p>答案：<strong>B</strong></p>
-        <br>
-        <p>解析：sizeof(arr)返回数组总字节数，sizeof(arr[0])返回单个元素字节数，相除得到元素个数。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>写一写</p>
+        <p>if(flag) ans++;</p>
+        <p>}</p>
+        <p>cout<<ans;</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main() {<br>
+            int m,t;<br>
+            cin&gt;&gt;m&gt;&gt;t;<br>
+            int ans=0;<br>
+            for(int i=1;i&lt;=m;i++){<br>
+            int x=i;<br>
+            bool flag=true;<br>
+            while(x&gt;0){<br>
+            if(x%10==t) flag=false;<br>
+            x/=10;<br>
+            }<br>
+        </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">以下关于字符串的说法，正确的是（）</div>
+        <div class="quiz-question">（2023年9月）著名的哥德巴赫猜想：任一大于2的偶数都可写成两 个素数之和。我们可以通过枚举法来证明它。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>字符数组不需要'\0'结尾</span>
+                <span>正确</span>
             </div>
             <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>string类不能使用+拼接</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>strlen()返回字符串长度（不含'\0'）</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>cin可以读取含空格的字符串</span>
+                <span>错误</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题3：判断题</h2>
-    <div class="slide-content">
-        <p><strong>（样题）</strong> 枚举算法一定能找到问题的最优解。</p>
-        <br>
-        <p>答案：<strong>错误</strong></p>
-        <br>
-        <p>解析：枚举算法可以找到所有满足条件的解，但不一定是最优解，除非问题本身就是求所有解。</p>
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">真题4：选择题</h2>
-    <div class="slide-content">
-        <p><strong>（2023年6月）</strong> 以下关于模拟算法的说法，正确的是（）</p>
-        <br>
-        <p>A. 模拟算法的时间复杂度一定很低</p>
-        <p>B. 模拟算法不需要考虑边界条件</p>
-        <p>C. 模拟算法直接按照问题描述执行</p>
-        <p>D. 模拟算法只能解决简单问题</p>
-        <br>
-        <p>答案：<strong>C</strong></p>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">以下关于递归函数的说法，正确的是（）</div>
+        <div class="quiz-question">（样题）枚举算法的主要特点是（ B ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>递归函数不需要终止条件</span>
+                <span>以空间换时间</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>递归函数的空间复杂度一定很高</span>
+                <span>逐个尝试所有可能的解</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>递归函数必须有递归条件和终止条件</span>
+                <span>动态规划</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>递归函数的时间复杂度一定比迭代低</span>
+                <span>贪心策略</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">真题5：选择题</h2>
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）枚举算法是一种暴力求解方法，逐个尝试所有可能的解。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
     <div class="slide-content">
-        <p><strong>（2023年6月）</strong> 表达式(5 << 2) & (3 | 4)的结果是（）</p>
-        <br>
-        <p>A. 0</p>
-        <p>B. 4</p>
-        <p>C. 16</p>
-        <p>D. 20</p>
-        <br>
-        <p>答案：<strong>C</strong></p>
-        <br>
-        <p>解析：5 << 2 = 20（10100），3 | 4 = 7（00111），20 & 7 = 16（10000）</p>
+        <p>百钱买百鸡</p>
+        <p>【问题描述】</p>
+        <p>我国古代数学家张丘建在《算经》一书中提出的数学问题：鸡翁一值钱五，鸡</p>
+        <p>母一值钱三，鸡雏三值钱一。百钱买百鸡，问鸡翁、鸡母、鸡雏各几何？</p>
+        <p>意思是：公鸡1只需要5钱，母鸡1只需要3钱，小鸡3只需要1钱，100钱买100</p>
+        <p>只鸡，公鸡、母鸡、小鸡各多少只？</p>
+        <p>【输入描述】</p>
+        <p>无</p>
+        <p>【输出描述】</p>
+        <p>一行中分别是公鸡、母鸡、小鸡的数量，用空格隔开，如果有多组答案，一组</p>
+        <p>答案占一行，公鸡数量少的答案排在前面。</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">编程题1：数组排序</h2>
+    <h2 class="slide-subtitle-center">课堂练习</h2>
     <div class="slide-content">
-        <p><strong>题目描述：</strong></p>
-        <p>输入一个整数数组，使用选择排序算法对其进行升序排序。</p>
-        <br>
-        <p><strong>输入格式：</strong></p>
-        <p>第一行输入整数n</p>
-        <p>第二行输入n个整数</p>
-        <br>
-        <p><strong>输出格式：</strong></p>
-        <p>排序后的数组</p>
+        <p>百钱买百鸡</p>
+        <p>公鸡1只需要5钱，母鸡1只需要3钱，小鸡3只需要1钱，</p>
+        <p>100钱买100只鸡，公鸡、母鸡、小鸡各多少只？</p>
+        <p>x只 y只 z只</p>
+        <p>1、公鸡的数量➕母鸡的数量➕小鸡的数量 = 100</p>
+        <p>x+y+z=100</p>
+        <p>2、公鸡的钱数➕母鸡的钱数➕小鸡的钱数 = 100</p>
+        <p>5钱 3钱 1钱 x*5 + y*3 + z/3 =100</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">数组排序参考代码</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> arr[100];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cin >> arr[i];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n - 1; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> min_index = i;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> j = i + 1; j &lt; n; j++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (arr[j] &lt; arr[min_index]) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_index = j;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> temp = arr[i];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[i] = arr[min_index];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr[min_index] = temp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i &lt; n; i++) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout << arr[i] << " ";<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">编程题2：字符串反转</h2>
+    <h2 class="slide-subtitle-center">课堂练习</h2>
     <div class="slide-content">
-        <p><strong>题目描述：</strong></p>
-        <p>输入一个字符串，将其反转后输出。</p>
-        <br>
-        <p><strong>输入格式：</strong></p>
-        <p>一个字符串</p>
-        <br>
-        <p><strong>输出格式：</strong></p>
-        <p>反转后的字符串</p>
+        <p>思路分析</p>
+        <p>如果100钱都买母鸡</p>
+        <p>100/3=33只</p>
+        <p>枚 fo 举 r( 所 in 有 t 公x= 鸡0的 ;x可 <= 能20;x++)</p>
+        <p>x只 y只 z只 枚fo举r(所in有t 母y=鸡0的;y可<=能33;y++)</p>
+        <p>for(int z=0;z<=100;z++)</p>
+        <p>枚举所有小鸡的可能</p>
+        <p>如if果(x满+y足+z条==件100&&5*x+y*3+z/3.0==100)</p>
+        <p>5钱 3钱 1钱 按co要u求t<输<x出<<结" 果"<<y<<" "<<z<<endl;</p>
+        <p>如果100钱都买公鸡 如果100钱都买小鸡</p>
+        <p>100/5=20只 最多100只</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">字符串反转参考代码</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">#include</span> &lt;string&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;string s;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cin >> s;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> left = 0, right = s.size() - 1;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (left &lt; right) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">char</span> temp = s[left];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[left] = s[right];<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[right] = temp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;right--;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << s << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">编程题3：数字统计</h2>
+    <h2 class="slide-subtitle-center">课堂练习</h2>
     <div class="slide-content">
-        <p><strong>题目描述：</strong></p>
-        <p>输入一个整数，统计其二进制表示中0和1的个数。</p>
-        <br>
-        <p><strong>输入格式：</strong></p>
-        <p>一个整数n</p>
-        <br>
-        <p><strong>输出格式：</strong></p>
-        <p>0的个数和1的个数</p>
+        <p>写一写</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            for(int x=0;x&lt;=20;x++)<br>
+            for(int y=0;y&lt;=33;y++)<br>
+            for(int z=0;z&lt;=100;z++)<br>
+            if(x+y+z==100&amp;&amp;5*x+y*3+z/3.0==100)<br>
+            cout&lt;&lt;x&lt;&lt;" "&lt;&lt;y&lt;&lt;" "&lt;&lt;z&lt;&lt;endl;<br>
+            return 0;<br>
+            }<br>
+        </div>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">数字统计参考代码</h2>
-    <div class="code-block">
-        <span class="code-keyword">#include</span> &lt;iostream&gt;<br>
-        <span class="code-keyword">using</span> <span class="code-keyword">namespace</span> std;<br>
-        <br>
-        <span class="code-keyword">int</span> main() {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> n;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cin >> n;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> count0 = 0, count1 = 0;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (n) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (n & 1) {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count1++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count0++;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n = n >> 1;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "0的个数：" << count0 << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;cout << "1的个数：" << count1 << endl;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> 0;<br>
-        }
-    </div>
-</div>
-
-<div class="slide">
-    <h2 class="slide-subtitle-center">03 考试技巧</h2>
+    <h2 class="slide-subtitle-center">真题解析</h2>
     <div class="slide-content">
-        <p><strong>选择题答题技巧：</strong></p>
-        <p>1. 仔细阅读题目，理解题意</p>
-        <p>2. 排除明显错误的选项</p>
-        <p>3. 对于不确定的题目，采用排除法</p>
-        <p>4. 注意题目中的陷阱（如数组下标、边界条件）</p>
-        <br>
-        <p><strong>编程题答题技巧：</strong></p>
-        <p>1. 先理解题目，分析输入输出</p>
-        <p>2. 设计算法，选择合适的数据结构</p>
-        <p>3. 编写代码，注意边界条件</p>
-        <p>4. 测试样例，确保代码正确</p>
-        <p>5. 优化代码，提高效率</p>
+        <p>（2023年12月）小猫分鱼</p>
+        <p>【问题描述】</p>
+        <p>海滩上有一堆鱼，N只小猫来分。</p>
+        <p>第一只小猫把这堆鱼平均分为N份，多了i<N个，这只小猫把多的i个扔入海中，拿走了一份。</p>
+        <p>第二只小猫接着把剩下的鱼平均分成N份，又多了i个，小猫同样把多的i个扔入海中，拿走了一 份。</p>
+        <p>第三、第四、……，第N只小猫仍是最终剩下的鱼分成N份，扔掉多了的i个，并拿走一份。</p>
+        <p>编写程序，输入小猫的数量N以及每次扔到海里的鱼的数量i，输出海滩上最少的鱼数，使得每只小猫</p>
+        <p>都可吃到鱼。 例如：两只小猫来分鱼N=2，每次扔掉鱼的数量为i=1，为了每只小猫都可吃到鱼，可</p>
+        <p>令第二只小猫需要拿走1条鱼，则此时待分配的有3条鱼。第一只小猫待分配的鱼3*2+1=7条。</p>
+        <p>【输入描述】</p>
+        <p>总共 2 行。第一行一个整数N，第二行一个整数i。 保证 0<N<10 ; i<N 。</p>
+        <p>【输出描述】</p>
+        <p>一行一个整数，表示满足要求的海滩上最少的鱼数。</p>
+        <p>【输入样例1】 【输入样例2】</p>
+        <p>2 3</p>
+        <p>1 1</p>
+        <p>【输出样例1】 【输出样例2】</p>
+        <p>7 25</p>
     </div>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">04 学习建议</h2>
+    <h2 class="slide-subtitle-center">真题解析</h2>
     <div class="slide-content">
-        <p><strong>巩固基础：</strong></p>
-        <p>- 复习C++基础知识</p>
-        <p>- 熟练掌握数组、字符串的操作</p>
-        <p>- 理解常用算法的原理</p>
-        <br>
-        <p><strong>多做练习：</strong></p>
-        <p>- 完成课本上的练习题</p>
-        <p>- 做历年真题</p>
-        <p>- 参加模拟考试</p>
-        <br>
-        <p><strong>调试技巧：</strong></p>
-        <p>- 使用cout输出中间结果</p>
-        <p>- 设置断点调试</p>
-        <p>- 分析错误信息</p>
+        <p>（2023年12月）小猫分鱼</p>
+        <p>【输入样例1】</p>
+        <p>2</p>
+        <p>1</p>
+        <p>【输出样例1】</p>
+        <p>7</p>
+        <p>猫 份数 拿走 扔掉</p>
+        <p>第一只 2 3 1 33//((22--11))*=23+1=7</p>
+        <p>第二只 2 1 1 2*1+1=3 第二只小猫拿之前是3，</p>
+        <p>也就是说3对应n-1份</p>
     </div>
 </div>
 
 <div class="slide">
-    <h1 class="slide-title">感谢你的学习</h1>
-    <p style="text-align:center; color:#666; font-size:18px;">第十课 综合复习</p>
-    <p style="text-align:center; color:#999; margin-top:20px;">祝你在GESP考试中取得好成绩！</p>
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年12月）小猫分鱼</p>
+        <p>【输入样例2】</p>
+        <p>3</p>
+        <p>1</p>
+        <p>【输出样例2】</p>
+        <p>25</p>
+        <p>猫 份数 拿走 扔掉</p>
+        <p>第一只 3 1 7/(3-1)=3.5</p>
+        <p>第二只 3 2 1 44//((33--11))*=32+1=7</p>
+        <p>第三只 3 1 1 3*1+1=4</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年12月）小猫分鱼</p>
+        <p>【输入样例2】</p>
+        <p>3</p>
+        <p>1</p>
+        <p>【输出样例2】</p>
+        <p>25</p>
+        <p>猫 份数 拿走 扔掉</p>
+        <p>第一只 3 1</p>
+        <p>第二只 3 1 7/(3-1)=3.5</p>
+        <p>第三只 3 2 1 3*2+1=7</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>（2023年12月）小猫分鱼</p>
+        <p>【输入样例2】</p>
+        <p>3</p>
+        <p>步骤：</p>
+        <p>1</p>
+        <p>1.枚举最后一只小猫拿走的鱼数，从1开始</p>
+        <p>【输出样例2】</p>
+        <p>25 2.计算最后一只小猫拿之前的鱼数：</p>
+        <p>ans=拿走×份数+扔掉</p>
+        <p>猫 份数 拿走 扔掉</p>
+        <p>3.循环(n-1次)计算出第一只小猫拿之前的鱼数：</p>
+        <p>ans÷(份数-1)×份数+扔掉</p>
+        <p>第一只 3 8 1 1166//((33--11))=*38+1=25</p>
+        <p>第二只 3 5 1 1100//((33--11))*=35+1=16</p>
+        <p>第三只 3 3 1 3*3+1=10</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 定义两个变量，输入小猫的个数(份数)n和每次扔掉的个数i</p>
+        <p>步骤：</p>
+        <p>int n,i;</p>
+        <p>cin>>n>>i;</p>
+        <p>1.枚举最后一只小猫拿走的鱼数，从1开始</p>
+        <p>2.计算最后一只小猫拿之前的鱼数： ② 使用while循环枚举最后一只小猫拿走的鱼数</p>
+        <p>ans=拿走×份数+扔掉 ③ 计算最后一只小猫拿之前的鱼数</p>
+        <p>int ans=0; //定义变量ans保存结果</p>
+        <p>3.循环(n-1次)计算出第一只小猫拿之前的鱼数：</p>
+        <p>int k=1;</p>
+        <p>ans÷(份数-1)×份数+扔掉</p>
+        <p>while(true){</p>
+        <p>ans=k*n+i;</p>
+        <p>k++;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>④ 循环(n-1次)计算出第一只小猫拿之前的鱼数</p>
+        <p>步骤：</p>
+        <p>int ans=0;</p>
+        <p>1.枚举最后一只小猫拿走的鱼数，从1开始 int k=1;</p>
+        <p>while(true){</p>
+        <p>2.计算最后一只小猫拿之前的鱼数：</p>
+        <p>ans=k*n+i;</p>
+        <p>ans=拿走×份数+扔掉</p>
+        <p>for(int j=1;j<n;j++){</p>
+        <p>3.循环(n-1次)计算出第一只小猫拿之前的鱼数： ans=ans/(n-1)*n+i;</p>
+        <p>}</p>
+        <p>ans÷(份数-1)×份数+扔掉</p>
+        <p>k++;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>④ 循环(n-1次)计算出第一只小猫拿之前的鱼数</p>
+        <p>步骤：</p>
+        <p>int ans=0;</p>
+        <p>1.枚举最后一只小猫拿走的鱼数，从1开始 int k=1;</p>
+        <p>while(true){</p>
+        <p>2.计算最后一只小猫拿之前的鱼数：</p>
+        <p>ans=k*n+i;</p>
+        <p>ans=拿走×份数+扔掉</p>
+        <p>for(int j=1;j<n;j++){</p>
+        <p>3.循环(n-1次)计算出第一只小猫拿之前的鱼数： 如果份数不是整数，说明k的值错误</p>
+        <p>终止循环</p>
+        <p>ans÷(份数-1)×份数+扔掉</p>
+        <p>ans=ans/(n-1)*n+i;</p>
+        <p>}</p>
+        <p>k++;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>④ 循环(n-1次)计算出第一只小猫拿之前的鱼数</p>
+        <p>步骤：</p>
+        <p>int ans=0;</p>
+        <p>1.枚举最后一只小猫拿走的鱼数，从1开始 int k=1;</p>
+        <p>while(true){</p>
+        <p>2.计算最后一只小猫拿之前的鱼数：</p>
+        <p>ans=k*n+i;</p>
+        <p>ans=拿走×份数+扔掉</p>
+        <p>for(int j=1;j<n;j++){</p>
+        <p>3.循环(n-1次)计算出第一只小猫拿之前的鱼数： if(ans%(n-1)!=0)</p>
+        <p>break;</p>
+        <p>ans÷(份数-1)×份数+扔掉</p>
+        <p>ans=ans/(n-1)*n+i;</p>
+        <p>}</p>
+        <p>找到答案后怎样退出while循环？</p>
+        <p>k++;</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>④ 循环(n-1次)计算出第一只小猫拿之前的鱼数</p>
+        <p>步骤：</p>
+        <p>int ans=0;</p>
+        <p>1.枚举最后一只小猫拿走的鱼数，从1开始 int k=1;</p>
+        <p>while(true){</p>
+        <p>2.计算最后一只小猫拿之前的鱼数：</p>
+        <p>bool flag=true;</p>
+        <p>ans=拿走×份数+扔掉 ans=k*n+i;</p>
+        <p>for(int j=1;j<n;j++){</p>
+        <p>3.循环(n-1次)计算出第一只小猫拿之前的鱼数：</p>
+        <p>if(ans%(n-1)!=0){</p>
+        <p>ans÷(份数-1)×份数+扔掉 flag=false; //当k值错误时将flag标记为false</p>
+        <p>break;</p>
+        <p>}</p>
+        <p>ans=ans/(n-1)*n+i;</p>
+        <p>}</p>
+        <p>if(flag) break; //如果循环结束后flag值为true</p>
+        <p>k++; 说明找到了正确的k值，终止while循环</p>
+        <p>}</p>
+        <p>⑤ 输出结果</p>
+        <p>cout<<ans;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>写一写</p>
+        <p>ans=ans/(n-1)*n+i;</p>
+        <p>}</p>
+        <p>if(flag) break;</p>
+        <p>k++;</p>
+        <p>}</p>
+        <p>cout<<ans;</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int n,i;<br>
+            cin&gt;&gt;n&gt;&gt;i;<br>
+            int ans=0;<br>
+            int k=1;<br>
+            while(true){<br>
+            bool flag=true;<br>
+            ans=k*n+i;<br>
+            for(int j=1;j&lt;n;j++){<br>
+            if(ans%(n-1)!=0){<br>
+            flag=false;<br>
+            break;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
 </div>

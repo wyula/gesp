@@ -1,0 +1,627 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第七课</h2>
+    <div class="slide-content">
+        <p>二 维 数 组 1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 二维数组的定义和访问</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组</p>
+        <p>二维数组可以被看作是一种特殊的一维数组：</p>
+        <p>—— 它的每个元素都是一个一维数组。</p>
+        <p>列（二维）</p>
+        <p>a[0] 1 2 3 4 行（一维）</p>
+        <p>a[1] 5 6 7 8</p>
+        <p>9 10 11 12</p>
+        <p>a[2]</p>
+        <p>二维数组a</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组的定义和初始化</p>
+        <p>格式：数据类型 数组名[行数][列数] ;</p>
+        <p>int a[3][4];</p>
+        <p>int a[3][4] = { {1,2,3,4}, {5,6,7,8}, {9,10,11,12} };</p>
+        <p>int a[][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12} };</p>
+        <p>a[0] 1 2 3 4</p>
+        <p>二维数组的行数可</p>
+        <p>a[1] 5 6 7 8</p>
+        <p>以省略，计算机可</p>
+        <p>以自动确定数组a的</p>
+        <p>a[2] 9 10 11 12</p>
+        <p>行数。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组的部分初始化</p>
+        <p>• 部分初始化：未被初始化的部分自动填充0。</p>
+        <p>int a[3][4] = {</p>
+        <p>a[0] 1 2 3 4</p>
+        <p>{1,2,3,4},</p>
+        <p>a[1] 5 6 0 0</p>
+        <p>a[2] 0 0 0 0 {5,6}</p>
+        <p>};</p>
+        <p>• 省略行合并部分初始化：自动推断行，未被初始化的部分自动补0。</p>
+        <p>a[0] 1 2 3 4 int a[][4] = {{1,2,3,4},{5,6},{9,10}};</p>
+        <p>a[1] 5 6 0 0</p>
+        <p>a[2] 9 10 0 0</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>访问二维数组元素</p>
+        <p>• 通过行下标和列下标访问二维数组中的元素。</p>
+        <p>列下标</p>
+        <p>0 1 2 3</p>
+        <p>0</p>
+        <p>1 2 3 4</p>
+        <p>行</p>
+        <p>下 1</p>
+        <p>5 6 7 8</p>
+        <p>标</p>
+        <p>2</p>
+        <p>9 10 11 12</p>
+        <p>cout<<a[1][2];</p>
+        <p>a[2][0]=18;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组的遍历</p>
+        <p>按行遍历 按列遍历</p>
+        <p>for (int i = 0; i < m; i++) { for (int j = 0; j < n; j++) {</p>
+        <p>for (int j = 0; j < n; j++) for (int i = 0; i < m; i++)</p>
+        <p>cout << a[i][j] << " "; cout << a[i][j] << " ";</p>
+        <p>cout << endl; cout << endl;</p>
+        <p>} }</p>
+        <p>• 外层循环遍历行 • 外层循环遍历列</p>
+        <p>• 内层循环遍历列 • 内层循环遍历行</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）已知数组 a 定义为 int a[100];，则赋值语句 a['0'] = 3; 会导致编译错误。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）如果希望记录 10 个最长为 99 字节的字符串，可以将字 符串数组定义为 char s[100][10];。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）如果希望记录10个最长为99字节的字符串，可以将字符 串数组定义为 char s[10][100]; 。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）以下哪个选项能正确定义一个二维数组（ D ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>int a[][];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>char b[][4];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>double c[3][];</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>bool d[3][4];</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）以下哪个选项能正确访问二维数组 array 的元素（ C ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>array[1, 2]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>array(1)(2)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>array[1][2]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>array{1}{2}</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）执行以下 C++语言程序后，输出结果是（ D ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>30</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>33</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>无法确定</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组做函数参数</p>
+        <p>传递多维数组时，只有形式参数的第一维的长度可以省略，形式参数</p>
+        <p>的其他维的长度都不能省略。</p>
+        <p>void printEle(int arr[][4]){</p>
+        <p>for(int i=0;i<4;i++)</p>
+        <p>for(int j=0;j<4;j++)</p>
+        <p>cout<<arr[i][j]<<' ';</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){ 传递地址<br>
+            int arr[4][4] ={0};<br>
+            printEle(arr);<br>
+            return 0;<br>
+            实参<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）以下哪个函数声明在调用时可以传递二维数组 的名字作为参数（ A ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>void BubbleSort(int a[3][4]);</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>void BubbleSort(int a[][]);</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>void BubbleSort(int * a[]);</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>void BubbleSort(int ** a);</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）以下哪个函数声明在调用时可以传递二维数组的名 字作为参数（ A ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>void BubbleSort(int a[][4]);</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>void BubbleSort(int a[3][]);</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>void BubbleSort(int * a[]);</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>void BubbleSort(int ** a);</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 二维数组的存储</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组的存储</p>
+        <p>二维数组的元素在内存中是是连续存放的，其本质也是按照</p>
+        <p>一维数组的方式存储；</p>
+        <p>int a[3][4];</p>
+        <p>a[0][0] a[0][1] a[0][2] a[0][3]</p>
+        <p>a[1][0] a[1][1] a[1][2] a[1][3]</p>
+        <p>a[2][0] a[2][1] a[2][2] a[2][3]</p>
+        <p>按行存放，每行中的元素是按列下标从小到大的顺序存放。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组的存储</p>
+        <p>二维数组其本质也是按照一维数组的方式访问元素，</p>
+        <p>需要根据所访问的元素行列下标计算出对应的下标</p>
+        <p>行下标×数组列长度+列下标</p>
+        <p>1 2 3 4 5 6 7 8 9 10 11 12</p>
+        <p>a[0][0] a[0][1] a[0][2] a[0][3] a[1][0] a[1][1] a[1][2] a[1][3] a[2][0] a[2][1] a[2][2] a[2][3]</p>
+        <p>0 1 2 3 4 5 6 7 8 9 10 11</p>
+        <p>int a[3][4] = {</p>
+        <p>{1,2,3,4},</p>
+        <p>{5,6,7,8},</p>
+        <p>{9,10,11,12}</p>
+        <p>a[1×4+2]a[6]</p>
+        <p>};</p>
+        <p>cout<<a[1][2]; 7</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组的存储</p>
+        <p>二维数组其本质也是按照一维数组的方式访问元素，</p>
+        <p>需要根据所访问的元素行列下标计算出对应的下标</p>
+        <p>行下标×数组列长度+列下标</p>
+        <p>1 2 3 4 5 6 7 8 9 10 11 12</p>
+        <p>a[0][0] a[0][1] a[0][2] a[0][3] a[1][0] a[1][1] a[1][2] a[1][3] a[2][0] a[2][1] a[2][2] a[2][3]</p>
+        <p>0 1 2 3 4 5 6 7 8 9 10 11</p>
+        <p>int a[3][4] = {</p>
+        <p>列下标范围0~3</p>
+        <p>{1,2,3,4},</p>
+        <p>{5,6,7,8},</p>
+        <p>{9,10,11,12}</p>
+        <p>a[0 ╳ 4+5]a[5]</p>
+        <p>};</p>
+        <p>cout<<a[0][5]; 6</p>
+        <p>没有越界！！！</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组的存储</p>
+        <p>二位数组其本质也是按照一维数组的方式访问元素，</p>
+        <p>需要根据所访问的元素行列下标计算出对应的下标</p>
+        <p>行下标×数组列长度+列下标</p>
+        <p>1 2 3 4 5 6 7 8 9 10 11 12</p>
+        <p>a[0][0] a[0][1] a[0][2] a[0][3] a[1][0] a[1][1] a[1][2] a[1][3] a[2][0] a[2][1] a[2][2] a[2][3]</p>
+        <p>0 1 2 3 4 5 6 7 8 9 10 11</p>
+        <p>int a[3][4] = {</p>
+        <p>{1,2,3,4},</p>
+        <p>× 越界！！！</p>
+        <p>a[3][1];</p>
+        <p>{5,6,7,8},</p>
+        <p>{9,10,11,12} a[2][5]; × 越界！！！</p>
+        <p>};</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>二维数组所占内存</p>
+        <p>二维数组所占内存大小，是全部元素所占内存之和。</p>
+        <p>1 2 3 4 5 6 7 8 9 10 11 12</p>
+        <p>a[0][0] a[0][1] a[0][2] a[0][3] a[1][0] a[1][1] a[1][2] a[1][3] a[2][0] a[2][1] a[2][2] a[2][3]</p>
+        <p>0 1 2 3 4 5 6 7 8 9 10 11</p>
+        <p>int a[3][4] = {</p>
+        <p>{1,2,3,4},</p>
+        <p>{5,6,7,8},</p>
+        <p>{9,10,11,12}</p>
+        <p>4 ╳ 3 ╳ 4  48</p>
+        <p>};</p>
+        <p>cout<<sizeof(a); 48</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）下列关于 C++语言中数组的叙述， 不正确的是( D ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>一维数组在内存中一定是连续存放的。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>二维数组是一维数组的一维数组。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>二维数组中的每个一维数组在内存中都是连续存放的。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>二维数组在内存中可以不是连续存放的。</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）如果有如下二维数组定义，则 a[0][3]的值为（ C ） int a[2][2] = {{0, 1}, {2, 3}};</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>编译出错</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>1</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>3</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>0</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）一个二维数组定义为 double array[3][10];，则这 个二维数组占用内存的大小为（ D ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>30</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>60</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>120</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>240</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-10"></div>
+        <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）⼀个二维数组定义为 char array[3][10]; ，则这个 二维数组占用内存的大小为（ B ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="11" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>10</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="11" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>30</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="11" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>32</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="11" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>48</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-11"></div>
+        <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）一个二维数组定义为 int array[5][3];，则 array[1][2] 和 array[2][1]，在内存中的位置相差多少字节（ ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="12" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>2 字节</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="12" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4 字节</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="12" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>8 字节</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="12" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>无法确定</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-12"></div>
+        <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>int array[5][3];</p>
+        <p>① 先计算array[1][2]和array[2][1]在内存里相差几个元素；</p>
+        <p>array[1][2]在一维数组中的下标：1×3+2=5</p>
+        <p>•</p>
+        <p>array[2][1]在一维数组中的下标：2×3+1=7</p>
+        <p>•</p>
+        <p>相差元素的个数：7-5=2</p>
+        <p>•</p>
+        <p>② 再计算相差的字节数：int字节数×相差的元素个数</p>
+        <p>4×2=8</p>
+        <p>•</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）一个二维数组定义为 int array[5][3];，则 array[1][2] 和 array[2][1]，在内存中的位置相差多少字节（ C ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="13" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>2 字节</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="13" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4 字节</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="13" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>8 字节</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="13" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>无法确定</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-13"></div>
+        <button class="btn-submit" id="submit-13" onclick="coursePlayer.submitQuiz(13)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-13">
+            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

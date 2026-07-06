@@ -1,0 +1,623 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">++一 级</h2>
+    <div class="slide-content">
+        <p>CCF-GESP C</p>
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第三课</h2>
+    <div class="slide-content">
+        <p>变量和数据类型</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">.01 .变量、常量和数据的输入输出</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>数据的输出</p>
+        <p>· 数据的输出：</p>
+        <p>输出运算符 分号</p>
+        <p>结尾</p>
+        <p>cout<< "Hello world";</p>
+        <p>显示器</p>
+        <p>输出的内容，使用双引号包含</p>
+        <p>· 数据的连续输出：</p>
+        <p>cout< < 内容1<<内容2 << … … .<< 内容n;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>变量</p>
+        <p>①变量是存储数据的容器</p>
+        <p>②变量中保存的数据是可以被修改，因此称为变量</p>
+        <p>③定义变量的语法格式：</p>
+        <p>数据类型变量名；</p>
+        <p>int a;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>常量</p>
+        <p>在程序运行过程中，不会被改变的量，称为常 量 。</p>
+        <p>字而常量：程序中的数字、字符、文本称为字面常量，也称为</p>
+        <p>字面值，例如100、 A、3.14.</p>
+        <p>符号常量：在C++ 中可以用一个标识符来表示一个常量，称之</p>
+        <p>为符号常量。定义符号常量使用const</p>
+        <p>关键字，常量名通常使用大写字母表示：</p>
+        <p>const int N;</p>
+        <p>N是常量，不</p>
+        <p>能被修改</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>变量的定义、赋值和使用</p>
+        <p>①将数据存储到变量中的过程称为赋值，变量一定要</p>
+        <p>先定义再赋值：</p>
+        <p>int a;</p>
+        <p>a=1;</p>
+        <p>②定义变量的同时进行赋值，这种赋值也称为变量的</p>
+        <p>初始化，对变量进行初始化是好的编程习惯；</p>
+        <p>int b=2;</p>
+        <p>③同时定义多个变量。</p>
+        <p>int c,e=3,f=4;</p>
+        <p>④通过变量名使用变量中的数据。</p>
+        <p>cout<<a;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>数据的输入</p>
+        <p>· 数据的输入：</p>
+        <p>int a; 将输入的数据</p>
+        <p>保存到变量a中</p>
+        <p>cin>>a;</p>
+        <p>键盘</p>
+        <p>输入运算符</p>
+        <p>· 数 据 的 连 续 输 入 ：</p>
+        <p>cin>> 变量1>>变量2>>变量3 … …</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年9月)下面C++ 代码段执行后的输出是( C). int a=3,b=4; cout<<"a+b=" <<a+b;</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>3+4=7</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>3+4=7</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>a+b=7</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>a+b=a+b</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023 年6月)下列关于C++ 语言变量的叙述，正确的是( D</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>变量可以没有定义</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>对一个没有定义的变量赋值，相当于定义了一个新变量</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>执行赋值语句后，变量的类型可能会变化</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>执行赋值语句后，变量的值可能不会变化</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年3月)下列关于C++ 语言的叙述，不正确的是(C)。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>变量定义时可以不初始化</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>变量被赋值之后的类型不变</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>变量没有定义也能够使用</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>变量名必须是合法的标识符</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>标识符</p>
+        <p>变量名就是一种标识符，标识符是程序员编程时使用的名字，</p>
+        <p>用于给变量、常量、函数、结构体等命名。</p>
+        <p>int la=100;</p>
+        <p>标识符</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>标识符的命名规则</p>
+        <p>①26 个英文字母、阿拉伯数字以及下划线_组成；</p>
+        <p>小写和大写是</p>
+        <p>a A name my_name age18 hello!×</p>
+        <p>不同的变量名</p>
+        <p>②不能以数字开头；</p>
+        <p>a3 Age18 _name 3a×</p>
+        <p>③不能使用关键字作为变量名。</p>
+        <p>int int; ×</p>
+        <p>int return; ×</p>
+        <p>int age;</p>
+        <p>int Int;</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>关键字</p>
+        <p>C++ 中有特殊含义的单词，称为关键字，也称保留字。</p>
+        <p>目前C++ 中共有73 个关键字：</p>
+        <p>asm do if return typedef char16t</p>
+        <p>auto double inline short typeid char32_t</p>
+        <p>bool dynamic_cast int signed typename constexpr</p>
+        <p>break else long sizeof union decitype</p>
+        <p>case enum mutable static unsigned noexcept</p>
+        <p>catch explicit namespace static_cast using nullptr</p>
+        <p>char export new struct virtual static_assert</p>
+        <p>class extern operator switch void thread_local</p>
+        <p>const false private template volatile</p>
+        <p>const cast float protected this wchart</p>
+        <p>continue for public throw while</p>
+        <p>default friend register true alignas</p>
+        <p>delete goto reinterpret_cast try alignof</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年3月)在C++ 语言中，标识符中可以有数字，但不能以</p>
+        <p>数字开头。</p>
+        <p>◎正确 错 误 ○</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年6月)在C++ 语言中，标识符的命名不能完全由数字组成， 至少有一个字母就可以。 O</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年9月)在C++ 代码中，不可以将变量命名为cout, 因 为</p>
+        <p>cout 是C++ 的关键字。</p>
+        <p>○ 正 确 错误(O</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年3月)以下不可以作为C++ 标识符的是(B.</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>x321</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>0x321</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>x32 1_</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>_x321</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年6月)以下可以作为C++ 标识符的是(A.</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>number_of_Chinese_people_in_millions</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>360AntiVirus</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>Man&Woman</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>break</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年3月)以下哪个不是C++ 语言的关键字? ( D)。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>int</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>for</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>do</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>cout</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年6月)以下哪个不是C++ 语言的关键字? ( D)。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>double</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>else</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>while</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>e ndl</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">。0 2 数 据 类 型</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>基本数据类型</p>
+        <p>类型 关键字</p>
+        <p>整型 int</p>
+        <p>超长整型 long long</p>
+        <p>字符型 char</p>
+        <p>布尔型</p>
+        <p>bool</p>
+        <p>浮点型 float</p>
+        <p>双精度浮点型</p>
+        <p>double</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>字面常量的数据类型</p>
+        <p>字面常量 数据类型</p>
+        <p>整型字面常量：0,1,20,100,1000</p>
+        <p>int</p>
+        <p>浮点型字面常量：3.14,2.5,0.0</p>
+        <p>double</p>
+        <p>字符常量： A','b','+',#'</p>
+        <p>char</p>
+        <p>布尔字面常量： true、false</p>
+        <p>bool</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年3月)'3是一个int类型常量。</p>
+        <p>○ 正 确 错误◎</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年6月)10是一个int类型常量。</p>
+        <p>◎正确 错 误 ○</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年3月)常量7.0的数据类型是(A)。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>double</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>float</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>void void 是一个关键字，</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>int 而不是数据类型。</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年6月)常量'3'的数据类型是(C )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>double</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>float</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>char</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>int</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>数据类型转换</p>
+        <p>① 自 动数据类型转换</p>
+        <p>①不同数据类型之间进行计算时，会发生自动转换</p>
+        <p>转换规则：低 精 度 →高精度</p>
+        <p>②数据存储到与其数据类型不一致的变量中，会发生自动转换</p>
+        <p>② 强 制数据类型转换</p>
+        <p>① 类型名(变量/常量/表达式)</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年9月)C++ 表达式(1'+'1')的值为'2'.</p>
+        <p>○ 正 确 错 误</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年3月)表达式(3.5*2)的计算结果为7.0,且结果类型为double.</p>
+        <p>◎正确 错 误 ○</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年6月)表达式(37/4)的计算结果为9,且结果类型为int.</p>
+        <p>正确</p>
+        <p>错 误 ○</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年9月)C++ 表达式int(3.14)的值为3.</p>
+        <p>◎正确 错 误 ○</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">(2023年6月)如果a和b 为int类型的变量，且值分别为7和2,则下列 哪个表达式的计算结果不是3.5? (A)</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0.0+a/b</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>(a+0.0)/b</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>(0.0+a)/b</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>a/(0.0+b)</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-10"></div>
+        <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">7</h2>
+    <div class="slide-content">
+        <p>知识讲解</p>
+        <p>注释</p>
+        <p>注释：解释性语句，可在程序任意位置添加，注释内容将不会被执行。</p>
+        <p>作 用：对代码进行解释说明，令程序更容易理解。</p>
+        <p>注释</p>
+        <p>■单行注释： 内 容</p>
+        <p>方式一：注释内容的最前方直接输入//</p>
+        <p>这是一条单行注释，不能换行</p>
+        <p>方式二(快捷键):</p>
+        <p>1、 鼠标点击该行任意位置</p>
+        <p>■多行注释：</p>
+        <p>2、按快捷键ctrl+/</p>
+        <p>注释</p>
+        <p>内容</p>
+        <p>成对 这是多行注释 3 、 鼠标点击该行任意位置，再次按ctrl+/ 取</p>
+        <p>出现 在多行注释中可以换行 消注释</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">真题解析</h2>
+    <div class="slide-content">
+        <p>判断题</p>
+        <p>(2023年3月)在C++ 语言中，注释不宜写得过多，</p>
+        <p>否则会使得程序运行速度变慢。</p>
+        <p>O 正确 错 误 ◎</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">童程童美</h2>
+    <div class="slide-content">
+        <p>程</p>
+        <p>童</p>
+        <p>美</p>
+        <p>童 少 儿 编 程 教 育</p>
+        <p>感 谢 你 的 学 习</p>
+    </div>
+</div>

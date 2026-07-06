@@ -1,0 +1,526 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++四级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第十一课</h2>
+    <div class="slide-content">
+        <p>递 推 算 法 1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 递推算法</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>递推算法</p>
+        <p>从已知的初始条件出发，依据递推关系，推出所求的结果。</p>
+        <p>1) 确定初始条件</p>
+        <p>递推的确定：</p>
+        <p>2) 确定递推关系</p>
+        <p>顺推 从事件的开始状态推导到结束状态。</p>
+        <p>递推分类：</p>
+        <p>逆推 从事件的结束状态推导到开始状态。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>递推算法—斐波那契数列</p>
+        <p>斐波那契数列：第一项和第二项都是1，从第三个数开始，每个数是</p>
+        <p>前面两项之和。求第 n 项（3≤n≤45）</p>
+        <p>1 1 2 3 5 8 13 21 34 55 89 144……</p>
+        <p>初始条件：</p>
+        <p>fib(1)=1</p>
+        <p>fib(2)=1</p>
+        <p>递推关系：</p>
+        <p>fib(n)=fib(n-2)+fib(n-1)</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>计算斐波那契数列的n项</p>
+        <p>数组+循环</p>
+        <p>变量+循环</p>
+        <div class="code-block">
+            int main(){<br>
+            int n; int main() {<br>
+            cin&gt;&gt;n; int n;<br>
+            int a=1,b=1; cin&gt;&gt;n;<br>
+            int c=0; int fibs[50] = {0};<br>
+            for(int i=3;i&lt;=n;i++){ fibs[1]=1, fibs[2] = 1;<br>
+            c=a+b; for(int i=3; i&lt;=n;i++){<br>
+            a=b; fibs[i]=(fibs[i-1]+ fibs[i-2]);<br>
+            b=c; }<br>
+            } cout&lt;&lt;fibs[n];<br>
+            cout&lt;&lt;c&lt;&lt;endl; return 0;<br>
+            return 0; }<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>计算斐波那契数列的n项</p>
+        <p>int fib(int n){</p>
+        <p>if(n==1||n==2)return 1;</p>
+        <p>return fib(n-1)+fib(n-2);</p>
+        <p>}</p>
+        <p>递归求解</p>
+        <div class="code-block">
+            int main(){<br>
+            int n;<br>
+            cin&gt;&gt;n;<br>
+            cout&lt;&lt;fib(n);<br>
+            return 0;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）递推算法通常有初始值。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）数列 1, 1, 2, 3, 5, 8 ... 是以意大利数学家列昂 纳多·斐波那契命名的数列，从第三个数开始，每个数是前面两 项之和。如果计算该数列的第 n 项（其中 n>3）fib(n)，我们 采用如下方法：① 令 fib(1)=fib(2)=1 ②用循环 for i=3 to n 分别计算 f(i) ③输出 fib(n)。这体现了递推的编程思想。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】for循环是遍历数组的常用方式，循环变量从0到数组长度-1。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）以下哪个递推关系式表示斐波那契数列（ B ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>F(n)=F(n-1) + F(n-2) + F(n-3)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>F(n) = F(n-1) + F(n-2)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>F(n) = F(n-1) * F(n-2)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>F(n) = F(n-1) / F(n-2)</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）执行以下C++语言程序后，输出结果是（ D ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>55</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>无法确定</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）在下列代码的横线处填写（ ），可以使得输出是“21”。 #include <iostream> using namespace std; int main(){ int a[5];</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>i++ a[0]=1; for(int i=1;i<5;i++) B. i+=2 a[i]=a[i–1]*2;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>i+=3 int sum = 0; for(int i=0;i<5;_________) D. i /= 2 sum+=a[i]; cout<<sum<<endl; return 0; }</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">思路分析 #include <iostream> • 数组a长度为5，且第一个元素是1； using namespace std; • 根据递推关系，后面每一个元素是前一个的2倍， int main(){ 计算出所有元素依次为1 2 4 8 16； int a[5]; • 数组元素累加求和，若和为21，则元素1+4+16 a[0]=1; 即可，所以横线处循环的步长为i+=2 for(int i=1;i<5;i++) a[i]=a[i–1]*2; 递推公式 int sum = 0; A. i++ for(int i=0;i<5;_________)</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>i+=2 sum+=a[i]; cout<<sum<<endl; C. i+=3 return 0;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>i /= 2 }</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）在下列代码的横线处填写（ B ），可以使得输出是“21”。 #include <iostream> using namespace std; int main(){ int a[5];</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>i++ a[0]=1; for(int i=1;i<5;i++) B. i+=2 a[i]=a[i-1]*2;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>i+=3 int sum = 0; for(int i=0;i<5;_________) D. i /= 2 sum+=a[i]; cout<<sum<<endl; return 0; }</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 有 2*n的一个长方形方格，用一个1*2的骨牌铺满方格，当n=5时， 铺法总数为多少（ D ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>6</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>7</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>8</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 设有一个共有n级台阶的楼梯，某人每步可走1级，也可以走2级，用递推 的方式可以计算出某人从底层开始走完全部台阶的走法。例如，当n=3 时， 共有3 种走法，即 1+1+1、1+2、2+1。当n=6 时，从底层开始走完全 部台阶的走法共有多少种?（ B ）</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>12</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>13</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>14</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>15</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 已知Pell数列定义如下,第5项的值是（ A ） a = 1 1 a = 2 2 … a = 2*a + a n n-1 n-2</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>29</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>30</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>12</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>32</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 综合练习</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>矩阵行走</p>
+        <p>【题目描述】</p>
+        <p>给定一个n*m格的矩阵，问从左上角走到右下角有多少条不同的路径？</p>
+        <p>每步只能向下走或向右走，且只能沿着矩阵的边线行走。</p>
+        <p>【输入格式】</p>
+        <p>一行两个正整数 n,m，1<=n<=10 1<=m<= 4。</p>
+        <p>【输出格式】</p>
+        <p>路径数目 t。</p>
+        <p>【样例输入1】 【样例输入2】 【样例输入3】</p>
+        <p>1 1 2 2 6 4</p>
+        <p>【样例输出1】 【样例输出2】 【样例输出3】</p>
+        <p>2 6 210</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>起点 1 起点 1 1 起点 1 1</p>
+        <p>2 3</p>
+        <p>2 2 3</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>3 6</p>
+        <p>1</p>
+        <p>起点 1</p>
+        <p>起点 1 1 1</p>
+        <p>2</p>
+        <p>1</p>
+        <p>2 3 4</p>
+        <p>3 1</p>
+        <p>1</p>
+        <p>3 6 10</p>
+        <p>1</p>
+        <p>4 10 20</p>
+        <p>1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>m+1列</p>
+        <p>起点 1 1 1 …… 1</p>
+        <p>1 1 1 1 1</p>
+        <p>2 3 4 5</p>
+        <p>1</p>
+        <p>1</p>
+        <p>2 3 4 5</p>
+        <p>3 6 10 15</p>
+        <p>1</p>
+        <p>1</p>
+        <p>3 6 10 15</p>
+        <p>n+1行</p>
+        <p>4 10 20 35</p>
+        <p>1 1</p>
+        <p>4 10 20 35</p>
+        <p>5 15 35 70</p>
+        <p>……</p>
+        <p>1</p>
+        <p>5 15 35 70</p>
+        <p>1</p>
+        <p>n*m格的矩阵</p>
+        <p>二维数组a</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>m+1列</p>
+        <p>递推的初始条件：</p>
+        <p>第一行和第一列的元素都是1</p>
+        <p>1 1 1 1 1</p>
+        <p>递推关系：</p>
+        <p>1</p>
+        <p>2 3 4 5</p>
+        <p>从第二行第二列开始，计算每个元素的值</p>
+        <p>1</p>
+        <p>a[0][1]=1</p>
+        <p>3 6 10 15</p>
+        <p>n+1行</p>
+        <p>a[1][0]=1</p>
+        <p>1</p>
+        <p>4 10 20 35</p>
+        <p>a[1][1]=a[0][1]+a[1][0]</p>
+        <p>1</p>
+        <p>5 15 35 70</p>
+        <p>a[1][2]=a[0][2]+a[1][1]</p>
+        <p>……</p>
+        <p>二维数组a</p>
+        <p>a[i][j]=a[i-1][j]+ a[i][j-1]</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 创建全局二维数组(1<=n<=10 1<=m<= 4)。</p>
+        <p>② 输入n和m数据。</p>
+        <p>③ 将数组的第一行和第一列的元素设置为1。</p>
+        <p>int a[15][15];</p>
+        <div class="code-block">
+            int main(){<br>
+            int n,m;<br>
+            cin&gt;&gt;n&gt;&gt;m;<br>
+            // 第一行设置为1<br>
+            for(int i=0;i&lt;=n;i++)a[i][0]=1;<br>
+            // 第一列设置为1<br>
+            for(int j=0;j&lt;=m;j++)a[0][j]=1;<br>
+            return 0;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>④ 根据递推公式计算路径，即计算二维数组中每个元素的值</p>
+        <p>⑤ 输出最后一行最后一列元素的值，即为所有路径</p>
+        <p>int a[15][15];</p>
+        <p>}</p>
+        <p>cout<<a[n][m];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            int main(){<br>
+            int n,m;<br>
+            cin&gt;&gt;n&gt;&gt;m;<br>
+            for(int i=0;i&lt;=n;i++)a[i][0]=1;<br>
+            for(int j=0;j&lt;=m;j++)a[0][j]=1;<br>
+            // 根据递推公式计算路径<br>
+            for(int i=1;i&lt;=n;i++){<br>
+            for(int j=1;j&lt;=m;j++){<br>
+            a[i][j]=a[i-1][j]+a[i][j-1];<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>}</p>
+        <p>cout<<a[n][m];</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            int a[15][15];<br>
+            int main(){<br>
+            int n,m;<br>
+            cin&gt;&gt;n&gt;&gt;m;<br>
+            // 第一行设置为1<br>
+            for(int i=0;i&lt;=n;i++)a[i][0]=1;<br>
+            // 第一列设置为1<br>
+            for(int j=0;j&lt;=m;j++)a[0][j]=1;<br>
+            // 根据递推公式计算路径<br>
+            for(int i=1;i&lt;=n;i++){<br>
+            for(int j=1;j&lt;=m;j++){<br>
+            a[i][j]=a[i-1][j]+a[i][j-1];<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>

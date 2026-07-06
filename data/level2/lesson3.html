@@ -1,0 +1,629 @@
+<div class="slide">
+    <h2 class="slide-subtitle-center">CCF-GESP C++二级</h2>
+    <div class="slide-content">
+        <p>编程能力等级认证</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">第三课</h2>
+    <div class="slide-content">
+        <p>计 算 机 网 络 1</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">01 计算机网络</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>网络的作用</p>
+        <p>在线聊天 网上购物 浏览网页</p>
+        <p>又出bug啦，我来看看</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>QQ收发消息的过程</p>
+        <p>发送方：A 接收方：B</p>
+        <p>你好！</p>
+        <p>IP:128.11.3.31 IP:128.11.3.28</p>
+        <p>锁定目标程序：QQ应用程序 确定目标程序：QQ应用程序</p>
+        <p>锁定接收方：IP地址 确定发送方：IP地址</p>
+        <p>封装数据包：转为二进制数据 解析数据包：转为文字、图片等信息</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>计算机网络</p>
+        <p>计算机网络系统将地理位置不同的、功能独立的多台计</p>
+        <p>算机互连起来，最终实现资源共享和信息传递。</p>
+        <p>资源共享：微信群里的文件，群成员都能下载查看。</p>
+        <p>信息传递：收发微信消息。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 计算机网络最核心的功能是( B )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>预防病毒</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>数据通信和资源共享</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>信息浏览</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="0" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>下载文件</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-0"></div>
+        <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>计算机网络的分类</p>
+        <p>按照地理位置划分：</p>
+        <p>广域网 （WAN） 覆盖范围通常在几千公里甚至几万公里，</p>
+        <p>(Wide Area Network) 作用范围一般是几个城市、一个国家、或者几个国家。</p>
+        <p>城域网（MAN） 覆盖范围通常在几千米到几十千米，</p>
+        <p>(Metropolitan Area Network) 作用范围一般是一个城市。</p>
+        <p>局域网（LAN） 覆盖范围通常是几百米或者几千米，</p>
+        <p>(Local Area Network) 作用范围可以是一个学校、一栋楼或者一个工厂等。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）我们常说的互联网（Internet）是一个覆盖全球 的广域网络，它不属于任何一个国家。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="1" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-1"></div>
+        <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 局域网的覆盖范围是( A )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>一栋楼</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>一条街</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>一座城市</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>一个国家</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-2"></div>
+        <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 广域网的英文缩写是( B )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>LAN</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>WAN</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>MAN</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>LNA</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-3"></div>
+        <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 局域网和广域网的主要区别是( A )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>覆盖范围</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>传输速度</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>传输介质</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>网络协议</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>计算机网络的分类</p>
+        <p>按照其他类型划分：</p>
+        <p>公用网（中国电信，联通，移动）</p>
+        <p>按使用者分类</p>
+        <p>专用网（铁路，军队，政府，银行）</p>
+        <p>有线网络（双绞线，同轴电缆）</p>
+        <p>按传输介质分类</p>
+        <p>无线网络（Wi-Fi，蓝牙，5G）</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 蓝牙和Wi-Fi都是( C )设备。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>无线广域网</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>无线城域网</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>无线局域网</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>无线路由器</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">02 网络协议</h2>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>网络协议</p>
+        <p>交通规则：红灯停，绿灯行，黄灯等一等...</p>
+        <p>网络通信也要遵守相应的规则</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>网络协议</p>
+        <p>网络协议：计算机网络中进行数据交换而建立的规则、标准或约定的集合。</p>
+        <p>格式</p>
+        <p>信息采用什么 ？</p>
+        <p>含义</p>
+        <p>格式的 是什么？</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>计算机网络体系结构</p>
+        <p>为了方便理解协议的设计和实现，计算机网络被分为多个层级结构。</p>
+        <p>OSI七层 TCP/IP四层模型 五层模型</p>
+        <p>7. 应用层</p>
+        <p>4. 应用层 5. 应用层</p>
+        <p>6. 表示层</p>
+        <p>4. 传输层</p>
+        <p>3. 传输层</p>
+        <p>5. 会话层</p>
+        <p>3. 网络层</p>
+        <p>4. 传输层</p>
+        <p>2. 网络层</p>
+        <p>3. 网络层 2. 数据链路层</p>
+        <p>2. 数据链路层 1. 网络接口层</p>
+        <p>1. 物理层</p>
+        <p>1. 物理层</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 TCP/IP四层模型中，包括网络接口层、网络层、传输层和( D )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>物理层</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>表示层</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>会话层</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>应用层</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>通过网络模型发送信息的过程</p>
+        <p>用户A 用户B</p>
+        <p>应用层 应用层</p>
+        <p>封 解</p>
+        <p>传输层 传输层</p>
+        <p>装 析</p>
+        <p>数 数</p>
+        <p>据 据</p>
+        <p>网络层 网络层</p>
+        <p>包 包</p>
+        <p>网络接口层 网络接口层</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>TCP/IP 四层模型</p>
+        <p>应用层</p>
+        <p>传输层</p>
+        <p>网络层</p>
+        <p>网络接口层 规定连接网络设备的接口</p>
+        <p>主要协议：</p>
+        <p>TCP/IP模型</p>
+        <p>Ethernet：以太网协议</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>TCP/IP 四层模型</p>
+        <p>应用层</p>
+        <p>传输层</p>
+        <p>负责不同网络之间数据传输</p>
+        <p>网络层</p>
+        <p>主要协议：</p>
+        <p>网络接口层 IP：网际协议</p>
+        <p>ARP：地址解析协议</p>
+        <p>TCP/IP模型</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>TCP/IP 四层模型</p>
+        <p>应用层</p>
+        <p>传输层 负责端口到端口之间的数据传输</p>
+        <p>主要协议：</p>
+        <p>网络层 TCP：传输控制协议</p>
+        <p>UDP：用户数据报协议</p>
+        <p>网络接口层</p>
+        <p>TCP/IP模型</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>TCP/IP 四层模型</p>
+        <p>应用层</p>
+        <p>控制应用程序，为应用程序提供网络服务。</p>
+        <p>主要协议：</p>
+        <p>传输层</p>
+        <p>SMTP：发送电子邮件协议</p>
+        <p>POP3： 接收电子邮件协议</p>
+        <p>网络层 FTP：文件传输协议</p>
+        <p>HTTP：超文本传输协议</p>
+        <p>网络接口层</p>
+        <p>TCP/IP模型</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>OSI 七层模型</p>
+        <p>OSI七层</p>
+        <p>TCP/IP四层模型</p>
+        <p>7. 应用层</p>
+        <p>6. 表示层</p>
+        <p>4. 应用层</p>
+        <p>5. 会话层</p>
+        <p>3. 传输层 4. 传输层</p>
+        <p>2. 网络层 3. 网络层</p>
+        <p>2. 数据链路层</p>
+        <p>1. 网络接口层</p>
+        <p>1. 物理层</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">知识讲解</h2>
+    <div class="slide-content">
+        <p>OSI 七层模型</p>
+        <p>控制应用程序，为应用程序提供网络服务。(HTTP、FTP、SMTP、POP3协议)</p>
+        <p>7. 应用层</p>
+        <p>负责不同计算机之间的数据格式转换和加密解密。</p>
+        <p>6. 表示层</p>
+        <p>5. 会话层 负责不同计算机之间的会话管理。</p>
+        <p>4. 传输层 负责端口到端口的数据传输。（TCP、UDP协议）</p>
+        <p>3. 网络层 负责不同网络之间的数据传输。（IP协议）</p>
+        <p>2. 数据链路层 负责同一网络内不同设备之间的数据传输。（ARP协议）</p>
+        <p>1. 物理层 负责计算网络的物理传输介质，例如：电缆，光纤。</p>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）TCP/IP的传输层的两个不同的协议分别是UDP和TCP。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（样题）万维网WWW中存储了海量的数据资源， 这里用于传输控制的协议是( C )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>URL</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>SMTP</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>HTTP</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>HTML</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 TCP/IP四层模型中，网络接口层负责提供数 据链路层和物理层的实现。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正确</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>错误</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 TCP/IP模型中，传输层的主要协议是什么( C )。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>HTTP</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>FTP</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>TCP和UDP</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="10" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>DNS</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-10"></div>
+        <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
+        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>完全数</p>
+        <p>【问题描述】</p>
+        <p>完全数，又称完美数或完备数，是一些特殊的自然数。它所有的真因子（即除了自身以外</p>
+        <p>的约数）的和等于它本身。</p>
+        <p>例如：6 = 1 + 2 + 3那么6就是一个完全数。</p>
+        <p>编程实现输入n和m，输出n到m之间所有的完全数（包括n和m）。</p>
+        <p>【输入描述】</p>
+        <p>输入一行，包含两个正整数n和m，中间使用一个空格分隔。（0<n<6<m<10000）</p>
+        <p>【输出描述】</p>
+        <p>输出一行，包含若干个正整数，数字之间使用一个空格分隔，即n到m之间所有的完全数。</p>
+        <p>【输入样例】</p>
+        <p>1 10</p>
+        <p>【输出样例】</p>
+        <p>6</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>① 输入n和m。</p>
+        <p>int n,m;</p>
+        <p>cin >> n>> m;</p>
+        <p>② 循环遍历n到m之间所有的数字、找出其中的完全数。</p>
+        <p>for(int i=n;i<=m;i++){</p>
+        <p>1、找出每个数字，除自身以外的约数</p>
+        <p>2、计算约数的累加和</p>
+        <p>3、判断约数累加和是否等于该数字</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>计算约数累加和</p>
+        <p>例如：计算6的所有约数（除6以外）的累加和</p>
+        <div class="code-block">
+            //遍历1~5之间的数字，找出其中能被6整除的，计算累加和<br>
+            记录约数累加和<br>
+            int s=0;<br>
+            for(int j=1;j&lt;6;j++){<br>
+            if(6%j==0) s+=j;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>思路分析</p>
+        <p>② 循环遍历n到m之间所有的数字、找出其中的完全数。</p>
+        <p>for(int i=n;i<=m;i++){</p>
+        <p>int s=0;</p>
+        <p>for(int j=1;j<i;j++){</p>
+        <p>1、找出每个数字，除自身以外的约数</p>
+        <p>if(i%j==0) s+=j;</p>
+        <p>2、计算约数的累加和</p>
+        <p>}</p>
+        <p>3、判断约数累加和是否等于该数字</p>
+        <p>if(s==i) cout << i << " ";</p>
+        <p>3、判断约数累加和是否等于该数字</p>
+        <p>}</p>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">课堂练习</h2>
+    <div class="slide-content">
+        <p>【完整代码】</p>
+        <p>if(s==i) cout << i << " ";</p>
+        <p>}</p>
+        <p>return 0;</p>
+        <p>}</p>
+        <div class="code-block">
+            #include&lt;iostream&gt;<br>
+            using namespace std;<br>
+            int main(){<br>
+            int n,m;<br>
+            cin &gt;&gt; n&gt;&gt; m;<br>
+            for(int i=n;i&lt;=m;i++){<br>
+            int s=0;<br>
+            for(int j=1;j&lt;i;j++){<br>
+            if(i%j==0) s+=j;<br>
+            }<br>
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">感 谢 你 的 学 习</h2>
+</div>
