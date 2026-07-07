@@ -13,7 +13,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查嵌套循环执行次数。外层循环i从5到0，共执行6次（5,4,3,2,1,0），语句1执行6次。内层循环j在外层循环外定义，第一次外层循环时j从0到6执行7次，之后j=7不再满足j<=6，内层循环不再执行。所以语句1执行6次，语句2执行7次，题目说法错误。
         </div>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查嵌套循环执行次数。外层循环执行5次（i=1~5），内层循环执行4次（j=1~4），总次数为5×4=20。
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查矩阵对角线判断。主对角线上的元素位置满足i==j，所以条件应为i==j。注意选项A使用的是赋值运算符=，不是比较运算符==。
         </div>
     </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查字符输出和取模运算。j%3可以得到0,1,2循环，'A'+j%3得到A,B,C循环。由于结果是int类型，需要强制转换为char类型才能正确输出字符，所以答案是(char)('A'+j%3)。
         </div>
     </div>
@@ -129,7 +129,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查数字菱形输出的空格计算。以lineCount=5为例，第0行需要8个空格，第1行需要6个空格，第2行需要4个空格，第3行需要2个空格，第4行需要0个空格。规律是空格数=(lineCount-i-1)*2。
         </div>
     </div>
@@ -158,7 +158,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查嵌套循环执行次数。i=2时j=1(1次)；i=3时j=1(1次)；i=4时j=1,3(2次)；i=5时j=1,3(2次)；i=6时j=1,3,5(3次)；i=7时j=1,3,5(3次)；i=8时j=1,3,5,7(4次)。总计1+1+2+2+3+3+4=16次。
         </div>
     </div>

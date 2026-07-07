@@ -1,5 +1,4 @@
-window.lessonData = {
-    title: '第2课 数组进阶',
+var lessonData = {
     answers: {
         0: 1,
         1: 1,
@@ -8,9 +7,8 @@ window.lessonData = {
         4: 1,
         5: 2,
         6: 2,
-        7: 0,
-        8: 1,
-        9: 0,
-        10: 0
+        7: 3,
+        8: 3,
+        9: 1
     }
 };

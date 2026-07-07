@@ -13,7 +13,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查异常处理的概念。如果异常发生但没有处理异常的代码，程序会直接终止运行，而不是一直等待处理。
         </div>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查异常的定义。异常是指程序在运行过程中发生的错误，如除数为0、内存分配失败、文件不存在等。
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查异常处理关键字。try用于包裹可能发生异常的代码，catch用于捕获异常，throw用于抛出异常。C++中没有finally关键字（Java中有）。
         </div>
     </div>
@@ -92,7 +92,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查try-catch的用法。try必须和catch配合使用，单独的try或catch都是语法错误。
         </div>
     </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查异常处理的特性。一个try子句可以对应多个catch子句，分别处理不同类型的异常。选项B错误，因为如果没有匹配的catch，异常会继续向上传播；选项C错误，try块中可以没有异常语句；选项D错误，catch处理完后不会重新执行try。
         </div>
     </div>
@@ -142,7 +142,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查异常处理的使用。函数可能抛出异常，但不一定要在try子句中调用。如果不在try中调用且发生异常，异常会向上传播，直到被捕获或程序终止。
         </div>
     </div>
@@ -163,7 +163,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】本题考查异常处理的规则。在C++中，调用可能抛出异常的函数不需要必须在try子句中，这不会引起编译错误。只是如果发生异常且没有被捕获，程序会终止。
         </div>
     </div>
@@ -184,7 +184,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】本题考查throw语句的用法。throw后面的表达式的值和类型决定了抛出的异常，catch根据类型进行匹配。
         </div>
     </div>
@@ -205,7 +205,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】本题考查异常处理机制。C++的异常处理采用栈展开机制，异常可以从被调用函数抛出，由调用链上层的try-catch捕获处理。
         </div>
     </div>
@@ -234,7 +234,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】本题考查异常处理流程。选项D错误，因为异常可以向上传播，如果本层没有匹配的catch，异常会继续向上层调用栈传播，直到被捕获或程序终止。
         </div>
     </div>

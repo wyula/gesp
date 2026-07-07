@@ -21,7 +21,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查因子输出。要从大到小输出因子，循环变量应从N开始递减到1，所以条件应为int i=N; i>0; i--。选项D缺少输出因子1，选项A和B是从小到大输出。
         </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查while循环条件。由于需要无限循环直到输入负数才break退出，所以循环条件应为true。C++中布尔常量是小写的true/false，不是True/False。
         </div>
     </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查嵌套循环和条件判断。i=1时内层不执行；i=4时j=1，4×1%2=0，break；i=7时j=1,3,5，7×1%2=1(cnt=1)，7×3%2=1(cnt=2)，7×5%2=1(cnt=3)；i=10时j=1，10×1%2=0，break。总计cnt=3。
         </div>
     </div>
@@ -108,7 +108,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查素数判断逻辑。当找到能整除N的因子时，说明N不是质数，应退出循环，然后根据i==N判断是否为质数。break用于跳出当前循环，continue用于跳过本次循环，exit和return会直接退出程序。所以应使用break。
         </div>
     </div>

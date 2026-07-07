@@ -13,7 +13,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查值传递的特点。使用值传递时，函数内部对形参的修改不会影响实参。要实现交换两个变量的值，需要使用指针传递或引用传递，而不是值传递。
         </div>
     </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查函数参数传递方式。C++语言中，函数参数默认以值传递方式进行传递，而不是地址传递。
         </div>
     </div>
@@ -63,7 +63,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查指针传递。要实现交换两个变量的值，需要使用指针传递或引用传递。选项B使用指针传递，可以通过解引用修改实参；选项D使用引用传递也可以实现交换。根据题目要求输出"20 10"，选项B正确。
         </div>
     </div>
@@ -92,7 +92,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查参数传递方式的特点。值传递时，子函数对参数的修改不会影响主函数中的实参，所以选项A正确。地址传递时，子函数可以通过指针修改主函数中的变量值。
         </div>
     </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查指针传递和数组初始化。arr[10]={2}表示arr[0]=2，其余元素初始化为0。fun1(arr)中*n是arr[0]=2，返回2*2=4，所以arr[1]=4，输出4。
         </div>
     </div>
@@ -142,7 +142,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查C++运算符。&是引用运算符和取地址运算符，&&是逻辑与运算符，*是解引用运算符和乘法运算符，但**不是C++语言的运算符。
         </div>
     </div>
@@ -163,7 +163,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】本题考查函数参数传递方式。C++语言中，函数参数默认以值传递方式进行传递，需要显式使用指针或引用才能实现地址传递或引用传递。
         </div>
     </div>
@@ -184,7 +184,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】本题考查引用传递的特点。引用传递时，形参是实参的别名，不会复制实际参数，因此不会额外占用内存空间。
         </div>
     </div>
@@ -213,7 +213,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】本题考查引用的声明方式。在C++中，使用&符号来声明引用，如int &ref = var;表示ref是var的引用。
         </div>
     </div>
@@ -242,7 +242,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】本题考查函数参数传递方式。C++中常用的参数传递方式有值传递、引用传递和指针传递。模板传递不是参数传递方式，而是一种编程范式。
         </div>
     </div>

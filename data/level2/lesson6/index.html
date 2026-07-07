@@ -13,7 +13,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】ASCII码只包含0~127的字符，包括英文字母、数字和基本符号，不包含汉字。汉字使用GB2312、GBK、UTF-8等编码。
         </div>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】判断字符是否为数字，需要判断其ASCII码是否在'0'(48)到'9'(57)之间。选项A使用逻辑与运算符&&连接两个比较条件，是正确的写法。选项C的写法在C++中会先计算'0'<=a，结果为bool类型，再与'9'比较，是错误的。
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】选项B的a+1只是计算表达式的值，并没有将结果赋值给a，所以a的值不会改变。其他选项都有赋值操作或自增操作，会改变a的值。
         </div>
     </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】循环从'1'到'9'共9个字符。选项D的条件ch%2==1判断字符的ASCII码是否为奇数。'1'(49)、'3'(51)、'5'(53)、'7'(55)、'9'(57)都是奇数，共5个，所以cnt=5。
         </div>
     </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】'F'的ASCII码是70，加1后变为71，71对应的字符是'G'。大写字母的ASCII码是连续的（A-Z：65-90），所以a+1会正确变为下一个字母。
         </div>
     </div>
@@ -150,7 +150,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】字符与整数运算时，使用的是字符的ASCII码。a='C'=67，a+2=69。由于结果是整数类型，cout会输出69而不是字符'E'。要输出'E'需要强制类型转换：cout<<char(a+2)。
         </div>
     </div>
@@ -171,7 +171,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】小写字母a-z的ASCII码是97-122，大写字母A-Z是65-90。a-'a'计算出该字母在字母表中的位置（0-25），再加上'A'的ASCII码65，就得到对应的大写字母。
         </div>
     </div>
@@ -192,7 +192,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】10.0是double类型，2是int类型。在运算时，int会自动转换为double，所以结果是5.0，类型为double。
         </div>
     </div>
@@ -221,7 +221,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】整数相除会进行截断取整。选项C使用4.0（double类型），会使整数和变为double类型，从而进行浮点除法，得到精确的平均值。
         </div>
     </div>
@@ -250,7 +250,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】选项B正确。int类型变量相乘结果仍是int类型。选项A错误，char可以赋值给int。选项C错误，整型溢出是未定义行为，不会报错崩溃。选项D错误，double除以0.0得到无穷大或NaN，不会崩溃。
         </div>
     </div>
@@ -279,7 +279,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+        <div class="quiz-analysis" id="analysis-10">
             【解析】平行四边形面积S=a*h=b*h_b，所以b边的高h_b=a*h/b。选项A先计算a/b（整数除法会截断），再乘以(0.0+h)，结果错误。其他选项都能正确计算。
         </div>
     </div>
@@ -300,7 +300,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-11"></div>
         <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
+        <div class="quiz-analysis" id="analysis-11">
             【解析】7.8是double类型，2是int类型。运算时2转换为double，结果3.9也是double类型，不是float。
         </div>
     </div>
@@ -321,7 +321,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-12"></div>
         <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
+        <div class="quiz-analysis" id="analysis-12">
             【解析】double乘以int，结果仍是double类型。a*10=35.0，类型为double，不是int。
         </div>
     </div>
@@ -350,7 +350,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-13"></div>
         <button class="btn-submit" id="submit-13" onclick="coursePlayer.submitQuiz(13)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-13">
+        <div class="quiz-analysis" id="analysis-13">
             【解析】选项D错误。强制类型转换的结果是右值，不能作为赋值语句的左值。正确的写法应该是b=(char)a;或者a=(int)b;。
         </div>
     </div>
@@ -379,7 +379,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-14"></div>
         <button class="btn-submit" id="submit-14" onclick="coursePlayer.submitQuiz(14)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-14">
+        <div class="quiz-analysis" id="analysis-14">
             【解析】'3'的ASCII码是51，'6'是54。a+b=105。要输出字符'9'（ASCII码57），需要计算：a+b-'0'=51+54-48=57='9'。再强制转换为char类型即可输出字符9。
         </div>
     </div>
@@ -408,7 +408,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-15"></div>
         <button class="btn-submit" id="submit-15" onclick="coursePlayer.submitQuiz(15)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-15">
+        <div class="quiz-analysis" id="analysis-15">
             【解析】-123.123 / 10 = -12.3123，强制转换为int类型时截断小数部分，结果为-12。
         </div>
     </div>

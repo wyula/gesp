@@ -21,7 +21,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查if-else多分支语句。m=14，n=12，都是偶数，所以m%2==0&&n%2==0为真，输出"都是偶数"。
         </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查if-else多分支语句和逻辑运算。m=14，m%2=0；n=12，n%2=0。所以m%2&&n%2=0&&0=0（假），m%2==1&&n%2==1=0&&0=0（假），执行else，输出"不都是偶数或奇数"。
         </div>
     </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查if-else多分支语句。m=14，n=12，都是偶数，所以m%2==1&&n%2==1为假，两个条件都不满足，执行else，输出"不都是偶数或奇数"。注意：代码中有逻辑错误，第一个条件判断奇数却输出"都是偶数"。
         </div>
     </div>
@@ -108,7 +108,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查if-else多分支语句和整数除法。m=7，m/5=1（整数除法），m/3=2。由于||的短路求值，m/5||m/3=1||...=1（真），所以输出0。
         </div>
     </div>

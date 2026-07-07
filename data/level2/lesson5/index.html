@@ -13,7 +13,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】sqrt、abs等数学函数声明在<cmath>或<math.h>头文件中，包含这些头文件后才能使用这些函数。
         </div>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】abs函数用于计算绝对值，sqrt用于计算平方根，min用于求最小值，pow用于计算幂。
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】j=4时，4*j-5=4*4-5=11，abs(11)=11。绝对值函数返回非负数。
         </div>
     </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】C++中没有**运算符，求幂需要使用pow函数，pow(x,n)表示x的n次方。
         </div>
     </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】sqrt函数的返回值类型是double，不是int。sqrt(9.0)的结果是3.0，类型为double。
         </div>
     </div>
@@ -150,7 +150,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】判断完全平方数的方法是：计算i的平方根并取整，再将其平方后与i比较。如果相等，则i是完全平方数。选项A和D使用了赋值号=而非比较号==，语法错误。选项B虽然能判断整数平方根，但不如选项C直接判断。
         </div>
     </div>
@@ -171,7 +171,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】srand(0)设置固定种子后，每次程序运行时rand()生成的随机数序列相同，但连续两次调用rand()的结果是不同的，因为随机数生成器会内部状态。
         </div>
     </div>
@@ -200,7 +200,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】生成a~b范围内随机整数的公式是：a + rand() % (b-a+1)。对于4~25，范围是25-4+1=22，所以公式是4 + rand() % 22。
         </div>
     </div>
@@ -229,7 +229,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】rand()函数声明在<cstdlib>头文件中。<cmath>包含数学函数，<algorithm>包含算法函数如min/max。
         </div>
     </div>
@@ -250,7 +250,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】使用srand(time(0))可以设置随时间变化的种子，使每次程序运行时生成不同的随机数序列。srand(1)和srand(0)都会生成固定的随机数序列。
         </div>
     </div>
@@ -271,7 +271,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+        <div class="quiz-analysis" id="analysis-10">
             【解析】max函数要求两个参数类型相同。10是int类型，20.5是double类型，参数类型不一致会导致编译错误。
         </div>
     </div>
@@ -292,7 +292,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-11"></div>
         <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
+        <div class="quiz-analysis" id="analysis-11">
             【解析】min函数每次只能比较两个数。要找出三个数中的最小值，可以嵌套使用min函数：min(min(a,b),c)，先比较a和b取较小值，再与c比较。
         </div>
     </div>
@@ -321,7 +321,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-12"></div>
         <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
+        <div class="quiz-analysis" id="analysis-12">
             【解析】min和max函数声明在<algorithm>头文件中。<cmath>和<math.h>包含数学函数，<iostream>包含输入输出函数。
         </div>
     </div>

@@ -21,7 +21,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查冒泡排序算法。冒泡排序内层循环需要遍历未排序部分，对于外循环i（从n递减），内层循环j应从0到i-2，即j<i-1。
         </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查冒泡排序算法。冒泡排序内层循环需要遍历未排序部分，对于外循环i（从n递减），内层循环j应从0到i-2，即j<i-1。
         </div>
     </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查冒泡排序的过程。初始序列：9,2,8,6,3,4。第1趟排序：2,8,6,3,4,9（9冒到最后）。第2趟排序：2,6,3,4,8,9（8冒到倒数第二位置）。
         </div>
     </div>
@@ -108,7 +108,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查冒泡排序的过程（降序）。初始序列：8,7,9,6,3,8。第1趟排序（降序）：8,9,7,6,8,3（7和9交换，3和8交换）。第2趟排序：9,8,7,8,6,3（8和9交换，6和8交换）。
         </div>
     </div>
@@ -137,7 +137,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查冒泡排序的交换次数。序列5,4,3,2,1的逆序对数量为：4+3+2+1=10。每次交换减少1个逆序对，因此需要10次交换。
         </div>
     </div>
@@ -166,7 +166,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查选择排序算法。选择排序需要找到未排序部分的最小值，当array[j]小于当前最小值array[min]时，更新最小值下标，条件应为array[min] > array[j]。
         </div>
     </div>
@@ -195,7 +195,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】本题考查选择排序算法。选择排序需要找到未排序部分的最小值，当array[j]小于当前最小值array[min]时，更新最小值下标，条件应为array[min] > array[j]。
         </div>
     </div>
@@ -224,7 +224,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】本题考查选择排序的过程。选择排序第一遍会找到整个序列的最小值并交换到第一个位置。第一遍结束后第一个元素是166（最小值），说明原始序列中166不在第一个位置，排除C、D。选项B中166在第三个位置，经过第一遍交换后得到166、169、177、175、172，符合条件。
         </div>
     </div>
@@ -253,7 +253,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】本题考查选择排序的交换次数。原始序列：18,17,23,15,16（降序排序）。第1遍：找最大值23，与第3位交换 → 23,17,18,15,16（1次交换）。第2遍：找次大值18，与第3位交换 → 23,18,17,15,16（1次交换）。第3遍：找第三大值17，已经在正确位置（0次交换）。第4遍：找第四大值16，与第5位交换 → 23,18,17,16,15（1次交换）。共3次交换。
         </div>
     </div>

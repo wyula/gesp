@@ -13,7 +13,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查C++的输出语句。cout可以直接输出表达式的计算结果，例如cout<<6+3;，不需要先存储在变量中。
         </div>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查表达式计算。先计算括号内：11+12=23，然后4*23=92，最后92/4=23。
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查运算符优先级和周长计算公式。选项A中，由于*的优先级高于+，所以a+b*2等价于a+(b*2)，只计算了一条长和两条宽，不能正确计算周长。
         </div>
     </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查运算符的含义。在C++中，^是位异或运算符，不是乘方运算符。选项C中的a^2不能计算正方形的面积，应该使用a*a。
         </div>
     </div>
@@ -129,7 +129,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查整数除法和取余运算。选项C：(a+3)/4*4可以正确求出大于等于a且是4的倍数的最小整数。当a=3时，(3+3)/4*4=6/4*4=1*4=4；当a=4时，(4+3)/4*4=7/4*4=1*4=4。
         </div>
     </div>
@@ -150,7 +150,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查赋值语句的含义。a=a+3;是合法的赋值语句，它将变量a原来的值加3后再赋给a，使a的值增加3。
         </div>
     </div>
@@ -179,7 +179,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】本题考查C++语法。选项D中的a++b是非法的，++是单目运算符，不能放在两个变量之间。正确的写法应该是a++或++a。
         </div>
     </div>
@@ -208,7 +208,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】本题考查复合赋值运算符。a*=3;等价于a=a*3;，当a=6时，6*3=18，所以a的值变为18。
         </div>
     </div>
@@ -237,7 +237,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】本题考查复合赋值运算符。a%=4;等价于a=a%4;，6%4=2，所以a的值变为2。
         </div>
     </div>
@@ -266,7 +266,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】本题考查整数除法和取余运算。要输出"20 10"，需要a%100=20，a/100=10。所以a应该是1020。a*100+b=10*100+20=1020，符合要求。
         </div>
     </div>
@@ -295,7 +295,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+        <div class="quiz-analysis" id="analysis-10">
             【解析】本题考查整数除法和取余运算。要输出"20 10"，需要a%100=20，a/100=10。所以a应该是1020。a*100+b=10*100+20=1020，符合要求。
         </div>
     </div>
@@ -324,7 +324,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-11"></div>
         <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
+        <div class="quiz-analysis" id="analysis-11">
             【解析】本题考查变量交换。要输出"20 10"，最终a=20，b=10。分析代码：b=a+b; a=b-a;。如果a=-10，则b=-10+20=10，a=10-(-10)=20。所以a的初始值应该是a-b=10-20=-10。
         </div>
     </div>
@@ -353,7 +353,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-12"></div>
         <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
+        <div class="quiz-analysis" id="analysis-12">
             【解析】本题考查变量交换。要输出"20 10"，最终a=20，b=10。分析代码：b=a+b; a=b-a;。如果a=-10，则b=-10+20=10，a=10-(-10)=20。所以a的初始值应该是a-b=10-20=-10。
         </div>
     </div>

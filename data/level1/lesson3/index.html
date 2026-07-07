@@ -21,7 +21,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查C++的输出语句。cout<<"a+b=" <<a+b;会先输出字符串"a+b="，再输出a+b的计算结果7，所以输出为"a+b=7"。
         </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查C++变量的基本概念。选项A错误，变量必须先定义后使用；选项B错误，C++不允许对未定义变量赋值；选项C错误，变量类型在定义时确定，不会随赋值而改变；选项D正确，例如a=a;赋值后值不变。
         </div>
     </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查C++变量的基本概念。选项C错误，C++要求变量必须先定义后使用，未定义的变量不能使用。
         </div>
     </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查标识符命名规则。标识符可以由字母、数字和下划线组成，但不能以数字开头，也不能完全由数字组成。但标识符可以以下划线开头（如_name），不一定需要字母。
         </div>
     </div>
@@ -129,7 +129,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查标识符命名规则。标识符不能以数字开头，选项B以数字0开头，所以不能作为标识符。
         </div>
     </div>
@@ -158,7 +158,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查标识符命名规则。选项B以数字开头，选项C包含特殊字符&，选项D是关键字，都不能作为标识符。选项A符合标识符命名规则。
         </div>
     </div>
@@ -187,7 +187,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】本题考查C++关键字。int、for、do都是C++关键字，而cout是iostream库中的对象名，不是关键字。
         </div>
     </div>
@@ -216,7 +216,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】本题考查C++关键字。double、else、while都是C++关键字，而endl是iostream库中的操作符，不是关键字。
         </div>
     </div>
@@ -245,7 +245,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】本题考查C++字面常量的类型。带小数点的数字字面常量默认是double类型。如果要表示float类型，需要在数字后加f或F后缀。
         </div>
     </div>
@@ -274,7 +274,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】本题考查C++字面常量的类型。单引号括起来的单个字符是char类型的字符常量。'3'表示字符3，不是数字3。
         </div>
     </div>
@@ -303,7 +303,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+        <div class="quiz-analysis" id="analysis-10">
             【解析】本题考查C++整数除法和类型转换。选项A中a/b是整数除法，7/2=3，然后0.0+3=3.0，结果不是3.5；选项B、C、D中都有double类型参与运算，整数会自动转换为double，7.0/2.0=3.5。
         </div>
     </div>

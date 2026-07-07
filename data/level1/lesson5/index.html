@@ -21,7 +21,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查C++的类型转换规则。表达式中包含double类型（3.0），根据类型转换规则，所有操作数都会转换为double类型，所以结果类型为double。
         </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查C++赋值语句的语法。赋值运算符的左边必须是左值（可以被赋值的变量），选项D中a+c是表达式，不是左值，所以不符合语法。
         </div>
     </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查判断奇数和偶数的表达式。选项A：a%=2是赋值语句，不是表达式，且当a为奇数时a%=2结果为1（非0），当a为偶数时结果为0，与题目要求相反。
         </div>
     </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查赋值运算符和比较运算符的区别。a=b是赋值语句，将b的值赋给a；判断相等需要使用==运算符，即a==b。
         </div>
     </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查偶数的判断方法。表达式(a%4==2)只能判断a除以4余2，例如6%4==2，但4%4==0，所以不能判断所有偶数。判断偶数应该使用a%2==0。
         </div>
     </div>
@@ -142,7 +142,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查取余运算的含义。a%4==0表示a除以4余数为0，说明a是4的倍数。
         </div>
     </div>
@@ -171,7 +171,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】本题考查逻辑表达式的运算顺序。选项B中(a == b == 0)的运算顺序是先计算a==b，得到bool值0或1，再将结果与0比较，不能正确判断a和b都等于0。
         </div>
     </div>
@@ -200,7 +200,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】本题考查逻辑表达式。选项B：!(a || b)表示a和b都为假（即都为0），可以正确判断a等于0且b等于0。
         </div>
     </div>
@@ -229,7 +229,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】本题考查运算符优先级和逻辑运算。算术运算符优先级高于逻辑运算符，所以先计算2-1=1和2%10=2，然后1&&2=1（非0值在逻辑运算中视为真）。
         </div>
     </div>
@@ -258,7 +258,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】本题考查逻辑表达式的计算。选项D：x<y=2<4=1（真），由于||运算的短路求值，整个表达式为真。
         </div>
     </div>
@@ -279,7 +279,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+        <div class="quiz-analysis" id="analysis-10">
             【解析】本题考查整数除法。a/4==2表示a除以4的商为2，即a在[8, 12)范围内（8<=a<12），而a>=8 && a<=11表示a在[8, 11]范围内。当a=11时，两个表达式都为真；当a=12时，a/4==2为假（12/4=3），a>=8 && a<=11也为假。所以两个表达式结果总是相同。
         </div>
     </div>

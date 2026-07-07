@@ -1,20 +1,20 @@
 <div class="slide">
     <h2 class="slide-subtitle-center">数组的存储</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/1-数组的存储.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="数组的存储">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/1-数组的存储.png" alt="数组的存储">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">数组所占内存大小</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/2-数组所占内存大小.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="数组所占内存大小">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/2-数组所占内存大小.png" alt="数组所占内存大小">
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在C++语⾔中，数组下标的大小决定元素在 逻辑上的先后顺序，与元素在内存中位置的先后顺序无关。</div>
+        <div class="quiz-question">（2023年9月）在C++语⾔中，数组下标的大小决定元素在逻辑上的先后顺序，与元素在内存中位置的先后顺序无关。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -27,7 +27,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】数组在内存中是连续存储的，下标越小的元素在内存中位置越靠前。数组下标决定元素在逻辑和物理上的先后顺序。
         </div>
     </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】C++语言中的数组大小在定义时确定，一旦定义不能自动调整大小。如果需要动态调整大小，应使用vector等容器。
         </div>
     </div>
@@ -56,7 +56,7 @@
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）一个数组定义为 double array[3];，则这个 数组占用内存的大小为（ ）。</div>
+        <div class="quiz-question">（2023年6月）一个数组定义为 double array[3];，则这个数组占用内存的大小为（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -77,7 +77,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】double类型占用8字节，数组有3个元素，所以总大小为3×8=24字节。
         </div>
     </div>
@@ -106,7 +106,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】long long类型占用8字节，数组有4个元素，所以总大小为4×8=32字节。
         </div>
     </div>
@@ -114,28 +114,28 @@
 
 <div class="slide">
     <h2 class="slide-subtitle-center">下标越界</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/3-下标越界.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="下标越界">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/3-下标越界.png" alt="下标越界">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">数组赋值</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/4-数组赋值.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="数组赋值">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/4-数组赋值.png" alt="数组赋值">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">定义数组的位置</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/5-定义数组的位置.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="定义数组的位置">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/5-定义数组的位置.png" alt="定义数组的位置">
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在C++语⾔中，长度为n的数组，访问下标为n的 元素会引起编译错误。</div>
+        <div class="quiz-question">（2023年9月）在C++语⾔中，长度为n的数组，访问下标为n的元素会引起编译错误。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -148,7 +148,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】数组下标越界是运行时错误，不会引起编译错误。C++编译器不检查数组下标是否越界。
         </div>
     </div>
@@ -177,7 +177,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】选项C不正确。任何类型的数组在定义时都可以省略长度，但必须提供初始值列表，不只是字符数组。
         </div>
     </div>
@@ -206,7 +206,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】选项C不正确。数组下标越界是运行时错误，不会产生编译错误。
         </div>
     </div>
@@ -214,65 +214,79 @@
 
 <div class="slide">
     <h2 class="slide-subtitle-center">遍历数组元素</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/6-遍历数组元素.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="遍历数组元素">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/6-遍历数组元素.png" alt="遍历数组元素">
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使得输出是“2”。</div>
-        <div class="quiz-options">
-            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>A</span>
-                <span>min > array[i]</span>
+        <div class="quiz-layout">
+            <div class="quiz-layout-left">
+                <img src="data/level3/lesson2/s1.png" alt="题目代码">
             </div>
-            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>min < array[i]</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>min = array[i]</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>以上均不对。</span>
+            <div class="quiz-layout-right">
+                <div class="quiz-options">
+                    <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>A</span>
+                        <span>min > array[i]</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>B</span>
+                        <span>min < array[i]</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>C</span>
+                        <span>min = array[i]</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>D</span>
+                        <span>以上均不对。</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
-            【解析】本题缺少完整代码，无法判断正确答案。请参考题目原始代码进行分析。
+        <div class="quiz-analysis" id="analysis-7">
+            【解析】从代码可以看出，数组初始值为{3, 7, 7, 5, 2, 4}，min初始化为0。如果条件是 min > array[i]，当 min=0 时，所有元素都大于0，都会执行赋值，最终min=4；如果条件是 min < array[i]，则所有元素都大于0，最终min=4；如果条件是 min = array[i]，这不是比较操作而是赋值，语法有误。因此正确答案是D。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在下列代码的横线处填写（ ），可以使得输 出是“120”。</div>
-        <div class="quiz-options">
-            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>A</span>
-                <span>res += array[i];</span>
+        <div class="quiz-question">（2023年9月）在下列代码的横线处填写（ ），可以使得输出是“120”。</div>
+        <div class="quiz-layout">
+            <div class="quiz-layout-left">
+                <img src="data/level3/lesson2/s2.png" alt="题目代码">
             </div>
-            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>res *= array[i]</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>res = array[i]</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>以上均不对。</span>
+            <div class="quiz-layout-left">
+                <div class="quiz-options">
+                    <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>A</span>
+                        <span>res += array[i];</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>B</span>
+                        <span>res *= array[i]</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>C</span>
+                        <span>res = array[i]</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>D</span>
+                        <span>以上均不对。</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
-            【解析】本题缺少完整代码，无法判断正确答案。请参考题目原始代码进行分析。
+        <div class="quiz-analysis" id="analysis-8">
+            【解析】从代码可知数组元素为{1, 2, 3, 4, 5}，初始res=0。选项A累加结果为15，选项B累乘结果为0（0乘以任何数都是0），选项C最后赋值为5。三个选项都无法输出120，所以答案选D。
         </div>
     </div>
 </div>
@@ -280,120 +294,98 @@
 <div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（2023年9月）在下列代码的输出是（ ）。</div>
-        <div class="quiz-options">
-            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>A</span>
-                <span>15</span>
+        <div class="quiz-layout">
+            <div class="quiz-layout-left">
+                <img src="data/level3/lesson2/s3.png" alt="题目代码">
             </div>
-            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>28</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>45</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>55</span>
+            <div class="quiz-layout-left">
+                <div class="quiz-options">
+                    <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>A</span>
+                        <span>15</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>B</span>
+                        <span>28</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>C</span>
+                        <span>45</span>
+                    </div>
+                    <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                        <span>D</span>
+                        <span>55</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
-            【解析】本题缺少完整代码，无法判断正确答案。请参考题目原始代码进行分析。
+        <div class="quiz-analysis" id="analysis-9">
+            【解析】从代码可知数组元素为{0, 1, 1, 2, 2, 4, 2, 6, 4, 6}，程序对数组元素进行累加求和。0+1+1+2+2+4+2+6+4+6=28，所以答案选B。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">分析代码执行的过程</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/7-分析代码执行的过程.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="分析代码执行的过程">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/7-分析代码执行的过程.png" alt="分析代码执行的过程">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">分析代码执行的过程</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/8-分析代码执行的过程.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="分析代码执行的过程">
-    </div>
-</div>
-
-<div class="slide">
-    <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在下列代码的输出是（ ）。</div>
-        <div class="quiz-options">
-            <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>A</span>
-                <span>15</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="10" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>28</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="10" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
-                <span>C</span>
-                <span>45</span>
-            </div>
-            <div class="quiz-option" data-quiz-index="10" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
-                <span>D</span>
-                <span>55</span>
-            </div>
-        </div>
-        <div class="quiz-feedback" id="feedback-10"></div>
-        <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
-            【解析】本题缺少完整代码，无法判断正确答案。请参考题目原始代码进行分析。
-        </div>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/8-分析代码执行的过程.png" alt="分析代码执行的过程">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">逛商场</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/9-逛商场.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="逛商场">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/9-逛商场.png" alt="逛商场">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">逛商场</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/10-逛商场.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="逛商场">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/10-逛商场.png" alt="逛商场">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">思路分析</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/11-思路分析.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="思路分析">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/11-思路分析.png" alt="思路分析">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">输入所需数据</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/12-输入所需数据.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="输入所需数据">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/12-输入所需数据.png" alt="输入所需数据">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">计数</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/13-计数.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="计数">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/13-计数.png" alt="计数">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">输出计数结果</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/14-输出计数结果.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="输出计数结果">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/14-输出计数结果.png" alt="输出计数结果">
     </div>
 </div>
 
 <div class="slide">
     <h2 class="slide-subtitle-center">完整代码</h2>
-    <div style="display: flex; justify-content: center; align-items: center; height: calc(100% - 80px);">
-        <img src="data/level3/lesson2/15-完整代码.png" style="max-width: 90%; max-height: 100%; object-fit: contain;" alt="完整代码">
+    <div class="slide-image-container">
+        <img src="data/level3/lesson2/15-完整代码.png" alt="完整代码">
     </div>
 </div>

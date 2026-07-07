@@ -13,7 +13,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-0">
+        <div class="quiz-analysis" id="analysis-0">
             【解析】本题考查指针类型匹配。指针变量的类型必须与所指向变量的类型一致，例如int*指针只能指向int类型变量，不能指向double类型变量。
         </div>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-1">
+        <div class="quiz-analysis" id="analysis-1">
             【解析】本题考查指针变量声明语法。正确的指针声明格式是"数据类型 *指针名;"，其中*表示该变量是指针类型。选项A符合语法规范。
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-2">
+        <div class="quiz-analysis" id="analysis-2">
             【解析】本题考查指针变量的基本概念。int *p = &n; 表示p存储的是n的地址，即p的值等于&n。p指向的值是*p，等于n的值。所以选项B正确。
         </div>
     </div>
@@ -100,7 +100,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-3">
+        <div class="quiz-analysis" id="analysis-3">
             【解析】本题考查指针变量的基本概念。int *p = &n; 表示p存储的是n的地址，即p的值等于&n。p指向的值是*p，等于n的值。所以选项B正确。
         </div>
     </div>
@@ -129,7 +129,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-4">
+        <div class="quiz-analysis" id="analysis-4">
             【解析】本题考查指针变量的创建和赋值。选项B正确，先定义int变量a，然后定义int指针p1并初始化为a的地址。选项C和D错误，因为int指针不能指向double类型变量。
         </div>
     </div>
@@ -158,7 +158,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-5">
+        <div class="quiz-analysis" id="analysis-5">
             【解析】本题考查指针类型判断。int *p = &a; 定义了一个指向int类型的指针p，p存储的是变量a的地址，而不是a的数值。所以选项B正确。
         </div>
     </div>
@@ -187,7 +187,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-6">
+        <div class="quiz-analysis" id="analysis-6">
             【解析】本题考查指针变量的存储内容。p是指针变量，存储的是变量a的地址，而不是a的值50。*p才是指向的值，等于50。所以选项D的说法错误。
         </div>
     </div>
@@ -208,7 +208,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-7">
+        <div class="quiz-analysis" id="analysis-7">
             【解析】本题考查指针变量的存储空间。指针变量本身也占用内存空间，在32位系统中占4字节，在64位系统中占8字节。所以题目说法错误。
         </div>
     </div>
@@ -237,7 +237,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-8">
+        <div class="quiz-analysis" id="analysis-8">
             【解析】本题考查指针变量的大小。指针变量的大小与编译器有关：32位编译器下占4字节，64位编译器下占8字节。所以选项D正确。
         </div>
     </div>
@@ -266,7 +266,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-9">
+        <div class="quiz-analysis" id="analysis-9">
             【解析】本题考查空指针概念。int *p = nullptr; 定义了一个指向int类型的空指针，p本身是int*类型，指向的类型是int。nullptr是C++关键字，表示空地址，不是随机地址。访问空指针会导致运行时错误而非编译错误。所以选项B正确。
         </div>
     </div>
@@ -295,7 +295,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-10">
+        <div class="quiz-analysis" id="analysis-10">
             【解析】本题考查指针的基本概念。指针变量可以指向指针变量，即可以定义指针的指针（int **pp）。所以选项C的叙述不正确。
         </div>
     </div>
@@ -324,7 +324,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-11"></div>
         <button class="btn-submit" id="submit-11" onclick="coursePlayer.submitQuiz(11)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-11">
+        <div class="quiz-analysis" id="analysis-11">
             【解析】本题考查指针运算。p=&x使p指向x的地址0x6ffe14。p++使指针移动一个int存储单元，在32位系统中int占4字节，所以p变为0x6ffe18。
         </div>
     </div>
@@ -353,7 +353,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-12"></div>
         <button class="btn-submit" id="submit-12" onclick="coursePlayer.submitQuiz(12)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-12">
+        <div class="quiz-analysis" id="analysis-12">
             【解析】本题考查地址和值的区别。&a是变量a的地址，p是指针变量存储的地址，&*p等价于p（先解引用再取地址）。而a是变量的值，*p是指针指向的值。所以选项D全部表示地址。
         </div>
     </div>
@@ -382,7 +382,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-13"></div>
         <button class="btn-submit" id="submit-13" onclick="coursePlayer.submitQuiz(13)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-13">
+        <div class="quiz-analysis" id="analysis-13">
             【解析】本题考查指针赋值操作。pk是指针变量存储的是地址（通常是4或8字节），而k是int类型（4字节），将地址赋值给int变量会导致类型不匹配，不能正确执行。选项D错误。
         </div>
     </div>
@@ -411,7 +411,7 @@
         </div>
         <div class="quiz-feedback" id="feedback-14"></div>
         <button class="btn-submit" id="submit-14" onclick="coursePlayer.submitQuiz(14)" disabled>提交答案</button>
-        <div style="margin-top:15px;padding:15px;background:#e8f5e9;border-radius:8px;border-left:4px solid #4caf50;display:none;" id="analysis-14">
+        <div class="quiz-analysis" id="analysis-14">
             【解析】本题考查通过指针修改变量值。*p = 200; 通过指针p修改其所指向的变量a的值为200，这样输出a就是200。选项B将200赋值给指针本身（地址），选项C试图修改变量地址（非法），选项D将值赋给表达式（非法）。所以选项A正确。
         </div>
     </div>
