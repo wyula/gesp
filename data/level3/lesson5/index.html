@@ -1,4 +1,32 @@
 <div class="slide">
+    <h2 class="slide-subtitle-center">计算机只认识二进制数</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/1-计算机只认识二进制数.png" alt="计算机只认识二进制数">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">二进制的计数规则</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/2-二进制的计数规则.png" alt="二进制的计数规则">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">二进制与十进制转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/3-二进制与十进制转换.png" alt="二进制与十进制转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">二进制数与十进制数转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/3-二进制数与十进制数转换.png" alt="二进制数与十进制数转换">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（2023年6月）计算机中存储的数据都是二进制形式。因此，在使用 C++ 语言编写程序时，将所有十进制数改写为相同数值的二进制数，会使得程序 运行效率更高。</div>
         <div class="quiz-options">
@@ -14,7 +42,7 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】错误。程序的运行效率取决于编译后的机器码优化，与源代码中使用十进制还是二进制无关。编译器会自动将源代码中的数字转换为二进制存储和执行。
         </div>
     </div>
 </div>
@@ -43,8 +71,29 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。37 = 32 + 4 + 1 = 2^5 + 2^2 + 2^0 = 100101。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">带小数部分的转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/4-带小数部分的转换.png" alt="带小数部分的转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">带小数部分的转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/5-带小数部分的转换.png" alt="带小数部分的转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">带小数部分的转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/6-带小数部分的转换.png" alt="带小数部分的转换">
     </div>
 </div>
 
@@ -64,7 +113,7 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】错误。101.101B = 4 + 0 + 1 + 0.5 + 0 + 0.125 = 5.625，不是5.005。
         </div>
     </div>
 </div>
@@ -93,7 +142,7 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项D正确。11.01B = 2 + 1 + 0 + 0.25 = 3.25。
         </div>
     </div>
 </div>
@@ -122,8 +171,36 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-4">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项A正确。13 = 8 + 4 + 1 = 1101B，0.375 = 0.25 + 0.125 = 0.011B，所以13.375 = 1101.011B。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">机器数和真值</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/7-机器数和真值.png" alt="机器数和真值">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">原码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/8-原码.png" alt="原码">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">反码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/9-反码.png" alt="反码">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">补码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson5/10-补码.png" alt="补码">
     </div>
 </div>
 
@@ -143,7 +220,7 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-5">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】错误。数据编码方式有很多种，除了原码、反码、补码外，还有ASCII码、Unicode、BCD码、浮点数编码等。
         </div>
     </div>
 </div>
@@ -164,7 +241,7 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-6">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】错误。负数的补码是对原码的**数值位**按位取反并加1，符号位保持不变。如果对包括符号位在内的所有位取反加1，结果就不对了。
         </div>
     </div>
 </div>
@@ -193,7 +270,7 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-7">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】选项A正确。负数的反码是原码的数值位取反（符号位不变），补码是反码加1。
         </div>
     </div>
 </div>
@@ -222,7 +299,7 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。补码10101011，符号位为1表示负数。求原码：数值位取反得0101010，加1得0101011=43，所以原码为10101011=-43？不对，重新计算：补码10101011，反码=补码-1=10101010，原码=符号位不变，数值位取反=11010101=-101。等等，让我重新算：补码10101011，求原码的方法是补码的补码=原码。补码10101011取反=01010100，加1=01010101=85，所以原码=10101011表示-85。
         </div>
     </div>
 </div>
@@ -245,13 +322,13 @@
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>10000111 补码的补码， 即为原码！</span>
+                <span>10000111</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-9">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项D正确。补码11111001，求原码的方法是补码的补码=原码。补码11111001取反=00000110，加1=00000111=7，所以原码=10000111=-7。
         </div>
     </div>
 </div>

@@ -686,8 +686,9 @@ body {
 .slide-image-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: calc(100% - 80px);
+    padding-top: 20px;
 }
 
 .slide-image-container img {

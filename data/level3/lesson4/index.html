@@ -1,4 +1,25 @@
 <div class="slide">
+    <h2 class="slide-subtitle-center">string类型数据的初始化</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/1-string类型数据的初始化.png" alt="string类型数据的初始化">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">遍历字符串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/2-遍历字符串.png" alt="遍历字符串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">string字符串的输入</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/3-string字符串的输入.png" alt="string字符串的输入">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">(2023年6月)字符常量'\0'常用来表示字符串结束， 它和字符常量'0'是不同的。</div>
         <div class="quiz-options">
@@ -14,7 +35,7 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】字符串是以'\0'结尾的字符数组。string类是C++标准库提供的字符串处理类，支持各种字符串操作。
+            【解析】正确。'\0'是空字符，ASCII值为0；'0'是字符0，ASCII值为48。两者完全不同。
         </div>
     </div>
 </div>
@@ -35,14 +56,49 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】错误。字符常量'3'的ASCII值是51，而int常量3的值就是3，两者的值完全不同。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">字符串常用操作函数</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/4-字符串常用操作函数.png" alt="字符串常用操作函数">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">substr()</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/5-substr() .png" alt="substr()">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">insert()</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/6-insert() .png" alt="insert()">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">erase()</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/7-erase().png" alt="erase()">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">replace()</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/8-replace() .png" alt="replace()">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 以下哪个函数是用来在 string 类中删除字符（ D ）。</div>
+        <div class="quiz-question">课堂练习 以下哪个函数是用来在 string 类中删除字符（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -64,24 +120,28 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项D正确。empty()用于判断字符串是否为空；replace()用于替换字符串；substr()用于截取子串；erase()用于删除字符。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 执行以下代码，输出结果是( C )</div>
+        <div class="quiz-question">课堂练习 执行以下代码，输出结果是( ) string s="Hello,C++"; string s1 = s.substr(3,5); cout << s1;</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>llo,C+ string s="Hello,C++";</span>
+                <span>llo,C+</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>IIo,C string s1= s.substr(3,5); cout <<s1; C. Io,C+</span>
+                <span>llo,C++</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>Io,C+</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
                 <span>Io,C++</span>
             </div>
@@ -89,7 +149,91 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项A正确。substr(pos, len)从位置pos开始截取长度为len的子串。s.substr(3,5)从索引3开始截取5个字符，即"llo,C"。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">文本替换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/9-文本替换.png" alt="文本替换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">文本替换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/10-文本替换.png" alt="文本替换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">输入三个字符串s,s1,s2</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/11-输入三个字符串s,s1,s2.png" alt="输入三个字符串s,s1,s2">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">输入三个字符串s,s1,s2</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/12-输入三个字符串s,s1,s2.png" alt="输入三个字符串s,s1,s2">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">输出替换后的s</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/13-输出替换后的s.png" alt="输出替换后的s">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/14-完整代码.png" alt="完整代码">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">密码合规检测</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/15-(2023年6月)密码合规检测.png" alt="密码合规检测">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">密码合规检测</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/16-(2023年6月)密码合规检测.png" alt="密码合规检测">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">修改函数check</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/17-修改函数check.png" alt="修改函数check">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">根据输入的长串截取子串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/18-根据输入的长串截取子串.png" alt="根据输入的长串截取子串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/19-完整代码.png" alt="完整代码">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson4/20-完整代码.png" alt="完整代码">
     </div>
 </div>

@@ -1,6 +1,48 @@
 <div class="slide">
+    <h2 class="slide-subtitle-center">八进制和十六进制</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/1-八进制和十六进制.png" alt="八进制和十六进制">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">计算机的进制对照关系</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/2-计算机的进制对照关系.png" alt="计算机的进制对照关系">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">八进制数与十进制数转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/3-八进制数与十进制数转换.png" alt="八进制数与十进制数转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">八进制数与二进制数转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/4-八进制数与二进制数转换.png" alt="八进制数与二进制数转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">十六进制数与十进制数转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/5-十六进制数与十进制数转换.png" alt="十六进制数与十进制数转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">十六进制数与二进制数转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/6-十六进制数与二进制数转换.png" alt="十六进制数与二进制数转换">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）C++语言中，表达式的值只有true和false两种。</div>
+        <div class="quiz-question">（2023年9月）在C++语言中，表达式 (0xff == 255) 的值为 true 。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -14,14 +56,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】正确。0xff是十六进制表示，等于十进制的255，所以表达式的值为true。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）C++语言中，逻辑值只有两种：真（true）和假（false）。</div>
+        <div class="quiz-question">（2023年6月）在 C++语言中，表达式(0xf == 015)的值为 true。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -35,57 +77,309 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】正确。0xf是十六进制等于十进制15，015是八进制也等于十进制15，所以两者相等。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在 C++语言中，表达式1&gt;2&gt;3的值为true。</div>
+        <div class="quiz-question">（样题）下列关于十六进制的描述中，正确的是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>正确</span>
+                <span>使用 0-9 和 A-F 表示</span>
             </div>
             <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>错误</span>
+                <span>使用 0-9 和 A-E 表示</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>使用 1-9 和 A-F 表示</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>使用 1-9 和 A-E 表示</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项A正确。十六进制使用0-9表示数字0-9，使用A-F表示数字10-15。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 假设int a=3,b=4,c=5; 则表达式!(a+b)+c-1&&b+c/2的值是（ ）。</div>
+        <div class="quiz-question">（2023年9月）已知大写字符 'A' 的ASCII编码的十六进制表示为0x41，则字符 'L' 的ASCII编码的十六进制表示为（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>1</span>
+                <span>4A</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>2</span>
+                <span>4B</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>3</span>
+                <span>4C</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>0</span>
+                <span>52</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项C正确。'A'是0x41，'L'在字母表中比'A'大11位，41+11=52，52的十六进制是0x4C。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）已知大写字符'A'的 ASCII 编码的十六进制表示为 0x41，则字符'F'的 ASCII 编码的十六进制表示为（ ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>46</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>47</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>48</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="4" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>49</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-4"></div>
+        <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
+        <div class="quiz-analysis" id="analysis-4">
+            【解析】选项A正确。'A'是0x41，'F'在字母表中比'A'大5位，41+5=46，所以'F'的ASCII码是0x46。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年6月）下列关于进制的叙述，不正确的是（ ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>正整数的二进制表示中只会出现 0 和 1。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>10 不是 2 的整数次幂，所以十进制数无法转换为二进制数。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>从二进制转换为 8 进制时，可以很方便地由低到高将每 3 位二进制位转换为对应的一位 8 进制位。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>从二进制转换为 16 进制时，可以很方便地由低到高将每 4 位二进制位转换为对应的一位 16 进制位。</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-5"></div>
+        <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
+        <div class="quiz-analysis" id="analysis-5">
+            【解析】选项B不正确。任何十进制数都可以转换为二进制数，与10是否是2的整数次幂无关。十进制转二进制采用除2取余法。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">（2023年9月）下列关于进制的叙述，正确的是（ ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>只有十进制和二进制能够用来表示小数，八进制和十六进制不可以。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>常用的进制包括二进制、八进制、十进制、十六进制，其他进制在日常生活中很少使用。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>对任意正整数，其二进制表示不会比它的十进制表示更短。</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>正整数的八进制表示中，每一位可能出现的最大数字是8。</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-6"></div>
+        <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
+        <div class="quiz-analysis" id="analysis-6">
+            【解析】选项C正确。二进制基数最小，相同数值需要的位数最多，所以二进制表示不会比十进制表示更短。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 二进制数1101111转换为十六进制是（ ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>157</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>111</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>6f</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>3f</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-7"></div>
+        <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
+        <div class="quiz-analysis" id="analysis-7">
+            【解析】选项C正确。从右往左每4位一组：0110 1111 = 6F。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">带小数部分的转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/7-带小数部分的转换.png" alt="带小数部分的转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">带小数部分的转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/8-带小数部分的转换.png" alt="带小数部分的转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">带小数部分的转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/9-带小数部分的转换.png" alt="带小数部分的转换">
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 与二进制小数0.1相等的八进制数是（ ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>0.8</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>0.4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>0.2</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>0.1</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-8"></div>
+        <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
+        <div class="quiz-analysis" id="analysis-8">
+            【解析】选项B正确。二进制0.1 = 0.5(十进制)，八进制0.4 = 4×8^(-1) = 0.5(十进制)。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <div class="quiz-container">
+        <div class="quiz-question">课堂练习 以下进制数字中，选项的值与其它三项不同的是（ ）。</div>
+        <div class="quiz-options">
+            <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>10111(2)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>23(10)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>27(8)</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>18(16)</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="feedback-9"></div>
+        <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
+        <div class="quiz-analysis" id="analysis-9">
+            【解析】选项D不同。A=10111B=23D，B=23D，C=27O=23D，D=18H=24D。
+        </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">进制判断（2023年9月）</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/10-进制判断（2023年9月）.png" alt="进制判断（2023年9月）">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">进制判断</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/11-进制判断.png" alt="进制判断">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/12-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">输入的n行字符串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/13-输入的n行字符串.png" alt="输入的n行字符串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">求出每个字符串中的最大字符</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/14-求出每个字符串中的最大字符.png" alt="求出每个字符串中的最大字符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">判断最大字符是否在N进制字符范围内</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/15-判断最大字符是否在N进制字符范围内.png" alt="判断最大字符是否在N进制字符范围内">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson6/16-完整代码.png" alt="完整代码">
     </div>
 </div>
