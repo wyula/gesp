@@ -35,7 +35,7 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】在C++中，数组一旦定义，其大小在编译时就已确定，运行时不能改变。数组的大小必须是编译时常量表达式。
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】数组定义语法：数据类型数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】选项A：int array[5]; 是正确的一维数组定义，长度为5。选项B：int array[]; 省略长度但未提供初始值，错误。选项C：int[5] array; 语法错误，类型名不能放在括号前。选项D：int[] array; 这是Java语法，C++不支持。
         </div>
     </div>
 </div>
@@ -93,7 +93,7 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】选项A：int a[]; 省略长度但未提供初始值，错误。选项B：int b['3']; 字符'3'会被自动转换为ASCII码51，作为数组长度是合法的常量表达式。选项C：int c[3.0]; 长度不能是浮点数，错误。选项D：int[3] d; 语法错误，类型名不能放在括号前。
         </div>
     </div>
 </div>
@@ -135,7 +135,7 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】在C++中，定义数组时[]中不一定要指定元素个数，可以省略长度，但必须同时提供初始值列表，编译器会根据初始值个数自动确定数组长度。例如：int arr[] = {1,2,3}; 是合法的。
         </div>
     </div>
 </div>
@@ -235,7 +235,7 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-6">
-            【解析】数组下标从0开始计数。长度为n的数组，下标范围是0到n-1。不能使用浮点数作为下标。
+            【解析】在C++中，数组下标从0开始计数，长度为n的数组，合法的下标范围是0到n-1，不包括n。题目中说下标范围从0到n（包括n）是错误的，因为array[n]会越界访问。
         </div>
     </div>
 </div>
@@ -256,7 +256,7 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-7">
-            【解析】数组下标从0开始计数。长度为n的数组，下标范围是0到n-1。不能使用浮点数作为下标。
+            【解析】在C++中，数组下标从0开始计数，而不是从1开始。例如，int arr[3]; 的三个元素分别是arr[0]、arr[1]、arr[2]。
         </div>
     </div>
 </div>
@@ -277,7 +277,7 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-8">
-            【解析】数组下标从0开始计数。长度为n的数组，下标范围是0到n-1。不能使用浮点数作为下标。
+            【解析】在C++中，数组下标必须是整数类型（int、long等），不能是浮点数。使用3.0作为下标会导致编译错误或运行时未定义行为。
         </div>
     </div>
 </div>
@@ -298,7 +298,7 @@
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-9">
-            【解析】数组下标从0开始计数。长度为n的数组，下标范围是0到n-1。不能使用浮点数作为下标。
+            【解析】在C++中，字符类型（char）本质上是整数类型，使用字符作为数组下标时，会自动转换为对应的ASCII码值。例如，'0'的ASCII码是48，'3'的ASCII码是51，这些整数值可以作为数组下标使用。因此使用字符作为数组下标是合法的。
         </div>
     </div>
 </div>
