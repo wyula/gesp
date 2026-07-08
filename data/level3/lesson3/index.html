@@ -1,4 +1,25 @@
 <div class="slide">
+    <h2 class="slide-subtitle-center">字符串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/1-字符串.png" alt="字符串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">使用字符数组保存字符串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/2-使用字符数组保存字符串.png" alt="使用字符数组保存字符串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">字符数组初始化方式</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/3-字符数组初始化方式 .png" alt="字符数组初始化方式">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（样题）在 C++语言中，字符串是以'\0'结尾的字符数组。</div>
         <div class="quiz-options">
@@ -14,7 +35,7 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】字符串是以'\0'结尾的字符数组。string类是C++标准库提供的字符串处理类，支持各种字符串操作。
+            【解析】在C++中，传统的C风格字符串是以'\0'（空字符）结尾的字符数组。'\0'的ASCII值为0，用于标识字符串的结束位置。
         </div>
     </div>
 </div>
@@ -35,7 +56,7 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】错误。字符数组不一定必须以'\0'结尾。只有当字符数组用于存储字符串时，才需要以'\0'结尾来标识字符串结束。如果只是普通的字符数组，不需要'\0'。
         </div>
     </div>
 </div>
@@ -64,7 +85,7 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】选项C正确。A选项中数组长度必须是常量；B选项中"hello"包含6个字符（含'\0'），而数组长度只有5；D选项语法错误，数组名后面必须跟方括号。
         </div>
     </div>
 </div>
@@ -93,7 +114,7 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】字符串是以'\0'结尾的字符数组。string类是C++标准库提供的字符串处理类，支持各种字符串操作。
+            【解析】选项D正确。C++中字符串是以'\0'（空字符，ASCII码为0）作为结束标志的。'\n'是换行符，' '是空格，'0'是字符0，都不是字符串结束标志。
         </div>
     </div>
 </div>
@@ -122,8 +143,15 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-4">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】选项B错误。C++中数组的大小必须是编译时常量，不能是变量。选项A正确（部分初始化），选项C正确（省略长度），选项D正确（"hello bit"共9个字符，数组长度10足够）。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">输入字符串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/4-输入字符串.png" alt="输入字符串">
     </div>
 </div>
 
@@ -151,8 +179,22 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-5">
-            【解析】字符串是以'\0'结尾的字符数组。string类是C++标准库提供的字符串处理类，支持各种字符串操作。
+            【解析】选项C正确。cin>>遇到空格会停止读取；cin.get()只能读取一个字符；cin.getline()可以读取整行，包括空格。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">字符数组的操作函数</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/5-字符数组的操作函数.png" alt="字符数组的操作函数">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">遍历字符串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/6-遍历字符串.png" alt="遍历字符串">
     </div>
 </div>
 
@@ -180,7 +222,7 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-6">
-            【解析】字符串是以'\0'结尾的字符数组。string类是C++标准库提供的字符串处理类，支持各种字符串操作。
+            【解析】选项D正确。strlen()是C语言标准库函数，用于获取C风格字符串的长度（不包括'\0'）。length()是string类的成员函数。
         </div>
     </div>
 </div>
@@ -209,7 +251,7 @@
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-7">
-            【解析】数组定义语法：数据类型 数组名[长度]。长度必须是大于0的整数常量。可以省略长度，但必须提供初始值列表。
+            【解析】选项C正确。"Hello"包含5个字母字符和1个'\0'结束符，共6个字符。所以字符数组str的长度为6。
         </div>
     </div>
 </div>
@@ -220,34 +262,60 @@
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>int i = 0; i < strlen(str); i++ using namespace std; int main() {</span>
+                <span>int i = 0; i < strlen(str); i++</span>
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>int i = 0; str[i] != '\0'; i++ char str[] = "1234567"; for (_________________) // 在此处填入代码 C. int i = 1; i <= 7; i += 2 cout << str[i];</span>
+                <span>int i = 0; str[i] != '\0'; i++</span>
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>int i = 1; i <= 7; i += 2</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>int i = 0; i <= 6; i += 2 return 0; }</span>
+                <span>int i = 0; i <= 6; i += 2</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项D正确。字符串"1234567"的索引为0-6，要输出奇数位字符（1,3,5,7），需要访问索引0,2,4,6，即从0开始，步长为2，条件i<=6。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">strupr()</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/7-strupr() .png" alt="strupr()">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">strlwr()</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/8-strlwr().png" alt="strlwr()">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 下面代码的结果是（ ） #include <stdio.h> #include <string.h> int main(){ A. 3 char arr[] = {'b', 'i', 't'};</div>
+        <div class="quiz-question">课堂练习 下面代码的结果是（ ） #include <stdio.h> #include <string.h> int main(){ char arr[] = {'b', 'i', 't'}; printf("%d\n", strlen(arr)); return 0; }</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>4 printf("%d\n", strlen(arr)); return 0; C. 随机值 }</span>
+                <span>A</span>
+                <span>3</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>4</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>随机值</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
                 <span>5</span>
             </div>
@@ -255,7 +323,7 @@
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-9">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项C正确。strlen()函数从数组起始位置开始计数，直到遇到'\0'为止。由于arr数组没有'\0'结尾，strlen()会继续向后查找，直到找到内存中的'\0'，结果是随机值。
         </div>
     </div>
 </div>
@@ -284,7 +352,98 @@
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-10">
-            【解析】请仔细阅读题目描述，结合所学知识判断正误。注意C++语言的语法规则和特性。
+            【解析】选项D错误。数组名是常量指针，不能直接用赋值运算符赋值。要复制字符串应该使用strcpy()函数。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">密码合规检测</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/9-(2023年6月)密码合规检测.png" alt="密码合规检测">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">密码合规检测</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/10-(2023年6月)密码合规检测.png" alt="密码合规检测">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">密码合规检测</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/11-(2023年6月)密码合规检测.png" alt="密码合规检测">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/12-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">根据输入的长串截取子串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/13-根据输入的长串截取子串.png" alt="根据输入的长串截取子串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">根据输入的长串截取子串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/14-根据输入的长串截取子串.png" alt="根据输入的长串截取子串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">根据输入的长串截取子串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/15-根据输入的长串截取子串.png" alt="根据输入的长串截取子串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">定义判断是否合法函数check</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/16-定义判断是否合法函数check.png" alt="定义判断是否合法函数check">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">定义判断是否合法函数check</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/17-定义判断是否合法函数check.png" alt="定义判断是否合法函数check">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">定义判断是否合法函数check</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/18-定义判断是否合法函数check.png" alt="定义判断是否合法函数check">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">根据输入的长串截取子串</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/19-根据输入的长串截取子串.png" alt="根据输入的长串截取子串">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/20-完整代码.png" alt="完整代码">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson3/21-完整代码.png" alt="完整代码">
     </div>
 </div>
