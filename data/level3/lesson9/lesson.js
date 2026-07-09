@@ -3,7 +3,7 @@ window.lessonData = {
     answers: {
         0: 1,
         1: 1,
-        2: 0,
+        2: 1,
         3: 1
     }
 };

@@ -1,4 +1,25 @@
 <div class="slide">
+    <h2 class="slide-subtitle-center">左移运算符&lt;&lt;</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/1-左移运算符<<.png" alt="左移运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">左移运算符&lt;&lt;</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/2-左移运算符<<.png" alt="左移运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">左移运算符&lt;&lt;</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/3-左移运算符<<.png" alt="左移运算符">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
         <div class="quiz-question">（样题）一个 int 类型的值乘以 8，等价于以下哪个位运算？（ ）</div>
         <div class="quiz-options">
@@ -22,7 +43,7 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项A正确。每左移1位相当于乘以2，左移3位相当于乘以2³=8。
         </div>
     </div>
 </div>
@@ -41,24 +62,24 @@
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span><</span>
+                <span>&lt;</span>
             </div>
             <div class="quiz-option" data-quiz-index="1" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span><<</span>
+                <span>&lt;&lt;</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。~是按位取反运算符，&lt;是小于运算符，&lt;&lt;是左移运算符，~~不是C++运算符。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在C++语⾔中，所有int类型的值，经过若干次左移 操作（<<）后，它们的值总会变为0。</div>
+        <div class="quiz-question">（2023年9月）在C++语言中，所有int类型的值，经过若干次左移操作（&lt;&lt;）后，它们的值总会变为0。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -72,14 +93,35 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】错误。-1的补码是全1，左移后仍然是全1（补1），永远不会变为0。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">右移运算符&gt;&gt;</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/4-右移运算符>>.png" alt="右移运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">右移运算符&gt;&gt;</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/5-右移运算符>>.png" alt="右移运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">运算符的优先级</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/6-运算符的优先级.png" alt="运算符的优先级">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）表达式(7 >> 2)的计算结果为 1.75，且结果类型为 double。</div>
+        <div class="quiz-question">（样题）表达式(7 &gt;&gt; 2)的计算结果为 1.75，且结果类型为 double。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -93,14 +135,14 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】错误。右移运算的结果类型仍然是int，7&gt;&gt;2=1（整数除法），不是1.75。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）一个 int 类型的值，做以下哪个操作，一定会 变回原来的值？（ ）</div>
+        <div class="quiz-question">（2023年6月）一个 int 类型的值，做以下哪个操作，一定会变回原来的值？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -122,22 +164,22 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-4">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项D正确。根据异或的性质：a^b^b=a，所以异或两次相同的值一定会恢复原值。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果 a 为 int 类型的变量，下列哪个表达式可以正确 求出满足"小于等于 a 且是 4 的倍数"的整数中最大的？（ ）</div>
+        <div class="quiz-question">（2023年6月）如果 a 为 int 类型的变量，下列哪个表达式可以正确求出满足"小于等于 a 且是 4 的倍数"的整数中最大的？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>(a&(~3))</span>
+                <span>(a&amp;(~3))</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>((a<<2)>>2)</span>
+                <span>((a&lt;&lt;2)&gt;&gt;2)</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
@@ -151,20 +193,28 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-5">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项A正确。~3将低2位置为0，a&amp;(~3)将低2位清零，得到小于等于a且是4的倍数的最大整数。D是向上取整，B可能溢出。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在下列代码的横线处填写（ ），可以使得输出是"20 10"。 #include <iostream> using namespace std; int main(){ int a=10,b=20;</div>
+        <div class="quiz-question">（2023年9月）在下列代码的横线处填写（ ），可以使得输出是"20 10"。<br>#include &lt;iostream&gt;<br>using namespace std;<br>int main(){<br>int a=10,b=20;<br>a=(a&lt;&lt;8)|b;<br>____;//在此处填入代码<br>cout&lt;&lt;a&lt;&lt;" "&lt;&lt;b&lt;&lt;endl;<br>return 0;<br>}</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
-                <span>B</span>
-                <span>b = a >> 8; a = a & 0xff;</span>
+                <span>A</span>
+                <span>a = a &gt;&gt; 8; b = a &amp; 0xff</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>b = a &gt;&gt; 8; a = a &amp; 0xff;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>a = b; b = a &amp; 0xff;</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
                 <span>b = a; a = b</span>
             </div>
@@ -172,65 +222,114 @@
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-6">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项B正确。a=(10&lt;&lt;8)|20=2580。执行b=a&gt;&gt;8后b=10，执行a=a&amp;0xff后a=20，输出"20 10"。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">复合赋值运算符</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/7-复合赋值运算符.png" alt="复合赋值运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">运算符的优先级</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/8-运算符的优先级.png" alt="运算符的优先级">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 以下程序运行后的输出结果是（ D ）。 #include <iostream> using namespace std;</div>
+        <div class="quiz-question">课堂练习 以下程序运行后的输出结果是（ ）。<br>#include &lt;iostream&gt;<br>using namespace std;<br>int main(){<br>int x=3,y=2,z=1;<br>cout&lt;&lt;(x/y&amp;~z);<br>return 0;<br>}</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>3 int main(){</span>
+                <span>3</span>
             </div>
             <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>2 int x=3,y=2,z=1; cout<<(x/y&~z);</span>
+                <span>2</span>
             </div>
             <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>1 return 0;</span>
+                <span>1</span>
             </div>
             <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>0 }</span>
+                <span>0</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-7">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项D正确。x/y=3/2=1，~z=~1=-2，1&amp;-2=0。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">课堂练习 以下程序运行后的输出结果是（ C ）。 #include <iostream> using namespace std;</div>
+        <div class="quiz-question">课堂练习 以下程序运行后的输出结果是（ ）。<br>#include &lt;iostream&gt;<br>using namespace std;<br>int main(){<br>int a=4|3;<br>int b=5^7;<br>a&lt;&lt;=b;<br>cout&lt;&lt;a;<br>return 0;<br>}</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>7 int main(){ int a=4|3;</span>
+                <span>7</span>
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>16 int b=5^7;</span>
+                <span>16</span>
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>28 a<<=b; cout<<a;</span>
+                <span>28</span>
             </div>
             <div class="quiz-option" data-quiz-index="8" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>12 return 0; }</span>
+                <span>12</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项C正确。a=4|3=7，b=5^7=2，a&lt;&lt;=2后a=7×4=28。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">（样题）进制转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/9-（样题）进制转换.png" alt="进制转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">（样题）进制转换</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/10-（样题）进制转换.png" alt="进制转换">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/11-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/12-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">完整代码</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson8/13-完整代码.png" alt="完整代码">
     </div>
 </div>

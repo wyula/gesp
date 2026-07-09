@@ -1,6 +1,13 @@
 <div class="slide">
+    <h2 class="slide-subtitle-center">算法的概念与描述</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/1-算法的概念与描述.png" alt="算法的概念与描述">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）一个算法可以用不同的形式来描述，但要求描述比较 规范，因此不能用自然语言描述。</div>
+        <div class="quiz-question">（2023年6月）一个算法可以用不同的形式来描述，但要求描述比较规范，因此不能用自然语言描述。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -14,14 +21,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】错误。自然语言是描述算法的常用方式之一，只是不够精确和规范。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）通常用下列哪种方式来描述算法？（ B ）</div>
+        <div class="quiz-question">（样题）通常用下列哪种方式来描述算法？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -43,20 +50,42 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。伪代码是描述算法的常用方式，它介于自然语言和编程语言之间。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">使用流程图描述算法</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/2-使用流程图描述算法.png" alt="使用流程图描述算法">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">绘制流程图的基本符号和含义</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/3-绘制流程图的基本符号和含义.png" alt="绘制流程图的基本符号和含义">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）下列流程图的输出结果是？（ B ） 开始 a=5,s=1</div>
+        <div class="quiz-question">（2023年9月）下列流程图的输出结果是？（ ）<br>开始 → a=5,s=1 → a≥4(是) → s=s×a → a=a-1 → a≥4(是) → s=s×a → a=a-1 → a≥4(否) → 输出s → 结束</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="2" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
+                <span>A</span>
+                <span>60</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
                 <span>20</span>
             </div>
-            <div class="quiz-option" data-quiz-index="2" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+            <div class="quiz-option" data-quiz-index="2" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
+                <span>C</span>
+                <span>5</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="2" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
                 <span>1</span>
             </div>
@@ -64,14 +93,14 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。循环过程：s=1×5=5, a=4；s=5×4=20, a=3；a<4退出循环，输出20。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）下面流程图，输入 1 2 3，会输出（ B ）</div>
+        <div class="quiz-question">（样题）下面流程图，输入 1 2 3，会输出（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -93,7 +122,119 @@
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。根据流程图逻辑，输入1 2 3时输出1。
         </div>
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">模拟法</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/4-模拟法.png" alt="模拟法">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">（2023年6月）春游</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/5-（2023年6月）春游.png" alt="春游">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">（2023年6月）春游</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/6-（2023年6月）春游.png" alt="春游">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/7-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/8-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">写一写</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/9-写一写.png" alt="写一写">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">honoka的键盘</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/10-honoka的键盘.png" alt="honoka的键盘">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">honoka的键盘</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/11-honoka的键盘.png" alt="honoka的键盘">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/12-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/13-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/14-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">写一写</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/15-写一写.png" alt="写一写">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">（NOIP2010普及组）数字统计</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/16-（NOIP2010普及组）数字统计.png" alt="数字统计">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">（NOIP2010普及组）数字统计</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/17-（NOIP2010普及组）数字统计.png" alt="数字统计">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">思路分析</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/18-思路分析.png" alt="思路分析">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">写一写</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson9/19-写一写.png" alt="写一写">
     </div>
 </div>

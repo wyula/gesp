@@ -1,6 +1,41 @@
 <div class="slide">
+    <h2 class="slide-subtitle-center">位运算</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/1-位运算.png" alt="位运算">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">按位与运算符&amp;</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/2-按位与运算符&.png" alt="按位与运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">与运算的用途</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/3-与运算的用途.png" alt="与运算的用途">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">与运算的用途</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/4-与运算的用途.png" alt="与运算的用途">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">与运算的用途</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/5-与运算的用途.png" alt="与运算的用途">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）以下哪个不是C++语言中的运算符？（ D ）</div>
+        <div class="quiz-question">（2023年6月）以下哪个不是C++语言中的运算符？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="0" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -22,14 +57,14 @@
         <div class="quiz-feedback" id="feedback-0"></div>
         <button class="btn-submit" id="submit-0" onclick="coursePlayer.submitQuiz(0)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-0">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项D正确。&是按位与运算符，&&是逻辑与运算符，*是乘法运算符或指针运算符。**不是C++中的运算符。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）如果a为int类型的变量，且表达式((a & 1) == 0) 的 值为true，则说明a是偶数。</div>
+        <div class="quiz-question">（2023年9月）如果a为int类型的变量，且表达式((a &amp; 1) == 0) 的值为true，则说明a是偶数。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="1" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -43,7 +78,7 @@
         <div class="quiz-feedback" id="feedback-1"></div>
         <button class="btn-submit" id="submit-1" onclick="coursePlayer.submitQuiz(1)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-1">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】正确。二进制数的最低位为0表示偶数，为1表示奇数。a &amp; 1可以获取最低位，结果为0说明是偶数。
         </div>
     </div>
 </div>
@@ -64,14 +99,28 @@
         <div class="quiz-feedback" id="feedback-2"></div>
         <button class="btn-submit" id="submit-2" onclick="coursePlayer.submitQuiz(2)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-2">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】错误。位运算会对包括符号位在内的所有二进制位进行操作。负数以补码形式参与位运算。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">按位或运算符|</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/6-按位或运算符|.png" alt="按位或运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">或运算的用途</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/7-或运算的用途.png" alt="或运算的用途">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）如果 a是int类型的变量 ，下列哪个表达式的值 ⼀定为 true？（ ）</div>
+        <div class="quiz-question">（2023年9月）如果 a是int类型的变量，下列哪个表达式的值一定为 true？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="3" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -79,28 +128,28 @@
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>a*2/2==a 可能越界</span>
+                <span>a*2/2==a</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>(a&1)==1 如果a为偶数，结果为0</span>
+                <span>(a&amp;1)==1</span>
             </div>
             <div class="quiz-option" data-quiz-index="3" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>(a|1)==a+1 如果a为奇数，不成立</span>
+                <span>(a|1)==a+1</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-3"></div>
         <button class="btn-submit" id="submit-3" onclick="coursePlayer.submitQuiz(3)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-3">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项A正确。选项B中a*2可能导致整数溢出；选项C当a为偶数时结果为false；选项D当a为奇数时，a|1=a，不等于a+1。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果 a 为 int 类型的变量，且表达式((a | 3) == 3)的 值为 true，则说明 a 在从 0 到 3 之间（可能为 0、可能为 3）。</div>
+        <div class="quiz-question">（2023年6月）如果 a 为 int 类型的变量，且表达式((a | 3) == 3)的值为 true，则说明 a 在从 0 到 3 之间（可能为 0、可能为 3）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="4" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -114,14 +163,28 @@
         <div class="quiz-feedback" id="feedback-4"></div>
         <button class="btn-submit" id="submit-4" onclick="coursePlayer.submitQuiz(4)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-4">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】错误。a | 3 == 3说明a的低2位都是0，但高位可以是任意值，例如a=4（100），4|3=7≠3；但a=8（1000），8|3=11≠3。实际上当a的低2位为0时，a可以是0、4、8、12等。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">按位异或运算符^</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/8-按位异或运算符^.png" alt="按位异或运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">异或运算符的性质和用途</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/9-异或运算符的性质和用途.png" alt="异或运算符的性质和用途">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）如果 a 和 b 均为 int 类型的变量，下列表达式 能正确判断“a 等于 b”的是（ ）。</div>
+        <div class="quiz-question">（2023年6月）如果 a 和 b 均为 int 类型的变量，下列表达式能正确判断“a 等于 b”的是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="5" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -129,11 +192,11 @@
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>((a&b)==a)</span>
+                <span>((a&amp;b)==a)</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>((a^b)==0)说明每一位都相同</span>
+                <span>((a^b)==0)</span>
             </div>
             <div class="quiz-option" data-quiz-index="5" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
@@ -143,56 +206,86 @@
         <div class="quiz-feedback" id="feedback-5"></div>
         <button class="btn-submit" id="submit-5" onclick="coursePlayer.submitQuiz(5)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-5">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项C正确。a^b==0说明a和b的每一位都相同，即a等于b。A中a/b==1不能判断相等（如5/3=1）；B中a&amp;b==a只说明a是b的子集；D中a|b==b只说明b是a的超集。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使得输 出是"24 12"。 #include <iostream> using namespace std;</div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使得输出是"24 12"。<br>#include &lt;iostream&gt;<br>using namespace std;<br>int main(){<br>int a=12,b=24;<br>____;//在此处填入代码<br>a=a^b;<br>b=a^b;<br>cout&lt;&lt;a&lt;&lt;" "&lt;&lt;b&lt;&lt;endl;<br>return 0;<br>}</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="6" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
                 <span>a=a^b</span>
             </div>
             <div class="quiz-option" data-quiz-index="6" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>b=a^b</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
                 <span>a=a+b</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="6" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>b=a+b</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-6"></div>
         <button class="btn-submit" id="submit-6" onclick="coursePlayer.submitQuiz(6)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-6">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。这是经典的异或交换算法：第一步b=a^b=12^24；第二步a=a^b=12^(12^24)=24；第三步b=a^b=24^(12^24)=12。最终a=24,b=12。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使得输 出不是"31"。 #include <iostream> using namespace std;</div>
+        <div class="quiz-question">（2023年6月）在下列代码的横线处填写（ ），可以使得输出不是"31"。<br>#include &lt;iostream&gt;<br>using namespace std;<br>int main(){<br>int array[5]={1,2,4,8,16};<br>int res=0;<br>for(int i=0;i&lt;5;i++)<br>____;//在此处填写代码<br>cout&lt;&lt;res&lt;&lt;endl;<br>return 0;<br>}</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="7" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
                 <span>res=res+array[i]</span>
             </div>
             <div class="quiz-option" data-quiz-index="7" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
+                <span>B</span>
+                <span>res=res&amp;array[i]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
                 <span>res=res|array[i]</span>
+            </div>
+            <div class="quiz-option" data-quiz-index="7" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
+                <span>D</span>
+                <span>res=res^array[i]</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-7"></div>
         <button class="btn-submit" id="submit-7" onclick="coursePlayer.submitQuiz(7)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-7">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】选项B正确。数组元素是1、2、4、8、16（二进制分别是00001、00010、00100、01000、10000）。A加法得31；C或运算得31；D异或运算得31；B与运算每次都是0&amp;array[i]=0。
         </div>
     </div>
 </div>
 
 <div class="slide">
+    <h2 class="slide-subtitle-center">按位取反运算符~</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/10-按位取反运算符~.png" alt="按位取反运算符">
+    </div>
+</div>
+
+<div class="slide">
+    <h2 class="slide-subtitle-center">运算符的优先级</h2>
+    <div class="slide-image-container">
+        <img src="data/level3/lesson7/11-运算符的优先级.png" alt="运算符的优先级">
+    </div>
+</div>
+
+<div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（2023年9月）在C++语言中，位运算符也有类似“先乘除、后加减” 的优先级规则。因此， 使用时应注意合理使用括号。</div>
+        <div class="quiz-question">（2023年9月）在C++语言中，位运算符也有类似“先乘除、后加减”的优先级规则。因此，使用时应注意合理使用括号。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="8" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
@@ -206,26 +299,26 @@
         <div class="quiz-feedback" id="feedback-8"></div>
         <button class="btn-submit" id="submit-8" onclick="coursePlayer.submitQuiz(8)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-8">
-            【解析】本题考查相关知识点，请结合课堂内容进行分析。
+            【解析】正确。位运算符有明确的优先级：~（取反）优先级最高，然后是&lt;&lt;和&gt;&gt;，接着是&amp;，然后是^，最后是|。合理使用括号可以避免优先级错误。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）如果 a 和 b 均为 int 类型的变量，下列表达式能正确 判断“a 等于 0 且 b 等于 0”的是（ ）。</div>
+        <div class="quiz-question">（样题）如果 a 和 b 均为 int 类型的变量，下列表达式能正确判断“a 等于 0 且 b 等于 0”的是（ ）。</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="9" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>((~a)&&(~b))</span>
+                <span>((~a)&amp;&amp;(~b))</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
-                <span>((a&b)==0)</span>
+                <span>((a&amp;b)==0)</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="2" onclick="coursePlayer.selectQuizOption(this)">
                 <span>C</span>
-                <span>((a|b)==0) a,b都为0，才能等于0</span>
+                <span>((a|b)==0)</span>
             </div>
             <div class="quiz-option" data-quiz-index="9" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
@@ -235,18 +328,18 @@
         <div class="quiz-feedback" id="feedback-9"></div>
         <button class="btn-submit" id="submit-9" onclick="coursePlayer.submitQuiz(9)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-9">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项C正确。a|b==0说明a和b的所有位都是0，即a=0且b=0。A中~a当a=0时为-1，非零为true，但无法判断b；B中a&amp;b==0可能其中一个不为0；D中a^b==0只说明a==b，不一定都是0。
         </div>
     </div>
 </div>
 
 <div class="slide">
     <div class="quiz-container">
-        <div class="quiz-question">（样题）如果 a 为 int 类型的变量，下列哪个表达式可以正确求 出满足"大于等于 a 且是 4 的倍数"的整数中最小的？（ ）。</div>
+        <div class="quiz-question">（样题）如果 a 为 int 类型的变量，下列哪个表达式可以正确求出满足“大于等于 a 且是 4 的倍数”的整数中最小的？（ ）</div>
         <div class="quiz-options">
             <div class="quiz-option" data-quiz-index="10" data-option="0" onclick="coursePlayer.selectQuizOption(this)">
                 <span>A</span>
-                <span>(a&(~3))</span>
+                <span>(a&amp;(~3))</span>
             </div>
             <div class="quiz-option" data-quiz-index="10" data-option="1" onclick="coursePlayer.selectQuizOption(this)">
                 <span>B</span>
@@ -258,13 +351,13 @@
             </div>
             <div class="quiz-option" data-quiz-index="10" data-option="3" onclick="coursePlayer.selectQuizOption(this)">
                 <span>D</span>
-                <span>(a<<2)</span>
+                <span>(a&lt;&lt;2)</span>
             </div>
         </div>
         <div class="quiz-feedback" id="feedback-10"></div>
         <button class="btn-submit" id="submit-10" onclick="coursePlayer.submitQuiz(10)" disabled>提交答案</button>
         <div class="quiz-analysis" id="analysis-10">
-            【解析】int表示整型，double表示双精度浮点型，float表示单精度浮点型。数组元素类型必须一致。
+            【解析】选项C正确。A和B会向下取整（小于等于a的4的倍数）；D是乘以4；C的原理：(a-1)|3将低2位置为1，加1后进位到4的倍数，实现向上取整。
         </div>
     </div>
 </div>
