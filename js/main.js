@@ -5,6 +5,7 @@ class CoursePlayer {
         this.currentPage = 0;
         this.slides = [];
         this.isPresentationMode = false;
+        this.isContextMenuVisible = false;
         this.quizState = {};
         this.lessonData = null;
         
@@ -203,6 +204,171 @@ class CoursePlayer {
                 this.exitPresentation();
             }
         });
+        
+        document.addEventListener('click', (e) => {
+            const isInMenu = e.target.closest('.normal-context-menu');
+            const isInDialog = e.target.closest('.go-to-page-dialog');
+            const menuWasVisible = this.isContextMenuVisible;
+            
+            if (!isInMenu && !isInDialog) {
+                this.hideNormalContextMenu();
+            }
+            if (this.isPresentationMode && !menuWasVisible && !isInMenu && !isInDialog && !e.target.closest('.quiz-option') && !e.target.closest('.btn-submit')) {
+                this.nextPage();
+            }
+        });
+        
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            this.showNormalContextMenu(e.clientX, e.clientY);
+        });
+        
+        document.addEventListener('wheel', (e) => {
+            if (this.isPresentationMode) {
+                e.preventDefault();
+                if (e.deltaY > 0) {
+                    this.nextPage();
+                } else {
+                    this.prevPage();
+                }
+            }
+        }, { passive: false });
+    }
+    
+    showNormalContextMenu(x, y) {
+        let menu = document.getElementById('normal-context-menu');
+        if (!menu) {
+            menu = document.createElement('div');
+            menu.id = 'normal-context-menu';
+            menu.className = 'normal-context-menu';
+            document.body.appendChild(menu);
+        }
+        
+        let pagesHtml = '<div class="context-submenu" id="context-submenu">';
+        const cols = 5;
+        const rows = Math.ceil(this.slides.length / cols);
+        for (let r = 0; r < rows; r++) {
+            pagesHtml += '<div class="context-submenu-row">';
+            for (let c = 0; c < cols; c++) {
+                const idx = r * cols + c;
+                if (idx < this.slides.length) {
+                    const activeClass = idx === this.currentPage ? 'context-submenu-item-active' : '';
+                    pagesHtml += `<div class="context-submenu-item ${activeClass}" onclick="coursePlayer.goToPage(${idx}); coursePlayer.hideNormalContextMenu()">${idx + 1}</div>`;
+                }
+            }
+            pagesHtml += '</div>';
+        }
+        pagesHtml += '</div>';
+        
+        const exitItem = this.isPresentationMode 
+            ? `<div class="context-menu-divider"></div><div class="context-menu-item context-menu-item-danger" onclick="coursePlayer.hideNormalContextMenu(); coursePlayer.exitPresentation()">🚪 退出全屏</div>`
+            : `<div class="context-menu-divider"></div><div class="context-menu-item context-menu-item-primary" onclick="coursePlayer.hideNormalContextMenu(); coursePlayer.enterPresentation()">🎤 演示模式</div>`;
+        
+        menu.innerHTML = `
+            <div class="context-menu-item" onclick="coursePlayer.prevPage(); coursePlayer.hideNormalContextMenu()">◀ 上一页</div>
+            <div class="context-menu-item" onclick="coursePlayer.nextPage(); coursePlayer.hideNormalContextMenu()">▶ 下一页</div>
+            <div class="context-menu-divider"></div>
+            <div class="context-menu-item context-menu-item-has-sub" id="context-menu-has-sub">📄 跳转到页面 <span class="context-menu-arrow">›</span>${pagesHtml}</div>
+            ${exitItem}
+        `;
+        
+        const rect = menu.getBoundingClientRect();
+        const maxX = window.innerWidth - rect.width;
+        const maxY = window.innerHeight - rect.height;
+        menu.style.left = Math.min(x, maxX) + 'px';
+        menu.style.top = Math.min(y, maxY) + 'px';
+        menu.style.display = 'block';
+        this.isContextMenuVisible = true;
+        
+        this.setupSubmenuEvents();
+    }
+    
+    setupSubmenuEvents() {
+        const parentItem = document.getElementById('context-menu-has-sub');
+        const submenu = document.getElementById('context-submenu');
+        if (!parentItem || !submenu) return;
+        
+        const showSubmenu = () => {
+            if (this.submenuHideTimer) {
+                clearTimeout(this.submenuHideTimer);
+                this.submenuHideTimer = null;
+            }
+            submenu.classList.add('visible');
+        };
+        
+        const hideSubmenu = () => {
+            this.submenuHideTimer = setTimeout(() => {
+                submenu.classList.remove('visible');
+                this.submenuHideTimer = null;
+            }, 200);
+        };
+        
+        parentItem.addEventListener('mouseenter', showSubmenu);
+        parentItem.addEventListener('mouseleave', hideSubmenu);
+        submenu.addEventListener('mouseenter', showSubmenu);
+        submenu.addEventListener('mouseleave', hideSubmenu);
+    }
+    
+    hideNormalContextMenu() {
+        const menu = document.getElementById('normal-context-menu');
+        if (menu) {
+            menu.style.display = 'none';
+        }
+        const submenu = document.getElementById('context-submenu');
+        if (submenu) {
+            submenu.classList.remove('visible');
+        }
+        if (this.submenuHideTimer) {
+            clearTimeout(this.submenuHideTimer);
+            this.submenuHideTimer = null;
+        }
+        this.isContextMenuVisible = false;
+    }
+    
+    showGoToPageDialog() {
+        let dialog = document.getElementById('go-to-page-dialog');
+        if (!dialog) {
+            dialog = document.createElement('div');
+            dialog.id = 'go-to-page-dialog';
+            dialog.className = 'go-to-page-dialog';
+            document.body.appendChild(dialog);
+        }
+        
+        dialog.innerHTML = `
+            <div class="dialog-overlay" onclick="coursePlayer.hideGoToPageDialog()"></div>
+            <div class="dialog-content">
+                <h3>跳转到页面</h3>
+                <p>当前第 ${this.currentPage + 1} / ${this.slides.length} 页</p>
+                <input type="number" id="page-input" min="1" max="${this.slides.length}" value="${this.currentPage + 1}">
+                <div class="dialog-buttons">
+                    <button class="btn-cancel" onclick="coursePlayer.hideGoToPageDialog()">取消</button>
+                    <button class="btn-confirm" onclick="coursePlayer.goToPageInput()">确定</button>
+                </div>
+            </div>
+        `;
+        
+        dialog.style.display = 'flex';
+        setTimeout(() => {
+            document.getElementById('page-input').focus();
+        }, 100);
+    }
+    
+    hideGoToPageDialog() {
+        const dialog = document.getElementById('go-to-page-dialog');
+        if (dialog) {
+            dialog.style.display = 'none';
+        }
+    }
+    
+    goToPageInput() {
+        const input = document.getElementById('page-input');
+        if (input) {
+            const pageNum = parseInt(input.value) - 1;
+            if (!isNaN(pageNum) && pageNum >= 0 && pageNum < this.slides.length) {
+                this.goToPage(pageNum);
+            }
+        }
+        this.hideGoToPageDialog();
     }
     
     goToPage(pageNum) {
@@ -243,6 +409,7 @@ class CoursePlayer {
         const sidebar = document.querySelector('.sidebar');
         
         sidebar.style.display = 'none';
+        this.hideNormalContextMenu();
         
         if (document.documentElement.requestFullscreen) {
             document.documentElement.requestFullscreen();
@@ -258,6 +425,7 @@ class CoursePlayer {
         const sidebar = document.querySelector('.sidebar');
         
         sidebar.style.display = 'block';
+        this.hideNormalContextMenu();
         
         if (document.exitFullscreen) {
             document.exitFullscreen();

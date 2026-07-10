@@ -694,6 +694,278 @@ body {
     box-sizing: border-box;
 }
 
+.page-navigator {
+    position: fixed;
+    background: rgba(30, 30, 50, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: none;
+    min-width: 200px;
+}
+
+.page-navigator h3 {
+    color: #fff;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    max-width: 300px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    background: rgba(76, 175, 80, 0.6);
+    transform: scale(1.1);
+}
+
+.page-btn.active {
+    background: #4caf50;
+    color: #fff;
+}
+
+.nav-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.btn-exit-fullscreen {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(244, 67, 54, 0.8);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-exit-fullscreen:hover {
+    background: rgba(244, 67, 54, 1);
+    transform: scale(1.05);
+}
+
+.normal-context-menu {
+    position: fixed;
+    background: rgba(40, 40, 60, 0.98);
+    border-radius: 10px;
+    padding: 8px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    display: none;
+    min-width: 160px;
+}
+
+.context-menu-item {
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.context-menu-item:hover {
+    background: rgba(76, 175, 80, 0.3);
+}
+
+.context-menu-item-primary {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.context-menu-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 6px 0;
+}
+
+.context-menu-item-has-sub {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.context-menu-arrow {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.context-menu-item-has-sub:hover .context-menu-arrow {
+    color: rgba(76, 175, 80, 0.8);
+}
+
+.context-submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: rgba(50, 50, 70, 0.98);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    min-width: 200px;
+    display: none;
+    margin-left: 2px;
+    pointer-events: none;
+}
+
+.context-submenu.visible {
+    display: block;
+    pointer-events: auto;
+}
+
+.context-submenu-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.context-submenu-row:last-child {
+    margin-bottom: 0;
+}
+
+.context-submenu-item {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.context-submenu-item:hover {
+    background: rgba(76, 175, 80, 0.4);
+    transform: scale(1.1);
+}
+
+.context-submenu-item-active {
+    background: #4caf50 !important;
+}
+
+.context-menu-item-danger {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.go-to-page-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+}
+
+.dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.dialog-content {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-content h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.dialog-content p {
+    margin: 0 0 20px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.dialog-content input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.dialog-content input:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-cancel, .btn-confirm {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.btn-cancel:hover {
+    background: #e0e0e0;
+}
+
+.btn-confirm {
+    background: #4caf50;
+    color: #fff;
+}
+
+.btn-confirm:hover {
+    background: #45a049;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
