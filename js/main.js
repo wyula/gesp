@@ -8,6 +8,8 @@ class CoursePlayer {
         this.isContextMenuVisible = false;
         this.quizState = {};
         this.lessonData = null;
+        this.progressData = this.loadProgress();
+        this.restoreLastProgress();
         
         this.lessonTitles = {
             'level1': {
@@ -87,7 +89,13 @@ class CoursePlayer {
         this.renderSlides();
         this.renderNav();
         this.setupEventListeners();
-        this.updateNavigation();
+        
+        if (this.currentPage >= this.slides.length) {
+            this.currentPage = Math.max(0, this.slides.length - 1);
+        }
+        this.goToPage(this.currentPage);
+        
+        this.updateSidebarProgress();
     }
     
     async loadCourseData() {
@@ -163,6 +171,8 @@ class CoursePlayer {
             const a = document.createElement('a');
             a.href = '#';
             a.dataset.lesson = num;
+            a.dataset.level = this.currentLevel;
+            a.classList.add('lesson-item');
             a.textContent = title;
             a.onclick = (e) => {
                 e.preventDefault();
@@ -381,6 +391,7 @@ class CoursePlayer {
         this.currentPage = pageNum;
         this.updateNavigation();
         this.updateProgress();
+        this.updateProgressRecord();
         
         document.querySelector('.slide-container').scrollTop = 0;
     }
@@ -436,6 +447,101 @@ class CoursePlayer {
         }
     }
     
+    loadProgress() {
+        try {
+            const data = localStorage.getItem('gesp_progress');
+            return data ? JSON.parse(data) : {
+                lastLevel: 'level3',
+                lastLesson: 1,
+                lastPage: 0,
+                visited: {},
+                quizResults: {}
+            };
+        } catch (e) {
+            return {
+                lastLevel: 'level3',
+                lastLesson: 1,
+                lastPage: 0,
+                visited: {},
+                quizResults: {}
+            };
+        }
+    }
+    
+    saveProgress() {
+        try {
+            localStorage.setItem('gesp_progress', JSON.stringify(this.progressData));
+        } catch (e) {
+            console.error('Failed to save progress:', e);
+        }
+    }
+    
+    updateProgressRecord() {
+        const key = `${this.currentLevel}_lesson${this.currentLesson}`;
+        if (!this.progressData.visited[key]) {
+            this.progressData.visited[key] = [];
+        }
+        if (!this.progressData.visited[key].includes(this.currentPage)) {
+            this.progressData.visited[key].push(this.currentPage);
+            this.progressData.visited[key].sort((a, b) => a - b);
+        }
+        
+        if (!this.progressData.pageCounts) {
+            this.progressData.pageCounts = {};
+        }
+        this.progressData.pageCounts[key] = this.slides.length;
+        
+        this.progressData.lastLevel = this.currentLevel;
+        this.progressData.lastLesson = this.currentLesson;
+        this.progressData.lastPage = this.currentPage;
+        
+        this.saveProgress();
+        this.updateSidebarProgress();
+    }
+    
+    restoreLastProgress() {
+        if (this.progressData && this.progressData.lastLevel) {
+            this.currentLevel = this.progressData.lastLevel;
+            this.currentLesson = this.progressData.lastLesson;
+            this.currentPage = this.progressData.lastPage || 0;
+        }
+    }
+    
+    saveQuizResult(quizIndex, answer, isCorrect) {
+        const key = `${this.currentLevel}_lesson${this.currentLesson}_q${quizIndex}`;
+        this.progressData.quizResults[key] = {
+            answer: answer,
+            correct: isCorrect,
+            timestamp: Date.now()
+        };
+        this.saveProgress();
+    }
+    
+    getQuizResult(quizIndex) {
+        const key = `${this.currentLevel}_lesson${this.currentLesson}_q${quizIndex}`;
+        return this.progressData.quizResults[key] || null;
+    }
+    
+    updateSidebarProgress() {
+        document.querySelectorAll('.lesson-item').forEach(item => {
+            const level = item.dataset.level;
+            const lesson = parseInt(item.dataset.lesson);
+            const key = `${level}_lesson${lesson}`;
+            const visited = this.progressData.visited[key] || [];
+            const totalPages = this.progressData.pageCounts ? this.progressData.pageCounts[key] || 0 : 0;
+            
+            const progress = totalPages > 0 ? Math.round((visited.length / totalPages) * 100) : 0;
+            
+            let progressEl = item.querySelector('.lesson-progress');
+            if (!progressEl) {
+                progressEl = document.createElement('span');
+                progressEl.className = 'lesson-progress';
+                item.appendChild(progressEl);
+            }
+            progressEl.textContent = progress > 0 ? `${progress}%` : '';
+        });
+    }
+    
     selectQuizOption(optionElement) {
         const quizIndex = parseInt(optionElement.dataset.quizIndex);
         const options = optionElement.parentElement.querySelectorAll('.quiz-option');
@@ -477,6 +583,9 @@ class CoursePlayer {
         }
         
         this.quizState[quizIndex] = isCorrect;
+        
+        const answerText = selectedOption.textContent;
+        this.saveQuizResult(quizIndex, answerText, isCorrect);
     }
     
     isQuizCorrect(quizIndex, selectedIndex) {
@@ -496,8 +605,13 @@ class CoursePlayer {
     }
     
     async loadLesson(lessonNum) {
+        this.updateProgressRecord();
+        
         this.currentLesson = lessonNum;
-        this.currentPage = 0;
+        
+        const key = `${this.currentLevel}_lesson${lessonNum}`;
+        const savedPage = this.progressData.visited[key] ? Math.min(this.progressData.lastPage, this.slides.length - 1) : 0;
+        this.currentPage = savedPage;
         
         document.querySelectorAll('.nav-list a').forEach(a => a.classList.remove('active'));
         const activeLink = document.querySelector(`[data-lesson="${lessonNum}"]`);
@@ -507,17 +621,29 @@ class CoursePlayer {
         
         await this.loadCourseData();
         this.renderSlides();
-        this.updateNavigation();
+        
+        if (this.currentPage >= this.slides.length) {
+            this.currentPage = Math.max(0, this.slides.length - 1);
+        }
+        
+        this.goToPage(this.currentPage);
         
         const titles = this.lessonTitles[this.currentLevel];
         const levelName = this.levelNames[this.currentLevel];
         document.getElementById('lesson-title').textContent = `CCF-GESP C++${levelName} - ${titles[lessonNum] || '第' + lessonNum + '课'}`;
+        
+        this.updateSidebarProgress();
     }
     
     async loadLevel(level) {
+        this.updateProgressRecord();
+        
         this.currentLevel = level;
         this.currentLesson = 1;
-        this.currentPage = 0;
+        
+        const key = `${level}_lesson1`;
+        const savedPage = this.progressData.visited[key] ? Math.min(this.progressData.lastPage, this.slides.length - 1) : 0;
+        this.currentPage = savedPage;
         
         document.querySelectorAll('.course-tab').forEach(tab => tab.classList.remove('active'));
         const activeTab = document.querySelector(`.course-tab[onclick="coursePlayer.loadLevel('${level}')"]`);
@@ -528,11 +654,18 @@ class CoursePlayer {
         await this.loadCourseData();
         this.renderSlides();
         this.renderNav();
-        this.updateNavigation();
+        
+        if (this.currentPage >= this.slides.length) {
+            this.currentPage = Math.max(0, this.slides.length - 1);
+        }
+        
+        this.goToPage(this.currentPage);
         
         const titles = this.lessonTitles[this.currentLevel];
         const levelName = this.levelNames[this.currentLevel];
         document.getElementById('lesson-title').textContent = `CCF-GESP C++${levelName} - ${titles[1] || '第1课'}`;
+        
+        this.updateSidebarProgress();
     }
 }
 
