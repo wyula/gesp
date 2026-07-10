@@ -178,16 +178,29 @@ class CoursePlayer {
     setupEventListeners() {
         document.getElementById('btn-prev').addEventListener('click', () => this.prevPage());
         document.getElementById('btn-next').addEventListener('click', () => this.nextPage());
-        document.getElementById('btn-presentation').addEventListener('click', () => this.togglePresentation());
+        document.getElementById('btn-presentation').addEventListener('click', () => this.enterPresentation());
         
         document.addEventListener('keydown', (e) => {
             if (this.isPresentationMode && e.key === 'Escape') {
-                this.togglePresentation();
+                e.preventDefault();
+                this.exitPresentation();
             } else if (!e.target.closest('input, textarea')) {
                 if (e.key === 'ArrowLeft') this.prevPage();
                 else if (e.key === 'ArrowRight') this.nextPage();
                 else if (e.key === 'Home') this.goToPage(0);
                 else if (e.key === 'End') this.goToPage(this.slides.length - 1);
+            }
+        });
+        
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement && this.isPresentationMode) {
+                this.exitPresentation();
+            }
+        });
+        
+        document.addEventListener('webkitfullscreenchange', () => {
+            if (!document.webkitFullscreenElement && this.isPresentationMode) {
+                this.exitPresentation();
             }
         });
     }
@@ -225,29 +238,34 @@ class CoursePlayer {
         document.getElementById('progress-fill').style.width = `${progress}%`;
     }
     
-    togglePresentation() {
-        this.isPresentationMode = !this.isPresentationMode;
+    enterPresentation() {
+        this.isPresentationMode = true;
         const sidebar = document.querySelector('.sidebar');
-        const btn = document.getElementById('btn-presentation');
         
-        if (this.isPresentationMode) {
-            sidebar.style.display = 'none';
-            btn.textContent = '退出演示';
-            document.body.style.cursor = 'none';
-            
-            setTimeout(() => {
-                document.addEventListener('mousemove', this.hideCursor);
-            }, 1000);
-        } else {
-            sidebar.style.display = 'block';
-            btn.textContent = '🎤 演示模式';
-            document.body.style.cursor = 'default';
-            document.removeEventListener('mousemove', this.hideCursor);
+        sidebar.style.display = 'none';
+        
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) {
+            document.documentElement.msRequestFullscreen();
         }
     }
     
-    hideCursor = () => {
-        document.body.style.cursor = 'none';
+    exitPresentation() {
+        this.isPresentationMode = false;
+        const sidebar = document.querySelector('.sidebar');
+        
+        sidebar.style.display = 'block';
+        
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
     }
     
     selectQuizOption(optionElement) {

@@ -654,6 +654,46 @@ body {
     color: white;
 }
 
+:fullscreen .header,
+:fullscreen .nav-buttons {
+    display: none;
+}
+
+:fullscreen .slide-container {
+    padding: 50px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+:fullscreen .slide {
+    padding: 30px 40px;
+    padding-top: 50px;
+    max-width: none;
+    width: 100%;
+    height: calc(100vh - 100px);
+    box-sizing: border-box;
+}
+
+:-webkit-full-screen .header,
+:-webkit-full-screen .nav-buttons {
+    display: none;
+}
+
+:-webkit-full-screen .slide-container {
+    padding: 50px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+:-webkit-full-screen .slide {
+    padding: 30px 40px;
+    padding-top: 50px;
+    max-width: none;
+    width: 100%;
+    height: calc(100vh - 100px);
+    box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
