@@ -92,8 +92,8 @@ class CoursePlayer {
     async loadCourseData() {
         try {
             const [htmlResponse, jsResponse] = await Promise.all([
-                fetch(`data/${this.currentLevel}/lesson${this.currentLesson}/index.html`),
-                fetch(`data/${this.currentLevel}/lesson${this.currentLesson}/lesson.js`)
+                fetch(`lesson/${this.currentLevel}/lesson${this.currentLesson}/index.html`),
+                fetch(`lesson/${this.currentLevel}/lesson${this.currentLesson}/lesson.js`)
             ]);
             
             if (!htmlResponse.ok) {
