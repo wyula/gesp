@@ -429,8 +429,11 @@ class CoursePlayer {
             btn.innerHTML = '📋 复制';
             btn.onclick = async () => {
                 const code = pre.querySelector('code').textContent;
+                const cleanCode = code.split('\n').map(line => {
+                    return line.replace(/^\d+\s*/, '');
+                }).join('\n');
                 try {
-                    await navigator.clipboard.writeText(code);
+                    await navigator.clipboard.writeText(cleanCode);
                     btn.textContent = '✓ 已复制';
                     btn.classList.add('copied');
                     setTimeout(() => {

@@ -444,15 +444,50 @@ int main(){
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">完整代码</h2>
-    <div class="slide-image-container">
-        <img src="lesson/level3/lesson3/19-完整代码.png" alt="完整代码">
-    </div>
+    <h2 class="slide-subtitle-center">完整代码 - check函数</h2>
+    <pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+char line[101];
+char pwd[101];
+bool chk[10];
+
+bool check(char str[], int l) {
+    if (l &lt; 6 || l &gt; 12) return false;
+    bool hasC = false, hasL = false, hasD = false, hasS = false;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if ('A' &lt;= str[i] &amp;&amp; str[i] &lt;= 'Z') {
+            hasC = true;
+        } else if ('a' &lt;= str[i] &amp;&amp; str[i] &lt;= 'z') {
+            hasL = true;
+        } else if ('0' &lt;= str[i] &amp;&amp; str[i] &lt;= '9') {
+            hasD = true;
+        } else if (str[i] == '!' || str[i] == '@' || str[i] == '#' || str[i] == '$') {
+            hasS = true;
+        } else return false;
+    }
+    if (!hasS) return false;
+    if (hasC + hasL + hasD &lt; 2) return false;
+    return true;
+}</code></pre>
 </div>
 
 <div class="slide">
-    <h2 class="slide-subtitle-center">完整代码</h2>
-    <div class="slide-image-container">
-        <img src="lesson/level3/lesson3/20-完整代码.png" alt="完整代码">
-    </div>
+    <h2 class="slide-subtitle-center">完整代码 - main函数</h2>
+    <pre><code class="language-cpp">int main() {
+    int n = 0;
+    while (cin.getline(line, 101)) {
+        int len = 0;
+        for (int i = 0; line[i] != '\0'; i++) {
+            if (line[i] != ' ') {
+                pwd[len++] = line[i];
+            }
+        }
+        pwd[len] = '\0';
+        chk[n++] = check(pwd, len);
+    }
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; (chk[i] ? "YES" : "NO") &lt;&lt; endl;
+    }
+    return 0;
+}</code></pre>
 </div>
