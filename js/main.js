@@ -154,6 +154,11 @@ class CoursePlayer {
             container.appendChild(slideElement);
         });
         
+        if (typeof hljs !== 'undefined') {
+            hljs.highlightAll();
+            this.addCopyButtons();
+        }
+        
         this.updateProgress();
     }
     
@@ -413,6 +418,45 @@ class CoursePlayer {
     updateProgress() {
         const progress = ((this.currentPage + 1) / this.slides.length) * 100;
         document.getElementById('progress-fill').style.width = `${progress}%`;
+    }
+    
+    addCopyButtons() {
+        document.querySelectorAll('.slide pre').forEach(pre => {
+            if (pre.querySelector('.copy-btn')) return;
+            
+            const btn = document.createElement('button');
+            btn.className = 'copy-btn';
+            btn.innerHTML = '📋 复制';
+            btn.onclick = async () => {
+                const code = pre.querySelector('code').textContent;
+                try {
+                    await navigator.clipboard.writeText(code);
+                    btn.textContent = '✓ 已复制';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.textContent = '📋 复制';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('复制失败:', err);
+                }
+            };
+            pre.appendChild(btn);
+            
+            this.addLineNumbers(pre);
+        });
+    }
+    
+    addLineNumbers(pre) {
+        const code = pre.querySelector('code');
+        if (!code) return;
+        
+        const lines = code.innerHTML.split('\n');
+        const numberedLines = lines.map((line, index) => {
+            const lineNum = index + 1;
+            return `<span class="line-number">${lineNum}</span>${line || ' '}`;
+        });
+        code.innerHTML = numberedLines.join('\n');
     }
     
     enterPresentation() {

@@ -152,7 +152,7 @@ body {
 }
 
 .slide {
-    background: #f8fcff;
+    background: linear-gradient(145deg, #ffffff, #f8fcff);
     width: 100%;
     max-width: 1200px;
     min-height: 100%;
@@ -161,9 +161,10 @@ body {
     padding-top: 60px;
     display: none;
     animation: fadeIn 0.4s ease;
-    border-radius: 20px;
+    border-radius: 24px;
     position: relative;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .slide::before {
@@ -197,8 +198,8 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .slide-title {
@@ -280,6 +281,105 @@ body {
     font-size: 17px;
     overflow-x: auto;
     margin: 25px 0;
+}
+
+.slide pre {
+    background: linear-gradient(145deg, #2d3748, #1a202c);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    overflow-x: auto;
+    border: 1px solid #4a5568;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    counter-reset: line;
+}
+
+.slide pre:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.slide pre code {
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #e2e8f0;
+    display: block;
+    white-space: pre;
+    tab-size: 4;
+}
+
+.slide pre code.hljs {
+    background: transparent;
+    padding: 0;
+}
+
+.slide pre .line-number {
+    display: inline-block;
+    width: 2em;
+    margin-right: 1em;
+    text-align: right;
+    color: #6b7280;
+    font-size: 13px;
+    user-select: none;
+    opacity: 0.7;
+}
+
+.slide pre .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    background: rgba(74, 85, 104, 0.8);
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: #e2e8f0;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.slide pre .copy-btn:hover {
+    background: rgba(74, 85, 104, 1);
+    transform: scale(1.05);
+}
+
+.slide pre .copy-btn.copied {
+    background: #48bb78;
+}
+
+.slide .hljs-keyword {
+    color: #c678dd;
+}
+
+.slide .hljs-string {
+    color: #98c379;
+}
+
+.slide .hljs-comment {
+    color: #5c6370;
+    font-style: italic;
+}
+
+.slide .hljs-number {
+    color: #d19a66;
+}
+
+.slide .hljs-type {
+    color: #e6c07b;
+}
+
+.slide .hljs-function .hljs-title {
+    color: #61aeee;
+}
+
+.slide .hljs-built_in {
+    color: #e6c07b;
 }
 
 .array-visualization {
@@ -384,11 +484,12 @@ body {
 .code-number { color: #bd93f9; }
 
 .quiz-container {
-    background: #f8f9fa;
-    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 16px;
     padding: 30px;
     margin: 25px 0;
     border-left: 4px solid #764ba2;
+    box-shadow: 0 4px 20px rgba(118, 75, 162, 0.1);
 }
 
 .quiz-question {
@@ -415,24 +516,28 @@ body {
 
 .quiz-option {
     padding: 18px 22px;
-    background: #f8fcff;
-    border: 2px solid #ddd;
-    border-radius: 8px;
+    background: linear-gradient(145deg, #ffffff, #f8fcff);
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .quiz-option:hover {
     border-color: #667eea;
     background: #f0f4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
 }
 
 .quiz-option.selected {
     border-color: #667eea;
     background: #e8ecff;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
 .quiz-option.correct {
