@@ -1,0 +1,155 @@
+第 1 题 学校组织到未来农场参观，⼩明听讲解员介绍，在智能温室中，湿度传感器可以连续检测⼟壤的湿度变化，并将检测到的湿度数据实时发送给中央控制器。中央控制器根据这些数据判断是否开启灌溉系统。请问，这⾥的湿度传感器所发挥的作⽤，类似于计算机系统中的哪⼀类组件？（ ）
+ {{ select(1) }}
+ - 处理器
+ - 存储器
+ - 输⼊设备
+ - 输出设备
+
+第 2 题 ⼩明去农场参观回来后就在⾃⼰的电脑上安装了⼀个 3D 农场仿真模拟系统，因为他今年买的⼆⼿电脑有点⽼旧，系统运⾏时经常弹出“系统内存不⾜”的警告，导致系统卡顿严重。他计划通过增加物理内存来解决问题。请问他应该购买以下哪种硬件组件？（ ）
+ {{ select(2) }}
+ - 机械硬盘
+ - 内存条
+ - 图形显卡
+ - 移动硬盘
+
+第 3 题 有关如下 C++ 代码的说法，正确的是（ ）。1 float a = 3 + 3.5;2 cout << a;
+ {{ select(3) }}
+ - 代码执⾏将报错。如果将 a = 3 + 3.5 改为 a = float(3) + 3.5 将能正常执⾏。
+ - 代码执⾏将报错。如果将 a = 3 + 3.5 改为 a = 3.0 + 3.5 将能正常执⾏。
+ - 代码能正常执⾏，将输出 6。
+ - 代码能正常执⾏，将输出 6.5。
+
+第 4 题 下⾯选择项中，与 C++ 表达式 not (x > 5 or y <= 10) 等价的是（ ）。1 / 10
+ {{ select(4) }}
+ - x <= 5 or y > 10
+ - x > 5 and y <= 10
+ - x <= 5 and y > 10
+ - not x > 5 and not y <= 10
+
+第 5 题 ⼩明在某开发环境中执⾏ C++ 代码 cout << (2.5 + 2.25) << ' ' << (2.2 + 2.1) 时输出 4.754.300000000000001，其原因最可能是（ ）。
+ {{ select(5) }}
+ - C++ 的 + 运算符在处理浮点数时有时正确，有时错误
+ - 某些浮点数难以精确表⽰，导致微⼩误差
+ - + 运算符不能⽤于浮点数，只能⽤于整数
+ - 因为 cout 函数难以输出太长的数值
+
+第 6 题 执⾏如下 C++ 程序后，当输⼊ 4 时，输出的最后⼀⾏是（ ）。1 int n;2 cin >> n;3 for (int i = n; i > 0; i--) {4 for (int j = 0; j < i; j++)5 cout << j + 1 << ' ';6 cout << endl;7 }
+ {{ select(6) }}
+ - 0
+ - 1
+ - 1 2
+ - 1 2 3 4
+
+第 7 题 下⾯的 C++ 代码执⾏后其输出是（ ）。1 int tnt = 0;2 for (int i = 1; i < 5; i += 3) {3 for (int j = 0; j < i; j++)4 tnt += 1;5 cout << tnt << "#";6 }7 cout << tnt;
+ {{ select(7) }}
+ - 1#5#5
+ - 1#5#5#
+ - 1#5#12#12
+ - 0
+
+第 8 题 下⾯的 C++ 代码执⾏之后的输出是（ ）。1 int i;2 for (i = -2; i < 2; i++)3 if (not i % 3 == 0)4 cout << i << "#";5 cout << i;
+ {{ select(8) }}
+ - -2#-1#1#2
+ - -2#-1#1#2#3
+ - 1#2#3
+ - 0#1#2#3
+
+第 9 题 下⾯的 C++ 代码执⾏后其输出是（ ）。2 / 101 int cnt = 0, i, j;2 for (i = 0; i < 3; i++) {3 j = i;4 while (j) {5 cnt += 1;6 j -= 1;7 }8 }9 cout << i << ' ' << j << ' ' << cnt;
+ {{ select(9) }}
+ - 3 0 3
+ - 2 0 4
+ - 2 0 5
+ - 3 0 5
+
+第 10 题 下⾯ C++ 代码执⾏后其输出是（ ）。1 int count = 0, i, j;2 for (i = 1; i < 4; i++)3 for (j = 0; j < i; j++) {4 if (j % 3 != 0)5 continue;6 count += 1;7 break;8 }9 cout << i << ' ' << j << ' ' << count;
+ {{ select(10) }}
+ - 4 0 4
+ - 3 0 0
+ - 3 2 0
+ - 4 0 3
+
+第 11 题 如下 C++ 代码执⾏后输出是 1 2 3 4 5 6 7 8 9 10 11 5 6 7 8 9 10 11 5 6 7 8 9 10 11 5 6 78 9 10 11 5 6 7。横线处应该填⼊的运算符是（ ）。1 int num = 1;2 for (int i = 0; i < 35; i++) {3 cout << num << " ";4 if (num _______ 10)5 num _______ 2;6 else7 num _______ 1;8 }
+ {{ select(11) }}
+ - > /= +=
+ - >= %= +=
+ - > /= =+
+ - >= %= =+
+
+第 12 题 如下数字图形在通过执⾏后续的 C++ 代码时，输⼊ 10 来输出。横线处应填⼊的代码是（ ）。3 / 101 1 1 1 1 1 1 1 1 1 12 1 1 0 0 0 0 0 0 0 13 1 0 1 0 0 0 0 0 0 14 1 0 0 1 0 0 0 0 0 15 1 0 0 0 1 0 0 0 0 16 1 0 0 0 0 1 0 0 0 17 1 0 0 0 0 0 1 0 0 18 1 0 0 0 0 0 0 1 0 19 1 0 0 0 0 0 0 0 1 110 1 1 1 1 1 1 1 1 1 11 int N;2 cin >> N;3 for (int i = 1; i < N + 1; i++) {4 for (int j = 1; j < N + 1; j++)5 if (________)6 cout << "1 ";7 else8 cout << "0 ";9 cout << endl;10 }
+ {{ select(12) }}
+ - i == j and i == 1 and j == 1 and i == N and j == N
+ - i == j or i == 1 or j == 1 or i == N or j == N
+ - i == j or i == 0 or j == 0 or i == (N + 1) or j == (N + 1)
+ - i == j and i == 1 and j == 1 and i == (N + 1) and j == (N + 1)
+
+第 13 题 英⽂ corner case 通常翻译为极端案例或边角案例，通常指正常范围以外的问题或者情形。在如下 C++代码中，变量都是整型，则 corner case 最应该是（ ）。1 int tnt = 0, cnt = 0;2 while (1) {3 int score;4 cin >> score;5 if (score == -1)6 break;7 tnt += score;8 cnt += 1;9 }10 cout << tnt / cnt;见
+ {{ select(13) }}
+ - tnt = 0, cnt = 0 是 corner case，应分为两⾏
+ - while(1) 是 corner case，因为 while(1) 将会导致死循环
+ - cin >> score 是 corner case，因为输⼊数据前应该提⽰整型数据
+ - cout << tnt / cnt 是 corner case，因为如果直接输⼊ -1，将导致执⾏错误，虽然这种情况较为罕
+
+第 14 题 如下 C++ 代码执⾏后，输⼊ 4 后，输出的数字图形是（ ）。4 / 101 int n;2 cin >> n;3 for (int i = n; i > 0; i--) {4 for (int j = 0; j < n - i; j++)5 cout << "0 ";6 for (int k = 0; k < i; k++)7 cout << k + 1 << " ";8 cout << endl;9 }1 1 2 3 42 1 2 3 03 1 2 0 04 1 0 0 01 1 2 3 42 0 1 2 33 0 0 1 24 0 0 0 11 1 2 3 42 2 3 4 03 3 4 0 04 4 0 0 01 0 0 0 12 0 0 1 23 0 1 2 34 1 2 3 4
+ {{ select(14) }}
+ - 
+ - 
+ - 
+ - 
+
+第 15 题 某学校举办“校园演讲⽐赛”，每位选⼿由 位评委打分（分数为 的整数），且每位评委必须打分。计分规则：去掉⼀个最⾼分，去掉⼀个最低分。如下程序通过键盘先输⼊选⼿编号，然后依次输⼊ 个分数，并计算最终得分。下列说法正确的是（ ）。5 / 101 for (int i = 0; i < 10; i++) {2 int id, score;3 printf("输入选手编号: ");4 scanf("%d", &id);6 int max_score = 0, min_score = 100; // 最高分和最低分7 int total_score = 0; // 总分9 for (int j = 1; j < 9; j++) {10 printf("输入选手第%d个成绩:", j);11 scanf("%d", &score);13 if (max_score < score)14 max_score = score;16 if (min_score > score)17 min_score = score;19 total_score += score;20 }22 total_score = total_score - max_score - min_score;23 printf("%d号选手的成绩:\24 去掉一个最高分%d,\25 去掉一个最低分%d,\26 最后成绩是：%d", id, max_score, min_score, total_score);27 }1 int total = total_score - max_score - min_score;2 total_score = total;2
+ {{ select(15) }}
+ - 上述代码能完成题⽬要求
+ - max_score = 0, min_score = 100 应修改为 max_score = 0, min_score = 0
+ - max_score < score 和 min_score > score 必须相应修改为 <= 和 >=
+ - total_score = total_score - max_score - min_score 不能达到预期，可修改如下：
+
+第 16 题 ⼜到期末考试周，⼩明发现这次许多闭卷考试不仅禁⽌携带⼿机、平板电脑，还有最近⽐较时髦的各类 AI眼镜也有叫智能眼镜也同样不允许带⼊考场。这些 AI 眼镜应该也是内置了操作系统并可能⽀持 Wi-Fi 或蓝⽛连接。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 C++ 代码 cout << (not ('5' % 2 == 0) == ((not '5' % 2) == 0)) 执⾏后的输出是 1。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 执⾏ C++ 语句 cout << (int(3.5) * 2) 将输出 6。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 下⾯ C++ 代码执⾏后将输出 1-4-7-。1 for (int i = 1; i < 10; i += 3) {2 if (not i % 3)3 break;4 cout << i << "-";5 }6 / 10（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 执⾏如下 C++ 代码，将从⼩到⼤依次输出 abs(N) 个整数，并在最后输出 1。1 int N;2 cin >> N;3 int start_num = 1, end_num = N + 1, i;5 if (N < 0)6 start_num = N, end_num = 0;8 for (i = start_num; i < end_num; i++)9 cout << i << " ";11 cout << endl << ((i - 1) == abs(N)) << endl;（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 如下 C++ 代码执⾏后，输出值为 9。1 int cnt = 0, i;2 for (i = 0; i < 10; i++) {3 for (int j = 0; j < i; j++)4 cnt += 1;5 break;6 }7 cout << i;（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 如下 C++ 代码执⾏时如输⼊ 10，输出将是 100。1 int cnt = 0, N;2 cout << "请输入正整数：";3 cin >> N;4 for (int i = 0; i < N; i++)5 for (int j = -i; j < i; j++)6 cnt += 1;7 cout << cnt;（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 如下 C++ 代码执⾏其输出是 3。1 int count = 0;2 int i = 0;3 while (i < 3) {4 int j = 0;5 while (j < 3) {6 if (i + j >= 3)7 count += 1;8 j += 1;9 }10 i += 1;11 }12 cout << count;（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 如下 C++ 代码执⾏时如果输⼊正整数，其输出将是输⼊的正整数。7 / 101 int N;2 cin >> N;3 int i = 0, Nbase = 1;4 int rst = 0;5 while (N != 0) {6 rst = rst + N % 10 * Nbase;7 N /= 10, Nbase *= 10;8 i += 1;9 }10 cout << rst;（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 如下 C++ 代码执⾏时如输⼊ 5，将输出代码后的字符图形。1 int n;2 cin >> n;3 for (int i = 1; i < n + 1; i++) {4 for (int j = 1; j < n - i + 1; j++)5 cout << 0;6 for (int k = 1; k < 2 * i; k++) {7 if (k <= i)8 cout << k;9 else10 cout << 2 * i - k;11 }12 for (int j = 1; j < n - i + 1; j++)13 cout << 0;14 cout << endl;15 }1 0000100002 0001210003 0012321004 0123432105 1234543213（）
+ {{ select(25) }}
+ - 对
+ - 错
+

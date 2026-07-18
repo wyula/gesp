@@ -1,0 +1,155 @@
+第 1 题 下⾯关于C++类和对象的说法，错误的是（ ）。
+ {{ select(1) }}
+ - 类的析构函数可以为虚函数。
+ - 类的构造函数不可以为虚函数。
+ - class中成员的默认访问权限为private。
+ - struct中成员的默认访问权限为private。
+
+第 2 题 对于⼀个具有 个顶点的⽆向图，若采⽤邻接矩阵表⽰，则该矩阵的⼤⼩为（ ）。
+ {{ select(2) }}
+ - 
+ - 
+ - 
+ - 
+
+第 3 题 设有编号为A、B、C、D、E的5个球和编号为A、B、C、D、E的5个盒⼦。现将这5个球投⼊5个盒⼦，要求每个盒⼦放⼀个球，并且恰好有两个球的编号与盒⼦编号相同，问有多少种不同的⽅法？（ ）。
+ {{ select(3) }}
+ - 5
+ - 120
+ - 20
+ - 60
+
+第 4 题 从甲地到⼄地，可以乘⾼铁，也可以乘汽车，还可以乘轮船。⼀天中，⾼铁有10班，汽车有5班，轮船有2班。那么⼀天中乘坐这些交通⼯具从甲地到⼄地共有多少种不同的⾛法？（ ）。
+ {{ select(4) }}
+ - 100
+ - 60
+ - 30
+ - 17
+
+第 5 题 个结点的⼆叉树，执⾏释放全部结点操作的时间复杂度是（ ）。
+ {{ select(5) }}
+ - 
+ - 
+ - 
+ - 
+
+第 6 题 在⼀个单位圆上，随机分布 个点，求这 个点能被⼀个单位半圆周全部覆盖的概率（ ）。
+ {{ select(6) }}
+ - 
+ - 
+ - 
+ - 
+
+第 7 题 下⾯pailie函数是⼀个实现排列的程序，横线处可以填⼊的是（ ）。1 #include <iostream>2 using namespace std;3 int sum = 0;4 void swap(int & a, int & b) {5 int temp = a;6 a = b;7 b = temp;8 }9 void pailie(int begin, int end, int a[]) {10 if (begin == end) {11 for (int i = 0; i < end; i++)12 cout << a[i];13 cout << endl;14 }15 for (int i = begin; i < end; i++) {16 __________ // 在此处填入选项17 }18 }1 swap(a[begin + 1], a[i]);2 pailie(begin + 1, end, a);3 swap(a[i], a[begin]);1 swap(a[begin], a[i]);2 pailie(begin, end, a);3 swap(a[i], a[begin]);1 swap(a[begin], a[i]);2 pailie(begin + 1, end, a);3 swap(a[i], a[begin]);1 swap(a[begin] + 1, a[i]);2 pailie(begin + 1, end, a);3 swap(a[i], a[begin + 1]);
+ {{ select(7) }}
+ - 
+ - 
+ - 
+ - 
+
+第 8 题 上⼀题中，如果主函数为如下的程序，则最后的排列数是多少个？（ ）。1 int main() {2 int a[5] = {1, 2, 3, 4, 5};3 pailie(0, 5, a);4 return 0;5 }
+ {{ select(8) }}
+ - 120
+ - 60
+ - 240
+ - 180
+
+第 9 题 下列程序实现了输出杨辉三角形，代码中横线部分应该填⼊的是（ ）。1 #include <iostream>2 using namespace std;3 #define N 354 int a[N][N];5 int main() {6 int n;7 cin >> n;8 for (int i = 1; i <= n; i++)9 for (int j = 1; j <= i; j++) {10 if (j == 1 || j == i)11 a[i][j] = 1;12 else13 __________ // 在此处填入选项14 }15 for (int i = 1; i <= n; i++) {16 for (int j = 1; j <= i; j++)17 cout << a[i][j];18 cout<<endl;19 }20 return 0;21 }
+ {{ select(9) }}
+ - a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+ - a[i][j] = a[i][j - 1] + a[i - 1][j];
+ - a[i][j] = a[i - 1][j] + a[i - 1][j];
+ - a[i][j] = a[i - 1][j - 1] + a[i][j];
+
+第 10 题 下⾯最⼩⽣成树的Kruskal算法程序中，横线处应该填⼊的是（ ）。1 #include <iostream>2 #include <vector>3 #include <algorithm>4 using namespace std;5 struct Edge {6 int u, v, weight;7 bool operator <(const Edge & other) const {8 return weight < other.weight;9 }10 };11 int findParent(int vertex, vector<int> & parent) {12 if (parent[vertex] == -1)13 return vertex;14 return parent[vertex] = findParent(parent[vertex], parent);15 }16 int main() {17 int n, m;18 cin >> n >> m; // n: 顶点数, m: 边数19 vector<Edge> edges(m);20 vector<int> parent(n, -1);21 int totalWeight = 0;22 for (int i = 0; i < m; i++)23 cin >> edges[i].u >> edges[i].v >> edges[i].weight;24 sort(edges.begin(), edges.end());26 for (const auto & edge : edges) {27 int uParent = findParent(edge.u, parent);28 int vParent = findParent(edge.v, parent);29 if (__________) { // 在此处填入选项30 parent[uParent] = vParent;31 totalWeight += edge.weight;32 }33 }34 }
+ {{ select(10) }}
+ - uParent == vParent
+ - uParent >= vParent
+ - uParent != vParent
+ - uParent <= vParent
+
+第 11 题 下⾯Prim算法程序中，横线处应该填⼊的是（ ）。1 #include <iostream>2 #include <vector>3 #include <algorithm>4 using namespace std;5 int prim(vector<vector<int>> & graph, int n) {6 vector<int> key(n, INT_MAX);7 vector<int> parent(n, -1);8 key[0] = 0;9 for (int i = 0; i < n; i++) {10 int u = min_element(key.begin(), key.end()) - key.begin();11 if (key[u] == INT_MAX)12 break;13 for (int v = 0; v < n; v++) {14 if (__________) { // 在此处填入选项15 key[v] = graph[u][v];16 parent[v] = u;17 }18 }19 }20 int sum = 0;21 for (int i = 0; i < n; i++) {22 if (parent[i] != -1) {23 cout << "Edge: " << parent[i] << " - " << i << " Weight: " << key[i] <<endl;24 sum += key[i];25 }26 }27 return sum;28 }29 int main() {30 int n, m;31 cin >> n >> m;32 vector<vector<int>> graph(n, vector<int>(n, 0));33 for (int i = 0; i < m; i++) {34 int u, v, w;35 cin >> u >> v >> w;36 graph[u][v] = w;37 graph[v][u] = w;38 }39 int result = prim(graph, n);40 cout << "Total weight of the minimum spanning tree: " << result << endl;41 return 0;42 }
+ {{ select(11) }}
+ - graph[u][v] >= 0 && key[v] > graph[u][v]
+ - graph[u][v] <= 0 && key[v] > graph[u][v]
+ - graph[u][v] == 0 && key[v] > graph[u][v]
+ - graph[u][v] != 0 && key[v] > graph[u][v]
+
+第 12 题 下列Dijkstra算法中，横线处应该填⼊的是（ ）。1 #include <iostream>2 using namespace std;4 #define N 1005 int n, e, s;6 const int inf = 0x7fffff;7 int dis[N + 1];8 int cheak[N + 1];9 int graph[N + 1][N + 1];10 int main() {11 for (int i = 1; i <= N; i++)12 dis[i] = inf;13 cin >> n >> e;14 for (int i = 1; i <= e; i++) {15 int a, b, c;16 cin >> a >> b >> c;17 graph[a][b] = c;18 }19 cin >> s;20 dis[s] = 0;21 for (int i = 1; i <= n; i++) {22 int minn = inf, minx;23 for (int j = 1; j <= n; j++) {24 if (__________) { // 在此处填入选项25 minn = dis[j];26 minx = j;27 }28 }29 cheak[minx] = 1;30 for (int j = 1; j <= n; j++) {31 if (graph[minx][j] > 0) {32 if (minn + graph[minx][j] < dis[j]) {33 dis[j] = minn + graph[minx][j];34 }35 }36 }37 }38 }
+ {{ select(12) }}
+ - dis[j] > minn && cheak[j] == 0
+ - dis[j] < minn && cheak[j] == 0
+ - dis[j] >= minn && cheak[j] == 0
+ - dis[j] < minn && cheak[j] != 0
+
+第 13 题 下⾯Floyd算法中，横线处应该填⼊的是（ ）。1 #include <iostream>2 using namespace std;4 #define N 215 #define INF 999999996 int map[N][N];7 int main() {8 int n, m, t1, t2, t3;9 cin >> n >> m;10 for (int i = 1; i <= n; i++) {11 for (int j = 1; j <= n; j++) {12 if (i == j)13 map[i][j] = 0;14 else15 map[i][j] = INF;16 }17 }18 for (int i = 1; i <= m; i++) {19 cin >> t1 >> t2 >> t3;20 map[t1][t2] = t3;21 }22 for (int k = 1; k <= n; k++)23 for (int i = 1; i <= n; i++)24 for (int j = 1; j <= n; j++)25 if (__________) // 在此处填入选项26 map[i][j] = map[i][k] + map[k][j];27 for (int i = 1; i <= n; i++) {28 for (int j = 1; j <= n; j++) {29 cout.width(4);30 cout << map[i][j];31 }32 cout << endl;33 }34 }
+ {{ select(13) }}
+ - map[i][j] < map[i][k] + map[k][j]
+ - map[i][j] > map[i][k] + map[k][j]
+ - map[i][j] > map[i][k] - map[k][j]
+ - map[i][j] < map[i][k] - map[k][j]
+
+第 14 题 下⾯程序的Merge_Sort函数时间复杂度为（ ）。1 void Merge(int a[], int left, int mid, int right) {2 int temp[right - left + 1];3 int i = left;4 int j = mid + 1;5 int k = 0;6 while (i <= mid && j <= right) {7 if (a[i] < a[j])8 temp[k++] = a[i++];9 else10 temp[k++] = a[j++];11 }12 while (i <= mid)13 temp[k++] = a[i++];14 while (j <= right)15 temp[k++] = a[j++];16 for (int m = left, n = 0; m <= right; m++, n++)17 a[m] = temp[n];18 }19 void Merge_Sort(int a[], int left, int right) {20 if (left == right)21 return;22 int mid = (left + right) / 2;23 Merge_Sort(a, left, mid);24 Merge_Sort(a, mid + 1, right);25 Merge(a, left, mid, right);26 }
+ {{ select(14) }}
+ - 
+ - 
+ - 
+ - 
+
+第 15 题 下⾯fibonacci函数的时间复杂度为（ ）。1 int fibonacci(int n) {2 if (n <= 1)3 return n;4 else5 return fibonacci(n - 1) + fibonacci(n - 2);6 }2
+ {{ select(15) }}
+ - 
+ - ,
+ - 
+ - 
+
+第 16 题 表达式'3' & 1的结果为'1'。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 在C++语⾔中，变量定义必须在某⼀个函数定义之内。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 冒泡排序⼀般是不稳定的。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 ⼆叉排序树的查找操作的平均时间复杂度，正⽐于树的⾼度。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 使⽤math.h或cmath头⽂件中的余弦函数，表达式cos(60)的结果类型为double、值约为0.5。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 你有三种硬币，分别⾯值2元、5元和7元，每种硬币都有⾜够多。买⼀本书需要27元，则最少可以⽤5个硬币组合起来正好付清，且不需要对⽅找钱。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 现有 个完全相同的元素，要将其分为 组，允许每组可以有 个元素，则⼀共有 种分组⽅案。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 已知int类型的变量a和b中分别存储着⼀个直角三角形的两条直角边的长度，则该三角形的⾯积可以通过表达式a / 2.0 * b求得。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 已知等差数列的通项公式 ，则前 项和的求和公式为 。使⽤这⼀公式计算 的时间复杂度是 。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 诚实国公民只说实话，说谎国公民只说谎话。你来到⼀处分岔⼝，⼀条通往诚实国，⼀条通往说谎国，但不知是哪⼀条通往哪⾥。正在为难之际，⾛来两位路⼈，他们都⾃称是诚实国公民，都说对⽅是说谎国公民。你想去说谎国，可以这样问其中⼀位路⼈：“我要去说谎国，如果我去问另⼀个路⼈，他会指向哪⼀条路？”。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

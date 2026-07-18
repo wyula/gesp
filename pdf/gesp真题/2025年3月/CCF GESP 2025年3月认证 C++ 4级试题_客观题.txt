@@ -1,0 +1,155 @@
+第 1 题 关于下述代码，说法错误的是（ ）。1 int multiply(int x, int y);3 int main() {4 int a = 4;5 int b = 5;6 int result = multiply(a, b);7 std::cout << "The result is: " << result << std::endl;8 return 0;9 }11 int multiply(int x, int y) {12 return x * y;13 }量，它们作为实参传递给了multiply函数的形参x和y。
+ {{ select(1) }}
+ - 函数multiply的定义应该放到函数main之前。
+ - 函数声明int multiply(int x, int y);中明确指定了函数multiply()的返回值为整数类型。
+ - 在main函数中，函数multiply通过multiply(a, b)被调⽤，其中a和b是定义在main函数中的变
+ - 运⾏上述代码，将输出The result is: 20。
+
+第 2 题 执⾏下述代码将输出（ ）。1 int x = 10;2 void func() { int x = 20; std::cout << x; }3 int main() {4 func();5 std::cout << x;6 return 0;7 }
+ {{ select(2) }}
+ - 2020
+ - 2010
+ - 1010
+ - 编译错误
+
+第 3 题 执⾏下述代码后，变量a的值为（ ）。1 int a = 10;2 int* p = &a;3 *p = 20
+ {{ select(3) }}
+ - 10
+ - 20
+ - 随机值
+ - 编译错误
+
+第 4 题 以下哪种参数传递⽅式可以避免拷贝⼤型对象？
+ {{ select(4) }}
+ - 只能⽤值传递
+ - 只能⽤引⽤传递
+ - 只能⽤指针传递
+ - 引⽤传递和指针传递均可
+
+第 5 题 执⾏下述代码，将输出（ ）。1 void swap(int a, int &b) {2 int temp = a;3 a = b;4 b = temp;5 }6 int main() {7 int x = 1, y = 2;8 swap(x, y);9 std::cout << x << y;10 return 0;11 }
+ {{ select(5) }}
+ - 12
+ - 21
+ - 22
+ - 11
+
+第 6 题 下⾯的描述中，（ ）正确定义⼀个名为Person的结构体并正确初始化了⼀个Person结构体的变量p。1 struct Person {2 string name;3 int age;4 };5 Person p("Yang", 10);1 struct Person {2 string name,3 int age;4 };5 Person p;6 p.name = "Yang";7 p.age = 10;1 struct Person {2 string name;3 int age;4 };5 Person p = { "Yang", 10 };1 struct Person {2 string name;3 int age;4 };5 Person p = new Person("Yang", 10);
+ {{ select(6) }}
+ - 
+ - 
+ - 
+ - 
+
+第 7 题 给定如下代码，1 struct Person {2 std::string name;3 int age;4 struct Address {5 std::string street;6 std::string city;7 };8 Address address;9 };下⾯描述错误的是（ ）。p.address.city = "Anytown";
+ {{ select(7) }}
+ - 结构Person内嵌套结构Address
+ - Person 有⼀个Address 类型的 address 成员
+ - ⼀个Person类型的变量p的address的初始化可以写成：p.address.street = "123 Main St";
+ - 结构的嵌套可以减少命名冲突，因此可以不必控制嵌套层次
+
+第 8 题 假设int arr[2][3] = {{1,2,3},{4,5,6}};，则arr[1][2]的值是（ ）。
+ {{ select(8) }}
+ - 2
+ - 3
+ - 5
+ - 6
+
+第 9 题 下⾯（ ）正确定义了⼆维数组。
+ {{ select(9) }}
+ - int arr[3,4];
+ - int arr[3][4];
+ - int arr(3,4);
+ - int a[3-4];
+
+第 10 题 ⼩杨正在爬楼梯，需要爬 阶才能到达楼顶。如果每次可以爬 个或 个台阶，下⾯代码采⽤递推算法来计算⼀共有多少种不同的⽅法可以爬到楼顶，则横线上应填写（ ）。1 int f(int n) {2 if (n == 1 || n == 2)3 return n;5 int f1 = 1;6 int f2 = 2;7 int res = 0;8 for (int i = 3; i <= n; i++) {9 ________________________________ // 在此处填入代码10 }11 return res;12 }1 res += f1 + f2;2 f1 = f2;3 f2 = res;1 res = f1 + f2;2 f1 = f2;3 f2 = res;1 res += f1 + f2;2 f2 = res;3 f1 = f2;1 res = f1 + f2;2 f2 = res;3 f1 = f2;
+ {{ select(10) }}
+ - 
+ - 
+ - 
+ - 
+
+第 11 题 给定如下算法，其时间复杂度为（ ）。1 bool f(int arr[], int n, int target) {2 for (int i = 0; i < (1 << n); i++) {3 int sum = 0;4 for (int j = 0; j < n; j++) {5 if (i & (1 << j)) {6 sum += arr[j];7 }8 }9 if (sum == target) return true;10 }11 return false;12 }
+ {{ select(11) }}
+ - 
+ - 
+ - 
+ - 
+
+第 12 题 下⾯关于排序稳定性的描述，正确的是（ ）。
+ {{ select(12) }}
+ - 稳定性指算法的时间复杂度恒定
+ - 稳定排序保证相同元素的相对顺序不变
+ - 选择排序是稳定排序
+ - 插⼊排序不是稳定排序
+
+第 13 题 对数组arr[]={5, 3, 8, 1}进⾏升序排序，执⾏第⼀轮冒泡排序后数组arr中的内容为（ ）。
+ {{ select(13) }}
+ - 3, 5, 1, 8
+ - 3, 1, 5, 8
+ - 3, 5, 8, 1
+ - 5, 3, 8, 1
+
+第 14 题 运⾏下⾯的代码，将出现（ ）。1 double hmean(double a, double b) {2 if (a == -b )3 throw runtime_error("Runtime error occurred.");4 return 2.0*a*b/(a + b);5 }7 int main() {8 double x = 10;9 double y = -10;11 try {12 int result = hmean(x, y);13 cout << "hmean: " << result << endl;14 }15 catch (const runtime_error& e) {16 cout << "Caught: " << e.what() << endl;17 } catch (...) {18 cout << "Caught an unknown exception." << endl;19 }20 return 0;21 }
+ {{ select(14) }}
+ - 屏幕上输出Caught: Runtime error occurred.
+ - 屏幕上输出Caught an unknown exception.
+ - 程序调⽤ std::terminate()
+ - 编译错误
+
+第 15 题 下⾯哪种⽅式不能实现将字符串"Happy Spring!"输出重定向到⽂件log.txt（ ）。1 freopen("log.txt", "w", stdout);2 cout << "Happy Spring!" << endl;3 fclose(stdout);1 std::ofstream outFile("log.txt");2 outFile << "Happy Spring!" << endl;3 outFile.close();1 std::ofstream outFile("log.txt");2 cout << "Happy Spring!" << endl;3 outFile.close();1 ofstream log_file("log.txt");2 streambuf* org_cout = cout.rdbuf();3 cout.rdbuf(log_file.rdbuf());4 cout << "Happy Spring!" << endl;5 cout.rdbuf(org_cout);2
+ {{ select(15) }}
+ - 
+ - 
+ - 
+ - 
+
+第 16 题 函数是C++中的核⼼概念，⽤于封装可重⽤的代码块。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 在C++中，函数的返回类型可以省略，默认为int。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 结构体的成员默认是public访问权限。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 假设整数数组arr[4]= {0, 1, 2, 3};的第⼀个元素在内存中的地址为0x7ffee4065820, 经过int* p= arr; p += 1;后，指针p的值是1。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 ⼆维数组作为函数参数时，必须显式指定所有维度的⼤⼩。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 递推是⼀种通过已知的初始值和递推公式，逐步求解⽬标值的算法。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 考虑最坏情况下冒泡排序算法的时间复杂度， 为待排序数字的数⽬为 的复杂度，则其递推关系式为， 。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 插⼊排序在最好情况已有序下的时间复杂度是 。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 对数组arr[]={4, 3, 1, 5, 2}进⾏升序排序，执⾏第⼀轮选择排序后数组arr中的内容是{1, 4, 3, 5,2}。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 未捕获异常会调⽤std::terminate终⽌程序。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

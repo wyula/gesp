@@ -1,0 +1,155 @@
+第 1 题 运⾏下⾯程序后变量a的值是（ ）。1 int a = 42;2 int* p = &a;3 *p = *p + 1;
+ {{ select(1) }}
+ - 42
+ - 43
+ - 编译错误
+ - 不确定
+
+第 2 题 以下关于数组的描述中，（ ）是错误的。
+ {{ select(2) }}
+ - 数组名是⼀个指针常量
+ - 随机访问数组的元素⽅便快捷
+ - 数组可以像指针⼀样进⾏⾃增操作
+ - sizeof(arr) 返回的是整个数组arr占⽤的字节数
+
+第 3 题 给定如下定义的数组arr，则*(*(arr + 1) + 2)的值是（ ）。1 int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+ {{ select(3) }}
+ - 2
+ - 5
+ - 4
+ - 6
+
+第 4 题 下⾯这段代码会输出（ ）。1 int add(int a, int b = 1); // 函数声明3 int main() {4 cout << add(2) << " " << add(2, 3);5 return 0;6 }8 int add(int a, int b) { // 函数定义9 return a + b;10 }
+ {{ select(4) }}
+ - 3 5
+ - 编译失败：定义处少了默认参数
+ - 运⾏错误
+ - 链接失败：未定义引⽤
+
+第 5 题 下⾯这段代码会输出（ ）。1 int x = 5;3 void foo() {4 int x = 10;5 cout << x << " ";6 }8 void bar() {9 cout << x << " ";10 }12 int main() {13 foo();14 bar();15 }
+ {{ select(5) }}
+ - 5 5
+ - 10 10
+ - 5 10
+ - 10 5
+
+第 6 题 下⾯程序运⾏的结果是（ ）。1 void increaseA(int x) {2 x++;3 }4 void increaseB(int* p) {5 (*p)++;6 }7 int main() {8 int a = 5;9 increaseA(a);10 cout << a << " ";11 increaseB(&a);12 cout << a;13 }
+ {{ select(6) }}
+ - 6 7
+ - 6 6
+ - 5 6
+ - 5 5
+
+第 7 题 关于结构体初始化，以下哪个选项中正确的是（ ）。1 struct Point {int x,y;};
+ {{ select(7) }}
+ - Point p = (1,2);
+ - Point p = {1,2};
+ - Point p = new {1,2};
+ - Point p = <1,2>;
+
+第 8 题 运⾏如下代码会输出（ ）。1 struct Cat {2 string name;3 int age;4 };6 void birthday(Cat& c) {7 c.age++;8 }10 int main() {11 Cat kitty{"Mimi", 2};12 birthday(kitty);13 cout << kitty.name << " " << kitty.age;14 }
+ {{ select(8) }}
+ - Mimi 2
+ - Mimi 3
+ - kitty 3
+ - kitty 2
+
+第 9 题 关于排序算法的稳定性，以下说法错误的是（ ）。
+ {{ select(9) }}
+ - 稳定的排序算法不改变相等元素的相对位置
+ - 冒泡排序是稳定的排序算法
+ - 选择排序是稳定的排序算法
+ - 插⼊排序是稳定的排序算法
+
+第 10 题 下⾯代码试图实现选择排序，使其能对数组 nums 排序为升序，则横线上应分别填写（ ）。1 void selectionSort(vector<int>& nums) {2 int n = nums.size();3 for (int i = 0; i < n - 1; ++i) {4 int minIndex = i;5 for (int j = i + 1; j < n; ++j) {6 if ( __________ ) { // 在此处填入代码7 minIndex = j;8 }9 }10 ____________________; // 在此处填入代码11 }12 }1 nums[j] < nums[minIndex]2 swap(nums[i], nums[minIndex])1 nums[j] > nums[minIndex]2 swap(nums[i], nums[minIndex])1 nums[j] <= nums[minIndex]2 swap(nums[j], nums[minIndex])1 nums[j] <= nums[minIndex]2 swap(nums[i], nums[j])
+ {{ select(10) }}
+ - 
+ - 
+ - 
+ - 
+
+第 11 题 下⾯程序实现插⼊排序（升序排序），则横线上应分别填写（ ）。1 void insertionSort(int arr[], int n) {2 for (int i = 1; i < n; i++) {3 int key = arr[i];4 int j = i - 1;5 while ( j >= 0 && ____________________ ) { // 在此处填入代码6 arr[j + 1] = arr[j];7 j--;8 }9 ____________________; // 在此处填入代码10 }11 }1 arr[j] > key2 arr[j + 1] = key1 arr[j] < key2 arr[j + 1] = key1 arr[j] > key2 arr[j] = key1 arr[j] < key2 arr[j] = key
+ {{ select(11) }}
+ - 
+ - 
+ - 
+ - 
+
+第 12 题 关于插⼊排序的时间复杂度，下列说法正确的是（ ）。
+ {{ select(12) }}
+ - 最好情况和最坏情况的时间复杂度都是
+ - 最好情况是 ，最坏情况是
+ - 最好情况是 ，最坏情况是
+ - 最好情况是 ，最坏情况是
+
+第 13 题 ⼩杨正在爬楼梯，需要 阶才能到达楼顶，每次可以爬 阶或 阶，求⼩杨有多少种不同的⽅法可以爬到楼顶，横线上应填写（ ）。1 int climbStairs(int n) {2 if (n <= 2) return n;3 int prev2 = 1;4 int prev1 = 2;5 int current = 0;6 for (int i = 3; i <= n; ++i) {7 ________________ // 在此处填入代码9 }10 return current;11 }1 prev2 = prev1;2 prev1 = current;3 current = prev1 + prev2;1 current = prev1 + prev2;2 prev2 = prev1;3 prev1 = current;1 current = prev1 + prev2;2 prev1 = current;3 prev2 = prev1;1 prev1 = current;2 prev2 = prev1;3 current = prev1 + prev2;
+ {{ select(13) }}
+ - 
+ - 
+ - 
+ - 
+
+第 14 题 假设有⼀个班级的成绩单，存储在⼀个长度为 n 的数组 scores 中，每个元素是⼀个学⽣的分数。⽼师想要找出 所有满⾜ scores[i] + scores[j] + scores[k] == 300 的三元组，其中 i < j < k。下⾯代码实现该功能，请问其时间复杂度是（ ）。1 int cnt = 0;2 for (int i = 0; i < n; i++) {3 for (int j = i + 1; j < n; j++) {4 for (int k = j + 1; k < n; k++) {5 if (scores[i] + scores[j] + scores[k] == 300) {6 cnt++;7 }8 }9 }10 }
+ {{ select(14) }}
+ - 
+ - 
+ - 
+ - 
+
+第 15 题 关于异常处理，以下说法错误的是（ ）。2
+ {{ select(15) }}
+ - try 块中的代码可能会抛出异常
+ - catch 块可以有多个，处理不同类型的异常
+ - throw 语句⽤于抛出异常
+ - 所有异常都必须被捕获，否则程序会崩溃
+
+第 16 题 以下代码能正确初始化指针。1 int a = 5;2 int *p = a;（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 执⾏下⾯C++代码将输出 11。1 int x = 10;2 void f() {3 int x = x + 1;4 cout << x << endl;5 }7 int main() {8 f();9 }（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 以下C++代码合法。1 struct Student {2 string name;3 int age;4 float score;5 };6 Student* students = new Student[20];（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 执⾏下⾯C++代码将输出 10。1 void func(int* p) {2 *p = 10;3 }5 int main() {6 int a = 5;7 func(&a);8 cout << a << endl;9 return 0;10 }（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 下⾯代码将⼆维数组arr传递给函数f，函数内部⽤arr[i][j]访问元素，函数参数声明为int arr[][4]是错误的。1 void f(int arr[][4], int rows) {2 // 访问 arr[i][j]3 }5 int main() {6 int arr[3][4] = { /* 初始化 */ };7 f(arr, 3);8 }（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 递推是在给定初始条件下，已知前⼀项或前⼏项求后⼀项的过程。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 虽然插⼊排序的时间复杂度为 ，但由于单元操作相对较少，因此在⼩数据量的排序任务中⾮常受欢迎。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 对整数数组{4, 1, 3, 1, 5, 2}进⾏冒泡排序将最⼤元素放到最后，执⾏⼀轮之后是{4, 1, 3, 1,2, 5}。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 以下代码只能捕获int类型异常。1 int main() {2 try {3 throw 42;4 } catch (...) {5 cout << "Caught" << endl;6 }7 return 0;8 }（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 以下代码将 Hello 写⼊⽂件 data.txt。1 ofstream file("data.txt");2 cout<<"Hello"<< endl;3 file.close();3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

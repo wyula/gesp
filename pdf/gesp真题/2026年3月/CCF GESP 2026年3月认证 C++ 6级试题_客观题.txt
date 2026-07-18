@@ -1,0 +1,155 @@
+第 1 题 下列关于 C++ 中类的描述，正确的是（ ）。
+ {{ select(1) }}
+ - 如果类没有⽤户声明的构造函数，那么编译器会隐式声明⼀个默认构造函数
+ - 类的析构函数可以被重载，⼀个类可以有多个析构函数
+ - 类中的所有成员都必须声明为 public
+ - 类和结构体在 C++ 中没有区别，包括默认访问权限也相同
+
+第 2 题 下列代码中，s1->draw(); 和 s2->draw();输出不同结果的主要原因是（ ）。第 1 页 / 共 12 页1 class Shape {2 public:3 virtual void draw() {4 cout << "绘制图形" << endl;5 }7 virtual ~Shape() {}8 };10 class Circle : public Shape {11 public:12 void draw() override {13 cout << "绘制圆形" << endl;14 }15 };17 class Rectangle : public Shape {18 public:19 void draw() override {20 cout << "绘制矩形" << endl;21 }22 };24 int main() {25 Shape* s1 = new Circle();26 Shape* s2 = new Rectangle();28 s1->draw();29 s2->draw();31 delete s1;32 delete s2;33 return 0;34 }
+ {{ select(2) }}
+ - draw() 是普通成员函数
+ - Shape 中的 draw() 被声明为虚函数
+ - Circle 和 Rectangle 中使⽤了 public 继承
+ - 指针变量名不同
+
+第 3 题 下⾯的代码在 main() 中有⼀⾏会导致编译错误，请找出来。1 class Pet {2 public:3 Pet(string n, int a) : name(n), age(a) {}4 string getName() { return name; }5 void birthday() { age++; }6 private:7 string name;8 int age;9 };11 int main() {12 Pet cat("奶茶", 2);13 cout << cat.getName(); // ①14 cat.birthday(); // ②15 cat.name = "大橘"; // ③16 cout << cat.getName(); // ④17 }第 2 页 / 共 12 页
+ {{ select(3) }}
+ - 第 ① ⾏
+ - 第 ② ⾏
+ - 第 ③ ⾏
+ - 第 ④ ⾏
+
+第 4 题 游乐园的过⼭车每次限坐 4 ⼈，⽤循环队列管理排队（容量 MAX=5，空⼀格判满）。下⾯代码执⾏后，循环队列是否已满？rear 的值是多少？1 const int MAX = 5;2 int queue[MAX];3 int front = 0, rear = 0;5 // 入队6 void enqueue(int x) {7 queue[rear] = x;8 rear = (rear + 1) % MAX;9 }10 // 出队11 void dequeue() {12 front = (front + 1) % MAX;13 }15 int main() {16 enqueue(1); enqueue(2); enqueue(3); enqueue(4);17 dequeue(); dequeue();18 enqueue(5); enqueue(6);19 }
+ {{ select(4) }}
+ - 已满，rear = 1
+ - 未满，rear = 1
+ - 已满，rear = 2
+ - 未满，rear = 4
+
+第 5 题 在以下计算机系统应⽤场景中，最适合使⽤循环队列的是（ ）。
+ {{ select(5) }}
+ - 函数调⽤过程中，保存局部变量和返回地址
+ - 表达式求值中的运算符优先级处理
+ - 操作系统中的进程优先级调度（⾼优先级先执⾏）
+ - ⽣产者和消费者问题中的共享缓冲区
+
+第 6 题 在⼆叉搜索树（BST）中，若中序遍历的序列为{1, 2, 3, 4, 5}，且先序遍历的第⼀个序列元素为3，则下列说法正确的是（ ）。
+ {{ select(6) }}
+ - 该树⼀定是⼀棵完全⼆叉树。
+ - 元素4和5不可能是兄弟节点。
+ - 元素1所在节点的深度可能⼤于3（根节点深度为1）。
+ - 元素2⼀定是元素1的⽗节点。
+
+第 7 题 某⼆叉树共有10个结点，记为A~J，已知它的先序遍历序列为：A B D H I E C F J G，中序遍历序列为：H DI B E A F J C G，则该⼆叉树的后序遍历序列是（ ）。第 3 页 / 共 12 页
+ {{ select(7) }}
+ - H I D E B J F G C A
+ - H I D B E J F G C A
+ - I H D E B J F G C A
+ - H I D E B F J G C A
+
+第 8 题 下列关于树的遍历的说法中，正确的⼀项是（ ）。
+ {{ select(8) }}
+ - 对任意⼀棵树进⾏深度优先遍历，所得序列⼀定唯⼀。
+ - 已知⼀棵⼆叉树的先序遍历和后序遍历序列，可以唯⼀确定这棵⼆叉树。
+ - 已知⼀棵⼆叉树的先序遍历和中序遍历序列，可以唯⼀确定这棵⼆叉树。
+ - 已知⼀棵⼆叉树的先序遍历序列，可以唯⼀确定这棵⼆叉树。
+
+第 9 题 有6个字符，它们出现的次数分别为：{2, 3, 3, 4, 6, 8}，现在⽤哈夫曼编码为这些字符编码，最⼩加权路径长度WPL（每个字符的出现次数 它的编码长度，再把每个字符结果加起来）的值为（ ）。
+ {{ select(9) }}
+ - 58
+ - 60
+ - 62
+ - 64
+
+第 10 题 对 个不同符号的符号进⾏哈夫曼编码。若⽣成的哈夫曼树共有 个结点，则 的值是。
+ {{ select(10) }}
+ - 60
+ - 58
+ - 57
+ - 56
+
+第 11 题 关于格雷编码（Gray Code），下列说法正确的是（ ）。
+ {{ select(11) }}
+ - 格雷编码中，编码位数越多，相邻编码之间变化的位数也越多
+ - 格雷编码中，相邻两个编码的⼆进制位恰好有⼀位不同
+ - 格雷编码就是把普通⼆进制编码按位取反后得到的结果
+ - 格雷编码不能⽤于数字电路和状态转换的设计中
+
+第 12 题 给定⼀棵⼆叉树，采⽤⼴度优先搜索 (BFS) 算法，返回右视图所有节点的值。其中右视图定义为：⼆叉树的右视图是从树的右侧看过去时可见的节点集合，即右视图中的每个节点都是某⼀层中最右侧的节点。第 4 页 / 共 12 页1 struct TreeNode {2 int val;3 TreeNode* left;4 TreeNode* right;5 TreeNode(int x): val(x), left(nullptr), right(nullptr) {}6 };8 vector<int> rightSideView(TreeNode* root) {9 unordered_map<int, int> rightmostValueAtDepth;10 int max_depth = -1;12 queue<TreeNode*> nodeQueue;13 queue<int> depthQueue;14 nodeQueue.push(root);15 depthQueue.push(0);17 while (!nodeQueue.empty()) {18 TreeNode* node = nodeQueue.front(); nodeQueue.pop();19 int depth = depthQueue.front(); depthQueue.pop();21 if (node != NULL) {22 max_depth = max(max_depth, depth);24 rightmostValueAtDepth[depth] = node->val;26 nodeQueue.push(node->left);27 nodeQueue.push(node->right);29 depthQueue.push(________);30 depthQueue.push(________);31 }32 }34 vector<int> rightView;35 for (int depth = 0; ________; ++depth) {36 rightView.push_back(rightmostValueAtDepth[depth]);37 }38 return rightView;39 };1 depth2 depth3 depth < max_depth1 depth + 12 depth + 13 depth <= max_depth1 depth + 12 depth + 13 depth < max_depth1 depth2 depth3 depth <= max_depth第 5 页 / 共 12 页
+ {{ select(12) }}
+ - 
+ - 
+ - 
+ - 
+
+第 13 题 下列关于树的深度优先搜索（DFS）的说法中，正确的是（ ）。
+ {{ select(13) }}
+ - 对树进⾏ DFS 时，⼀定是按层从上到下依次访问结点
+ - 对任意⼀棵树进⾏ DFS，得到的遍历序列唯⼀
+ - 对⼀棵树进⾏ DFS 时，常借助递归或栈实现
+ - DFS 只能⽤于⼆叉树，不能⽤于普通树
+
+第 14 题 ⼩朋友们去邻⾥拜年，每个家⾥有不同数量的糖果。规则是：不能连续进⼊两个相邻的房⼦（即不能同时取相邻两家的糖果）。⽬标是拿到最多糖果。以下是代码实现，请补全横线。1 int visit(vector<int>& nums) {2 if (nums.empty()) {3 return 0;4 }5 int size = nums.size();6 if (size == 1) {7 return nums[0];8 }9 vector<int> dp = vector<int>(size, 0);10 dp[0] = nums[0];11 dp[1] = max(nums[0], nums[1]);13 for (int i = 2; i < size; i++) {14 dp[i] = ______; // 在此处填写代码15 }17 return dp[size - 1];18 }
+ {{ select(14) }}
+ - dp[i] = dp[i - 1] + nums[i];
+ - dp[i] = max(dp[i - 1], dp[i - 2] * nums[i]);
+ - dp[i] = max(dp[i - 1], dp[i - 2] + nums[i]);
+ - dp[i] = dp[i - 2] + nums[i];
+
+第 15 题 元宵节晚上，⼩朋友沿着⼀条发光⽯板路前进，每次可向前⾛ 1 块或 2 块⽯板。动态规划定义如下：dp[i] = dp[i - 1] + dp[i - 2]，下⾯关于 dp[i] 的含义最合适的是（ ）。2
+ {{ select(15) }}
+ - ⾛到第 i 块⽯板的不同⾛法数量
+ - ⾛到第 i 块⽯板时，已经⾛过的⽯板总数
+ - 从第 i 块⽯板⾛回起点的最少步数
+ - 从第 i 块⽯板⾛回起点的最⼤步数
+
+第 16 题 下⾯定义了⼀个表⽰⼆维坐标点的类 Point， 并提供了⼀个带参数的构造函数，但第 ② ⾏ Point b; 会调⽤编译器⾃动⽣成的默认构造函数，将b.x 和 b.y 被初始化为 0.0，程序可以正常编译运⾏。第 6 页 / 共 12 页1 class Point {2 public:3 double x, y;4 Point(double px, double py) : x(px), y(py) {}5 void print() {6 cout << "(" << x << ", " << y << ")";7 }8 };10 int main() {11 Point a(3.0, 4.0); // ①12 Point b; // ②13 a.print();14 }（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 C++ 中的继承⽀持单继承和多继承，但⼦类⽆法直接访问⽗类的私有成员。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 对如下结构的树，执⾏travel函数，输出结果是 1 2 3 4 5。1 12 / \3 2 34 / \5 4 51 struct Node {2 int val;3 Node *left, *right;4 Node(int v) : val(v), left(nullptr), right(nullptr) {}5 };7 void travel(Node* root) {8 if (!root) return;9 stack<Node*> s;10 s.push(root);12 while (!s.empty()) {13 Node* cur = s.top(); s.pop();14 cout << cur->val << " ";16 if (cur->right) s.push(cur->right);17 if (cur->left) s.push(cur->left);18 }19 }（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 若所有字符出现频率相同，则哈夫曼编码⼀定会得到完全⼆叉树。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 哈夫曼编码是⼀种变长的前缀编码，在解码时不需要额外的分隔符就能唯⼀还原，这是因为在哈夫曼树中，任何⼀个字符的叶⼦结点都不会成为另⼀个字符结点的祖先。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 在 C++ 中使⽤⼀维数组 vector<int> tree 存储按层序遍历的完全⼆叉树时，若根节点存储在tree[0]，则对于任意⾮空节点 tree[i]，其右孩⼦如果存在必然位于 tree[2 * i + 2]。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 在 C++ 中使⽤栈来⾮递归地实现⼆叉树的前序遍历时，为了保证遍历顺序正确，在处理完当前结点后，应该先将该结点的左孩⼦压⼊栈中，然后再将右孩⼦压⼊栈中。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 设⼆叉树共有 个结点，函数 preorderTraversal 以下代码的时间复杂度为 ，空间复杂度为 。第 7 页 / 共 12 页1 struct TreeNode {2 int val;3 TreeNode* left;4 TreeNode* right;5 TreeNode(int x): val(x), left(nullptr), right(nullptr) {}6 };8 void preorder(TreeNode *root, vector<int> &res) {9 if (root == nullptr) {10 return;11 }12 res.push_back(root->val);13 preorder(root->left, res);14 preorder(root->right, res);15 }17 vector<int> preorderTraversal(TreeNode *root) {18 vector<int> res;19 preorder(root, res);20 return res;21 };（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 下列代码实现了⼀个0-1背包的⼀维动态规划代码，内层循环是经典的逆序写法。若将内层循环改成正序遍历即 for (int j = w[i]; j <= W; j++)，仍能得到正确答案。1 int main() {2 int W = 5;3 int w[] = {2, 3, 4};4 int v[] = {10, 1, 1};5 int n = 3;6 int dp[6] = {0};8 for (int i = 0; i < n; i++) {9 for (int j = W; j >= w[i]; j--) { // ← 逆序！10 dp[j] = max(dp[j], dp[j - w[i]] + v[i]);11 }12 }13 cout << dp[W];14 }（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 在动态规划问题中，状态空间相同且没有重复计算的情况下，“状态转移⽅程+递推”与“递归+记忆化搜索”的时间复杂度通常相同。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

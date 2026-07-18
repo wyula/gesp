@@ -1,0 +1,155 @@
+第 1 题 在 C++ 中，（ ）正确定义了⼀个返回整数值并接受两个整数参数的函数。
+ {{ select(1) }}
+ - int add(int a, int b) { return a + b; }
+ - void add(int a, int b) { return a + b; }
+ - int add(a, b) { return a + b; }
+ - void add(int a, int b) { return a - b; }
+
+第 2 题 在C++中，形参与实参的关系描述正确的是（ ）。
+ {{ select(2) }}
+ - 形参在函数调⽤时指定，实参在函数定义时传递
+ - 形参在函数定义时指定，实参在函数调⽤时传递
+ - 形参和实参可以互换
+ - 形参和实参必须是完全相同的类型，不能有任何差异。
+
+第 3 题 运⾏以下代码，屏幕上将输出（ ）。1 #include <iostream>2 using namespace std;4 int var = 100;6 void function() {7 int var = 200;9 cout << var << " ";10 cout << ::var << " ";11 }13 int main() {14 cout << var << " ";16 function();18 var += 100;19 cout << var << " ";21 return 0;22 }
+ {{ select(3) }}
+ - 100 200 100 200
+ - 100 200 100 300
+ - 100 200 200 200
+ - 100 200 200 300
+
+第 4 题 运⾏下⾯代码，屏幕上输出是（ ）。1 int arr[3] = {24, 9, 7};2 int* p = arr;3 p++;4 cout << *p << endl;
+ {{ select(4) }}
+ - 24
+ - 9
+ - 7
+ - 不确定
+
+第 5 题 运⾏下⾯代码⽚段的结果是（ ）。1 int x = 20;2 int y = 24;3 int* p = &x;4 int* q = &y;6 p = q;
+ {{ select(5) }}
+ - 将 赋值为24
+ - 将 赋值为20
+ - 将 指向 的地址
+ - 将 指向 的地址
+
+第 6 题 在 C++ 中，（ ）正确定义⼀个名为student的结构体，其中包含⼀个name字符数组和⼀个age整数？
+ {{ select(6) }}
+ - struct student { char name[20]; int age; };
+ - student struct { char name[20]; int age; };
+ - student struct { string name; int age; };
+ - struct student { char[20] name; int age; };
+
+第 7 题 在 C++ 中，（ ）正确声明了⼀个 3 ⾏ 4 列的⼆维数组。
+ {{ select(7) }}
+ - int arr[3, 4];
+ - int arr[3][4];
+ - int arr[4][3];
+ - int arr(3, 4);
+
+第 8 题 ⼀个⼆维数组定义为 int arr[3][4];（假设⼀个int变量占4个字节），则int arr[0]占⽤（ ）个字节的内存。
+ {{ select(8) }}
+ - 3
+ - 4
+ - 12
+ - 16
+
+第 9 题 下⾯代码采⽤递推算法来实现整数 的阶乘（ ），则横线上应填写（ ）。1 int factorial(int n) {2 int result = 1;3 for (int i = 2; i <= n; i++) {4 ________________________________ // 在此处填入代码5 }6 return result;7 }
+ {{ select(9) }}
+ - result *= i;
+ - result += i;
+ - result *= result;
+ - result += result;
+
+第 10 题 在排序算法中，稳定性指的是（ ）。
+ {{ select(10) }}
+ - 排序后数据不会丢失
+ - 排序后相同元素的相对顺序保持不变
+ - 排序后数据不会被修改
+ - 排序后数据的时间复杂度不变
+
+第 11 题 下⾯代码实现了冒泡排序函数，则横线上应填写（ ）。1 //交换数组arr的第i个元素和第j个元素2 void swap(vector<int> &arr, int i, int j) {3 int tmp = arr[i];4 arr[i] = arr[j];5 arr[j] = tmp;6 }8 int bubble_sort(vector<int> &arr) {9 for (int i = arr.size() - 1; i > 0; i--) {10 bool flag = false; // 标志位11 ________________________________ { // 在此处填入代码13 if (arr[j] > arr[j + 1]) {14 swap(arr, i, j);15 flag = true;16 }17 }18 if (!flag)19 break; // 此轮“冒泡”未交换任何元素20 }21 }
+ {{ select(11) }}
+ - for (int j = 0; j < arr.size() - 1; j++)
+ - for (int j = arr.size() - 1; j > 0; j--)
+ - for (int j = 0; j < i; j++)
+ - for (int j = i-1; j <=0; j--)
+
+第 12 题 上⼀题算法的时间复杂度为（ ）。
+ {{ select(12) }}
+ - 
+ - 
+ - 
+ - 
+
+第 13 题 下⾯代码实现了插⼊排序函数（升序），则横线上应填写（ ）。1 void insertion_sort(vector<int> &nums) {2 for (int i = 1; i < nums.size(); i++) {3 int base = nums[i], j = i - 1;5 ________________________________ { // 在此处填入代码6 nums[j + 1] = nums[j];7 j--;8 }9 nums[j + 1] = base;10 }11 }
+ {{ select(13) }}
+ - while (j >= 0 && nums[j] > base)
+ - while (j > 0 && nums[j] > base)
+ - while (j >= 0 && nums[j] < base)
+ - while (j > 0 && nums[j] < base)
+
+第 14 题 ⼩杨⽤⽂件重定向实现在log.txt⽂件中输出⽇志，则下⾯横线上应填写（ ）。1 #include <iostream>2 #include <fstream>3 #include <string>4 using namespace std;6 int main() {7 ofstream log_file("log.txt");9 streambuf* original_cout = cout.rdbuf();10 cout.rdbuf(log_file.rdbuf());12 ___________________________________ // 在此处填入代码14 cout.rdbuf(original_cout); // 恢复原始的标准输出缓冲区15 return 0;16 }
+ {{ select(14) }}
+ - cout << "This output will go to the log file." << endl;
+ - log_file << "This output will go to the log file." << endl;
+ - cout >> "This output will go to the log file." >> endl;
+ - log_file >> "This output will go to the log file." >> endl;
+
+第 15 题 运⾏下⾯的代码，屏幕上将输出（ ）。1 #include <iostream>2 using namespace std;4 int divide(int a, int b) {5 if (b == 0) {6 throw runtime_error("division by zero error ");7 }8 return a / b;9 }11 int main() {12 int x = 10;13 int y = 0; // 设为 0 会导致除零错误15 try {16 int result = divide(x, y);17 cout << "result: " << result << endl;18 } catch (const runtime_error& e) {19 cout << "caught an exception: " << e.what() << endl;20 }22 return 0;23 }2
+ {{ select(15) }}
+ - division by zero error result: caught an exception:
+ - result: caught an exception: division by zero error
+ - caught an exception: division by zero error
+ - division by zero error caught an exception: division by zero error
+
+第 16 题 代码int a = 10; int* p = &a;可以正确定义指针和初始化指针。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 在 C++ 中，引⽤传递允许函数修改传递给它的参数的值。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 指针的⼤⼩与其所指向的变量的数据类型的⼤⼩相同。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 ⼆维数组的⾏的⼤⼩的必须在定义时确定，列的⼤⼩可以动态变化。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 递推算法通过逐步求解当前状态和前⼀个或⼏个状态之间的关系来解决问题。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 选择排序是稳定的排序算法。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 插⼊排序的时间复杂度总是⽐冒泡排序低。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 在 C++ 中，如果没有捕获到异常没有匹配的 catch 块，程序会继续执⾏⽽不会终⽌。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 以下代码⽤递推法求斐波那契数列的第 项，时间复杂度为指数级。1 int fibonacci(int n) {2 if (n == 0) return 0;3 if (n == 1) return 1;5 int f0 = 0; // F(0)6 int f1 = 1; // F(1)7 int current;9 for (int i = 2; i <= n; i++) {10 current = f0+ f 1; / / F(n) = F(n-1) + F(n-2)11 f0 = f1;12 f1 = current;13 }15 return current;16 }（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 执⾏下⾯C++代码后，输出的是20。1 int point(int* p){2 return *p * 2;3 }5 int main() {6 int a = 10;7 int* p = &a;8 *p = point(p);9 cout << *p << endl;10 }3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

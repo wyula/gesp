@@ -1,0 +1,155 @@
+第 1 题 下⾯关于链表和数组的描述，错误的是（ ）。较合适，⼤⼩可动态调整。
+ {{ select(1) }}
+ - 当数据数量不确定时，为了应对各种可能的情况，需要申请⼀个较⼤的数组，可能浪费空间；此时⽤链表⽐
+ - 在链表中访问节点的效率较低，时间复杂度为 。
+ - 链表插⼊和删除元素效率较低，时间复杂度为 。
+ - 链表的节点在内存中是分散存储的，通过指针连在⼀起。
+
+第 2 题 在循环单链表中，节点的 next 指针指向下⼀个节点，最后⼀个节点的 next 指针指向（ ）。
+ {{ select(2) }}
+ - 当前节点
+ - nullptr
+ - 第⼀个节点
+ - 上⼀个节点
+
+第 3 题 为了⽅便链表的增删操作，⼀些算法⽣成⼀个虚拟头节点，⽅便统⼀删除头节点和其他节点。下⾯代码实现了删除链表中值为val的节点，横线上应填的最佳代码是( )。1 struct LinkedNode {2 int val;3 LinkedNode* next;4 LinkedNode(int val):val(val), next(nullptr){}5 };7 void removeElements(LinkedNode* head, int val) {8 if (head == nullptr) {9 return;10 }11 LinkedNode* cur;12 LinkedNode* dummyHead = new LinkedNode(0); //虚拟头节点13 ________________________________ // 在此处填入代码15 while(cur ->next ！= nullptr) {16 if(cur->next->val == val) {17 LinkedNode* tmp = cur->next;18 cur->next = cur->next->next;19 delete tmp;20 tmp = nullptr;21 }22 else {23 cur = cur ->next;24 }25 }26 head = dummyHead->next;27 delete dummyHead;28 dummyHead = nullptr;29 }
+ {{ select(3) }}
+ - dummyHead->next = head; cur = dummyHead;
+ - dummyHead->next = head->next; cur = dummyHead;
+ - dummyHead->next = head; cur = dummyHead->next;
+ - dummyHead->next = head->next; cur = dummyHead->next;
+
+第 4 题 对下⾯两个函数，说法错误的是（ ）。1 int fibA(int n) {2 if (n <= 1) return n;4 int f1 = 0, f2 = 1;5 for (int i = 2; i <= n; ++i) {6 int temp = f2;7 f2 = f1 + f2;8 f1 = temp;9 }10 return f2;11 }13 int fibB(int n) {14 if (n <= 1) return n;15 return fibB(n - 1) + fibB(n - 2);16 }
+ {{ select(4) }}
+ - 两个函数的实现的功能相同。
+ - fibA采⽤递推⽅式。
+ - fibB采⽤的是递归⽅式。
+ - fibA时间复杂度为 ，fibB的时间复杂度为 。
+
+第 5 题 两块长⽅形⼟地的长宽分别为 和 ⽶，要将它们分成正⽅形的⼩块，使得正⽅形的尺⼨尽可能⼤。⼩杨采⽤如下的辗转相除函数gcd(24, 36)来求正⽅形分块的边长，则函数gcd调⽤顺序为（ ）。1 int gcd(int a, int b) {2 int big = a > b ? a : b;3 int small = a < b ? a : b;4 if (big % small == 0) {5 return small;6 }7 return gcd(small, big % small);8 }
+ {{ select(5) }}
+ - gcd(24, 36)、gcd(24, 12)、gcd(12, 0)
+ - gcd(24, 36)、gcd(12, 24)、gcd(0, 12)
+ - gcd(24, 36)、gcd(24, 12)
+ - gcd(24, 36)、gcd(12, 24)
+
+第 6 题 唯⼀分解定理表明，每个⼤于1的⾃然数可以唯⼀地写成若⼲个质数的乘积。下⾯函数将⾃然数 的所有质因数找出来，横线上能填写的最佳代码是（ ）。1 #include <vector>2 vector<int> get_prime_factors(int n) {3 vector<int> factors;4 if (n <= 1) {5 cout << "输入的数必须是大于1的正整数" << endl;6 return;7 }8 while (n % 2 == 0) {9 factors.push_back(2);10 n /= 2;11 }13 ________________________________ { // 在此处填入代码14 while (n % i == 0) {15 factors.push_back(i);16 n /= i;17 }18 }20 if (n > 2) {21 factors.push_back(n);22 }24 return factors;25 }
+ {{ select(6) }}
+ - for (int i = 3; i <= n; i ++)
+ - for (int i = 3; i * i <= n; i ++)
+ - for (int i = 3; i <= n; i += 2)
+ - for (int i = 3; i * i <= n; i += 2)
+
+第 7 题 下述代码实现素数表的埃拉托⾊尼(埃⽒)筛法，筛选出所有⼩于等于 的素数。1 vector<int> sieve_Eratosthenes(int n) {2 vector<bool> is_prime(n +1, true);3 vector<int> primes;5 for (int i = 2; i * i <= n; i++) {6 if (is_prime[i]) {7 primes.push_back(i);9 for (int j = i * i; j <= n; j += i) {10 is_prime[j] = false;11 }12 }13 }15 for (int i = sqrt(n) + 1; i <= n; i++) {16 if (is_prime[i]) {17 primes.push_back(i);18 }19 }21 return primes;22 }下⾯说法，正确的是（ ）。
+ {{ select(7) }}
+ - 代码的时间复杂度是 。
+ - 在标记⾮素数时，代码从 开始，可以减少重复标记。
+ - 代码会输出所有⼩于等于 的奇数。
+ - 调⽤函数sieve_Eratosthenes(10)，函数返回值的数组中包含的元素有：2, 3, 5, 7, 9。
+
+第 8 题 下述代码实现素数表的线性筛法，筛选出所有⼩于等于 的素数。下⾯说法正确的是( )。1 vector<int> sieve_linear(int n) {2 vector<bool> is_prime(n +1, true);3 vector<int> primes;5 for (int i = 2; i <= n/2; i++) {6 if (is_prime[i])7 primes.push_back(i);9 for (int j = 0; j < primes.size() && i * primes[j] <= n; j++) {10 is_prime[ i * primes[j] ] = 0;11 if (i % primes[j] == 0)12 break;13 }14 }16 for (int i = n/2 +1; i <= n; i++) {17 if (is_prime[i])18 primes.push_back(i);19 }21 return primes;22 }
+ {{ select(8) }}
+ - 线性筛的时间复杂度是 。
+ - 每个合数会被其所有的质因⼦标记⼀次。
+ - 线性筛和埃拉托⾊尼筛的实现思路完全相同。
+ - 以上都不对
+
+第 9 题 考虑以下C++代码实现的快速排序算法：1 int partition(vector<int>& arr, int left, int right) {2 int pivot = arr[right]; // 基准值3 int i = left - 1;5 for (int j = left; j < right; j++) {6 if (arr[j] < pivot) {7 i++;8 swap(arr[i], arr[j]);9 }10 }11 swap(arr[i + 1], arr[right]);12 return i + 1;13 }15 // 快速排序16 void quickSort(vector<int>& arr, int left, int right) {17 if (left < right) {18 int pi = partition(arr, left, right);19 quickSort(arr, left, pi - 1);20 quickSort(arr, pi + 1, right);21 }22 }以下关于快速排序的说法，正确的是（ ）。
+ {{ select(9) }}
+ - 快速排序通过递归对⼦问题进⾏求解。
+ - 快速排序的最坏时间复杂度是 。
+ - 快速排序是⼀个稳定的排序算法。
+ - 在最优情况下，快速排序的时间复杂度是 。
+
+第 10 题 下⾯关于归并排序，描述正确的是（ ）。
+ {{ select(10) }}
+ - 归并排序是⼀个不稳定的排序算法。
+ - 归并排序的时间复杂度在最优、最差和平均情况下都是 。
+ - 归并排序需要额外的 空间。
+ - 对于输⼊数组 {12, 11, 13, 5, 6, 7}，代码输出结果为：7 6 5 13 12 11。
+
+第 11 题 给定⼀个长度为 的有序数组nums，其中所有元素都是唯⼀的。下⾯的函数返回数组中元素target的索引。1 int binarySearch(vector<int> &nums, int target, int left, int right) {2 if (left > right) {3 return -1;4 }6 int middle = left + ((right - left) / 2);7 if (nums[middle] == target) {8 return middle;9 }10 else if (nums[middle] < target) {11 return binarySearch(nums, target, middle + 1, right);12 }13 else14 return binarySearch(nums, target, left, middle - 1);15 }16 }18 int Find(vector<int> &nums, int target) {19 int n = nums.size();20 return binarySearch(nums, target, 0, n - 1);21 }关于上述函数，描述不正确的是（ ）。
+ {{ select(11) }}
+ - 函数采⽤⼆分查找，每次计算搜索当前搜索区间的中点，然后根据中点的元素值排除⼀半搜索区间。
+ - 函数采⽤递归求解，每次问题的规模减⼩⼀半。
+ - 递归的终⽌条件是中间元素的值等于target，若数组中不包含该元素，递归不会终⽌。
+ - 算法的复杂度为 .
+
+第 12 题 给定⼀个长度为 的有序数组nums，其中可能包含重复元素。下⾯的函数返回数组中某个元素target的左边界，若数组中不包含该元素，则返回−1。例如在数组nums = [5,7,7,8,8,10]中查找target=8，函数返回 在数组中的左边界的索引为 。则横线上应填写的代码为（ ）。1 int getLeftBoundary(vector<int>& nums, int target) {2 int left = 0;3 int right = nums.size() - 1;5 while (left < right) {6 int middle = left + ((right - left) / 2);7 if (target <= nums[middle])8 ________________________________ // 在此处填入代码9 else10 left = middle+1;11 }13 return nums[left]==target?left:-1;14 }
+ {{ select(12) }}
+ - right = middle - 1;
+ - right = middle;
+ - right = middle + 1;
+ - 以上都不对
+
+第 13 题 假设有多个孩⼦，数组g保存所有孩⼦的胃⼝值。有多块饼⼲，数组s保存所有饼⼲的尺⼨。⼩杨给孩⼦们发饼⼲，每个孩⼦最多只能给⼀块饼⼲。饼⼲的尺⼨⼤于等于孩⼦的胃⼝时，孩⼦才能得到满⾜。⼩杨的⽬标是尽可能满⾜越多数量的孩⼦，因此打算采⽤贪⼼算法来找出能满⾜的孩⼦的数⽬，则横线上应填写的代码为（ ）。1 int cooki4children(vector<int>& g, vector<int>& s) {2 sort(g.begin(), g.end());3 sort(s.begin(), s.end());5 int index = s.size() - 1; // 饼干数组下标6 int result = 0;7 for (int i = g.size() - 1; i >= 0; i--) {8 if (index >= 0 && s[index] >= g[i]) {9 ________________________________ // 在此处填入代码10 }11 }12 return result;13 }
+ {{ select(13) }}
+ - result++; index--;
+ - result--; index--;
+ - result--; index++;
+ - result++; index++;
+
+第 14 题 关于分治算法，以下说法中不正确的是（ ）。
+ {{ select(14) }}
+ - 分治算法将问题分成⼦问题，然后分别解决⼦问题，最后合并结果。
+ - 归并排序采⽤了分治思想。
+ - 快速排序采⽤了分治思想。
+ - 冒泡排序采⽤了分治思想。
+
+第 15 题 ⼩杨编写了⼀个如下的⾼精度减法函数：1 vector<int> highPrecisionSubtract(vector<int> a, vector<int> b) {2 vector<int> result;3 int borrow = 0;5 for (int i = 0; i < a.size(); ++i) {6 int digitA = a[i];7 int digitB = i < b.size() ? b[i] : 0;9 int diff = digitA - digitB - borrow;10 if (diff < 0) {11 diff += 10;12 borrow = 1;13 }14 else {15 borrow = 0;16 }18 result.push_back(diff);19 }21 while (result.size() > 1 && result.back() == 0) {22 result.pop_back();23 }25 return result;26 }下⾯说法，正确的是（ ）。2
+ {{ select(15) }}
+ - 如果数组 表⽰的整数⼩于 表⽰的整数，代码会正确返回⼆者的差为负数。
+ - 代码假设输⼊数字是以倒序存储的，例如 存储为 {0, 0, 5}。
+ - 代码的时间复杂度为
+ - 当减法结果为 时，结果数组仍然会存储很多个元素 。
+
+第 16 题 单链表只⽀持在表头进⾏插⼊和删除操作。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 线性筛相对于埃拉托斯特尼筛法，每个合数只会被它的最⼩质因数筛去⼀次，因此效率更⾼。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 任何⼀个⼤于1的⾃然数都可以分解成若⼲个不同的质数的乘积，且分解⽅式是唯⼀的。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 贪⼼算法通过每⼀步选择当前最优解，从⽽⼀定能获得全局最优解。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 递归算法必须有⼀个明确的结束条件，否则会导致⽆限递归并可能引发栈溢出。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 快速排序和归并排序的平均时间复杂度均为 ，且都是稳定排序。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 快速排序的时间复杂度总⽐插⼊排序的时间复杂度低。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 ⼆分查找仅适⽤于数组⽽不适合链表，因为⼆分查找需要跳跃式访问元素，链表中执⾏跳跃式访问的效率低。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 对有序数组{5,13,19,21,37,56,64,75,88,92,100} 进⾏⼆分查找，成功查找元素19 的⽐较次数是2。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 递归函数每次调⽤⾃⾝时，系统都会为新开启的函数分配内存，以存储局部变量、调⽤地址和其他信息等，导致递归通常⽐迭代更加耗费内存空间。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

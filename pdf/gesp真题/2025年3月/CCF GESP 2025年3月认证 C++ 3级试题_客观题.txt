@@ -1,0 +1,155 @@
+第 1 题 Base64 编码将每3字节的输⼊数据编码为 4 字节的输出数据。如果输⼊数据长度不是 3 的倍数，会⽤=号填充。在Base64编码中，如果输⼊字符串的长度为10字节，编码后的字符串长度是多少（ ）
+ {{ select(1) }}
+ - 12 字节
+ - 13 字节
+ - 14 字节
+ - 16 字节
+
+第 2 题 UTF-8 编码规则如下：1 字节：0xxxxxxx2 字节：110xxxxx 10xxxxxx3 字节：1110xxxx 10xxxxxx 10xxxxxx4 字节：11110xxx 10xxxxxx 10xxxxxx 10xxxxxx以下哪个字节序列是合法的 UTF-8 编码（ ）
+ {{ select(2) }}
+ - 0xC0 0x80
+ - 0xF0 0x90 0x80 0x80
+ - 0x80 0x80 0x80
+ - 0xFF 0xFE 0xFD
+
+第 3 题 在 8 位⼆进制原码表⽰中，⼋进制数 -5 的⼆进制形式是什么（ ）
+ {{ select(3) }}
+ - 10000101
+ - 11111010
+ - 11111011
+ - 00000101
+
+第 4 题 ⼗进制数 111.111 的⼆进制表⽰可以是下⾯的（ ）。
+ {{ select(4) }}
+ - 1101111.0001110001
+ - 1101110.1001110001
+ - 1101111.1001110001
+ - 1101111.0011110001
+
+第 5 题 在C++中，补码的主要作⽤是
+ {{ select(5) }}
+ - 提高浮点数的精度
+ - 简化整数的加减法运算
+ - 增加整数的表示范围
+ - 优化内存分配
+
+第 6 题 在C++中，⼀个8位有符号整数（使⽤补码表⽰）的范围是
+ {{ select(6) }}
+ - -128 到 127
+ - -127 到 128
+ - -256 到 255
+ - 0 到 255
+
+第 7 题 在C++中，以下代码的输出是什么()1 int a = -5;2 unsigned int b = a;3 cout << b;
+ {{ select(7) }}
+ - -5
+ - 5
+ - 4294967291
+ - 编译错误
+
+第 8 题 下列程序的作⽤是1 int main() {2 int decimal = 25;3 cout << oct << decimal;4 return 0;5 }
+ {{ select(8) }}
+ - 将十进制数转换成八进制数
+ - 将八进制数转换成十进制数
+ - 将二进制数转换成八进制数
+ - 将八进制数转换成16进制数
+
+第 9 题 下⾯程序是将⼗进制转⼗六进制，横线处应该填⼊的是1 #include <iostream>2 using namespace std;4 int main() {5 int decimal = 255;6 ——————————————————7 return 0;8 }
+ {{ select(9) }}
+ - cout << oct << decimal;
+ - cout << decimal << decimal;
+ - cout << hex << decimal;
+ - 不能正确执行
+
+第 10 题 以下代码的说法正确的是什么( )1 #include <iostream>2 using namespace std;4 int main() {5 int a = 0b1101;6 int b = 0b1011;7 cout << (a ^ b);8 return 0;9 }
+ {{ select(10) }}
+ - 进行的是整体异或运算
+ - 进行的是按位同或运算
+ - 进行的是按位与运算
+ - 进行的是按位异或运算
+
+第 11 题 下⾯枚举法查找最⼤值索引程序中，横线处应该填写的是1 #include <iostream>2 using namespace std;4 int main() {5 int arr[] = {3, 7, 2, 9, 5};6 int maxIndex = 0;7 for (int i = 1; i < 5; i++) {8 ————————————————————————————————9 {10 maxIndex = i;11 }12 }13 cout << maxIndex;14 return 0;15 }
+ {{ select(11) }}
+ - if (arr[maxIndex] > arr[i])
+ - if (arr[i]-1 > arr[maxIndex])
+ - if (arr[i]+1 > arr[maxIndex])
+ - if (arr[i] > arr[maxIndex])
+
+第 12 题 以下代码的功能是将数组中的奇数和偶数分别放在数组的前半部分和后半部分,横线处应该填⼊的是1 #include <iostream>2 using namespace std;4 int main() {5 int arr[] = {1, 2, 3, 4, 5};6 int left = 0, right = 4;7 while (left < right) {8 while (arr[left] % 2 == 1 && left < right) left++;9 ————————————————————————————————————————————————————10 if (left < right) {11 swap(arr[left], arr[right]);12 }13 }14 for (int i = 0; i < 5; i++) {15 cout << arr[i] << " ";16 }17 return 0;18 }
+ {{ select(12) }}
+ - while (arr[left] % 2 == 0 && left < right) right--;
+ - while (arr[right] % 2 == 0 && left < right) left--;
+ - while (arr[right] % 2 != 0 && left < right) right--;
+ - while (arr[right] % 2 == 0 && left < right) right--;
+
+第 13 题 下⾯程序最后能够得到HelloC++的是2 int main() {3 string str = "HelloWorld";4 ___________________5 cout << str;6 return 0;7 }1 str.replace(0, 5, "C++");1 str.replace(5, 5, "C++");1 str.replace(1, 5, "C++");1 str.replace(4, 5, "C++");
+ {{ select(13) }}
+ - 
+ - 
+ - 
+ - 
+
+第 14 题 想要得到字符串world,下⾯程序横线处应该填⼊的是1 #include <iostream>2 #include <string>3 using namespace std;5 int main() {6 string str = "HelloC++";7 _________________8 _________________9 return 0;10 }1 str.insert(4, "World");2 cout << str.substr(4, 4);1 cout << str.substr(5, 5);1 str.insert("World");2 cout << str.substr(5, 5);1 str.insert(5, "World");2 cout << str.substr(5, 5);
+ {{ select(14) }}
+ - 
+ - 
+ - 
+ - 
+
+第 15 题 有 n 个正整数，假设⼀个正整数是美丽数字当且仅当该正整数是 9 的倍数但不是 8 的倍数。下⾯的程序是编写计算 n 个正整数中美丽数字的数量，横线处应该填⼊的是1 for (int i = 1; i <= n; i++) {2 cin >> a;3 __________________________4 cnt++;5 }2
+ {{ select(15) }}
+ - if (a % 9 != 0 && a % 8 != 0)
+ - if (a % 9 == 0 & a % 8 == 0)
+ - if (a % 9 == 0 && a % 8 != 0)
+ - if (a % 9 == 0 & a % 8 != 0)
+
+第 16 题 判断一个三角形是否成立的条件只有:任意两边长度之和大于第三条边的长度（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 这段程序进⾏的是判断⼀个从键盘输⼊的字符的ASCII 是否是奇数，若是，输出 YES，否则，输出 NO1 int main()2 {3 char x;4 scanf("%c", &x);5 int ASCII = (int)x;6 cout << (x & 1 ? "YES" : "NO") << '\n';7 return 0;8 }（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 闰年的定义：普通闰年：公历年份是 4 的倍数，且不是 100 的倍数的，为闰年如 2004 年、2020 年等就是闰年。世纪闰年：公历年份是整百数的，必须是 400 的倍数才是闰年如 1900 年不是闰年，2000 年是闰年。下⾯程序是判断是否是闰年的正确程序1 cin>>n;2 cout<<((n%4==0&&n%100!=0)||(n%400==0))?1:0;3 return 0;（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 C++语句cout<<(n%15==0? "YES":"NO");能够判断⼀个整数能否被3和5同时整除（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 有n个同学，从中抽取任意个⼈数来参加学校组织的⼤合唱，共有2的n次幂个⽅法（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 若将⼀个正整数化为⼆进制数，在此⼆进制数中，我们将数字 1 的个数是偶数的这类⼆进制数称为 A 类数，否则就称其为 B 类数。例如：(13) 10 =(1101) 2 ，其中 1 的个数为 3则称此数为 B 类数；(10) 10 =(1010) 2 ，其中 1 的个数为 2，称此数为 A 类数；判断202510化为⼆进制后，1的个数为偶数个，因此2025为A类数。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 该段程序将 n 不停地除以 2，并输出此时的商和余数，直到 n=0 为⽌。1 long long n;2 cin >> n;3 while(n != 0) {4 cout << n/2 << ' ' << n%2 << '\n';5 n /= 2;6 }（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 两个13进制的数A和B，在10进制下分别表⽰10和11。A+B13=1813，也就是说13进制数A加上13进制数B，和是13进制数18。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 k 进制，逢 k 进第⼆位， 进百位， 进千位；（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 CCF(⼗九进制) = 21AC(⼗三进制)(不区分⼤⼩写)3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

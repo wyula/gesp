@@ -1,0 +1,155 @@
+第 1 题 执⾏下⾯程序后，输出为（ ）。1 int f(int x = 2){2 return x * 3;3 }5 int main(){6 cout << f() << " " << f(4);7 }
+ {{ select(1) }}
+ - 2 12
+ - 6 12
+ - 6 4
+ - 12 6
+
+第 2 题 执⾏下⾯代码后，输出为（ ）。1 int main() {2 int a = 5;3 int* p = &a;4 int** q = &p;5 **q += 7;6 cout << a << " " << *p;7 }
+ {{ select(2) }}
+ - 5 5
+ - 12 12
+ - 12 5
+ - 5 12
+
+第 3 题 已知：1 int a[3][4] = {2 {1,2,3,4},3 {5,6,7,8},4 {9,10,11,12}5 };6 int (*p)[4] = a;第 1 页 / 共 11 页则表达式 *(*(p + 2) + 1) 的值为（ ）。
+ {{ select(3) }}
+ - 6
+ - 10
+ - 9
+ - 11
+
+第 4 题 执⾏下⾯程序后，输出为（ ）。1 void fun(int a, int &b, int *c){2 a += 1;3 b += 2;4 *c += 3;5 }7 int main(){8 int x = 1, y = 1, z = 1;9 fun(x, y, &z);10 cout << x << " " << y << " " << z;11 }
+ {{ select(4) }}
+ - 2 3 4
+ - 1 3 4
+ - 2 1 4
+ - 1 1 1
+
+第 5 题 执⾏下⾯程序后输出为（ ）。1 int x = 3;2 void f(int& x){3 x += 2;4 }5 int main(){6 int x = 10;7 f(x);8 cout << x << " " << ::x;9 }
+ {{ select(5) }}
+ - 12 3
+ - 10 5
+ - 12 5
+ - 10 3
+
+第 6 题 下列关于结构体初始化的写法，正确的是（ ）。1 struct Point { int x, y; };3 Point p = (1,2);1 struct Point { int x, y; };3 Point p = {1,2};第 2 页 / 共 11 页1 struct Point { int x, y; };3 Point p = new Point(1,2);1 struct Point { int x, y; };3 Point p = <1,2>;
+ {{ select(6) }}
+ - 
+ - 
+ - 
+ - 
+
+第 7 题 执⾏下⾯代码后输出为（ ）。1 struct S { int a; int b; };3 void g(S s){ s.a += 10; }4 void h(S& s){ s.b += 10; }6 int main(){7 S s{1,2};8 g(s);9 h(s);10 cout << s.a << " " << s.b;11 }
+ {{ select(7) }}
+ - 11 12
+ - 1 12
+ - 11 2
+ - 1 2
+
+第 8 题 关于递推算法的描述，正确的是（ ）。
+ {{ select(8) }}
+ - 递推表现为函数⾃⼰调⽤⾃⼰
+ - 递推从已知初值出发，利⽤递推关系逐步推出后续结果
+ - 递推只能⽤于指数复杂度问题
+ - 递推⼀定需要回溯
+
+第 9 题 执⾏ climb(6) 的返回值为（ ）。1 int climb(int n){2 if(n <= 2) return n;3 int a = 1, b = 2, c = 0;4 for(int i = 3; i <= n; i++){5 c = a + b;6 a = b;7 b = c;8 }9 return c;10 }第 3 页 / 共 11 页
+ {{ select(9) }}
+ - 8
+ - 13
+ - 5
+ - 10
+
+第 10 题 某排序算法对如下数据排序（按 score 升序），则下⾯关于该排序算法稳定性的描述中，说法正确的是。初始：(90,'A'), (90,'B'), (80,'C'), (90,'D')排序后：(80,'C'), (90,'A'), (90,'B'), (90,'D')
+ {{ select(10) }}
+ - 不稳定，因为出现了相同分数
+ - 稳定，因为相同 score 的相对顺序保持为 A 在 B 前、B 在 D 前
+ - 不稳定，因为 C 跑到前⾯了
+ - ⽆法判断
+
+第 11 题 下⾯代码试图把数组按升序进⾏“插⼊排序”，横线处应填写（ ）。1 void ins(int a[], int n){2 for(int i = 1; i < n; i++){3 int key = a[i];4 int j = i-1;5 while(j >= 0 && __________){6 a[j+1] = a[j];7 j--;8 }9 a[j+1] = key;10 }11 }
+ {{ select(11) }}
+ - a[j] < key
+ - a[j] > key
+ - a[j+1] > key
+ - a[j] == key
+
+第 12 题 下列代码段的时间复杂度为（ ）。1 int cnt=0;2 for(int i=0; i<n; i++){3 for(int j=0; j<n; j++){4 if( (i+j) % 3 == 0) cnt++;5 }6 }
+ {{ select(12) }}
+ - 
+ - 
+ - 
+ - 
+
+第 13 题 下⾯哪种⽅式不能实现将字符串 Welcome to 2026! 输出重定向到⽂件 log.txt（ ）。1 freopen("log.txt", "w", stdout);2 cout << "Welcome to 2026!" << endl;3 fclose(stdout);第 4 页 / 共 11 页1 std::ofstream outFile("log.txt");2 cout << "Welcome to 2026!" << endl;3 outFile.close();1 ofstream log_file("log.txt");2 streambuf* org_cout = cout.rdbuf();3 cout.rdbuf(log_file.rdbuf());4 cout << "Welcome to 2026!" << endl;5 cout.rdbuf(org_cout);1 std::ofstream outFile("log.txt");2 outFile << "Welcome to 2026!" << endl;3 outFile.close();
+ {{ select(13) }}
+ - 
+ - 
+ - 
+ - 
+
+第 14 题 执⾏下⾯程序，输出结果是（ ）。1 int divi(int a,int b){2 if(b==0) throw 0;3 return a/b;4 }6 int main(){7 try{8 cout << divi(10,0);9 }catch(const char* msg){10 cout << "A";11 }catch(int){12 cout << "B";13 }14 }
+ {{ select(14) }}
+ - A
+ - B
+ - 程序崩溃
+ - ⽆输出
+
+第 15 题 下列函数实现排⾏榜中单个元素的位置调整（类似插⼊排序的相邻搬移）。当某玩家分数增加，需将其向前移动时，while 循环的条件应为（ ）。1 struct Player{ int score; };2 void up(Player players[], int n, int idx){3 Player cur = players[idx];4 int i = idx;5 while( ____________________ ){6 players[i] = players[i-1];7 i--;8 }9 players[i] = cur;10 }第 5 页 / 共 11 页2
+ {{ select(15) }}
+ - i > 0 && cur.score > players[i-1].score
+ - i > 0 && cur.score < players[i-1].score
+ - i < n-1 && cur.score > players[i+1].score
+ - i < n-1 && cur.score < players[i+1].score
+
+第 16 题 下⾯代码执⾏结束时，变量 a 的值变成 15。1 void add10(int &x) { x += 10; }3 int main() {4 int a = 5;5 add10(a);6 }（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 引⽤⼀旦绑定某个变量，就不能再绑定其他变量。 （）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 执⾏下⾯代码，输出结果为 5。1 int main() {2 int a[2][3];3 cout << &a[1][2] - &a[0][1] << endl;4 return 0;5 }（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 下⾯程序可以正常编译并输出 10。1 int calc(int x, int y = 10);2 int calc(int x) { return x * 2; }3 int calc(int x, int y) { return x * y; }5 int main() {6 cout << calc(5);7 }（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 下⾯程序执⾏后输出 2010。1 int x = 10;2 void f() { int x = 20; cout << x; }4 int main() {5 f();6 cout << x;7 }（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 在 C++ 中，如果声明了⼀个指针变量但没有显式初始化，该指针会⾃动被初始化为 nullptr。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 下⾯代码没有语法错误。第 6 页 / 共 11 页1 struct GameCharacter {2 string name;3 int level;4 float position_x;5 float position_y;7 struct Equipment {8 string weapon;9 int attack_bonus;10 int defense_bonus;11 } equipment;13 struct Skill {14 string name;15 int damage;16 } skills[8];17 int skill_count;18 };（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 下⾯程序能够把 Hello 写⼊ data.txt ⽂件中。1 ofstream fout("data.txt");2 cout << "Hello";3 fout.close();（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 由于选择排序和插⼊排序的时间复杂度均为 ，在任何实际场景下两者的性能表现⼏乎相同，可以互相替代。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 下⾯⽤递推⽅式计算斐波那契数列第 n 项的程序，时间复杂度是 。1 int fib(int n) {2 if (n <= 1) return n;3 int f0 = 0, f1 = 1, cur = 0;4 for (int i = 2; i <= n; i++) {5 cur = f0 + f1;6 f0 = f1;7 f1 = cur;8 }9 return cur;10 }3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

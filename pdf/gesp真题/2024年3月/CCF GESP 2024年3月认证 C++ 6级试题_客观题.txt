@@ -1,0 +1,155 @@
+第 1 题 在构建哈夫曼树时，每次应该选择（ ）合并。
+ {{ select(1) }}
+ - 最⼩权值的节点
+ - 最⼤权值的节点
+ - 随机节点
+ - 深度最深的节点
+
+第 2 题 ⾯向对象的编程思想主要包括以下哪些原则（ ）？
+ {{ select(2) }}
+ - 贪⼼、动态规划、回溯
+ - 并发、并⾏、异步
+ - 递归、循环、分治
+ - 封装、继承、多态
+
+第 3 题 在队列中，元素的添加和删除是按照（ ）原则进⾏的。
+ {{ select(3) }}
+ - 先进先出
+ - 先进后出
+ - 最⼩值先出
+ - 随机进出
+
+第 4 题 给定⼀个简单的类定义如下，（ ）语句在类的外部正确地创建了⼀个 Circle 对象并调⽤了 getArea 函数？1 class Circle {2 private:3 double radius;4 public:5 Circle(double r) : radius(r) {}6 double getArea() {7 return 3.14 * radius * radius;8 }9 };
+ {{ select(4) }}
+ - Circle c = Circle(5.0); c.getArea(c);
+ - Circle c(5.0); getArea(c);
+ - Circle c = new Circle(5.0); c.getArea();
+ - Circle c(5.0); c.getArea();
+
+第 5 题 以下代码希望能在⼀棵⼆叉排序树中搜索特定的值，请在横线处填⼊（ ），使其能正确实现相应功能。1 TreeNode* search(TreeNode* root, int target) {2 if (root == NULL || root->val == target) {3 return root;4 }5 if (_______________) {6 return search(root->left, target);7 } else {8 return search(root->right, target);9 }10 }
+ {{ select(5) }}
+ - target < root->left
+ - target < root->val
+ - target > root->val
+ - target > root->left
+
+第 6 题 3 位格雷编码的正确顺序是（ ）。
+ {{ select(6) }}
+ - 000, 001, 010, 011, 100, 101, 110, 111
+ - 000, 001, 011, 010, 110, 111, 101, 100
+ - 000, 010, 001, 011, 100, 110, 101, 111
+ - 000, 010, 110, 100, 111, 101, 011, 001
+
+第 7 题 以下动态规划算法的含义与⽬的是（ ）。1 int function(vector<int>& nums) {2 int n = nums.size();3 if (n == 0)4 return 0;5 if (n == 1)6 return nums[0];7 vector<int> dp(n, 0);8 dp[0] = nums[0];9 dp[1] = max(nums[0], nums[1]);10 for (int i = 2; i < n; ++i) {11 dp[i] = max(dp[i - 1], nums[i] + dp[i - 2]);12 }13 return dp[n - 1];14 }
+ {{ select(7) }}
+ - 计算数组 nums 中的所有元素的和
+ - 计算数组 nums 中相邻元素的最⼤和
+ - 计算数组 nums 中不相邻元素的最⼤和
+ - 计算数组 nums 中的最⼩元素
+
+第 8 题 阅读以下⼴度优先搜索的代码：1 void bfs(TreeNode* root) {2 if (root == NULL) {3 return;4 }5 queue<TreeNode*> q;6 q.push(root);7 while (!q.empty()) {8 TreeNode* current = q.front();9 q.pop();10 cout << current->val << " ";11 if (current->left) {12 q.push(current->left);13 }14 if (current->right) {15 q.push(current->right);16 }17 }18 }使⽤以上算法遍历以下这棵树，可能的输出是（ ）。1 12 / \3 2 34 / \ \5 8 9 66 / \ \7 4 5 78 / \9 10 11
+ {{ select(8) }}
+ - 1 2 8 9 4 5 3 6 7 10 11
+ - 1 2 3 4 5 6 7 8 9 10 11
+ - 1 2 3 8 9 6 4 5 7 10 11
+ - 1 2 3 8 9 4 5 6 7 10 11
+
+第 9 题 给定⼀个空栈，执⾏以下操作序列：操作序列：push(1), push(2), push(3), pop(), pop(), push(4), push(5), pop()最终栈中的元素是（ ）。
+ {{ select(9) }}
+ - 1, 2
+ - 1, 4, 5
+ - 1, 2, 5
+ - 1, 4
+
+第 10 题 ⼀个有 124 个叶⼦节点的完全⼆叉树，最多有（ ）个结点。
+ {{ select(10) }}
+ - 247
+ - 248
+ - 249
+ - 250
+
+第 11 题 在求解最优化问题时，动态规划常常涉及到两个重要性质，即最优⼦结构和（ ）。
+ {{ select(11) }}
+ - 重叠⼦问题
+ - 分治法
+ - 贪⼼策略
+ - 回溯算法
+
+第 12 题 若⼀棵⼆叉树的先序遍历为：A, B, D, E, C, F、中序遍历为：D, B, E, A, F, C，它的后序遍历为（ ）。
+ {{ select(12) }}
+ - D, E, B, F, C, A
+ - E, D, B, F, C, A
+ - D, E, B, C, F, A
+ - E, D, B, C, F, A
+
+第 13 题 线性筛法与埃⽒筛法相⽐的优势是（ ）。
+ {{ select(13) }}
+ - 更容易实现
+ - 更节省内存
+ - 更快速
+ - 更准确
+
+第 14 题 以下代码使⽤了辗转相除法求解最⼤公因数，请在横线处填⼊（ ），使其能正确实现相应功能。1 int gcd(int a, int b) {2 while (b != 0) {3 ______________________4 }5 return a;6 }
+ {{ select(14) }}
+ - int temp = b; b = a / b; a = temp;
+ - int temp = a; a = b / a; b = temp;
+ - int temp = b; b = a % b; a = temp;
+ - b = a % b; a = b;
+
+第 15 题 下⾯的代码⽚段⽤于反转单链表，请进⾏（ ）修改，使其能正确实现相应功能。1 ListNode* reverseLinkedList(ListNode* head) {2 ListNode* prev = nullptr;3 ListNode* current = head;4 while (current != nullptr) {5 ListNode* next = current->next;6 current->next = next;7 prev = current;8 current = next;9 }10 return prev;11 }2
+ {{ select(15) }}
+ - current->next = next; 应该改为 current->next = prev;
+ - ListNode* next = current->next; 应该改为 ListNode* next = prev->next;
+ - current != nullptr 应该改为 current->next != nullptr
+ - ListNode* prev = nullptr; 应该改为 ListNode* prev = head;
+
+第 16 题 哈夫曼树是⼀种⼆叉树。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 在动态规划中，状态转移⽅程的作⽤是定义状态之间的关系。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 继承是将已有类的属性和⽅法引⼊新类的过程。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 完全⼆叉树的任意⼀层都可以不满。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 删除单向链表中的节点，只需知道待删除节点的地址即可，⽆需访问前⼀个节点。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 在宽度优先搜索中，通常使⽤队列来辅助实现。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 哈夫曼编码的主要应⽤领域是有损数据压缩。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 ⼆叉搜索树的查找操作的时间复杂度是 。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 栈的基本操作包括⼊栈push和出栈pop。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 使⽤哈夫曼编码对⼀些字符进⾏编码，如果两个字符的频率差异最⼤，则它们的编码可能出现相同的前缀。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

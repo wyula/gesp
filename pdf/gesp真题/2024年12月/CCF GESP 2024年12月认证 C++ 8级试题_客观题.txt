@@ -1,0 +1,155 @@
+第 1 题 ⼩杨家响应国家“以旧换新”政策，将⾃家的汽油车置换为新能源汽车，正在准备⾃编车牌。⾃编车牌包括5位数字或英⽂字母，要求第5位必须是数字，前4位中可以有最多1位英⽂字母。英⽂字母必须是⼤写，⽽且不能是O或I（因为容易与数字0或1混淆）。请问⾃编车牌共有多少种可能性？（ ）。
+ {{ select(1) }}
+ - 100,000
+ - 1,060,000
+ - 1,360,000
+ - 1,460,000
+
+第 2 题 新年到，四家⼈在⼀起聚会。其中两家有三⼝⼈，另外两家有两⼝⼈。现在要安排⼤家在⼀张⼗⼈圆桌坐下，要求⼀家⼈必须相邻就座。由于有“主座”的习俗，每个座位都被认为是不同的。请问共有多少种就座⽅案？。
+ {{ select(2) }}
+ - 8640
+ - 6912
+ - 144
+ - 60
+
+第 3 题 下⾯关于C++类继承的说法，错误的是（ ）。
+ {{ select(3) }}
+ - ⼀个类可以继承多个类。
+ - ⼀个类可以被多个类继承。
+ - ⼀个类可以继承另⼀个类的⼦类。
+ - 抽象类必须被⾄少⼀个类继承，否则会编译错误。
+
+第 4 题 使⽤邻接表表达⼀个简单有向图，图中包含v个顶点、e条边，则该出边表中边节点的个数为（ ）。
+ {{ select(4) }}
+ - 
+ - 
+ - 
+ - 
+
+第 5 题 以下将⼆维数组作为参数的函数声明，哪个是符合语法的？（ ）。
+ {{ select(5) }}
+ - void Bubble(int a[10][], int m);
+ - void Bubble(int a[][], int n, int m);
+ - void Bubble(int (*a)[20], int n);
+ - void Bubble(int * a[20], int n);
+
+第 6 题 已知两个点A、B在平⾯直角坐标系下的坐标分别为 和 ，并分别定义变量double xa, ya,xb, yb;存储坐标。假设直线AB的斜率存在，下列哪个表达式可以⽤来表达它？（ ）。
+ {{ select(6) }}
+ - (xa - xb) / (ya - yb)
+ - (xa - xb) / (yb - ya)
+ - (ya - yb) / (xa - xb)
+ - (ya - yb) / (xb - xa)
+
+第 7 题 ⼆项式 的展开式中 项的系数是（ ）。
+ {{ select(7) }}
+ - 6
+ - 15
+ - 20
+ - 120
+
+第 8 题 以下关于动态规划的说法中，错误的是（ ）。
+ {{ select(8) }}
+ - 动态规划⽅法有递推和递归两种实现形式。
+ - 递归实现动态规划⽅法的时间复杂度总是不低于递推实现。
+ - 动态规划⽅法将原问题分解为⼀个或多个相似的⼦问题。
+ - 动态规划⽅法通常能够列出递推公式。
+
+第 9 题 在下⾯的程序中，使⽤整数表⽰⼀种组合。整数⼆进制表⽰的某⼀位为1，表⽰该位对应的数被选中，反之为0表⽰未选中。例如，从0 - 5这6个数中选出3个，则0b111000代表选中3, 4, 5三个数，0b011001代表选中0, 3, 4三个数。zuhe_next函数按组合对应的整数由⼤到⼩的顺序，求出组合c的下⼀个组合。横线处可以填⼊的是（ ）。1 int intlow2(int c) {2 return ________; // 在此处填入选项3 }4 int zuhe_next_incur(int c, int n, int l) {5 if (n == 1) return c;6 if ((c & (1 << l)) == 0) {7 int d = intlow2(c);8 c = (c & ~d);9 c = (c | (d >> 1));10 } else {11 c = (c & ~(1 << l));12 c = zuhe_next_incur(c, n - 1, l + 1);13 int d = intlow2(c);14 c = (c | (d >> 1));15 }16 return c;17 }18 // 从n个数中选m个，当前组合为c19 int zuhe_next(int c, int n, int m) {20 return zuhe_next_incur(c, n, 0);21 }
+ {{ select(9) }}
+ - ((c - 1) ^ c)
+ - (((c - 1) ^ c) + 1)
+ - (((c - 1) ^ c) >> 1)
+ - ((((c - 1) ^ c) + 1) >> 1)
+
+第 10 题 下⾯程序的输出为（ ）。1 #include <iostream>2 using namespace std;3 int main() {4 int N = 15, cnt = 0;5 for (int x = 0; x + x + x <= N; x++)6 for (int y = x; x + y + y <= N; y++)7 for (int z = y; x + y + z <= N; z++)8 cnt++;9 cout << cnt << endl;10 return 0;11 }
+ {{ select(10) }}
+ - 174
+ - 447
+ - 816
+ - 4096
+
+第 11 题 下⾯最长公共⼦序列程序中，横线处应该填⼊的是（ ）。1 #define MAX(A, B) (((A) > (B)) ? (A) : (B))2 #define MIN(A, B) (((A) < (B)) ? (A) : (B))3 int dp[MAX_L + 1][MAX_L + 1];4 int LCS(char str1[], char str2[]) {5 int len1 = strlen(str1);6 int len2 = strlen(str2);7 for (int i = 0; i < len1; i++)8 for(int j = 0; j < len2; j++)9 if (str1[i] == str2[j])10 dp[i + 1][j + 1] = dp[i][j] + 1;11 else12 ________; // 在此处填入选项13 return dp[len1][len2];14 }
+ {{ select(11) }}
+ - dp[i + 1][j + 1] = dp[i][j + 1] + dp[i + 1][j]
+ - dp[i + 1][j + 1] = MIN(dp[i][j + 1], dp[i + 1][j])
+ - dp[i + 1][j + 1] = MAX(dp[i][j + 1], dp[i + 1][j])
+ - dp[i + 1][j + 1] = MAX(dp[i][j + 1], dp[i + 1][j]) + 1
+
+第 12 题 下列Dijkstra算法中，横线处应该填⼊的是（ ）。1 typedef struct Edge {2 int in, out; // 从下标in顶点到下标out顶点的边3 int len; // 边长度4 struct Edge * next;5 } Edge;6 // v：顶点个数，graph：出边邻接表，start：起点下标，dis：输出每个顶点的最短距离7 void dijkstra(int v, Edge * graph[], int start, int * dis) {8 const int MAX_DIS = 0x7fffff;9 for (int i = 0; i < v; i++)10 dis[i] = MAX_DIS;11 dis[start] = 0;12 int * visited = new int[v];13 for (int i = 0; i < v; i++)14 visited[i] = 0;15 visited[start] = 1;16 for (int t = 0; ; t++) {17 int min = MAX_DIS, minv = -1;18 for (int i = 0; i < v; i++) {19 if (visited[i] == 0 && min > dis[i]) {20 min = dis[i];21 minv = i;22 }23 }24 if (minv < 0)25 break;26 visited[minv] = 1;27 for (Edge * e = graph[minv]; e != NULL; e = e->next) {28 ________; // 在此处填入选项29 }30 }31 delete[] visited;32 }1 if (dis[e->out] > e->len)2 dis[e->out] = e->len;1 if (dis[e->out] > min + e->len)2 dis[e->out] = min + e->len;1 if (dis[e->in] > e->len)2 dis[e->in] = e->len;1 if (dis[e->in] > min + e->len)2 dis[e->in] = min + e->len;
+ {{ select(12) }}
+ - 
+ - 
+ - 
+ - 
+
+第 13 题 假设图graph中顶点数v、边数e，上题程序的时间复杂度为（ ）。
+ {{ select(13) }}
+ - 
+ - 
+ - 
+ - 
+
+第 14 题 下⾯的快速排序程序中，两处横线处分别应填⼊的是（ ）。1 void quick_sort(int a[], int n) {2 if (n <= 1)3 return;4 int pivot = 0, l = 0, r = n - 1;5 while (________) { // 在此处填入选项6 while (r > pivot && a[r] >= a[pivot])7 r--;8 if (r > pivot) {9 int temp = a[pivot];10 a[pivot] = a[r];11 a[r] = temp;12 pivot = r;13 }14 while (l < pivot && a[l] <= a[pivot])15 l++;16 if (l < pivot) {17 int temp = a[pivot];18 a[pivot] = a[l];19 a[l] = temp;20 pivot = l;21 }22 }23 quick_sort(a, pivot);24 quick_sort(________); // 在此处填入选项25 }1 l < r2 a + pivot + 1, n - pivot - 11 l < r2 a + pivot + 1, n - pivot1 l <= r2 a + pivot + 1, n - pivot - 11 l <= r2 a + pivot + 1, n - pivot
+ {{ select(14) }}
+ - 
+ - 
+ - 
+ - 
+
+第 15 题 上题程序的时间复杂度为（ ）。2
+ {{ select(15) }}
+ - 
+ - 
+ - 
+ - 
+
+第 16 题 表达式'3' + '5'的结果为'8'，类型为char。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 在C++语⾔中，可以在函数内定义结构体，但该结构体类型只能在该函数内使⽤。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 对 个元素的数组进⾏排序，快速排序和归并排序的平均时间复杂度都为 。但快速排序存在退化情况，使得时间复杂度升⾼⾄ ；归并排序需要额外的空间开销。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 ⼆维数组的最后⼀维在内存中⼀定是连续的，但第⼀维在内存中可能不连续。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 使⽤math.h或cmath头⽂件中的函数，表达式log(1000)的结果类型为double、值约为3。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 你有三种硬币，分别⾯值2元、5元和7元，每种硬币都有⾜够多。买⼀本书需要27元，则有8种硬币组合组合与顺序⽆关，“1个2元+1个5元+1个2元”与“1个5元+2个2元”认为是同样的组合可以正好付清，且不需要对⽅找钱。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 使⽤哈希函数f(x) = x % p建⽴键值为int类型的哈希表，只要p取⼩于等于哈希表⼤⼩的素数，可保证不发⽣碰撞。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 杨辉三角中的第 ⾏、第 项，即为将⼆项式 展开后 项的系数。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 判断图是否连通，可以通过⼴度优先搜索实现。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 要求解⼀元⼆次⽅程 ，需要先判断表达式a ^ 2 - b * 4 >= 0是否为真。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

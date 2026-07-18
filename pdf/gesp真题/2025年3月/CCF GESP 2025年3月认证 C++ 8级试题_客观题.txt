@@ -1,0 +1,155 @@
+第 1 题 国家“以旧换新”政策仍在继续，⼩杨家决定在家⾥旧的冰箱、电视、洗⾐机、微波炉中选两种换新。其中，冰箱有4种型号可选，电视有6种型号可选，洗⾐机有3种型号可选，微波炉有5种型号可选。请问⼩杨家共有多少种换新的⽅案？（ ）。
+ {{ select(1) }}
+ - 18
+ - 119
+ - 238
+ - 360
+
+第 2 题 ⼩杨和3位朋友约好⼀起去看电影“哪吒2”。打开购票软件，他们发现，已经没有同⼀排连续的四个座位了（图中每个⽅框代表⼀个座位，红⾊⽅框代表已经售出）。朋友们商量了⼀下，决定分为两组，每组两⼈在同⼀排的相邻两个座位，且两组之间⾄少有⼀对座位是前后相邻的。请问共有多少种购票⽅案？（ ）。
+ {{ select(2) }}
+ - 495
+ - 96
+ - 7
+ - 4
+
+第 3 题 下⾯关于C++类构造和析构函数的说法，错误的是（ ）。
+ {{ select(3) }}
+ - 构造函数不能声明为虚函数。
+ - 析构函数必须声明为虚函数。
+ - 类的默认构造函数可以被声明为private。
+ - 类的析构函数可以被声明为private。
+
+第 4 题 下列关于树和图的说法，错误的是（ ）。
+ {{ select(4) }}
+ - 树是⼀种有向⽆环图，有向⽆环图都是⼀棵树。
+ - 如果把树看做有向图，每个节点指向其⼦节点，则该图是弱连通图。
+ - 个顶点且连通的⽆向图，其最⼩⽣成树⼀定包含 个条边。
+ - 个顶点、 条边的有向图，⼀定不是强连通的。
+
+第 5 题 从1到2025这2025个数中，包含数字5的个数（ ）。
+ {{ select(5) }}
+ - 600
+ - 601
+ - 602
+ - 603
+
+第 6 题 已定义double类型的变量r和theta，分别表⽰图中圆半径和圆⼼角。下列表达式中可以求出弦长s的是（ ）。
+ {{ select(6) }}
+ - r * cos(theta)
+ - r * cos(theta / 2) * 2
+ - r * sin(theta)
+ - r * sin(theta / 2) * 2
+
+第 7 题 个节点的平衡⼆叉树的⾼为（ ）。
+ {{ select(7) }}
+ - 
+ - 
+ - 
+ - ⽆法确定。
+
+第 8 题 下列关于算法的说法，错误的是（ ）。
+ {{ select(8) }}
+ - 如果有⾜够的时间和空间，枚举法能解决⼀切有限的问题。
+ - 分治算法将原问题分为多个⼦问题进⾏求解，且分解出的⼦问题必须相互独⽴。
+ - 如果能找到合理的贪⼼原则，贪⼼算法往往能够⽐其他⽅法更快求解。
+ - 倍增法在搜索未知长度的有序数组时，通过动态倍增或减半步长，快速定位⽬标范围。
+
+第 9 题 是个神奇的数字，因为它是由两个数 和 拼接⽽成，⽽且 。⼩杨决定写个程序找找⼩于 的正整数中共有多少这样神奇的数字。下⾯程序横线处应填⼊的是（ ）。1 #include <string>2 int count_miracle(int N) {3 int cnt = 0;4 for (int n = 1; n * n < N; n++) {5 int n2 = n * n;6 std::string s = std::to_string(n2);7 for (int i = 1; i < s.length(); i++)8 if (s[i] != '0') {9 std::string sl = s.substr(0, i);10 std::string sr = s.substr(i);11 int nl = std::stoi(sl);12 int nr = std::stoi(sr);13 if (_________) // 在此处填入选项14 cnt++;15 }16 }17 return cnt;18 }1 nl + nr == n1 nl + nr == n21 (nl + nr) * (nl + nr) == n1 (nl + nr) ^ 2 == n2
+ {{ select(9) }}
+ - 
+ - 
+ - 
+ - 
+
+第 10 题 是个神奇的数字，因为它是由两个数 和 拼接⽽成，⽽且 。⼩杨决定写个程序找找⼩于 的正整数中共有多少这样神奇的数字。该函数的时间复杂度为（ ）。1 #include <string>2 int count_miracle(int N) {3 int cnt = 0;4 for (int n = 1; n * n < N; n++) {5 int n2 = n * n;6 std::string s = std::to_string(n2);7 for (int i = 1; i < s.length(); i++)8 if (s[i] != '0') {9 std::string sl = s.substr(0, i);10 std::string sr = s.substr(i);11 int nl = std::stoi(sl);12 int nr = std::stoi(sr);13 if (_________) // 在此处填入选项14 cnt++;15 }16 }17 return cnt;18 }
+ {{ select(10) }}
+ - 
+ - 
+ - 
+ - 
+
+第 11 题 下⾯的欧⽒筛法程序中，两个横线处应填⼊的分别是（ ）。1 int primes[MAXP], num = 0;2 bool isPrime[MAXN + 1] = {false};3 void sieve() {4 for (int n = 2; n <= MAXN; n++) {5 if (!isPrime[n])6 primes[num++] = n;7 for (int i = 0; i < num && ________; i++) { // 在此处填入选项8 isPrime[n * primes[i]] = true;9 if (________) // 在此处填入选项10 break;11 }12 }13 }1 n * primes[i] < MAXN2 n % primes[i] == 01 n * primes[i] < MAXN2 primes[i] > n1 n * primes[i] <= MAXN2 n % primes[i] == 01 n * primes[i] <= MAXN2 primes[i] > n
+ {{ select(11) }}
+ - 
+ - 
+ - 
+ - 
+
+第 12 题 下⾯Floyd算法中，横线处应该填⼊的是（ ）。1 #include <iostream>2 using namespace std;4 #define N 215 #define INF 999999996 int map[N][N];7 int main() {8 int n, m, t1, t2, t3;9 cin >> n >> m;10 for (int i = 1; i <= n; i++) {11 for (int j = 1; j <= n; j++) {12 if (i == j)13 map[i][j] = 0;14 else15 map[i][j] = INF;16 }17 }18 for (int i = 1; i <= m; i++) {19 cin >> t1 >> t2 >> t3;20 map[t1][t2] = t3;21 }22 for (int k = 1; k <= n; k++)23 for (int i = 1; i <= n; i++)24 for (int j = 1; j <= n; j++)25 if (map[i][j] > map[i][k] + map[k][j])26 ________; // 在此处填入选项27 for (int i = 1; i <= n; i++) {28 for (int j = 1; j <= n; j++) {29 cout.width(4);30 cout << map[i][j];31 }32 cout << endl;33 }34 }1 map[i][j] = map[i][k] + map[k][j]1 map[i][k] = map[i][j] - map[k][j]1 map[i][j] = map[i][k] - map[k][j]1 map[k][j] = map[i][j] - map[i][k]
+ {{ select(12) }}
+ - 
+ - 
+ - 
+ - 
+
+第 13 题 下⾯Floyd算法程序的时间复杂度为（ ）。1 #include <iostream>2 using namespace std;4 #define N 215 #define INF 999999996 int map[N][N];7 int main() {8 int n, m, t1, t2, t3;9 cin >> n >> m;10 for (int i = 1; i <= n; i++) {11 for (int j = 1; j <= n; j++) {12 if (i == j)13 map[i][j] = 0;14 else15 map[i][j] = INF;16 }17 }18 for (int i = 1; i <= m; i++) {19 cin >> t1 >> t2 >> t3;20 map[t1][t2] = t3;21 }22 for (int k = 1; k <= n; k++)23 for (int i = 1; i <= n; i++)24 for (int j = 1; j <= n; j++)25 if (map[i][j] > map[i][k] + map[k][j])26 ________; // 在此处填入选项27 for (int i = 1; i <= n; i++) {28 for (int j = 1; j <= n; j++) {29 cout.width(4);30 cout << map[i][j];31 }32 cout << endl;33 }34 }
+ {{ select(13) }}
+ - 
+ - 
+ - 
+ - 
+
+第 14 题 下列程序实现了输出杨辉三角形，代码中横线部分应该填⼊的是（ ）。1 #include <iostream>2 using namespace std;3 #define N 354 int a[N];5 int main() {6 int n;7 cin >> n;8 for (int i = 0; i < n; i++) {9 a[i] = 1;10 for (int j = i - 1; j > 0; j--)11 ________; // 在此处填入选项12 for (int j = 0; j <= i; j++)13 cout << a[j] << " ";14 cout << endl;15 }16 return 0;17 }1 a[j] += a[j + 1]1 a[j] += a[j - 1]1 a[j - 1] += a[j]1 a[j + 1] += a[j]
+ {{ select(14) }}
+ - 
+ - 
+ - 
+ - 
+
+第 15 题 下列程序实现了输出杨辉三角形，其时间复杂度为（ ）。1 #include <iostream>2 using namespace std;3 #define N 354 int a[N];5 int main() {6 int n;7 cin >> n;8 for (int i = 0; i < n; i++) {9 a[i] = 1;10 for (int j = i - 1; j > 0; j--)11 ________; // 在此处填入选项12 for (int j = 0; j <= i; j++)13 cout << a[j] << " ";14 cout << endl;15 }16 return 0;17 }2
+ {{ select(15) }}
+ - 
+ - 
+ - 
+ - 
+
+第 16 题 表达式'5' - 3.0的结果为2.0，类型为double。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 在C++语⾔中，如果想要在⼀个函数内调⽤⼀个类的私有⽅法，可以在该类中将该函数声明为友元函数。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 插⼊排序⼀般是稳定的。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 5个相同的红球和4个相同的蓝球排成⼀排，要求蓝球不能相邻，则⼀共有15种排列⽅案。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 使⽤math.h或cmath头⽂件中的函数，表达式pow(2, 5)的结果类型为int、值为32。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 C++是⼀种⾯向对象编程语⾔，C则不是。多态是⾯向对象三⼤特性之⼀，虚函数是动态多态的代表特性。因此，使⽤C语⾔⽆法实现虚函数。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 在 个节点的平衡⼆叉树中查找指定元素的最差时间复杂度为 。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 定义int类型的变量a和b，求⼆次函数 取最⼩值时x的值，可以通过表达式-a / 2.0求得。（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 判断⽆向图中是否有环，可以通过⼴度优先搜索实现。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 从32名学⽣中选出4⼈分别担任班长、副班长、学习委员和组织委员，共有 种不同的选法。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

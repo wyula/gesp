@@ -1,0 +1,155 @@
+第 1 题 以下哪种情况使⽤链表⽐数组更合适？
+ {{ select(1) }}
+ - 数据量固定且读多写少
+ - 需要频繁在中间或开头插⼊、删除元素
+ - 需要⾼效随机访问元素
+ - 存储空间必须连续
+
+第 2 题 函数removeElements删除单链表中所有结点值等于 val 的结点，并返回新的头结点，其中链表头结点为head，则横线处填写（ ）。1 // 结点结构体2 struct Node {3 int val;4 Node* next;6 Node() : val(0), next(nullptr) {}7 Node(int x) : val(x), next(nullptr) {}8 Node(int x, Node *next) : val(x), next(next) {}9 };11 Node* removeElements(Node* head, int val) {12 Node dummy(0, head); // 哑结点，统一处理头结点13 Node* cur = &dummy;14 while (cur->next) {15 if (cur->next->val == val) {16 _______________________ // 在此填入代码18 }19 else {20 cur = cur->next;21 }22 }23 return dummy.next;24 }1 Node* del = cur;2 cur = del->next;3 delete del;1 Node* del = cur->next;2 cur->next = del;3 delete del;1 Node* del = cur->next;2 cur->next = del->next;3 delete del;1 Node* del = cur->next;2 delete del;3 cur->next = del->next;
+ {{ select(2) }}
+ - 
+ - 
+ - 
+ - 
+
+第 3 题 函数hasCycle采⽤Floyd快慢指针法判断⼀个单链表中是否存在环，链表的头节点为head，即⽤两个指针在链表上前进：slow 每次⾛ 1 步，fast 每次⾛ 2 步，若存在环，fast 终会追上 slow（相遇）；若⽆环，fast 会先到达 nullptr，则横线上应填写（ ）。1 struct Node {2 int val;3 Node *next;4 Node(int x) : val(x), next(nullptr) {}5 };7 bool hasCycle(Node *head) {8 if (!head || !head->next)9 return false;10 Node* slow = head;11 Node* fast = head->next;12 while (fast && fast->next) {13 if (slow == fast) return true;14 _______________________ // 在此填入代码15 }16 return false;17 }1 slow = slow->next;2 fast = fast->next->next;1 slow = fast->next;2 fast = slow->next->next;1 slow = slow->next;2 fast = slow->next->next;1 slow = fast->next;2 fast = fast->next->next;
+ {{ select(3) }}
+ - 
+ - 
+ - 
+ - 
+
+第 4 题 函数isPerfectNumber判断⼀个正整数是否为完全数（该数是否即等于它的真因⼦之和），则横线上应填写（ ）。⼀个正整数n的真因⼦包括所有⼩于n的正因⼦，如28的真因⼦为1, 2, 4, 7, 14。1 bool isPerfectNumber(int n) {2 if(n <= 1) return false;3 int sum = 1;4 for(int i = 2; ______; i++) {5 if(n % i == 0) {6 sum += i;7 if(i != n/i) sum += n/i;8 }9 }10 return sum == n;11 }
+ {{ select(4) }}
+ - i <= n
+ - i*i <= n
+ - i <= n/2
+ - i < n
+
+第 5 题 以下代码计算两个正整数的最⼤公约数(GCD)，横线上应填写（ ）。1 int gcd0(int a, int b) {2 if (a < b) {3 swap(a, b);4 }5 while(b != 0) {6 int temp = a % b;7 a = b;8 b = temp;9 }10 return ______;11 }
+ {{ select(5) }}
+ - b
+ - a
+ - temp
+ - a * b
+
+第 6 题 函数sieve实现埃拉托斯特尼筛法(埃⽒筛)，横线处应填⼊（ ）。1 vector<bool> sieve(int n) {2 vector<bool> is_prime(n+1, true);3 is_prime[0] = is_prime[1] = false;4 for(int i = 2; i <= n; i++) {5 if(is_prime[i]) {6 for(int j = ______; j <= n; j += i) {7 is_prime[j] = false;8 }9 }10 }11 return is_prime;12 }
+ {{ select(6) }}
+ - i
+ - i+1
+ - i*2
+ - i*i
+
+第 7 题 函数linearSieve实现线性筛法(欧拉筛)，横线处应填⼊（ ）。1 vector<int> linearSieve(int n) {2 vector<bool> is_prime(n+1, true);3 vector<int> primes;4 for(int i = 2; i <= n; i++) {5 if(is_prime[i]) primes.push_back(i);6 for(int p : primes) {7 if(p * i > n) break;8 is_prime[p * i] = false;9 if(________) break;10 }11 }12 return primes;13 }
+ {{ select(7) }}
+ - i % p == 0
+ - p % i == 0
+ - i == p
+ - i * p == n
+
+第 8 题 关于 埃⽒筛 和 线性筛 的⽐较，下列说法错误的是（ ）。
+ {{ select(8) }}
+ - 埃⽒筛可能会对同⼀个合数进⾏多次标记
+ - 线性筛的理论时间复杂度更优，所以线性筛的速度往往优于埃⽒筛
+ - 线性筛保证每个合数只被其最⼩质因⼦筛到⼀次
+ - 对于常见范围（ ），埃⽒筛因实现简单，常数较⼩，其速度往往优于线性筛
+
+第 9 题 唯⼀分解定理描述的是( )。
+ {{ select(9) }}
+ - 每个整数都能表⽰为任意素数的乘积
+ - 每个⼤于 1 的整数能唯⼀分解为素数幂乘积（忽略顺序）
+ - 合数不能分解为素数乘积
+ - 素数只有两个因⼦：1 和⾃⾝
+
+第 10 题 给定⼀个 n x n 的矩阵 matrix，矩阵的每⼀⾏和每⼀列都按升序排列。函数countLE返回矩阵中第k ⼩的元素，则两处横线上应分别填写（ ）。1 // 统计矩阵中 <= x 的元素个数：从左下角开始2 int countLE(const vector<vector<int>>& matrix, int x) {3 int n = (int)matrix.size();4 int i = n - 1, j = 0, cnt = 0;5 while (i >= 0 && j < n) {6 if (matrix[i][j] <= x) {7 cnt += i + 1;8 ++j;9 }10 else {11 --i;12 }13 }14 return cnt;15 }17 int kthSmallest(vector<vector<int>>& matrix, int k) {18 int n = (int)matrix.size();19 int lo = matrix[0][0];20 int hi = matrix[n - 1][n - 1];22 while (lo < hi) {23 int mid = lo + (hi - lo) / 2;24 if (countLE(matrix, mid) >= k) {25 ________________ // 在此处填入代码26 } else {27 ________________ // 在此处填入代码28 }29 }30 return lo;31 }1 hi = mid - 1;2 lo = mid + 1;1 hi = mid;2 lo = mid;1 hi = mid;2 lo = mid + 1;1 hi = mid + 1;2 lo = mid;
+ {{ select(10) }}
+ - 
+ - 
+ - 
+ - 
+
+第 11 题 下述C++代码实现了快速排序算法，下⾯说法错误的是（ ）。1 int partition(vector<int>& arr, int low, int high) {2 int i = low, j = high;3 int pivot = arr[low]; // 以首元素为基准4 while (i < j) {5 while (i < j && arr[j] >= pivot) j--; //从右往左查找6 while (i < j && arr[i] <= pivot) i++; //从左往右查找7 if (i < j) swap(arr[i], arr[j]);8 }9 swap(arr[i], arr[low]);10 return i;11 }13 void quickSort(vector<int>& arr, int low, int high) {14 if (low >= high) return;15 int p = partition(arr, low, high);16 quickSort(arr, low, p - 1);17 quickSort(arr, p + 1, high);18 }序更⾼效。，每层中的循环数为 ，总时间为 。
+ {{ select(11) }}
+ - 快速排序之所以叫“快速”，是因为它在平均情况下运⾏速度较快，常数⼩、就地排序，实践中通常⽐归并排
+ - 在平均情况下，划分的递归层数为 ，每层中的总循环数为 ，总时间为 。
+ - 在最差情况下，每轮划分操作都将长度为 的数组划分为长度为 0 和 的两个⼦数组，此时递归层数达到
+ - 划分函数partition中“从右往左查找”与“从左往右查找”的顺序可以交换。
+
+第 12 题 下述C++代码实现了归并排序算法，则横线上应填写（ ）。1 void merge(vector<int> &nums, int left, int mid, int right) {2 // 左子数组区间为 [left, mid], 右子数组区间为 [mid+1, right]3 vector<int> tmp(right - left + 1);4 int i = left, j = mid + 1, k = 0;5 while (i <= mid && j <= right) {6 if (nums[i] <= nums[j])7 tmp[k++] = nums[i++];8 else9 tmp[k++] = nums[j++];10 }11 while (i <= mid) {12 tmp[k++] = nums[i++];13 }14 while (________) { // 在此处填入代码15 tmp[k++] = nums[j++];16 }17 for (k = 0; k < tmp.size(); k++) {18 nums[left + k] = tmp[k];19 }20 }22 void mergeSort(vector<int> &nums, int left, int right) {23 if (left >= right)24 return;26 int mid = (left + right) / 2;27 mergeSort(nums, left, mid);28 mergeSort(nums, mid + 1, right);29 merge(nums, left, mid, right);30 }
+ {{ select(12) }}
+ - i < mid
+ - j < right
+ - i <= mid
+ - j <= right
+
+第 13 题 假设你是⼀家电影院的排⽚经理，只有⼀个放映厅。你有⼀个电影列表 movies，其中 movies[i] =[start_i, end_i] 表⽰第i部电影的开始和结束时间。请你找出最多能安排多少部不重叠的电影，则横线上应分别填写的代码为（ ）。1 int maxMovies(vector<vector<int>>& movies) {2 if (movies.empty()) return 0;4 sort(movies.begin(), movies.end(), [](const vector<int>& a, const vector<int>& b) {5 return ______; // 在此处填入代码6 });8 int count = 1;9 int lastEnd = movies[0][1];11 for (int i = 1; i < movies.size(); i++) {12 if (movies[i][0] >= lastEnd) {13 count++;14 ______ = movies[i][1]; // 在此处填入代码15 }16 }18 return count;19 }
+ {{ select(13) }}
+ - a[0] < b[0] 和 lastEnd
+ - a[1] < b[1] 和 lastEnd
+ - a[0] < b[0] 和 movies[i][0]
+ - a[1] < b[1] 和 movies[i][0]
+
+第 14 题 给定⼀个整数数组nums，下⾯代码找到⼀个具有最⼤和的连续⼦数组，并返回该最⼤和。则下⾯说法错误的是（ ）。1 int crossSum(vector<int>& nums, int left, int mid, int right) {2 int leftSum = INT_MIN, rightSum = INT_MIN;3 int sum = 0;4 for (int i = mid; i >= left; i--) {5 sum += nums[i];6 leftSum = max(leftSum, sum);7 }8 sum = 0;9 for (int i = mid + 1; i <= right; i++) {10 sum += nums[i];11 rightSum = max(rightSum, sum);12 }13 return leftSum + rightSum;14 }16 int helper(vector<int>& nums, int left, int right) {17 if (left == right)18 return nums[left];19 int mid = left + (right - left) / 2;20 int leftMax = helper(nums, left, mid);21 int rightMax = helper(nums, mid + 1, right);22 int crossMax = crossSum(nums, left, mid, right);23 return max({leftMax, rightMax, crossMax});24 }26 int maxSubArray(vector<int>& nums) {27 return helper(nums, 0, nums.size() - 1);28 }
+ {{ select(14) }}
+ - 上述代码采⽤分治算法实现
+ - 上述代码采⽤贪⼼算法
+ - 上述代码时间复杂度为
+ - 上述代码采⽤递归⽅式实现
+
+第 15 题 给定⼀个由⾮负整数组成的数组digits，表⽰⼀个⾮负整数的各位数字，其中最⾼位在数组⾸位，且digits不含前导0（除⾮是0本⾝）。下⾯代码对该整数执⾏ +1 操作，并返回结果数组，则横线上应填写（ ）。1 vector<int> plusOne(vector<int>& digits) {2 for (int i = (int)digits.size() - 1; i >= 0; --i) {3 if (digits[i] < 9) {4 digits[i] += 1;5 return digits;6 }7 ________________ // 在此处填入代码8 }9 digits.insert(digits.begin(), 1);10 return digits;11 }1 digits[i] = 0;1 digits[i] = 9;1 digits[i] = 1;1 digits[i] = 10;2
+ {{ select(15) }}
+ - 
+ - 
+ - 
+ - 
+
+第 16 题 基于下⾯定义的函数，通过判断isDivisibleBy9(n) == isDigitSumDivisibleBy9(n)代码可验算如果⼀个数能被9整除，则它的各位数字之和能被9整除。1 bool isDivisibleBy9(int n) {2 return n % 9 == 0;3 }5 bool isDigitSumDivisibleBy9(int n) {6 int sum = 0;7 string numStr = to_string(n);8 for (char c : numStr) {9 sum += (c - '0');10 }11 return sum % 9 == 0;12 }（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 假设函数gcd()能正确求两个正整数的最⼤公约数，则下⾯的findMusicalPattern(4，6)函数返回2。1 void findMusicalPattern(int rhythm1, int rhythm2) {2 int commonDivisor = gcd(rhythm1, rhythm2);3 int patternLength = (rhythm1 * rhythm2) / commonDivisor;4 return patternLength；5 }（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 下⾯递归实现的斐波那契数列的时间复杂度为 。1 long long fib_memo(int n, long long memo[]) {2 if (n <= 1) return n;3 if (memo[n] != -1) return memo[n];4 memo[n] = fib_memo(n - 1, memo) + fib_memo(n - 2, memo);5 return memo[n];6 }8 int main() {9 int n = 40;10 long long memo[100];11 fill_n(memo, 100, -1);12 long long result2 = fib_memo(n, memo);13 return 0;14 }（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 链表通过更改指针实现⾼效的结点插⼊与删除，但结点访问效率低、占⽤内存较多，且对缓存利⽤不友好。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 ⼆分查找依赖数据的有序性，通过循环逐步缩减⼀半搜索区间来进⾏查找，且仅适⽤于数组或基于数组实现的数据结构。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 线性筛关键是“每个合数只会被最⼩质因⼦筛到⼀次”，因此为 。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 快速排序和归并排序都是稳定的排序算法。（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 下⾯代码采⽤分治算法求解标准 3 柱汉诺塔问题，时间复杂度为 。1 void move(vector<int> &src, vector<int> &tar) {2 int pan = src.back();3 src.pop_back();4 tar.push_back(pan);5 }7 void dfs(int n, vector<int> &src, vector<int> &buf, vector<int> &tar) {8 if (n == 1) {9 move(src, tar);10 return;11 }13 dfs(n - 1, src, tar, buf);14 move(src, tar);15 dfs(n - 1, buf, src, tar);16 }18 void solveHanota(vector<int> &A, vector<int> &B, vector<int> &C) {19 int n = A.size();20 dfs(n, A, B, C);21 }（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 所有递归算法都可以转换为迭代算法。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 贪⼼算法总能得到全局最优解。3（）
+ {{ select(25) }}
+ - 对
+ - 错
+

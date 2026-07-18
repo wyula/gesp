@@ -1,0 +1,155 @@
+第 1 题 下列哪⼀项不是⾯向对象编程的基本特征？
+ {{ select(1) }}
+ - 继承
+ - 封装
+ - 多态
+ - 链接
+
+第 2 题 2. 为了让 Dog 类的构造函数能正确地调⽤其⽗类 Animal 的构造⽅法，横线线处应填⼊（ ）。1 class Animal {2 public:3 std::string name;5 Animal(std::string str) : name(str) {6 std::cout << "Animal created\n";7 }8 virtual void speak() {9 cout << "Animal speaks" << endl;10 }11 };13 class Dog : public Animal {14 std::string breed;15 public:16 Dog(std::string name, std::string b) : _________________, breed(b) {17 std::cout << "Dog created\n";18 }19 void speak() override {20 cout << "Dog barks" << endl;21 }22 };24 int main() {25 Animal* p = new Dog("Rex", "Labrador");26 p->speak();27 delete p;28 return 0;29 }
+ {{ select(2) }}
+ - Animal(name)
+ - super(name)
+ - Animal::Animal(name)
+ - Animal()
+
+第 3 题 代码同上⼀题，代码执⾏结果是（ ）。
+ {{ select(3) }}
+ - 输出 Animal speaks
+ - 输出 Dog barks
+ - 编译错误
+ - 程序崩溃
+
+第 4 题 以下关于栈和队列的代码，执⾏后输出是（ ）。1 stack<int> s;2 queue<int> q;4 for (int i = 1; i <= 3; ++i) {5 s.push(i);6 q.push(i);7 }8 cout << s.top() << " " << q.front() << endl;
+ {{ select(4) }}
+ - 1 3
+ - 3 1
+ - 3 3
+ - 1 1
+
+第 5 题 在⼀个循环队列中，front是指向队头的指针， rear指向队尾的指针，队列最⼤容量为 maxSize。判断队列已满的条件是（ ）。
+ {{ select(5) }}
+ - rear == front
+ - (rear + 1) % maxSize == front
+ - (rear - 1 + maxSize) % maxSize == front
+ - (rear - 1) == front
+
+第 6 题 （ ）只有最底层的节点未被填满，且最底层节点尽量靠左填充。
+ {{ select(6) }}
+ - 完美⼆叉树
+ - 完全⼆叉树
+ - 完满⼆叉树
+ - 平衡⼆叉树
+
+第 7 题 在使⽤数组表⽰完全⼆叉树时，如果⼀个节点的索引为 （从 开始计数），那么其左⼦节点的索引通常是。
+ {{ select(7) }}
+ - 
+ - 
+ - 
+ - 
+
+第 8 题 已知⼀棵⼆叉树的前序遍历序列为 GDAFEMHZ，中序遍历序列为 ADFGEHMZ，则其后序遍历序列为（ ）。
+ {{ select(8) }}
+ - ADFGEHMZ
+ - ADFGHMEZ
+ - AFDGEMZH
+ - AFDHZMEG
+
+第 9 题 设有字符集 {a, b, c, d, e}，其出现频率分别为 {5, 8, 12, 15, 20}，得到的哈夫曼编码为（ ）。1 a: 0102 b: 0113 c: 004 d: 105 e: 111 a: 002 b: 103 c: 0114 d: 1005 e: 1111 a: 102 b: 013 c: 0114 d: 1005 e: 1111 a: 1002 b: 013 c: 0114 d: 1005 e: 00
+ {{ select(9) }}
+ - 
+ - 
+ - 
+ - 
+
+第 10 题 3位格雷编码中，编码 101 之后的下⼀个编码不可能是（ ）。
+ {{ select(10) }}
+ - 100
+ - 111
+ - 110
+ - 001
+
+第 11 题 请将下列 C++ 实现的深度优先搜索（DFS）代码补充完整，横线处应填⼊（ ）。1 struct TreeNode {2 int val;3 TreeNode* left;4 TreeNode* right;5 TreeNode(int x): val(x), left(nullptr), right(nullptr) {}6 };8 void dfs(TreeNode* root, vector<int>& result) {9 if (root == nullptr) return;11 __________________________12 }1 result.push_back(root->val);2 dfs(root->left);3 dfs(root->right);1 result.push_back(root->left->val);2 dfs(root->right);3 dfs(root->left);1 result.push_back(root->left->val);2 dfs(root->left);3 dfs(root->right);1 result.push_back(root->right->val);2 dfs(root->right);3 dfs(root->left);
+ {{ select(11) }}
+ - 
+ - 
+ - 
+ - 
+
+第 12 题 给定⼀个⼆叉树，返回每⼀层中最⼤的节点值，结果以数组形式返回，横线处应填⼊（ ）。1 #include <vector>2 #include <queue>3 #include <algorithm>5 struct TreeNode {6 int val;7 TreeNode* left;8 TreeNode* right;9 TreeNode(int x): val(x), left(nullptr), right(nullptr) {}10 };12 vector<int> largestValues(TreeNode* root) {13 vector<int> result;14 if (!root) return result;16 queue<TreeNode*> q;17 q.push(root);19 while (!q.empty()) {20 int sz = q.size();21 int maxVal = INT_MIN;22 for (int i = 0; i < sz; ++i) {23 TreeNode* node;24 _______________________________25 maxVal = max(maxVal, node->val);26 if (node->left) q.push(node->left);27 if (node->right) q.push(node->right);28 }29 result.push_back(maxVal);30 }32 return result;33 }1 node = q.end();1 node = q.front();1 q.pop();2 node = q.front();1 node = q.front();2 q.pop();
+ {{ select(12) }}
+ - 
+ - 
+ - 
+ - 
+
+第 13 题 下⾯代码实现⼀个⼆叉排序树的插⼊函数（没有相同的数值），横线处应填⼊（ ）。1 struct TreeNode {2 int val;3 TreeNode* left;4 TreeNode* right;5 TreeNode(int x): val(x), left(nullptr), right(nullptr) {}6 };8 void insert(TreeNode*& root, int key) {9 if (!root) {10 root = new TreeNode(key);11 return;12 }13 _______________________________14 }1 if (key < root->val)2 insert(root->left, key);3 else if (key > root->val)4 insert(root->right, key);1 if (key < root->val)2 insert(root->right, key);3 else if (key > root->val)4 insert(root->left, key);1 insert(root->left, key);2 insert(root->right, key);1 insert(root->right, key);2 insert(root->left, key);
+ {{ select(13) }}
+ - 
+ - 
+ - 
+ - 
+
+第 14 题 以下关于动态规划算法特性的描述，正确的是（ ）。
+ {{ select(14) }}
+ - ⼦问题相互独⽴，不重叠
+ - 问题包含重叠⼦问题和最优⼦结构
+ - 只能从底⾄顶迭代求解
+ - 必须使⽤递归实现，不能使⽤迭代
+
+第 15 题 给定 个物品和⼀个最⼤承重为 的背包，每个物品有⼀个重量 和价值 ，每个物品只能选择放或不放。⽬标是选择若⼲个物品放⼊背包，使得总价值最⼤，且总重量不超过 。关于下⾯代码，说法正确的是。1 int knapsack1D(int W, vector<int>& wt, vector<int>& val, int n) {2 vector<int> dp(W+1, 0);3 for (int i = 0; i < n; ++i) {4 for (int w = W; w >= wt[i]; --w) {5 dp[w] = max(dp[w], dp[w - wt[i]] + val[i]);6 }7 }8 return dp[W];9 }
+ {{ select(15) }}
+ - 该算法不能处理背包容量为 0 的情况
+ - 外层循环 i 遍历背包容量，内层遍历物品
+ - 从⼤到⼩遍历 w 是为了避免重复使⽤同⼀物品
+ - 这段代码计算的是最⼩重量⽽⾮最⼤价值
+
+第 16 题 构造函数可以被声明为 virtual。（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 给定⼀组字符及其出现的频率，构造出的哈夫曼树是唯⼀的。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 为了实现⼀个队列，使其出队操作pop的时间复杂度为 并且避免数组删除⾸元素的 问题，⼀种常见且有效的⽅法是使⽤环形数组，通过调整队⾸和队尾指针来实现。（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 对⼀棵⼆叉排序树进⾏中序遍历，可以得到⼀个递增的有序序列。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 如果⼆叉搜索树在连续的插⼊和删除操作后，所有节点都偏向⼀侧，导致其退化为类似于链表的结构，这时其查找、插⼊、删除操作的时间复杂度会从理想情况下的 退化到 。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 执⾏下列代码，my_dog.name 的最终值是 Charlie。1 class Dog {2 public:3 std::string name;4 Dog(std::string str) : name(str) {}5 };7 int main() {8 Dog my_dog("Buddy");9 my_dog.name = "Charlie";10 return 0;11 }（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 下列 C++ 代码可以成功编译，并且⼦类 Child 的实例能通过其成员函数访问⽗类 Parent 的属性value。1 class Parent {2 private:3 int value = 100;4 };5 class Child : public Parent {6 public:7 int get_private_val() {8 return value; // 尝试访问父类的私有成员9 }10 };（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 下列代码中的 tree 向量，表⽰的是⼀棵完全⼆叉树 (-1代表空节点)按照层序遍历的结果。1 #include <vector>2 std::vector<int> tree = {1, 2, 3, 4, -1, 6, 7};（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 在树的深度优先搜索DFS中，使⽤栈作为辅助数据结构以实现“先进后出”的访问顺序。（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 下⾯代码采⽤动态规划求解零钱兑换问题：给定 种硬币，第𝑖种硬币的⾯值为𝑐𝑜𝑖𝑛𝑠[𝑖 − 1]，⽬标⾦额为𝑎𝑚𝑡，每种硬币可以重复选取，求能够凑出⽬标⾦额的最少硬币数量；如果不能凑出⽬标⾦额，返回-1。1 int coinChangeDPComp(vector<int> &coins, int amt) {2 int n = coins.size();3 int MAX = amt + 1;5 vector<int> dp(amt + 1, MAX);6 dp[0] = 0;8 for (int i = 1; i <= n; i++) {9 for (int a = 1; a <= amt; a++) {10 if (coins[i - 1] > a)11 dp[a] = dp[a];12 else13 dp[a] = min(dp[a], dp[a - coins[i - 1]] + 1);14 }15 }16 return dp[amt] != MAX ? dp[amt] : -1;17 }（）
+ {{ select(25) }}
+ - 对
+ - 错
+

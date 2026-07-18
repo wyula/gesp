@@ -1,0 +1,155 @@
+第 1 题 ⼩杨正在编写⼀个“数字交换器”程序，他希望通过函数交换两个变量的值。请问运⾏以下代码后，屏幕上输出的是（ ）。1 void exchange(int *a, int &b) {2 int t = *a;3 *a = b;4 b = t;5 }6 int main() {7 int x = 100, y = 200;8 exchange(&x, y);9 cout << x << " " << y;10 return 0;11 }
+ {{ select(1) }}
+ - 100 200
+ - 200 100
+ - 200 200
+ - 编译错误
+
+第 2 题 下⾯程序想通过函数计算三门课总分，横线处应填⼊的是（ ）。1 int sumScore(int a, int b, int c) {2 return a + b + c;3 }4 int main() {5 int chinese = 88, math = 95, english = 90;6 int total = __________;7 cout << total;8 return 0;9 }
+ {{ select(2) }}
+ - sumScore
+ - sumScore(chinese, math, english)
+ - sumScore(int chinese, int math, int english)
+ - sumScore(a, b, c)
+
+第 3 题 下⾯程序输出结果是（ ）。1 / 101 int addOne(int x) {2 return x + 1;3 }4 int main() {5 int a = 6;6 cout << addOne(a) + addOne(3);7 return 0;8 }
+ {{ select(3) }}
+ - 9
+ - 10
+ - 11
+ - 12
+
+第 4 题 关于下⾯程序，说法正确的是（ ）。1 void show() {2 int stars = 5;3 }4 int main() {5 cout << stars;6 return 0;7 }
+ {{ select(4) }}
+ - 程序输出 5
+ - 程序可以通过编译，但输出随机值
+ - 程序不能通过编译，因为 stars 只在 show 函数中有效
+ - 程序不能通过编译，因为 cout 不能输出变量
+
+第 5 题 ⼩杨在调试⼀个“等级提升”系统，代码逻辑如下，执⾏后 *p 的值是（ ）。1 int lv = 5, next_lv = 6;2 int *p = &lv;3 *p = *p + 1;4 p = &next_lv;
+ {{ select(5) }}
+ - 5
+ - 6
+ - lv 的地址
+ - next_lv 的地址
+
+第 6 题 ⼩杨正在开发⼀款名为“星际⽹格”的游戏，他⽤⼆维数组 int map[5][4]; 来表⽰地图。已知 int 占字节，如果 map 的内存地址是 0x2000，则表达式 &map + 1 的地址值是（ ）。
+ {{ select(6) }}
+ - 0x204c
+ - 0x205c
+ - 0x2050
+ - 0x2058
+
+第 7 题 执⾏完下⾯代码后，变量 val 的值是（ ）。2 / 101 int data[] = {10, 20, 30, 40, 50};2 int *ptr = data + 2;3 int val = *(ptr - 1) + *(ptr + 1);
+ {{ select(7) }}
+ - 50
+ - 60
+ - 70
+ - 80
+
+第 8 题 某班 个⼩组、每组 名同学的分数存⼊下⾯的⼆维数组 score，则 score[1][2] 的值是（ ）。1 int score[3][4] = {2 {80, 81, 82, 83},3 {90, 91, 92, 93},4 {70, 71, 72, 73}5 };
+ {{ select(8) }}
+ - 81
+ - 90
+ - 92
+ - 72
+
+第 9 题 ⼩杨定义了⼀个结构体 Hero 来表⽰游戏角⾊，下⾯哪种初始化⽅式会由于语法错误导致编译失败？。1 struct Hero {2 string name;3 int hp;4 };1 Hero h;2 h.name = "Arthur";3 h.hp = 100;
+ {{ select(9) }}
+ - Hero h = {"Arthur", 100};
+ - 
+ - Hero h = new Hero{"Arthur", 100};
+ - Hero *p = new Hero{"Arthur", 100};
+
+第 10 题 下⾯程序输出结果是（ ）。1 struct Book {2 string title;3 int pages;4 };5 int main() {6 Book books[2] = {{"Math", 120}, {"Science", 150}};7 cout << books[1].title;8 return 0;9 }3 / 10
+ {{ select(10) }}
+ - Math
+ - Science
+ - 120
+ - 150
+
+第 11 题 ⼩杨在对“能量晶⽯”按亮度进⾏排序。如果两块晶⽯亮度相同，他希望保持它们在原始序列中的相对顺序。下列关于排序算法稳定性的说法，错误的是（ ）。
+ {{ select(11) }}
+ - 冒泡排序是稳定的，因为只有在左边⽐右边⼤时才交换。
+ - 插⼊排序是稳定的，因为它将元素插⼊到相等元素的右侧。
+ - 选择排序是稳定的，因为它每次选出最⼩元素放在前⾯。
+ - 稳定性是指排序后相等元素的相对位置不发⽣改变。
+
+第 12 题 ⼩杨的机器⼈正在能量踏板上跳跃，踏板编号为 。跳到第 块踏板的⽅案数满⾜递推式。若 ，则运⾏以下代码计算 jump(5) 的结果是（ ）。1 int jump(int n) {2 if (n <= 2)3 return n;4 int a = 1, b = 2, c = 0;5 for (int i = 3; i <= n; i++) {6 c = a + b;7 a = b;8 b = c;9 }10 return c;11 }
+ {{ select(12) }}
+ - 5
+ - 8
+ - 13
+ - 21
+
+第 13 题 在“模拟实验室”程序中，为了防⽌除以 导致崩溃，⼩杨使⽤了异常处理机制。执⾏以下代码将输出。1 try {2 int x = 10, y = 0;3 if (y == 0) throw "Zero Error";4 cout << x / y;5 } catch (int e) {6 cout << "Error Code: " << e;7 } catch (const char* msg) {8 cout << "Caught: " << msg;9 }
+ {{ select(13) }}
+ - 0
+ - Error Code: 0
+ - Caught: Zero Error
+ - 程序直接崩溃
+
+第 14 题 下⾯代码使⽤某种排序算法，将数组中的元素按从⼩到⼤排序。这段代码使⽤的排序算法是（ ）。4 / 101 void mystery_sort(double arr[], int n) {2 for (int i = 0; i < n - 1; i++) {3 int minPos = i;4 for (int j = i + 1; j < n; j++) {5 if (arr[j] < arr[minPos]) {6 minPos = j;7 }8 }9 double temp = arr[i];10 arr[i] = arr[minPos];11 arr[minPos] = temp;12 }13 }
+ {{ select(14) }}
+ - 冒泡排序
+ - 插⼊排序
+ - 选择排序
+ - ⾮典型排序
+
+第 15 题 ⼩杨正在读取“冒险⽇志”⽂件 quest.txt。若⽂件内容为 Level 10，执⾏以下程序后输出为（ ）。1 ifstream fin("quest.txt");2 string s;3 int v;4 fin >> s >> v;5 cout << s.length() * v;2
+ {{ select(15) }}
+ - 50
+ - 15
+ - 70
+ - 5
+
+第 16 题 运⾏以下程序后，变量 a 的值最终会变为 20。1 void modify(int *p) {2 *p = *p + 10;3 }4 int main() {5 int a = 10;6 modify(&a);7 return 0;8 }（）
+ {{ select(16) }}
+ - 对
+ - 错
+
+第 17 题 在 C++ 中，引⽤⼀旦初始化并绑定到某个变量后，可以通过赋值语句将其重新绑定到另⼀个变量。（）
+ {{ select(17) }}
+ - 对
+ - 错
+
+第 18 题 下⾯程序可以正确计算并输出 名学⽣的平均成绩。5 / 101 struct Student {2 int id;3 int score;4 };6 int main() {7 Student students[3] = {8 {1, 90},9 {2, 80},10 {3, 100}11 };13 int sum = 0;14 for (int i = 0; i < 3; i++) {15 sum += students[i].score;16 }17 double average = sum / 3.0;18 cout << average << endl;19 return 0;20 }（）
+ {{ select(18) }}
+ - 对
+ - 错
+
+第 19 题 选择排序算法在寻找每⼀轮最⼩值时，如果遇到相等的元素不进⾏交换，则选择排序是⼀种稳定的排序算法。（）
+ {{ select(19) }}
+ - 对
+ - 错
+
+第 20 题 如果使⽤带 flag 的冒泡排序，且待排序数组⼀开始就是有序的，那么算法只需⼀轮扫描即可结束，时间复杂度为 。（）
+ {{ select(20) }}
+ - 对
+ - 错
+
+第 21 题 在 C++ 中定义⼆维数组并初始化时，可以省略第⼀维，但不能省略第⼆维。因此 int a[][2] = {{1, 2},{3, 4}}; 是合法的，⽽ int a[][] = {{1, 2}, {3, 4}}; 是不合法的。（）
+ {{ select(21) }}
+ - 对
+ - 错
+
+第 22 题 下⾯代码的时间复杂度是 。1 int cnt = 0;2 for (int i = 1; i <= n; i++) {3 for (int j = 1; j <= i; j++) {4 cnt++;5 }6 }（）
+ {{ select(22) }}
+ - 对
+ - 错
+
+第 23 题 假设⽂件 output.txt 能正常打开，下⾯代码通过 rdbuf 将 cout 的输出重定向到了⽂件中。1 ofstream fout("output.txt");2 streambuf* old_buf = cout.rdbuf();3 cout.rdbuf(fout.rdbuf());4 cout << "GESP Exam";5 cout.rdbuf(old_buf);（）
+ {{ select(23) }}
+ - 对
+ - 错
+
+第 24 题 ⼩杨想通过下⾯程序给饭卡充值，程序会输出 70。1 void recharge(int money) {2 money += 20;3 }4 int main() {5 int card = 50;6 recharge(card);7 cout << card;8 return 0;9 }（）
+ {{ select(24) }}
+ - 对
+ - 错
+
+第 25 题 下⾯代码可以通过编译。6 / 101 int a[5];2 a++;3（）
+ {{ select(25) }}
+ - 对
+ - 错
+
